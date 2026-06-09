@@ -11,6 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PilierSlugRouteImport } from './routes/pilier.$slug'
+import { Route as InstitutVisionManifesteRouteImport } from './routes/institut.vision-manifeste'
+import { Route as BiographieHaceneBoumedieneRouteImport } from './routes/biographie.hacene-boumediene'
+import { Route as BiographieArnaudSighanoRouteImport } from './routes/biographie.arnaud-sighano'
+import { Route as BiographieAntoineObtelRouteImport } from './routes/biographie.antoine-obtel'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,30 +26,86 @@ const PilierSlugRoute = PilierSlugRouteImport.update({
   path: '/pilier/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InstitutVisionManifesteRoute = InstitutVisionManifesteRouteImport.update({
+  id: '/institut/vision-manifeste',
+  path: '/institut/vision-manifeste',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BiographieHaceneBoumedieneRoute =
+  BiographieHaceneBoumedieneRouteImport.update({
+    id: '/biographie/hacene-boumediene',
+    path: '/biographie/hacene-boumediene',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BiographieArnaudSighanoRoute = BiographieArnaudSighanoRouteImport.update({
+  id: '/biographie/arnaud-sighano',
+  path: '/biographie/arnaud-sighano',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BiographieAntoineObtelRoute = BiographieAntoineObtelRouteImport.update({
+  id: '/biographie/antoine-obtel',
+  path: '/biographie/antoine-obtel',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
+  '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
+  '/biographie/hacene-boumediene': typeof BiographieHaceneBoumedieneRoute
+  '/institut/vision-manifeste': typeof InstitutVisionManifesteRoute
   '/pilier/$slug': typeof PilierSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
+  '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
+  '/biographie/hacene-boumediene': typeof BiographieHaceneBoumedieneRoute
+  '/institut/vision-manifeste': typeof InstitutVisionManifesteRoute
   '/pilier/$slug': typeof PilierSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
+  '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
+  '/biographie/hacene-boumediene': typeof BiographieHaceneBoumedieneRoute
+  '/institut/vision-manifeste': typeof InstitutVisionManifesteRoute
   '/pilier/$slug': typeof PilierSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/pilier/$slug'
+  fullPaths:
+    | '/'
+    | '/biographie/antoine-obtel'
+    | '/biographie/arnaud-sighano'
+    | '/biographie/hacene-boumediene'
+    | '/institut/vision-manifeste'
+    | '/pilier/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/pilier/$slug'
-  id: '__root__' | '/' | '/pilier/$slug'
+  to:
+    | '/'
+    | '/biographie/antoine-obtel'
+    | '/biographie/arnaud-sighano'
+    | '/biographie/hacene-boumediene'
+    | '/institut/vision-manifeste'
+    | '/pilier/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/biographie/antoine-obtel'
+    | '/biographie/arnaud-sighano'
+    | '/biographie/hacene-boumediene'
+    | '/institut/vision-manifeste'
+    | '/pilier/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BiographieAntoineObtelRoute: typeof BiographieAntoineObtelRoute
+  BiographieArnaudSighanoRoute: typeof BiographieArnaudSighanoRoute
+  BiographieHaceneBoumedieneRoute: typeof BiographieHaceneBoumedieneRoute
+  InstitutVisionManifesteRoute: typeof InstitutVisionManifesteRoute
   PilierSlugRoute: typeof PilierSlugRoute
 }
 
@@ -65,13 +125,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PilierSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/institut/vision-manifeste': {
+      id: '/institut/vision-manifeste'
+      path: '/institut/vision-manifeste'
+      fullPath: '/institut/vision-manifeste'
+      preLoaderRoute: typeof InstitutVisionManifesteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/biographie/hacene-boumediene': {
+      id: '/biographie/hacene-boumediene'
+      path: '/biographie/hacene-boumediene'
+      fullPath: '/biographie/hacene-boumediene'
+      preLoaderRoute: typeof BiographieHaceneBoumedieneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/biographie/arnaud-sighano': {
+      id: '/biographie/arnaud-sighano'
+      path: '/biographie/arnaud-sighano'
+      fullPath: '/biographie/arnaud-sighano'
+      preLoaderRoute: typeof BiographieArnaudSighanoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/biographie/antoine-obtel': {
+      id: '/biographie/antoine-obtel'
+      path: '/biographie/antoine-obtel'
+      fullPath: '/biographie/antoine-obtel'
+      preLoaderRoute: typeof BiographieAntoineObtelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BiographieAntoineObtelRoute: BiographieAntoineObtelRoute,
+  BiographieArnaudSighanoRoute: BiographieArnaudSighanoRoute,
+  BiographieHaceneBoumedieneRoute: BiographieHaceneBoumedieneRoute,
+  InstitutVisionManifesteRoute: InstitutVisionManifesteRoute,
   PilierSlugRoute: PilierSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
