@@ -1,0 +1,177 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_qU79TJXMnw.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-anthracite: var(--anthracite);
+  --color-anthracite-foreground: var(--anthracite-foreground);
+  --color-crimson: var(--crimson);
+  --color-crimson-foreground: var(--crimson-foreground);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Dominante : Blanc pur */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.18 0.01 240);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.01 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.01 240);
+
+  /* Primaire : anthracite (textes forts) */
+  --primary: oklch(0.22 0.008 240);
+  --primary-foreground: oklch(0.98 0 0);
+
+  /* Secondaire : gris très clair */
+  --secondary: oklch(0.97 0.002 240);
+  --secondary-foreground: oklch(0.22 0.008 240);
+
+  --muted: oklch(0.965 0.002 240);
+  --muted-foreground: oklch(0.48 0.01 240);
+
+  --accent: oklch(0.96 0.003 240);
+  --accent-foreground: oklch(0.22 0.008 240);
+
+  /* Anthracite corporate */
+  --anthracite: oklch(0.23 0.01 250);
+  --anthracite-foreground: oklch(0.98 0 0);
+
+  /* Accent : Rouge républicain / crimson */
+  --crimson: oklch(0.52 0.21 26);
+  --crimson-foreground: oklch(0.99 0 0);
+
+  --destructive: oklch(0.52 0.21 26);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.92 0.004 240);
+  --input: oklch(0.92 0.004 240);
+  --ring: oklch(0.52 0.21 26);
+}
+
+.dark {
+  --background: oklch(0.18 0.01 240);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.22 0.008 240);
+  --card-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.98 0 0);
+  --primary-foreground: oklch(0.18 0.01 240);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    letter-spacing: -0.011em;
+  }
+  h1, h2, h3, h4 {
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .bg-crimson { background-color: var(--crimson); }
+  .text-crimson { color: var(--crimson); }
+  .text-crimson-foreground { color: var(--crimson-foreground); }
+  .bg-anthracite { background-color: var(--anthracite); }
+  .text-anthracite { color: var(--anthracite); }
+  .text-anthracite-foreground { color: var(--anthracite-foreground); }
+  .border-crimson { border-color: var(--crimson); }
+  .ring-crimson { --tw-ring-color: var(--crimson); }
+  .font-serif { font-family: var(--font-serif); }
+
+  .glass-header {
+    background-color: color-mix(in oklab, white 75%, transparent);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+  }
+
+  .btn-crimson {
+    background-color: var(--crimson);
+    color: var(--crimson-foreground);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+  .btn-crimson:hover {
+    background-color: color-mix(in oklab, var(--crimson) 88%, black);
+    box-shadow: 0 10px 30px -10px color-mix(in oklab, var(--crimson) 60%, transparent);
+    transform: translateY(-1px);
+  }
+
+  .pillar-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .pillar-card::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 2px;
+    background-color: var(--crimson);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px color-mix(in oklab, black 25%, transparent);
+  }
+  .pillar-card:hover::after { transform: scaleX(1); }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: reveal 0.8s ease forwards;
+  }
+  @keyframes reveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
