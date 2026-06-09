@@ -130,6 +130,16 @@ function TeamFounders() {
   );
 }
 
+function BioLink({ slug }: { slug: string }) {
+  const cls = "mt-6 btn-crimson px-5 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-2";
+  const inner = (<>En savoir plus <ArrowRight className="size-3.5" /></>);
+  if (slug === "arnaud-sighano") return <Link to="/biographie/arnaud-sighano" className={cls}>{inner}</Link>;
+  if (slug === "antoine-obtel") return <Link to="/biographie/antoine-obtel" className={cls}>{inner}</Link>;
+  return <Link to="/biographie/hacene-boumediene" className={cls}>{inner}</Link>;
+}
+
+
+
 
 
 /* ---------- HERO ---------- */
