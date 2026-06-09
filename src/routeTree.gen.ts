@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PilierSlugRouteImport } from './routes/pilier.$slug'
 import { Route as InstitutVisionManifesteRouteImport } from './routes/institut.vision-manifeste'
+import { Route as InstitutCampusRouteImport } from './routes/institut.campus'
 import { Route as BiographieHaceneBoumedieneRouteImport } from './routes/biographie.hacene-boumediene'
 import { Route as BiographieArnaudSighanoRouteImport } from './routes/biographie.arnaud-sighano'
 import { Route as BiographieAntoineObtelRouteImport } from './routes/biographie.antoine-obtel'
@@ -29,6 +30,11 @@ const PilierSlugRoute = PilierSlugRouteImport.update({
 const InstitutVisionManifesteRoute = InstitutVisionManifesteRouteImport.update({
   id: '/institut/vision-manifeste',
   path: '/institut/vision-manifeste',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstitutCampusRoute = InstitutCampusRouteImport.update({
+  id: '/institut/campus',
+  path: '/institut/campus',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BiographieHaceneBoumedieneRoute =
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
   '/biographie/hacene-boumediene': typeof BiographieHaceneBoumedieneRoute
+  '/institut/campus': typeof InstitutCampusRoute
   '/institut/vision-manifeste': typeof InstitutVisionManifesteRoute
   '/pilier/$slug': typeof PilierSlugRoute
 }
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
   '/biographie/hacene-boumediene': typeof BiographieHaceneBoumedieneRoute
+  '/institut/campus': typeof InstitutCampusRoute
   '/institut/vision-manifeste': typeof InstitutVisionManifesteRoute
   '/pilier/$slug': typeof PilierSlugRoute
 }
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
   '/biographie/hacene-boumediene': typeof BiographieHaceneBoumedieneRoute
+  '/institut/campus': typeof InstitutCampusRoute
   '/institut/vision-manifeste': typeof InstitutVisionManifesteRoute
   '/pilier/$slug': typeof PilierSlugRoute
 }
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
     | '/biographie/hacene-boumediene'
+    | '/institut/campus'
     | '/institut/vision-manifeste'
     | '/pilier/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
     | '/biographie/hacene-boumediene'
+    | '/institut/campus'
     | '/institut/vision-manifeste'
     | '/pilier/$slug'
   id:
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
     | '/biographie/hacene-boumediene'
+    | '/institut/campus'
     | '/institut/vision-manifeste'
     | '/pilier/$slug'
   fileRoutesById: FileRoutesById
@@ -105,6 +117,7 @@ export interface RootRouteChildren {
   BiographieAntoineObtelRoute: typeof BiographieAntoineObtelRoute
   BiographieArnaudSighanoRoute: typeof BiographieArnaudSighanoRoute
   BiographieHaceneBoumedieneRoute: typeof BiographieHaceneBoumedieneRoute
+  InstitutCampusRoute: typeof InstitutCampusRoute
   InstitutVisionManifesteRoute: typeof InstitutVisionManifesteRoute
   PilierSlugRoute: typeof PilierSlugRoute
 }
@@ -130,6 +143,13 @@ declare module '@tanstack/react-router' {
       path: '/institut/vision-manifeste'
       fullPath: '/institut/vision-manifeste'
       preLoaderRoute: typeof InstitutVisionManifesteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/institut/campus': {
+      id: '/institut/campus'
+      path: '/institut/campus'
+      fullPath: '/institut/campus'
+      preLoaderRoute: typeof InstitutCampusRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/biographie/hacene-boumediene': {
@@ -161,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   BiographieAntoineObtelRoute: BiographieAntoineObtelRoute,
   BiographieArnaudSighanoRoute: BiographieArnaudSighanoRoute,
   BiographieHaceneBoumedieneRoute: BiographieHaceneBoumedieneRoute,
+  InstitutCampusRoute: InstitutCampusRoute,
   InstitutVisionManifesteRoute: InstitutVisionManifesteRoute,
   PilierSlugRoute: PilierSlugRoute,
 }
