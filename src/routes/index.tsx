@@ -45,7 +45,7 @@ export const Route = createFileRoute("/")({
 
 function Landing() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-white text-foreground">
       <Header />
       <main>
         <Hero />
@@ -55,6 +55,7 @@ function Landing() {
         <Proof />
         <Admission />
         <Founder />
+        <TeamFounders />
         <Faq />
         <ContactCta />
       </main>
@@ -63,6 +64,78 @@ function Landing() {
     </div>
   );
 }
+
+/* ---------- TEAM — Qui sommes-nous ---------- */
+function TeamFounders() {
+  const team = [
+    {
+      slug: "arnaud-sighano",
+      name: "Arnaud SIGHANO",
+      role: "Fondateur & Directeur Associé",
+      quote: "Diriger est une discipline d'influence, d'éthique et de méthode.",
+      img: directorImg,
+    },
+    {
+      slug: "antoine-obtel",
+      name: "Antoine OBTEL",
+      role: "Directeur Associé",
+      quote: "La rigueur académique au service des décideurs européens.",
+      img: directorImg,
+    },
+    {
+      slug: "hacene-boumediene",
+      name: "Bloukli Hacene BOUMEDIENE",
+      role: "Co-fondateur — Architecture & Urbanisme",
+      quote: "Bâtir la ville de demain dans le respect du patrimoine.",
+      img: directorImg,
+    },
+  ];
+  return (
+    <section id="equipe" className="py-24 md:py-32">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-5">
+            07 — Qui sommes-nous
+          </div>
+          <h2 className="font-serif text-4xl md:text-5xl text-anthracite leading-[1.1]">
+            La Direction de l'Institut
+          </h2>
+          <p className="mt-5 text-muted-foreground">
+            Trois fondateurs, trois disciplines, une même exigence républicaine.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-10">
+          {team.map((m) => (
+            <div key={m.slug} className="flex flex-col items-center text-center">
+              <div className="relative">
+                <div className="size-40 rounded-full overflow-hidden ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]">
+                  <img src={m.img} alt={m.name} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <Quote className="absolute -top-1 -left-1 size-7 text-crimson" strokeWidth={1.8} />
+              </div>
+              <p className="mt-7 font-serif italic text-[17px] leading-relaxed text-anthracite max-w-xs">
+                « {m.quote} »
+              </p>
+              <div className="mt-6">
+                <div className="text-base font-bold text-anthracite">{m.name}</div>
+                <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">{m.role}</div>
+              </div>
+              <Link
+                to="/biographie/$slug"
+                params={{ slug: m.slug }}
+                className="mt-6 btn-crimson px-5 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-2"
+              >
+                En savoir plus <ArrowRight className="size-3.5" />
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 
 /* ---------- HERO ---------- */
 function Hero() {
