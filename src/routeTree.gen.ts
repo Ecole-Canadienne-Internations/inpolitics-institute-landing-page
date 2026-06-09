@@ -10,9 +10,30 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProgrammesVisitesTechniquesRouteImport } from './routes/programmes.visites-techniques'
+import { Route as ProgrammesSeminairesGigeanRouteImport } from './routes/programmes.seminaires-gigean'
+import { Route as ProgrammesPlaidoyerInfluenceRouteImport } from './routes/programmes.plaidoyer-influence'
+import { Route as ProgrammesFormationsAfriqueRouteImport } from './routes/programmes.formations-afrique'
+import { Route as ProgrammesCursusHybridesRouteImport } from './routes/programmes.cursus-hybrides'
 import { Route as PilierSlugRouteImport } from './routes/pilier.$slug'
+import { Route as LobbyingReseauServicesEntreprisesRouteImport } from './routes/lobbying-reseau.services-entreprises'
+import { Route as LobbyingReseauMethode6AxesRouteImport } from './routes/lobbying-reseau.methode-6-axes'
+import { Route as LobbyingReseauClubExecRouteImport } from './routes/lobbying-reseau.club-exec'
+import { Route as LabPublicationsRouteImport } from './routes/lab.publications'
+import { Route as LabLivreRouteImport } from './routes/lab.livre'
+import { Route as LabBlogRouteImport } from './routes/lab.blog'
+import { Route as LabActualitesEvenementsRouteImport } from './routes/lab.actualites-evenements'
 import { Route as InstitutVisionManifesteRouteImport } from './routes/institut.vision-manifeste'
+import { Route as InstitutLobbyingIntegriteRouteImport } from './routes/institut.lobbying-integrite'
+import { Route as InstitutLabelHauteIntegriteRouteImport } from './routes/institut.label-haute-integrite'
+import { Route as InstitutDiplomatieTerritorialeRouteImport } from './routes/institut.diplomatie-territoriale'
 import { Route as InstitutCampusRouteImport } from './routes/institut.campus'
+import { Route as GouvernanceDigitaleSolutionsSaasRouteImport } from './routes/gouvernance-digitale.solutions-saas'
+import { Route as GouvernanceDigitaleIaDataScienceRouteImport } from './routes/gouvernance-digitale.ia-data-science'
+import { Route as GouvernanceDigitaleEtudesDeCasRouteImport } from './routes/gouvernance-digitale.etudes-de-cas'
+import { Route as DiasporaProgrammeLandingRouteImport } from './routes/diaspora.programme-landing'
+import { Route as DiasporaConnectRouteImport } from './routes/diaspora.connect'
+import { Route as DiasporaConciergerieRouteImport } from './routes/diaspora.conciergerie'
 import { Route as BiographieHaceneBoumedieneRouteImport } from './routes/biographie.hacene-boumediene'
 import { Route as BiographieArnaudSighanoRouteImport } from './routes/biographie.arnaud-sighano'
 import { Route as BiographieAntoineObtelRouteImport } from './routes/biographie.antoine-obtel'
@@ -22,9 +43,76 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgrammesVisitesTechniquesRoute =
+  ProgrammesVisitesTechniquesRouteImport.update({
+    id: '/programmes/visites-techniques',
+    path: '/programmes/visites-techniques',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProgrammesSeminairesGigeanRoute =
+  ProgrammesSeminairesGigeanRouteImport.update({
+    id: '/programmes/seminaires-gigean',
+    path: '/programmes/seminaires-gigean',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProgrammesPlaidoyerInfluenceRoute =
+  ProgrammesPlaidoyerInfluenceRouteImport.update({
+    id: '/programmes/plaidoyer-influence',
+    path: '/programmes/plaidoyer-influence',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProgrammesFormationsAfriqueRoute =
+  ProgrammesFormationsAfriqueRouteImport.update({
+    id: '/programmes/formations-afrique',
+    path: '/programmes/formations-afrique',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProgrammesCursusHybridesRoute =
+  ProgrammesCursusHybridesRouteImport.update({
+    id: '/programmes/cursus-hybrides',
+    path: '/programmes/cursus-hybrides',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PilierSlugRoute = PilierSlugRouteImport.update({
   id: '/pilier/$slug',
   path: '/pilier/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LobbyingReseauServicesEntreprisesRoute =
+  LobbyingReseauServicesEntreprisesRouteImport.update({
+    id: '/lobbying-reseau/services-entreprises',
+    path: '/lobbying-reseau/services-entreprises',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LobbyingReseauMethode6AxesRoute =
+  LobbyingReseauMethode6AxesRouteImport.update({
+    id: '/lobbying-reseau/methode-6-axes',
+    path: '/lobbying-reseau/methode-6-axes',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LobbyingReseauClubExecRoute = LobbyingReseauClubExecRouteImport.update({
+  id: '/lobbying-reseau/club-exec',
+  path: '/lobbying-reseau/club-exec',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabPublicationsRoute = LabPublicationsRouteImport.update({
+  id: '/lab/publications',
+  path: '/lab/publications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabLivreRoute = LabLivreRouteImport.update({
+  id: '/lab/livre',
+  path: '/lab/livre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabBlogRoute = LabBlogRouteImport.update({
+  id: '/lab/blog',
+  path: '/lab/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabActualitesEvenementsRoute = LabActualitesEvenementsRouteImport.update({
+  id: '/lab/actualites-evenements',
+  path: '/lab/actualites-evenements',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InstitutVisionManifesteRoute = InstitutVisionManifesteRouteImport.update({
@@ -32,9 +120,61 @@ const InstitutVisionManifesteRoute = InstitutVisionManifesteRouteImport.update({
   path: '/institut/vision-manifeste',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InstitutLobbyingIntegriteRoute =
+  InstitutLobbyingIntegriteRouteImport.update({
+    id: '/institut/lobbying-integrite',
+    path: '/institut/lobbying-integrite',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const InstitutLabelHauteIntegriteRoute =
+  InstitutLabelHauteIntegriteRouteImport.update({
+    id: '/institut/label-haute-integrite',
+    path: '/institut/label-haute-integrite',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const InstitutDiplomatieTerritorialeRoute =
+  InstitutDiplomatieTerritorialeRouteImport.update({
+    id: '/institut/diplomatie-territoriale',
+    path: '/institut/diplomatie-territoriale',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const InstitutCampusRoute = InstitutCampusRouteImport.update({
   id: '/institut/campus',
   path: '/institut/campus',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GouvernanceDigitaleSolutionsSaasRoute =
+  GouvernanceDigitaleSolutionsSaasRouteImport.update({
+    id: '/gouvernance-digitale/solutions-saas',
+    path: '/gouvernance-digitale/solutions-saas',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GouvernanceDigitaleIaDataScienceRoute =
+  GouvernanceDigitaleIaDataScienceRouteImport.update({
+    id: '/gouvernance-digitale/ia-data-science',
+    path: '/gouvernance-digitale/ia-data-science',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GouvernanceDigitaleEtudesDeCasRoute =
+  GouvernanceDigitaleEtudesDeCasRouteImport.update({
+    id: '/gouvernance-digitale/etudes-de-cas',
+    path: '/gouvernance-digitale/etudes-de-cas',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DiasporaProgrammeLandingRoute =
+  DiasporaProgrammeLandingRouteImport.update({
+    id: '/diaspora/programme-landing',
+    path: '/diaspora/programme-landing',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DiasporaConnectRoute = DiasporaConnectRouteImport.update({
+  id: '/diaspora/connect',
+  path: '/diaspora/connect',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiasporaConciergerieRoute = DiasporaConciergerieRouteImport.update({
+  id: '/diaspora/conciergerie',
+  path: '/diaspora/conciergerie',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BiographieHaceneBoumedieneRoute =
@@ -59,18 +199,60 @@ export interface FileRoutesByFullPath {
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
   '/biographie/hacene-boumediene': typeof BiographieHaceneBoumedieneRoute
+  '/diaspora/conciergerie': typeof DiasporaConciergerieRoute
+  '/diaspora/connect': typeof DiasporaConnectRoute
+  '/diaspora/programme-landing': typeof DiasporaProgrammeLandingRoute
+  '/gouvernance-digitale/etudes-de-cas': typeof GouvernanceDigitaleEtudesDeCasRoute
+  '/gouvernance-digitale/ia-data-science': typeof GouvernanceDigitaleIaDataScienceRoute
+  '/gouvernance-digitale/solutions-saas': typeof GouvernanceDigitaleSolutionsSaasRoute
   '/institut/campus': typeof InstitutCampusRoute
+  '/institut/diplomatie-territoriale': typeof InstitutDiplomatieTerritorialeRoute
+  '/institut/label-haute-integrite': typeof InstitutLabelHauteIntegriteRoute
+  '/institut/lobbying-integrite': typeof InstitutLobbyingIntegriteRoute
   '/institut/vision-manifeste': typeof InstitutVisionManifesteRoute
+  '/lab/actualites-evenements': typeof LabActualitesEvenementsRoute
+  '/lab/blog': typeof LabBlogRoute
+  '/lab/livre': typeof LabLivreRoute
+  '/lab/publications': typeof LabPublicationsRoute
+  '/lobbying-reseau/club-exec': typeof LobbyingReseauClubExecRoute
+  '/lobbying-reseau/methode-6-axes': typeof LobbyingReseauMethode6AxesRoute
+  '/lobbying-reseau/services-entreprises': typeof LobbyingReseauServicesEntreprisesRoute
   '/pilier/$slug': typeof PilierSlugRoute
+  '/programmes/cursus-hybrides': typeof ProgrammesCursusHybridesRoute
+  '/programmes/formations-afrique': typeof ProgrammesFormationsAfriqueRoute
+  '/programmes/plaidoyer-influence': typeof ProgrammesPlaidoyerInfluenceRoute
+  '/programmes/seminaires-gigean': typeof ProgrammesSeminairesGigeanRoute
+  '/programmes/visites-techniques': typeof ProgrammesVisitesTechniquesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
   '/biographie/hacene-boumediene': typeof BiographieHaceneBoumedieneRoute
+  '/diaspora/conciergerie': typeof DiasporaConciergerieRoute
+  '/diaspora/connect': typeof DiasporaConnectRoute
+  '/diaspora/programme-landing': typeof DiasporaProgrammeLandingRoute
+  '/gouvernance-digitale/etudes-de-cas': typeof GouvernanceDigitaleEtudesDeCasRoute
+  '/gouvernance-digitale/ia-data-science': typeof GouvernanceDigitaleIaDataScienceRoute
+  '/gouvernance-digitale/solutions-saas': typeof GouvernanceDigitaleSolutionsSaasRoute
   '/institut/campus': typeof InstitutCampusRoute
+  '/institut/diplomatie-territoriale': typeof InstitutDiplomatieTerritorialeRoute
+  '/institut/label-haute-integrite': typeof InstitutLabelHauteIntegriteRoute
+  '/institut/lobbying-integrite': typeof InstitutLobbyingIntegriteRoute
   '/institut/vision-manifeste': typeof InstitutVisionManifesteRoute
+  '/lab/actualites-evenements': typeof LabActualitesEvenementsRoute
+  '/lab/blog': typeof LabBlogRoute
+  '/lab/livre': typeof LabLivreRoute
+  '/lab/publications': typeof LabPublicationsRoute
+  '/lobbying-reseau/club-exec': typeof LobbyingReseauClubExecRoute
+  '/lobbying-reseau/methode-6-axes': typeof LobbyingReseauMethode6AxesRoute
+  '/lobbying-reseau/services-entreprises': typeof LobbyingReseauServicesEntreprisesRoute
   '/pilier/$slug': typeof PilierSlugRoute
+  '/programmes/cursus-hybrides': typeof ProgrammesCursusHybridesRoute
+  '/programmes/formations-afrique': typeof ProgrammesFormationsAfriqueRoute
+  '/programmes/plaidoyer-influence': typeof ProgrammesPlaidoyerInfluenceRoute
+  '/programmes/seminaires-gigean': typeof ProgrammesSeminairesGigeanRoute
+  '/programmes/visites-techniques': typeof ProgrammesVisitesTechniquesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -78,9 +260,30 @@ export interface FileRoutesById {
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
   '/biographie/hacene-boumediene': typeof BiographieHaceneBoumedieneRoute
+  '/diaspora/conciergerie': typeof DiasporaConciergerieRoute
+  '/diaspora/connect': typeof DiasporaConnectRoute
+  '/diaspora/programme-landing': typeof DiasporaProgrammeLandingRoute
+  '/gouvernance-digitale/etudes-de-cas': typeof GouvernanceDigitaleEtudesDeCasRoute
+  '/gouvernance-digitale/ia-data-science': typeof GouvernanceDigitaleIaDataScienceRoute
+  '/gouvernance-digitale/solutions-saas': typeof GouvernanceDigitaleSolutionsSaasRoute
   '/institut/campus': typeof InstitutCampusRoute
+  '/institut/diplomatie-territoriale': typeof InstitutDiplomatieTerritorialeRoute
+  '/institut/label-haute-integrite': typeof InstitutLabelHauteIntegriteRoute
+  '/institut/lobbying-integrite': typeof InstitutLobbyingIntegriteRoute
   '/institut/vision-manifeste': typeof InstitutVisionManifesteRoute
+  '/lab/actualites-evenements': typeof LabActualitesEvenementsRoute
+  '/lab/blog': typeof LabBlogRoute
+  '/lab/livre': typeof LabLivreRoute
+  '/lab/publications': typeof LabPublicationsRoute
+  '/lobbying-reseau/club-exec': typeof LobbyingReseauClubExecRoute
+  '/lobbying-reseau/methode-6-axes': typeof LobbyingReseauMethode6AxesRoute
+  '/lobbying-reseau/services-entreprises': typeof LobbyingReseauServicesEntreprisesRoute
   '/pilier/$slug': typeof PilierSlugRoute
+  '/programmes/cursus-hybrides': typeof ProgrammesCursusHybridesRoute
+  '/programmes/formations-afrique': typeof ProgrammesFormationsAfriqueRoute
+  '/programmes/plaidoyer-influence': typeof ProgrammesPlaidoyerInfluenceRoute
+  '/programmes/seminaires-gigean': typeof ProgrammesSeminairesGigeanRoute
+  '/programmes/visites-techniques': typeof ProgrammesVisitesTechniquesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -89,27 +292,90 @@ export interface FileRouteTypes {
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
     | '/biographie/hacene-boumediene'
+    | '/diaspora/conciergerie'
+    | '/diaspora/connect'
+    | '/diaspora/programme-landing'
+    | '/gouvernance-digitale/etudes-de-cas'
+    | '/gouvernance-digitale/ia-data-science'
+    | '/gouvernance-digitale/solutions-saas'
     | '/institut/campus'
+    | '/institut/diplomatie-territoriale'
+    | '/institut/label-haute-integrite'
+    | '/institut/lobbying-integrite'
     | '/institut/vision-manifeste'
+    | '/lab/actualites-evenements'
+    | '/lab/blog'
+    | '/lab/livre'
+    | '/lab/publications'
+    | '/lobbying-reseau/club-exec'
+    | '/lobbying-reseau/methode-6-axes'
+    | '/lobbying-reseau/services-entreprises'
     | '/pilier/$slug'
+    | '/programmes/cursus-hybrides'
+    | '/programmes/formations-afrique'
+    | '/programmes/plaidoyer-influence'
+    | '/programmes/seminaires-gigean'
+    | '/programmes/visites-techniques'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
     | '/biographie/hacene-boumediene'
+    | '/diaspora/conciergerie'
+    | '/diaspora/connect'
+    | '/diaspora/programme-landing'
+    | '/gouvernance-digitale/etudes-de-cas'
+    | '/gouvernance-digitale/ia-data-science'
+    | '/gouvernance-digitale/solutions-saas'
     | '/institut/campus'
+    | '/institut/diplomatie-territoriale'
+    | '/institut/label-haute-integrite'
+    | '/institut/lobbying-integrite'
     | '/institut/vision-manifeste'
+    | '/lab/actualites-evenements'
+    | '/lab/blog'
+    | '/lab/livre'
+    | '/lab/publications'
+    | '/lobbying-reseau/club-exec'
+    | '/lobbying-reseau/methode-6-axes'
+    | '/lobbying-reseau/services-entreprises'
     | '/pilier/$slug'
+    | '/programmes/cursus-hybrides'
+    | '/programmes/formations-afrique'
+    | '/programmes/plaidoyer-influence'
+    | '/programmes/seminaires-gigean'
+    | '/programmes/visites-techniques'
   id:
     | '__root__'
     | '/'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
     | '/biographie/hacene-boumediene'
+    | '/diaspora/conciergerie'
+    | '/diaspora/connect'
+    | '/diaspora/programme-landing'
+    | '/gouvernance-digitale/etudes-de-cas'
+    | '/gouvernance-digitale/ia-data-science'
+    | '/gouvernance-digitale/solutions-saas'
     | '/institut/campus'
+    | '/institut/diplomatie-territoriale'
+    | '/institut/label-haute-integrite'
+    | '/institut/lobbying-integrite'
     | '/institut/vision-manifeste'
+    | '/lab/actualites-evenements'
+    | '/lab/blog'
+    | '/lab/livre'
+    | '/lab/publications'
+    | '/lobbying-reseau/club-exec'
+    | '/lobbying-reseau/methode-6-axes'
+    | '/lobbying-reseau/services-entreprises'
     | '/pilier/$slug'
+    | '/programmes/cursus-hybrides'
+    | '/programmes/formations-afrique'
+    | '/programmes/plaidoyer-influence'
+    | '/programmes/seminaires-gigean'
+    | '/programmes/visites-techniques'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -117,9 +383,30 @@ export interface RootRouteChildren {
   BiographieAntoineObtelRoute: typeof BiographieAntoineObtelRoute
   BiographieArnaudSighanoRoute: typeof BiographieArnaudSighanoRoute
   BiographieHaceneBoumedieneRoute: typeof BiographieHaceneBoumedieneRoute
+  DiasporaConciergerieRoute: typeof DiasporaConciergerieRoute
+  DiasporaConnectRoute: typeof DiasporaConnectRoute
+  DiasporaProgrammeLandingRoute: typeof DiasporaProgrammeLandingRoute
+  GouvernanceDigitaleEtudesDeCasRoute: typeof GouvernanceDigitaleEtudesDeCasRoute
+  GouvernanceDigitaleIaDataScienceRoute: typeof GouvernanceDigitaleIaDataScienceRoute
+  GouvernanceDigitaleSolutionsSaasRoute: typeof GouvernanceDigitaleSolutionsSaasRoute
   InstitutCampusRoute: typeof InstitutCampusRoute
+  InstitutDiplomatieTerritorialeRoute: typeof InstitutDiplomatieTerritorialeRoute
+  InstitutLabelHauteIntegriteRoute: typeof InstitutLabelHauteIntegriteRoute
+  InstitutLobbyingIntegriteRoute: typeof InstitutLobbyingIntegriteRoute
   InstitutVisionManifesteRoute: typeof InstitutVisionManifesteRoute
+  LabActualitesEvenementsRoute: typeof LabActualitesEvenementsRoute
+  LabBlogRoute: typeof LabBlogRoute
+  LabLivreRoute: typeof LabLivreRoute
+  LabPublicationsRoute: typeof LabPublicationsRoute
+  LobbyingReseauClubExecRoute: typeof LobbyingReseauClubExecRoute
+  LobbyingReseauMethode6AxesRoute: typeof LobbyingReseauMethode6AxesRoute
+  LobbyingReseauServicesEntreprisesRoute: typeof LobbyingReseauServicesEntreprisesRoute
   PilierSlugRoute: typeof PilierSlugRoute
+  ProgrammesCursusHybridesRoute: typeof ProgrammesCursusHybridesRoute
+  ProgrammesFormationsAfriqueRoute: typeof ProgrammesFormationsAfriqueRoute
+  ProgrammesPlaidoyerInfluenceRoute: typeof ProgrammesPlaidoyerInfluenceRoute
+  ProgrammesSeminairesGigeanRoute: typeof ProgrammesSeminairesGigeanRoute
+  ProgrammesVisitesTechniquesRoute: typeof ProgrammesVisitesTechniquesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -131,11 +418,95 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programmes/visites-techniques': {
+      id: '/programmes/visites-techniques'
+      path: '/programmes/visites-techniques'
+      fullPath: '/programmes/visites-techniques'
+      preLoaderRoute: typeof ProgrammesVisitesTechniquesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes/seminaires-gigean': {
+      id: '/programmes/seminaires-gigean'
+      path: '/programmes/seminaires-gigean'
+      fullPath: '/programmes/seminaires-gigean'
+      preLoaderRoute: typeof ProgrammesSeminairesGigeanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes/plaidoyer-influence': {
+      id: '/programmes/plaidoyer-influence'
+      path: '/programmes/plaidoyer-influence'
+      fullPath: '/programmes/plaidoyer-influence'
+      preLoaderRoute: typeof ProgrammesPlaidoyerInfluenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes/formations-afrique': {
+      id: '/programmes/formations-afrique'
+      path: '/programmes/formations-afrique'
+      fullPath: '/programmes/formations-afrique'
+      preLoaderRoute: typeof ProgrammesFormationsAfriqueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programmes/cursus-hybrides': {
+      id: '/programmes/cursus-hybrides'
+      path: '/programmes/cursus-hybrides'
+      fullPath: '/programmes/cursus-hybrides'
+      preLoaderRoute: typeof ProgrammesCursusHybridesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pilier/$slug': {
       id: '/pilier/$slug'
       path: '/pilier/$slug'
       fullPath: '/pilier/$slug'
       preLoaderRoute: typeof PilierSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lobbying-reseau/services-entreprises': {
+      id: '/lobbying-reseau/services-entreprises'
+      path: '/lobbying-reseau/services-entreprises'
+      fullPath: '/lobbying-reseau/services-entreprises'
+      preLoaderRoute: typeof LobbyingReseauServicesEntreprisesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lobbying-reseau/methode-6-axes': {
+      id: '/lobbying-reseau/methode-6-axes'
+      path: '/lobbying-reseau/methode-6-axes'
+      fullPath: '/lobbying-reseau/methode-6-axes'
+      preLoaderRoute: typeof LobbyingReseauMethode6AxesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lobbying-reseau/club-exec': {
+      id: '/lobbying-reseau/club-exec'
+      path: '/lobbying-reseau/club-exec'
+      fullPath: '/lobbying-reseau/club-exec'
+      preLoaderRoute: typeof LobbyingReseauClubExecRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lab/publications': {
+      id: '/lab/publications'
+      path: '/lab/publications'
+      fullPath: '/lab/publications'
+      preLoaderRoute: typeof LabPublicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lab/livre': {
+      id: '/lab/livre'
+      path: '/lab/livre'
+      fullPath: '/lab/livre'
+      preLoaderRoute: typeof LabLivreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lab/blog': {
+      id: '/lab/blog'
+      path: '/lab/blog'
+      fullPath: '/lab/blog'
+      preLoaderRoute: typeof LabBlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lab/actualites-evenements': {
+      id: '/lab/actualites-evenements'
+      path: '/lab/actualites-evenements'
+      fullPath: '/lab/actualites-evenements'
+      preLoaderRoute: typeof LabActualitesEvenementsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/institut/vision-manifeste': {
@@ -145,11 +516,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InstitutVisionManifesteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/institut/lobbying-integrite': {
+      id: '/institut/lobbying-integrite'
+      path: '/institut/lobbying-integrite'
+      fullPath: '/institut/lobbying-integrite'
+      preLoaderRoute: typeof InstitutLobbyingIntegriteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/institut/label-haute-integrite': {
+      id: '/institut/label-haute-integrite'
+      path: '/institut/label-haute-integrite'
+      fullPath: '/institut/label-haute-integrite'
+      preLoaderRoute: typeof InstitutLabelHauteIntegriteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/institut/diplomatie-territoriale': {
+      id: '/institut/diplomatie-territoriale'
+      path: '/institut/diplomatie-territoriale'
+      fullPath: '/institut/diplomatie-territoriale'
+      preLoaderRoute: typeof InstitutDiplomatieTerritorialeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/institut/campus': {
       id: '/institut/campus'
       path: '/institut/campus'
       fullPath: '/institut/campus'
       preLoaderRoute: typeof InstitutCampusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gouvernance-digitale/solutions-saas': {
+      id: '/gouvernance-digitale/solutions-saas'
+      path: '/gouvernance-digitale/solutions-saas'
+      fullPath: '/gouvernance-digitale/solutions-saas'
+      preLoaderRoute: typeof GouvernanceDigitaleSolutionsSaasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gouvernance-digitale/ia-data-science': {
+      id: '/gouvernance-digitale/ia-data-science'
+      path: '/gouvernance-digitale/ia-data-science'
+      fullPath: '/gouvernance-digitale/ia-data-science'
+      preLoaderRoute: typeof GouvernanceDigitaleIaDataScienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gouvernance-digitale/etudes-de-cas': {
+      id: '/gouvernance-digitale/etudes-de-cas'
+      path: '/gouvernance-digitale/etudes-de-cas'
+      fullPath: '/gouvernance-digitale/etudes-de-cas'
+      preLoaderRoute: typeof GouvernanceDigitaleEtudesDeCasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diaspora/programme-landing': {
+      id: '/diaspora/programme-landing'
+      path: '/diaspora/programme-landing'
+      fullPath: '/diaspora/programme-landing'
+      preLoaderRoute: typeof DiasporaProgrammeLandingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diaspora/connect': {
+      id: '/diaspora/connect'
+      path: '/diaspora/connect'
+      fullPath: '/diaspora/connect'
+      preLoaderRoute: typeof DiasporaConnectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diaspora/conciergerie': {
+      id: '/diaspora/conciergerie'
+      path: '/diaspora/conciergerie'
+      fullPath: '/diaspora/conciergerie'
+      preLoaderRoute: typeof DiasporaConciergerieRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/biographie/hacene-boumediene': {
@@ -181,9 +615,31 @@ const rootRouteChildren: RootRouteChildren = {
   BiographieAntoineObtelRoute: BiographieAntoineObtelRoute,
   BiographieArnaudSighanoRoute: BiographieArnaudSighanoRoute,
   BiographieHaceneBoumedieneRoute: BiographieHaceneBoumedieneRoute,
+  DiasporaConciergerieRoute: DiasporaConciergerieRoute,
+  DiasporaConnectRoute: DiasporaConnectRoute,
+  DiasporaProgrammeLandingRoute: DiasporaProgrammeLandingRoute,
+  GouvernanceDigitaleEtudesDeCasRoute: GouvernanceDigitaleEtudesDeCasRoute,
+  GouvernanceDigitaleIaDataScienceRoute: GouvernanceDigitaleIaDataScienceRoute,
+  GouvernanceDigitaleSolutionsSaasRoute: GouvernanceDigitaleSolutionsSaasRoute,
   InstitutCampusRoute: InstitutCampusRoute,
+  InstitutDiplomatieTerritorialeRoute: InstitutDiplomatieTerritorialeRoute,
+  InstitutLabelHauteIntegriteRoute: InstitutLabelHauteIntegriteRoute,
+  InstitutLobbyingIntegriteRoute: InstitutLobbyingIntegriteRoute,
   InstitutVisionManifesteRoute: InstitutVisionManifesteRoute,
+  LabActualitesEvenementsRoute: LabActualitesEvenementsRoute,
+  LabBlogRoute: LabBlogRoute,
+  LabLivreRoute: LabLivreRoute,
+  LabPublicationsRoute: LabPublicationsRoute,
+  LobbyingReseauClubExecRoute: LobbyingReseauClubExecRoute,
+  LobbyingReseauMethode6AxesRoute: LobbyingReseauMethode6AxesRoute,
+  LobbyingReseauServicesEntreprisesRoute:
+    LobbyingReseauServicesEntreprisesRoute,
   PilierSlugRoute: PilierSlugRoute,
+  ProgrammesCursusHybridesRoute: ProgrammesCursusHybridesRoute,
+  ProgrammesFormationsAfriqueRoute: ProgrammesFormationsAfriqueRoute,
+  ProgrammesPlaidoyerInfluenceRoute: ProgrammesPlaidoyerInfluenceRoute,
+  ProgrammesSeminairesGigeanRoute: ProgrammesSeminairesGigeanRoute,
+  ProgrammesVisitesTechniquesRoute: ProgrammesVisitesTechniquesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
