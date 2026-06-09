@@ -120,13 +120,8 @@ function TeamFounders() {
                 <div className="text-base font-bold text-anthracite">{m.name}</div>
                 <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">{m.role}</div>
               </div>
-              <Link
-                to="/biographie/$slug"
-                params={{ slug: m.slug }}
-                className="mt-6 btn-crimson px-5 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-2"
-              >
-                En savoir plus <ArrowRight className="size-3.5" />
-              </Link>
+              <BioLink slug={m.slug} />
+
             </div>
           ))}
         </div>
