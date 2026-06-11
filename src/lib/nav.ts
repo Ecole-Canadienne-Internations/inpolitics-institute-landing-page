@@ -5,7 +5,6 @@ export type NavItem = {
 };
 
 export type NavMenu = {
-  icon: string;
   label: string;
   items: NavItem[];
 };
