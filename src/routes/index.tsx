@@ -18,8 +18,10 @@ import {
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import heroBg from "@/assets/hero-elites-bg.jpg";
-import directorImg from "@/assets/director-sighano.jpg";
+import heroBg from "@/assets/hero-bg-collage.png";
+import teamSighano from "@/assets/team-sighano.png";
+import teamObtel from "@/assets/team-obtel.jpeg";
+import teamBoumediene from "@/assets/team-boumediene.jpeg";
 import logo from "@/assets/logo-inpolitics.jpg";
 import pillarGouvernance from "@/assets/pillar-gouvernance.jpg";
 import pillarDiplomatie from "@/assets/pillar-diplomatie-1.jpg";
@@ -72,22 +74,19 @@ function TeamFounders() {
       slug: "arnaud-sighano",
       name: "Arnaud SIGHANO",
       role: "Fondateur & Directeur Associé",
-      quote: "Diriger est une discipline d'influence, d'éthique et de méthode.",
-      img: directorImg,
+      img: teamSighano,
     },
     {
       slug: "antoine-obtel",
       name: "Antoine OBTEL",
       role: "Directeur Associé",
-      quote: "La rigueur académique au service des décideurs européens.",
-      img: directorImg,
+      img: teamObtel,
     },
     {
       slug: "hacene-boumediene",
       name: "Bloukli Hacene BOUMEDIENE",
       role: "Co-fondateur — Architecture & Urbanisme",
-      quote: "Bâtir la ville de demain dans le respect du patrimoine.",
-      img: directorImg,
+      img: teamBoumediene,
     },
   ];
   return (
@@ -107,21 +106,14 @@ function TeamFounders() {
         <div className="grid md:grid-cols-3 gap-10">
           {team.map((m) => (
             <div key={m.slug} className="flex flex-col items-center text-center">
-              <div className="relative">
-                <div className="size-40 rounded-full overflow-hidden ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]">
-                  <img src={m.img} alt={m.name} className="w-full h-full object-cover" loading="lazy" />
-                </div>
-                <Quote className="absolute -top-1 -left-1 size-7 text-crimson" strokeWidth={1.8} />
+              <div className="size-44 rounded-full overflow-hidden ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]">
+                <img src={m.img} alt={m.name} className="w-full h-full object-cover" loading="lazy" />
               </div>
-              <p className="mt-7 font-serif italic text-[17px] leading-relaxed text-anthracite max-w-xs">
-                « {m.quote} »
-              </p>
               <div className="mt-6">
-                <div className="text-base font-bold text-anthracite">{m.name}</div>
+                <div className="text-lg font-bold text-anthracite">{m.name}</div>
                 <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">{m.role}</div>
               </div>
               <BioLink slug={m.slug} />
-
             </div>
           ))}
         </div>
@@ -145,68 +137,53 @@ function BioLink({ slug }: { slug: string }) {
 /* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section className="relative pt-28 md:pt-36 pb-20 md:pb-28 overflow-hidden">
-      {/* Background image — elites collage with white fuming effect */}
-      <div className="absolute inset-0 -z-10">
+    <section className="relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white">
+      {/* Background collage anchored to the right, blended into white */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
         <img
           src={heroBg}
           alt=""
           aria-hidden
-          className="absolute inset-0 w-full h-full object-cover opacity-[0.18] grayscale"
+          className="absolute right-0 top-0 h-full w-[70%] object-cover object-right"
         />
-        {/* White fuming overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/70 to-white" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,white_70%)]" />
-        <div className="absolute -top-32 -right-32 size-[520px] rounded-full bg-crimson/5 blur-3xl" />
+        {/* Very light white veil for legibility */}
+        <div className="absolute inset-0 bg-white/15" />
+        {/* Smooth fade from white (left) to transparent (right) so left text reads on pure white */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent" />
+        {/* Soft fade at bottom to merge with the rest of the page */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center">
-        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-7 reveal">
-          <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
-          École d'élite · Yaoundé, Cameroun
-        </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-[72px] leading-[1.04] font-bold text-anthracite max-w-5xl mx-auto reveal">
-          Formez-vous aux plus hautes{" "}
-          <span className="text-crimson">sphères du pouvoir</span> et de la
-          gouvernance au Cameroun.
-        </h1>
-        <p className="mt-7 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed reveal">
-          Le premier institut d'excellence dédié à la formation de l'élite
-          politique, des diplomates et des dirigeants stratégiques de demain.
-        </p>
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
+            <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
+            Gigean · Yaoundé · Douala
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-[68px] leading-[1.05] font-bold text-anthracite">
+            Formez-vous aux plus hautes{" "}
+            <span className="text-crimson">sphères du pouvoir</span>, de la diplomatie et de la gouvernance digitale.
+          </h1>
+          <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
+            <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et de la Gouvernance Digitale au service du développement économique.
+          </p>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#contact"
-            className="btn-crimson inline-flex items-center gap-2 px-7 h-14 rounded-full font-semibold text-sm"
-          >
-            Demander la brochure
-            <ArrowRight className="size-4" />
-          </a>
-          <a
-            href="#formations"
-            className="inline-flex items-center gap-2 px-7 h-14 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-anthracite-foreground transition-colors"
-          >
-            Découvrir l'institut
-            <ArrowUpRight className="size-4" />
-          </a>
-        </div>
-
-        <div className="mt-16 flex flex-wrap justify-center gap-x-16 gap-y-6">
-          {[
-            { v: "+100", l: "Heures de simulations" },
-            { v: "100%", l: "Experts & hauts commis d'État" },
-            { v: "01", l: "Observatoire politique unique" },
-          ].map((s) => (
-            <div key={s.v}>
-              <div className="text-4xl font-bold text-anthracite tracking-tight">
-                {s.v}
-              </div>
-              <div className="mt-1 text-xs text-muted-foreground max-w-[180px] mx-auto leading-relaxed">
-                {s.l}
-              </div>
-            </div>
-          ))}
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <a
+              href="#contact"
+              className="btn-crimson inline-flex items-center gap-2 px-7 h-13 py-3.5 rounded-full font-semibold text-sm"
+            >
+              Demander la brochure
+              <ArrowRight className="size-4" />
+            </a>
+            <a
+              href="#formations"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-anthracite-foreground transition-colors"
+            >
+              Découvrir l'institut
+              <ArrowUpRight className="size-4" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -475,7 +452,7 @@ function Founder() {
           <div className="relative aspect-[4/5] max-w-sm">
             <div className="absolute -top-3 -right-3 left-10 bottom-10 rounded-[2rem] border border-crimson/40" />
             <img
-              src={directorImg}
+              src={teamSighano}
               alt="Arnaud Sighano, Directeur d'Inpolitics Institute"
               loading="lazy"
               className="relative h-full w-full object-cover rounded-[2rem] shadow-2xl"
