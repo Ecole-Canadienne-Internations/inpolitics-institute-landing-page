@@ -32,16 +32,14 @@ export const Route = createFileRoute("/")({
   component: Landing,
   head: () => ({
     meta: [
-      {
-        title:
-          "Inpolitics Institute — École d'Élite de la Gouvernance au Cameroun",
-      },
-      {
-        name: "description",
-        content:
-          "Premier institut d'excellence dédié à la formation de l'élite politique, des diplomates et des dirigeants stratégiques du Cameroun. Observatoire de données électorales en temps réel.",
-      },
+      { title: "InPolitics Institute — Décideurs Publics, Diplomatie & Gouvernance Digitale" },
+      { name: "description", content: "Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique." },
+      { property: "og:title", content: "InPolitics Institute" },
+      { property: "og:description", content: "L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale." },
+      { property: "og:image", content: "/favicon-96x96.png" },
+      { property: "og:url", content: "/" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
 });
 
@@ -144,21 +142,19 @@ function Hero() {
           src={heroBg}
           alt=""
           aria-hidden
-          className="absolute right-0 top-0 h-full w-[70%] object-cover object-right"
+          className="absolute right-0 top-0 h-full w-[60%] object-contain object-right"
         />
-        {/* Very light white veil for legibility */}
-        <div className="absolute inset-0 bg-white/15" />
-        {/* Smooth fade from white (left) to transparent (right) so left text reads on pure white */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent" />
+        {/* Smooth fade from white (left) to transparent (right) — text on white only */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent" />
         {/* Soft fade at bottom to merge with the rest of the page */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white" />
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
             <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
-            Gigean · Yaoundé · Douala
+            Gigean · Montpellier Métropole · Campus Afrique
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-[68px] leading-[1.05] font-bold text-anthracite">
             Formez-vous aux plus hautes{" "}
