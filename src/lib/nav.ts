@@ -15,7 +15,7 @@ export const NAV: NavMenu[] = [
     label: "L'Institut",
     items: [
       { to: "/institut/vision-manifeste", label: "Vision & Manifeste", desc: "Le texte officiel d'Arnaud SIGHANO." },
-      { to: "/institut/campus", label: "Nos Campus", desc: "Gigean (Montpellier) et pôles Afrique (Yaoundé, Douala…)." },
+      { to: "/institut/campus", label: "Nos Campus", desc: "Gigean (Montpellier Métropole) & perspectives d'extension Afrique." },
       { to: "/institut/diplomatie-territoriale", label: "Diplomatie Territoriale", desc: "Positionnement international des territoires." },
       { to: "/institut/lobbying-integrite", label: "Lobbying, Plaidoyer & Intégrité", desc: "Charte éthique et conformité OCDE/UE." },
       { to: "/institut/label-haute-integrite", label: 'Label "Commune de Haute Intégrité"', desc: "Standard de transparence financière." },

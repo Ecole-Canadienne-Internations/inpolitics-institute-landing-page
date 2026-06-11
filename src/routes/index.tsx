@@ -369,7 +369,7 @@ function Proof() {
   const stats = [
     { v: "+100", l: "Heures de simulations de débats et de gestion de crise" },
     { v: "100%", l: "Des intervenants : experts, diplomates et hauts commis de l'État" },
-    { v: "01", l: "Observatoire unique d'analyse de données politiques au Cameroun" },
+    { v: "01", l: "Observatoire unique d'analyse de données politiques territoriales" },
   ];
   return (
     <section className="py-24 md:py-32">
@@ -498,7 +498,7 @@ const FAQS = [
     a: "Oui. Nous proposons un format Executive Education (cours du soir & week-ends) pour les cadres, ainsi qu'un format hybride / en ligne avec une plateforme e-learning sécurisée accessible 24/7.",
   },
   {
-    q: "Les diplômes et certifications sont-ils reconnus au Cameroun et à l'international ?",
+    q: "Les diplômes et certifications sont-ils reconnus à l'international ?",
     a: "Inpolitics Institute opère en totale conformité avec les exigences académiques nationales. Nos programmes suivent les standards des plus grands instituts de sciences politiques mondiaux, et des partenariats stratégiques avec des universités étrangères sont en cours de déploiement.",
   },
   {
