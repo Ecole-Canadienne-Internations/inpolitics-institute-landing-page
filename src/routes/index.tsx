@@ -32,16 +32,14 @@ export const Route = createFileRoute("/")({
   component: Landing,
   head: () => ({
     meta: [
-      {
-        title:
-          "Inpolitics Institute — École d'Élite de la Gouvernance au Cameroun",
-      },
-      {
-        name: "description",
-        content:
-          "Premier institut d'excellence dédié à la formation de l'élite politique, des diplomates et des dirigeants stratégiques du Cameroun. Observatoire de données électorales en temps réel.",
-      },
+      { title: "InPolitics Institute — Décideurs Publics, Diplomatie & Gouvernance Digitale" },
+      { name: "description", content: "Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique." },
+      { property: "og:title", content: "InPolitics Institute" },
+      { property: "og:description", content: "L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale." },
+      { property: "og:image", content: "/favicon-96x96.png" },
+      { property: "og:url", content: "/" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
 });
 
@@ -144,21 +142,19 @@ function Hero() {
           src={heroBg}
           alt=""
           aria-hidden
-          className="absolute right-0 top-0 h-full w-[70%] object-cover object-right"
+          className="absolute right-0 top-0 h-full w-[60%] object-contain object-right"
         />
-        {/* Very light white veil for legibility */}
-        <div className="absolute inset-0 bg-white/15" />
-        {/* Smooth fade from white (left) to transparent (right) so left text reads on pure white */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent" />
+        {/* Smooth fade from white (left) to transparent (right) — text on white only */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent" />
         {/* Soft fade at bottom to merge with the rest of the page */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white" />
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
             <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
-            Gigean · Yaoundé · Douala
+            Gigean · Montpellier Métropole · Campus Afrique
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-[68px] leading-[1.05] font-bold text-anthracite">
             Formez-vous aux plus hautes{" "}
@@ -193,7 +189,7 @@ function Hero() {
 /* ---------- ABOUT ---------- */
 function About() {
   return (
-    <section id="apropos" className="py-24 md:py-32 border-t border-border">
+    <section id="apropos" className="py-28 md:py-36">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-14">
         <div className="lg:col-span-4">
           <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-4">
@@ -205,15 +201,16 @@ function About() {
         </div>
         <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
           <p>
-            Inpolitics Institute forme la prochaine génération de décideurs
-            camerounais aux disciplines essentielles de la République : sciences
-            politiques, relations internationales, communication de crise et
-            gouvernance stratégique.
+            InPolitics Institute forme la prochaine génération de décideurs
+            publics aux disciplines essentielles de la République :
+            diplomatie territoriale, gouvernance digitale, lobbying d'intégrité
+            et performance des territoires.
           </p>
           <p>
             Notre approche fusionne la rigueur académique européenne, la
-            spécificité du terrain africain et l'exigence éthique d'une
-            République qui se construit.
+            spécificité du terrain et l'exigence éthique d'une République
+            qui se construit, depuis notre Campus Europe de Gigean
+            (Montpellier Métropole) jusqu'à nos pôles Afrique.
           </p>
         </div>
       </div>
@@ -257,7 +254,7 @@ function Pillars() {
   return (
     <section
       id="formations"
-      className="py-24 md:py-32 border-t border-border"
+      className="py-28 md:py-36"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
@@ -330,7 +327,7 @@ function SimulCrise() {
     { icon: Shield, t: "Débriefing d'État", d: "Décryptage par un jury d'anciens ministres, diplomates et experts en sécurité." },
   ];
   return (
-    <section className="py-24 md:py-32 border-t border-border relative overflow-hidden">
+    <section className="py-28 md:py-36 relative overflow-hidden">
       <div className="absolute -top-40 -left-40 size-[500px] rounded-full bg-crimson/5 blur-3xl" />
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-14 relative">
         <div className="lg:col-span-5">
@@ -372,7 +369,7 @@ function Proof() {
   const stats = [
     { v: "+100", l: "Heures de simulations de débats et de gestion de crise" },
     { v: "100%", l: "Des intervenants : experts, diplomates et hauts commis de l'État" },
-    { v: "01", l: "Observatoire unique d'analyse de données politiques au Cameroun" },
+    { v: "01", l: "Observatoire unique d'analyse de données politiques territoriales" },
   ];
   return (
     <section className="py-24 md:py-32">
@@ -414,7 +411,7 @@ function Admission() {
     { n: "03", t: "Admission définitive", d: "Intégration officielle de la nouvelle cohorte des élites." },
   ];
   return (
-    <section id="admission" className="py-24 md:py-32 border-t border-border">
+    <section id="admission" className="py-28 md:py-36">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-16">
           <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-4">
@@ -446,7 +443,7 @@ function Admission() {
 /* ---------- FOUNDER ---------- */
 function Founder() {
   return (
-    <section className="py-24 md:py-32 border-t border-border">
+    <section className="py-28 md:py-36">
       <div className="max-w-6xl mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-5">
           <div className="relative aspect-[4/5] max-w-sm">
@@ -466,8 +463,8 @@ function Founder() {
           <Quote className="size-8 text-crimson mb-4" strokeWidth={1.5} />
           <blockquote className="font-serif italic text-2xl md:text-[32px] leading-[1.35] text-anthracite">
             « Diriger est une science qui s'apprend. Notre mission est d'armer
-            la jeunesse et les cadres camerounais des meilleurs outils
-            d'analyse pour servir la Nation avec rigueur, vision et intégrité. »
+            les décideurs publics et la diaspora des meilleurs outils
+            d'analyse pour servir leurs territoires avec rigueur, vision et intégrité. »
           </blockquote>
           <div className="mt-8 flex items-center gap-4">
             <div className="h-px w-12 bg-anthracite/30" />
@@ -476,7 +473,7 @@ function Founder() {
                 Arnaud Sighano
               </div>
               <div className="text-xs text-muted-foreground tracking-wide">
-                Directeur Fondateur — Inpolitics Institute
+                Directeur Fondateur — InPolitics Institute
               </div>
             </div>
           </div>
@@ -501,7 +498,7 @@ const FAQS = [
     a: "Oui. Nous proposons un format Executive Education (cours du soir & week-ends) pour les cadres, ainsi qu'un format hybride / en ligne avec une plateforme e-learning sécurisée accessible 24/7.",
   },
   {
-    q: "Les diplômes et certifications sont-ils reconnus au Cameroun et à l'international ?",
+    q: "Les diplômes et certifications sont-ils reconnus à l'international ?",
     a: "Inpolitics Institute opère en totale conformité avec les exigences académiques nationales. Nos programmes suivent les standards des plus grands instituts de sciences politiques mondiaux, et des partenariats stratégiques avec des universités étrangères sont en cours de déploiement.",
   },
   {
@@ -577,7 +574,7 @@ function ContactCta() {
     "Bonjour, je souhaite recevoir la brochure des programmes Inpolitics Institute."
   )}`;
   return (
-    <section id="contact" className="py-20 md:py-28 border-t border-border">
+    <section id="contact" className="py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="relative overflow-hidden bg-background border border-border rounded-[2.5rem] p-10 md:p-16">
           <div className="absolute -top-32 -right-32 size-[420px] rounded-full bg-crimson/10 blur-3xl" />
@@ -627,57 +624,62 @@ function ContactCta() {
 /* ---------- FOOTER ---------- */
 function Footer() {
   return (
-    <footer className="bg-background border-t border-border text-muted-foreground">
+    <footer className="bg-anthracite text-white/80">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
-          <img src={logo} alt="Inpolitics Institute" className="h-12 w-auto object-contain" />
+          <img src={logo} alt="InPolitics Institute" className="h-14 w-auto object-contain bg-white rounded-lg p-2" />
           <p className="mt-6 text-sm leading-relaxed max-w-sm">
-            École d'excellence dédiée à la formation de l'élite politique
-            camerounaise et à l'analyse stratégique de la République.
+            L'Institut des Décideurs Publics, de la Diplomatie, de la
+            Performance Territoriale et de la Gouvernance Digitale.
+            Campus Europe à Gigean (Montpellier Métropole) & Campus Afrique.
           </p>
           <div className="mt-7 space-y-3 text-sm">
             <div className="flex items-start gap-3">
               <MapPin className="size-4 mt-0.5 text-crimson" />
-              <span>Yaoundé (Cameroun), Quartier Bastos — Zone des Ambassades</span>
+              <span>Rue de l'Herme, 34770 GIGEAN — Montpellier Métropole, France</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <Phone className="size-4 mt-0.5 text-crimson" />
+              <a href="tel:+33746440427" className="hover:text-white transition">+33 7 46 44 04 27</a>
             </div>
             <div className="flex items-start gap-3">
               <Mail className="size-4 mt-0.5 text-crimson" />
-              <a href="mailto:info@inpolitics-institute.cm" className="hover:text-anthracite transition">
-                info@inpolitics-institute.cm
+              <a href="mailto:contact@inpolitics-institute.org" className="hover:text-white transition">
+                contact@inpolitics-institute.org
               </a>
             </div>
           </div>
         </div>
 
         <div className="md:col-span-3">
-          <div className="text-xs font-semibold tracking-[0.2em] uppercase text-anthracite mb-5">
+          <div className="text-xs font-semibold tracking-[0.2em] uppercase text-white mb-5">
             Institut
           </div>
           <ul className="space-y-3 text-sm">
-            <li><a href="#formations" className="hover:text-anthracite transition">Formations</a></li>
-            <li><Link to="/pilier/$slug" params={{ slug: "observatoire" }} className="hover:text-anthracite transition">Observatoire</Link></li>
-            <li><a href="#admission" className="hover:text-anthracite transition">Admission</a></li>
-            <li><a href="#faq" className="hover:text-anthracite transition">FAQ</a></li>
-            <li><a href="#contact" className="hover:text-anthracite transition">Contact</a></li>
+            <li><Link to="/institut/vision-manifeste" className="hover:text-white transition">Vision & Manifeste</Link></li>
+            <li><Link to="/institut/campus" className="hover:text-white transition">Nos Campus</Link></li>
+            <li><Link to="/institut/diplomatie-territoriale" className="hover:text-white transition">Diplomatie Territoriale</Link></li>
+            <li><Link to="/institut/label-haute-integrite" className="hover:text-white transition">Label Haute Intégrité</Link></li>
+            <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
           </ul>
         </div>
 
         <div className="md:col-span-4">
-          <div className="text-xs font-semibold tracking-[0.2em] uppercase text-anthracite mb-5">
+          <div className="text-xs font-semibold tracking-[0.2em] uppercase text-white mb-5">
             Newsletter
           </div>
           <p className="text-sm mb-4">
-            Recevez nos analyses politiques gratuites.
+            Recevez nos analyses et publications de l'Observatoire.
           </p>
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="flex border border-border rounded-full overflow-hidden bg-background p-1"
+            className="flex border border-white/20 rounded-full overflow-hidden bg-white/5 p-1"
           >
             <input
               type="email"
               required
               placeholder="Votre email"
-              className="flex-1 px-4 h-11 bg-transparent text-sm text-anthracite placeholder:text-muted-foreground focus:outline-none"
+              className="flex-1 px-4 h-11 bg-transparent text-sm text-white placeholder:text-white/50 focus:outline-none"
             />
             <button className="btn-crimson px-5 text-xs font-semibold uppercase tracking-wide rounded-full">
               S'inscrire
@@ -686,12 +688,12 @@ function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border">
+      <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
-          <div>© {new Date().getFullYear()} Inpolitics Institute. Tous droits réservés.</div>
+          <div>© {new Date().getFullYear()} InPolitics Institute. Tous droits réservés.</div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-anthracite transition">Mentions légales</a>
-            <a href="#" className="hover:text-anthracite transition">Confidentialité</a>
+            <a href="#" className="hover:text-white transition">Mentions légales</a>
+            <a href="#" className="hover:text-white transition">Confidentialité</a>
           </div>
         </div>
       </div>
