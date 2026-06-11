@@ -189,7 +189,7 @@ function Hero() {
 /* ---------- ABOUT ---------- */
 function About() {
   return (
-    <section id="apropos" className="py-24 md:py-32 border-t border-border">
+    <section id="apropos" className="py-28 md:py-36">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-14">
         <div className="lg:col-span-4">
           <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-4">
@@ -253,7 +253,7 @@ function Pillars() {
   return (
     <section
       id="formations"
-      className="py-24 md:py-32 border-t border-border"
+      className="py-28 md:py-36"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
@@ -326,7 +326,7 @@ function SimulCrise() {
     { icon: Shield, t: "Débriefing d'État", d: "Décryptage par un jury d'anciens ministres, diplomates et experts en sécurité." },
   ];
   return (
-    <section className="py-24 md:py-32 border-t border-border relative overflow-hidden">
+    <section className="py-28 md:py-36 relative overflow-hidden">
       <div className="absolute -top-40 -left-40 size-[500px] rounded-full bg-crimson/5 blur-3xl" />
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-14 relative">
         <div className="lg:col-span-5">
@@ -410,7 +410,7 @@ function Admission() {
     { n: "03", t: "Admission définitive", d: "Intégration officielle de la nouvelle cohorte des élites." },
   ];
   return (
-    <section id="admission" className="py-24 md:py-32 border-t border-border">
+    <section id="admission" className="py-28 md:py-36">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-16">
           <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-4">
@@ -442,7 +442,7 @@ function Admission() {
 /* ---------- FOUNDER ---------- */
 function Founder() {
   return (
-    <section className="py-24 md:py-32 border-t border-border">
+    <section className="py-28 md:py-36">
       <div className="max-w-6xl mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-5">
           <div className="relative aspect-[4/5] max-w-sm">
@@ -573,7 +573,7 @@ function ContactCta() {
     "Bonjour, je souhaite recevoir la brochure des programmes Inpolitics Institute."
   )}`;
   return (
-    <section id="contact" className="py-20 md:py-28 border-t border-border">
+    <section id="contact" className="py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="relative overflow-hidden bg-background border border-border rounded-[2.5rem] p-10 md:p-16">
           <div className="absolute -top-32 -right-32 size-[420px] rounded-full bg-crimson/10 blur-3xl" />
