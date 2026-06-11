@@ -18,8 +18,10 @@ import {
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import heroBg from "@/assets/hero-elites-bg.jpg";
-import directorImg from "@/assets/director-sighano.jpg";
+import heroBg from "@/assets/hero-bg-collage.png";
+import teamSighano from "@/assets/team-sighano.png";
+import teamObtel from "@/assets/team-obtel.jpeg";
+import teamBoumediene from "@/assets/team-boumediene.jpeg";
 import logo from "@/assets/logo-inpolitics.jpg";
 import pillarGouvernance from "@/assets/pillar-gouvernance.jpg";
 import pillarDiplomatie from "@/assets/pillar-diplomatie-1.jpg";
@@ -72,22 +74,19 @@ function TeamFounders() {
       slug: "arnaud-sighano",
       name: "Arnaud SIGHANO",
       role: "Fondateur & Directeur Associé",
-      quote: "Diriger est une discipline d'influence, d'éthique et de méthode.",
-      img: directorImg,
+      img: teamSighano,
     },
     {
       slug: "antoine-obtel",
       name: "Antoine OBTEL",
       role: "Directeur Associé",
-      quote: "La rigueur académique au service des décideurs européens.",
-      img: directorImg,
+      img: teamObtel,
     },
     {
       slug: "hacene-boumediene",
       name: "Bloukli Hacene BOUMEDIENE",
       role: "Co-fondateur — Architecture & Urbanisme",
-      quote: "Bâtir la ville de demain dans le respect du patrimoine.",
-      img: directorImg,
+      img: teamBoumediene,
     },
   ];
   return (
@@ -107,21 +106,14 @@ function TeamFounders() {
         <div className="grid md:grid-cols-3 gap-10">
           {team.map((m) => (
             <div key={m.slug} className="flex flex-col items-center text-center">
-              <div className="relative">
-                <div className="size-40 rounded-full overflow-hidden ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]">
-                  <img src={m.img} alt={m.name} className="w-full h-full object-cover" loading="lazy" />
-                </div>
-                <Quote className="absolute -top-1 -left-1 size-7 text-crimson" strokeWidth={1.8} />
+              <div className="size-44 rounded-full overflow-hidden ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]">
+                <img src={m.img} alt={m.name} className="w-full h-full object-cover" loading="lazy" />
               </div>
-              <p className="mt-7 font-serif italic text-[17px] leading-relaxed text-anthracite max-w-xs">
-                « {m.quote} »
-              </p>
               <div className="mt-6">
-                <div className="text-base font-bold text-anthracite">{m.name}</div>
+                <div className="text-lg font-bold text-anthracite">{m.name}</div>
                 <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">{m.role}</div>
               </div>
               <BioLink slug={m.slug} />
-
             </div>
           ))}
         </div>
