@@ -32,14 +32,15 @@ export const Route = createFileRoute("/")({
   component: Landing,
   head: () => ({
     meta: [
-      { title: "InPolitics Institute — Décideurs Publics, Diplomatie & Gouvernance Digitale" },
+      { title: "InPolitics Institute — Campus Europe à Gigean" },
       { name: "description", content: "Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique." },
       { property: "og:title", content: "InPolitics Institute" },
       { property: "og:description", content: "L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale." },
-      { property: "og:image", content: "/favicon-96x96.png" },
-      { property: "og:url", content: "/" },
+      { property: "og:image", content: "https://inpolitics-institute.vercel.app/favicon-96x96.png" },
+      { property: "og:url", content: "https://inpolitics-institute.vercel.app/" },
+      { name: "twitter:image", content: "https://inpolitics-institute.vercel.app/favicon-96x96.png" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://inpolitics-institute.vercel.app/" }],
   }),
 });
 

@@ -73,7 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "InPolitics Institute — Décideurs Publics, Diplomatie Territoriale & Gouvernance Digitale" },
+      { title: "InPolitics Institute — Campus Europe à Gigean" },
       { name: "description", content: "InPolitics Institute — Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'excellence des décideurs publics, diplomatie territoriale, lobbying d'intégrité et gouvernance digitale." },
       { name: "author", content: "InPolitics Institute" },
       { name: "theme-color", content: "#DC2626" },
@@ -81,9 +81,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "InPolitics Institute" },
       { property: "og:description", content: "L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale." },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/favicon-96x96.png" },
+      { property: "og:image", content: "https://inpolitics-institute.vercel.app/favicon-96x96.png" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:image", content: "/favicon-96x96.png" },
+      { name: "twitter:image", content: "https://inpolitics-institute.vercel.app/favicon-96x96.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -101,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <HeadContent />
       </head>
