@@ -135,22 +135,21 @@ function BioLink({ slug }: { slug: string }) {
 /* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section className="relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white">
+    <section className="relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white isolate">
       {/* Background collage anchored to the right, blended into white */}
-      <div className="absolute inset-0 -z-10 pointer-events-none">
+      <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
         <img
           src={heroBg}
           alt=""
-          aria-hidden
-          className="absolute right-0 top-0 h-full w-[60%] object-contain object-right"
+          className="absolute right-0 top-8 h-[calc(100%-2rem)] w-[76%] max-w-none object-contain object-right-top opacity-100"
         />
         {/* Smooth fade from white (left) to transparent (right) — text on white only */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white from-[0%] via-white/55 via-[38%] to-transparent to-[68%]" />
         {/* Soft fade at bottom to merge with the rest of the page */}
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white" />
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
             <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
