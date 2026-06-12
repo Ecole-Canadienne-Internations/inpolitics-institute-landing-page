@@ -136,10 +136,12 @@ function BioLink({ slug }: { slug: string }) {
 /* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section className="relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white">
+    <section
+      className="hero-campus relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white"
+      style={{ "--hero-campus-image": `url(${heroBg})` } as React.CSSProperties}
+    >
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-[minmax(0,0.92fr)_minmax(520px,1.08fr)] items-center gap-8">
-          <div className="max-w-2xl">
+        <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
               <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
               Gigean · Montpellier Métropole · Campus Afrique
@@ -168,14 +170,6 @@ function Hero() {
                 <ArrowUpRight className="size-4" />
               </a>
             </div>
-          </div>
-          <div className="relative hidden min-h-[520px] lg:block" aria-hidden="true">
-            <img
-              src={heroBg}
-              alt=""
-              className="absolute inset-y-0 right-[-16px] my-auto h-full w-full max-w-none object-contain object-right"
-            />
-          </div>
         </div>
       </div>
     </section>

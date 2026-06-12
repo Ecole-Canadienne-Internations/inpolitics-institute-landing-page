@@ -145,6 +145,23 @@
     transform: translateY(-1px);
   }
 
+  .hero-campus {
+    background-image:
+      linear-gradient(90deg, white 0%, white 40%, color-mix(in oklab, white 62%, transparent) 54%, transparent 72%),
+      var(--hero-campus-image);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, right 2rem center;
+    background-size: cover, min(64vw, 920px) auto;
+  }
+
+  @media (max-width: 1023px) {
+    .hero-campus {
+      background-image: linear-gradient(180deg, color-mix(in oklab, white 82%, transparent), white 58%), var(--hero-campus-image);
+      background-position: center, center top 8rem;
+      background-size: cover, 105vw auto;
+    }
+  }
+
   .pillar-card {
     position: relative;
     overflow: hidden;
