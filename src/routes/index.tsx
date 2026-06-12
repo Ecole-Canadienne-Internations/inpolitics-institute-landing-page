@@ -32,14 +32,15 @@ export const Route = createFileRoute("/")({
   component: Landing,
   head: () => ({
     meta: [
-      { title: "InPolitics Institute — Décideurs Publics, Diplomatie & Gouvernance Digitale" },
+      { title: "InPolitics Institute — Campus Europe à Gigean" },
       { name: "description", content: "Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique." },
       { property: "og:title", content: "InPolitics Institute" },
       { property: "og:description", content: "L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale." },
-      { property: "og:image", content: "/favicon-96x96.png" },
-      { property: "og:url", content: "/" },
+      { property: "og:image", content: "https://inpolitics-institute.vercel.app/favicon-96x96.png" },
+      { property: "og:url", content: "https://inpolitics-institute.vercel.app/" },
+      { name: "twitter:image", content: "https://inpolitics-institute.vercel.app/favicon-96x96.png" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://inpolitics-institute.vercel.app/" }],
   }),
 });
 
@@ -135,51 +136,40 @@ function BioLink({ slug }: { slug: string }) {
 /* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section className="relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white">
-      {/* Background collage anchored to the right, blended into white */}
-      <div className="absolute inset-0 -z-10 pointer-events-none">
-        <img
-          src={heroBg}
-          alt=""
-          aria-hidden
-          className="absolute right-0 top-0 h-full w-[60%] object-contain object-right"
-        />
-        {/* Smooth fade from white (left) to transparent (right) — text on white only */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent" />
-        {/* Soft fade at bottom to merge with the rest of the page */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white" />
-      </div>
-
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <section
+      className="hero-campus relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white"
+      style={{ "--hero-campus-image": `url(${heroBg})` } as React.CSSProperties}
+    >
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
-            <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
-            Gigean · Montpellier Métropole · Campus Afrique
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-[68px] leading-[1.05] font-bold text-anthracite">
-            Formez-vous aux plus hautes{" "}
-            <span className="text-crimson">sphères du pouvoir</span>, de la diplomatie et de la gouvernance digitale.
-          </h1>
-          <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
-            <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et de la Gouvernance Digitale au service du développement économique.
-          </p>
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
+              <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
+              Gigean · Montpellier Métropole · Campus Afrique
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.05] font-bold text-anthracite">
+              Formez-vous aux plus hautes{" "}
+              <span className="text-crimson">sphères du pouvoir</span>, de la diplomatie et de la gouvernance digitale.
+            </h1>
+            <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
+              <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et de la Gouvernance Digitale au service du développement économique.
+            </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href="#contact"
-              className="btn-crimson inline-flex items-center gap-2 px-7 h-13 py-3.5 rounded-full font-semibold text-sm"
-            >
-              Demander la brochure
-              <ArrowRight className="size-4" />
-            </a>
-            <a
-              href="#formations"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-anthracite-foreground transition-colors"
-            >
-              Découvrir l'institut
-              <ArrowUpRight className="size-4" />
-            </a>
-          </div>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <a
+                href="#contact"
+                className="btn-crimson inline-flex items-center gap-2 px-7 h-13 py-3.5 rounded-full font-semibold text-sm"
+              >
+                Demander la brochure
+                <ArrowRight className="size-4" />
+              </a>
+              <a
+                href="#formations"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-anthracite-foreground transition-colors"
+              >
+                Découvrir l'institut
+                <ArrowUpRight className="size-4" />
+              </a>
+            </div>
         </div>
       </div>
     </section>
