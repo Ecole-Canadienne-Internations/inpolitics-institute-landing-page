@@ -136,57 +136,44 @@ function BioLink({ slug }: { slug: string }) {
 /* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section className="relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white isolate">
-      {/* Background collage anchored to the right, blended into white */}
-      <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
-        <img
-          src={heroBg}
-          alt=""
-          className="absolute right-0 top-0 hidden h-full w-[72%] max-w-none object-contain object-right-top opacity-100 lg:block"
-        />
-        {/* Smooth fade from white (left) to transparent (right) — text on white only */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white from-[0%] via-white/35 via-[34%] to-transparent to-[58%]" />
-        {/* Soft fade at bottom to merge with the rest of the page */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white" />
-      </div>
-
+    <section className="relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white">
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-[0.92fr_1.08fr] items-center gap-8">
+        <div className="grid lg:grid-cols-[minmax(0,0.92fr)_minmax(520px,1.08fr)] items-center gap-8">
           <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
-            <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
-            Gigean · Montpellier Métropole · Campus Afrique
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-[68px] leading-[1.05] font-bold text-anthracite">
-            Formez-vous aux plus hautes{" "}
-            <span className="text-crimson">sphères du pouvoir</span>, de la diplomatie et de la gouvernance digitale.
-          </h1>
-          <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
-            <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et de la Gouvernance Digitale au service du développement économique.
-          </p>
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
+              <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
+              Gigean · Montpellier Métropole · Campus Afrique
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.05] font-bold text-anthracite">
+              Formez-vous aux plus hautes{" "}
+              <span className="text-crimson">sphères du pouvoir</span>, de la diplomatie et de la gouvernance digitale.
+            </h1>
+            <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
+              <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et de la Gouvernance Digitale au service du développement économique.
+            </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href="#contact"
-              className="btn-crimson inline-flex items-center gap-2 px-7 h-13 py-3.5 rounded-full font-semibold text-sm"
-            >
-              Demander la brochure
-              <ArrowRight className="size-4" />
-            </a>
-            <a
-              href="#formations"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-anthracite-foreground transition-colors"
-            >
-              Découvrir l'institut
-              <ArrowUpRight className="size-4" />
-            </a>
-          </div>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <a
+                href="#contact"
+                className="btn-crimson inline-flex items-center gap-2 px-7 h-13 py-3.5 rounded-full font-semibold text-sm"
+              >
+                Demander la brochure
+                <ArrowRight className="size-4" />
+              </a>
+              <a
+                href="#formations"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-anthracite-foreground transition-colors"
+              >
+                Découvrir l'institut
+                <ArrowUpRight className="size-4" />
+              </a>
+            </div>
           </div>
           <div className="relative hidden min-h-[520px] lg:block" aria-hidden="true">
             <img
               src={heroBg}
               alt=""
-              className="absolute inset-y-0 right-[-24px] my-auto h-[112%] w-[118%] max-w-none object-contain object-right"
+              className="absolute inset-y-0 right-[-16px] my-auto h-full w-full max-w-none object-contain object-right"
             />
           </div>
         </div>
