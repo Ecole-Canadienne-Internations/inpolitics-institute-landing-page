@@ -142,16 +142,17 @@ function Hero() {
         <img
           src={heroBg}
           alt=""
-          className="absolute right-0 top-8 h-[calc(100%-2rem)] w-[76%] max-w-none object-contain object-right-top opacity-100"
+          className="absolute right-0 top-0 hidden h-full w-[72%] max-w-none object-contain object-right-top opacity-100 lg:block"
         />
         {/* Smooth fade from white (left) to transparent (right) — text on white only */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white from-[0%] via-white/55 via-[38%] to-transparent to-[68%]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white from-[0%] via-white/35 via-[34%] to-transparent to-[58%]" />
         {/* Soft fade at bottom to merge with the rest of the page */}
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white" />
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
-        <div className="max-w-2xl">
+        <div className="grid lg:grid-cols-[0.92fr_1.08fr] items-center gap-8">
+          <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
             <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
             Gigean · Montpellier Métropole · Campus Afrique
@@ -179,6 +180,14 @@ function Hero() {
               Découvrir l'institut
               <ArrowUpRight className="size-4" />
             </a>
+          </div>
+          </div>
+          <div className="relative hidden min-h-[520px] lg:block" aria-hidden="true">
+            <img
+              src={heroBg}
+              alt=""
+              className="absolute inset-y-0 right-[-24px] my-auto h-[112%] w-[118%] max-w-none object-contain object-right"
+            />
           </div>
         </div>
       </div>
