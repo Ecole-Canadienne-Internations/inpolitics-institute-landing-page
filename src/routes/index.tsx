@@ -74,7 +74,7 @@ function TeamFounders() {
     {
       slug: "arnaud-sighano",
       name: "Arnaud SIGHANO",
-      role: "Fondateur & Directeur Associé",
+      role: "Fondateur & Directeur",
       img: teamSighano,
     },
     {
