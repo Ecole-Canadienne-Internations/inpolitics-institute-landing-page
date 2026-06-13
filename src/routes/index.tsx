@@ -76,21 +76,18 @@ function TeamFounders() {
       name: "Arnaud SIGHANO",
       role: "Fondateur & Directeur",
       img: teamSighano,
-      bio: "Arnaud SIGHANO est le fondateur et directeur d'InPolitics Institute. À travers sa vision, il a créé une institution dédiée à la transformation des décideurs publics et à la performance des territoires.",
     },
     {
       slug: "antoine-obtel",
       name: "Antoine OBTEL",
       role: "Directeur Associé",
       img: teamObtel,
-      bio: "Antoine OBTEL est Directeur Associé d'inPolitics Institute, apportant une expertise nourrie par la recherche universitaire et l'expérience de terrain en relations internationales.",
     },
     {
       slug: "hacene-boumediene",
       name: "Bloukli Hacene BOUMEDIENE",
       role: "Co-fondateur",
       img: teamBoumediene,
-      bio: "Bloukli Hacene Boumediene est co-fondateur d'InPolitics Institute, apportant son expertise unique à l'intersection de l'architecture, de l'urbanisme et de la décision publique.",
     },
   ];
   
@@ -122,9 +119,6 @@ function TeamFounders() {
               <div className="mt-6">
                 <div className="text-lg font-bold text-anthracite">{m.name}</div>
                 <div className="text-xs uppercase tracking-[0.15em] text-crimson font-semibold mt-1.5">{m.role}</div>
-                <p className="text-xs text-muted-foreground leading-relaxed mt-3 max-w-xs">
-                  {m.bio}
-                </p>
               </div>
               <BioLink slug={m.slug} />
             </div>
