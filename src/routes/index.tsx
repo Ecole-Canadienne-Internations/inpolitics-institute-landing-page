@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "InPolitics Institute — Campus Europe à Gigean" },
-      { name: "description", content: "Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique." },
+      { name: "description", content: "Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au[...]
       { property: "og:title", content: "InPolitics Institute" },
       { property: "og:description", content: "L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale." },
       { property: "og:url", content: "https://inpoliticsinstitute.com/" },
@@ -76,20 +76,24 @@ function TeamFounders() {
       name: "Arnaud SIGHANO",
       role: "Fondateur & Directeur",
       img: teamSighano,
+      bio: "Arnaud SIGHANO est le fondateur et directeur d'InPolitics Institute. À travers sa vision, il a créé une institution dédiée à la transformation des décideurs publics et à la performance des territoires par l'excellence pédagogique et la diplomatie d'influence.",
     },
     {
       slug: "antoine-obtel",
       name: "Antoine OBTEL",
       role: "Directeur Associé",
       img: teamObtel,
+      bio: "Antoine OBTEL est Directeur Associé d'inPolitics Institute, où il apporte une expertise nourrie par la recherche universitaire et l'expérience de terrain. Étudiant-chercheur en Histoire et Relations Internationales au sein de trois institutions d'excellence (Université Paris Cité, Sorbonne Université et Université Paris-Panthéon-Assas), il évolue au contact direct des décideurs politiques européens.",
     },
     {
       slug: "hacene-boumediene",
       name: "Bloukli Hacene BOUMEDIENE",
-      role: "Co-fondateur — Architecture & Urbanisme",
+      role: "Co-fondateur",
       img: teamBoumediene,
+      bio: "Bloukli Hacene Boumediene est co-fondateur d'InPolitics Institute, où il apporte son expertise unique à l'intersection de l'architecture, de l'urbanisme et de la décision publique. Reconnu par les Architectes des Bâtiments de France (ABF), il conjugue tradition haussmannienne et innovations urbanistiques.",
     },
   ];
+  
   return (
     <section id="equipe" className="py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
@@ -106,19 +110,21 @@ function TeamFounders() {
         </div>
         <div className="grid md:grid-cols-3 gap-10">
           {team.map((m) => (
-            <div key={m.slug} className="flex flex-col items-center text-center">
-              <div className="size-44 rounded-full overflow-hidden ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)] bg-white">
+            <div key={m.slug} className="flex flex-col items-center text-center group">
+              <div className="size-44 rounded-full overflow-hidden ring-4 ring-crimson/20 shadow-[0_20px_50px_-15px_rgba(185,28,28,0.2)] bg-white transition-all duration-300 hover:ring-crimson/40 hover:shadow-[0_20px_50px_-10px_rgba(185,28,28,0.3)]">
                 <img
                   src={m.img}
                   alt={m.name}
-                  className="w-full h-full object-cover object-top"
-                  style={{ transform: "scale(0.8)" }}
+                  className="w-full h-full object-cover object-center"
                   loading="lazy"
                 />
               </div>
               <div className="mt-6">
                 <div className="text-lg font-bold text-anthracite">{m.name}</div>
-                <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">{m.role}</div>
+                <div className="text-xs uppercase tracking-[0.15em] text-crimson font-semibold mt-1.5">{m.role}</div>
+                <p className="text-xs text-muted-foreground leading-relaxed mt-3 max-w-xs">
+                  {m.bio}
+                </p>
               </div>
               <BioLink slug={m.slug} />
             </div>
@@ -136,7 +142,6 @@ function BioLink({ slug }: { slug: string }) {
   if (slug === "antoine-obtel") return <Link to="/biographie/antoine-obtel" className={cls}>{inner}</Link>;
   return <Link to="/biographie/hacene-boumediene" className={cls}>{inner}</Link>;
 }
-
 
 
 
@@ -159,7 +164,7 @@ function Hero() {
               <span className="text-crimson">sphères du pouvoir</span>, de la diplomatie et de la gouvernance digitale.
             </h1>
             <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
-              <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et de la Gouvernance Digitale au service du développement économique.
+              <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et d[...]
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -172,7 +177,7 @@ function Hero() {
               </a>
               <a
                 href="#formations"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-anthracite-foreground transition-colors"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-anthracite-fore[...]
               >
                 Découvrir l'institut
                 <ArrowUpRight className="size-4" />
@@ -473,7 +478,7 @@ function Founder() {
                 Arnaud Sighano
               </div>
               <div className="text-xs text-muted-foreground tracking-wide">
-                Directeur Fondateur — InPolitics Institute
+                Fondateur & Directeur — InPolitics Institute
               </div>
             </div>
           </div>
@@ -487,23 +492,23 @@ function Founder() {
 const FAQS = [
   {
     q: "Quels sont les débouchés professionnels après un cursus à l'Inpolitics Institute ?",
-    a: "Nos diplômés intègrent des fonctions de premier plan : hauts fonctionnaires, conseillers en cabinet ministériel, diplomates, directeurs d'administrations publiques et d'institutions régionales (CEMAC, Union Africaine), directeurs des affaires publiques en entreprise, consultants en stratégie de crise, analystes politiques seniors et spécialistes en Data Analytics politique.",
+    a: "Nos diplômés intègrent des fonctions de premier plan : hauts fonctionnaires, conseillers en cabinet ministériel, diplomates, directeurs d'administrations publiques et d'institutions r[...]
   },
   {
     q: "Comment l'Observatoire Inpolitics garantit-il la neutralité, l'anonymat et la précision de ses données ?",
-    a: "Notre crédibilité repose sur une méthodologie scientifique stricte : protocoles d'échantillonnage rigoureux (méthode des quotas) validés par des experts en statistiques, anonymisation et agrégation systématiques des données, et neutralité absolue — l'Observatoire ne s'aligne sur aucune formation politique.",
+    a: "Notre crédibilité repose sur une méthodologie scientifique stricte : protocoles d'échantillonnage rigoureux (méthode des quotas) validés par des experts en statistiques, anonymisati[...]
   },
   {
     q: "Les formations sont-elles adaptées aux professionnels en activité ?",
-    a: "Oui. Nous proposons un format Executive Education (cours du soir & week-ends) pour les cadres, ainsi qu'un format hybride / en ligne avec une plateforme e-learning sécurisée accessible 24/7.",
+    a: "Oui. Nous proposons un format Executive Education (cours du soir & week-ends) pour les cadres, ainsi qu'un format hybride / en ligne avec une plateforme e-learning sécurisée accessible [...]
   },
   {
     q: "Les diplômes et certifications sont-ils reconnus à l'international ?",
-    a: "Inpolitics Institute opère en totale conformité avec les exigences académiques nationales. Nos programmes suivent les standards des plus grands instituts de sciences politiques mondiaux, et des partenariats stratégiques avec des universités étrangères sont en cours de déploiement.",
+    a: "Inpolitics Institute opère en totale conformité avec les exigences académiques nationales. Nos programmes suivent les standards des plus grands instituts de sciences politiques mondiau[...]
   },
   {
     q: "Comment fonctionne l'achat et l'accès aux rapports de l'Observatoire ?",
-    a: "Deux modes : l'achat à l'unité (téléchargement d'un rapport sectoriel en PDF dynamique) ou l'abonnement annuel (tableau de bord interactif, mises à jour mensuelles, accès Grand Public ou Corporate).",
+    a: "Deux modes : l'achat à l'unité (téléchargement d'un rapport sectoriel en PDF dynamique) ou l'abonnement annuel (tableau de bord interactif, mises à jour mensuelles, accès Grand Publ[...]
   },
 ];
 
@@ -606,7 +611,7 @@ function ContactCta() {
               </a>
               <a
                 href="mailto:contact@inpoliticsinstitute.com?subject=Demande%20de%20brochure"
-                className="inline-flex items-center justify-between gap-3 px-6 h-14 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-white transition"
+                className="inline-flex items-center justify-between gap-3 px-6 h-14 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-w[...]
               >
                 <span className="flex items-center gap-3">
                   <Mail className="size-4" /> Demander par email
