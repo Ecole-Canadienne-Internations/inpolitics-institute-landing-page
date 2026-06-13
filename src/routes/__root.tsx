@@ -80,6 +80,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "InPolitics Institute" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { property: "og:title", content: "InPolitics Institute — Campus Europe à Gigean" },
+      { name: "twitter:title", content: "InPolitics Institute — Campus Europe à Gigean" },
+      { property: "og:description", content: "InPolitics Institute — Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'excellence des décideurs publics, diplomatie territoriale, lobbying d'intégrité et gouvernance digitale." },
+      { name: "twitter:description", content: "InPolitics Institute — Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'excellence des décideurs publics, diplomatie territoriale, lobbying d'intégrité et gouvernance digitale." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ba04b5ba-1f89-4d99-bd1f-499a3743b5e2/id-preview-1aed82cf--420836d1-978d-42a7-b6c1-c1a3617ca13b.lovable.app-1781310438448.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ba04b5ba-1f89-4d99-bd1f-499a3743b5e2/id-preview-1aed82cf--420836d1-978d-42a7-b6c1-c1a3617ca13b.lovable.app-1781310438448.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
