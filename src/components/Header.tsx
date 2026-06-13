@@ -36,9 +36,9 @@ export function Header() {
       <div className="bg-crimson text-white text-[12px]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-9 flex items-center justify-between gap-6">
           <div className="hidden md:flex items-center gap-5 font-medium">
-            <span className="inline-flex items-center gap-1.5"><Mail className="size-3.5" /> contact@inpolitics-institute.org</span>
+            <a href="mailto:contact@inpoliticsinstitute.com" className="inline-flex items-center gap-1.5 hover:opacity-90"><Mail className="size-3.5" /> contact@inpoliticsinstitute.com</a>
             <span className="opacity-60">|</span>
-            <span className="inline-flex items-center gap-1.5"><Phone className="size-3.5" /> +33 7 46 44 04 27</span>
+            <a href="tel:+33746440427" className="inline-flex items-center gap-1.5 hover:opacity-90"><Phone className="size-3.5" /> +33 7 46 44 04 27</a>
           </div>
           <div className="flex items-center gap-1.5 ml-auto truncate">
             <MapPin className="size-3.5 shrink-0" />
@@ -54,6 +54,15 @@ export function Header() {
           </Link>
 
           <nav className="hidden xl:flex items-center gap-1" onMouseLeave={() => setOpenIdx(null)}>
+            <Link
+              to="/"
+              onMouseEnter={() => setOpenIdx(null)}
+              className="px-3 py-2 text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors"
+              activeOptions={{ exact: true }}
+              activeProps={{ className: "px-3 py-2 text-[13px] font-semibold text-crimson" }}
+            >
+              Accueil
+            </Link>
             {NAV.map((menu, i) => (
               <div key={menu.label} className="relative" onMouseEnter={() => setOpenIdx(i)}>
                 <button
@@ -105,6 +114,9 @@ export function Header() {
         {mobile && (
           <div className="xl:hidden bg-white max-h-[80vh] overflow-y-auto shadow-lg">
             <div className="px-6 py-4 flex flex-col gap-1">
+              <Link to="/" className="py-3 text-sm font-semibold text-anthracite hover:text-crimson">
+                Accueil
+              </Link>
               {NAV.map((menu) => (
                 <details key={menu.label} className="group">
                   <summary className="flex items-center justify-between py-3 cursor-pointer list-none">

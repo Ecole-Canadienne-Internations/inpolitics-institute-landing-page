@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Mail } from "lucide-react";
 import { Header } from "@/components/Header";
 import { useContactModal } from "@/components/ContactModal";
 
@@ -38,25 +38,15 @@ export function SubPage({
               {intro}
             </p>
           )}
-          <div className="mt-12 prose-content space-y-6 text-[17px] leading-[1.8] text-foreground/85">
-            {children ?? (
-              <div className="rounded-2xl bg-secondary/60 p-8 md:p-10">
-                <p className="text-sm font-semibold text-crimson tracking-[0.18em] uppercase mb-3">
-                  Bientôt disponible
-                </p>
-                <p className="text-foreground/80">
-                  Cette page est en cours de finalisation. Notre équipe rédige actuellement le contenu détaillé.
-                  Pour toute information immédiate, prenez contact avec l'Institut.
-                </p>
-              </div>
-            )}
+          <div className="mt-12 prose-content space-y-10 text-[17px] leading-[1.8] text-foreground/85">
+            {children}
           </div>
           <div className="mt-16 pt-10 border-t border-border flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
             <p className="text-sm text-muted-foreground">
               Une question, un projet, une demande de partenariat ?
             </p>
-            <button onClick={open} className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold">
-              📩 Contacter l'Institut
+            <button onClick={open} className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2">
+              <Mail className="size-4" /> Contacter l'Institut
             </button>
           </div>
         </article>

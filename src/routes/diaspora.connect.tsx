@@ -1,14 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SubPage } from "@/components/SubPage";
+import { RichSubPage } from "@/lib/subpage-content";
 
 export const Route = createFileRoute("/diaspora/connect")({
-  component: () => (
-    <SubPage eyebrow={`Diaspora — 02`} title={`Diaspora Connect`} intro={`Matching profils Europe / besoins locaux Afrique.`} />
-  ),
-  head: () => ({ meta: [
-    { title: "Diaspora Connect — InPolitics Institute" },
-    { name: "description", content: "Matching profils Europe / besoins locaux Afrique." },
-    { property: "og:title", content: "Diaspora Connect — InPolitics Institute" },
-    { property: "og:description", content: "Matching profils Europe / besoins locaux Afrique." },
-  ]}),
+  component: () => <RichSubPage k="diaspora/connect" />,
+  head: () => ({
+    meta: [
+      { title: "Diaspora Connect — InPolitics Institute" },
+      { name: "description", content: "Mise en relation entre profils de la diaspora et besoins des territoires partenaires." },
+      { property: "og:title", content: "Diaspora Connect — InPolitics Institute" },
+      { property: "og:description", content: "Mise en relation entre profils de la diaspora et besoins des territoires partenaires." },
+      { property: "og:url", content: "https://inpoliticsinstitute.com/diaspora/connect" },
+      { property: "og:type", content: "article" },
+    ],
+    links: [{ rel: "canonical", href: "https://inpoliticsinstitute.com/diaspora/connect" }],
+  }),
 });

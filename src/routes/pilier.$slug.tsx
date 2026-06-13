@@ -30,7 +30,7 @@ const PILLARS: Record<string, Pillar> = {
       "Politiques publiques et évaluation de l'action gouvernementale",
       "Éthique républicaine et lutte contre la corruption",
       "Leadership institutionnel et conduite du changement",
-      "Décentralisation et gouvernance locale au Cameroun",
+      "Diplomatie territoriale et gouvernance locale en Europe et Afrique",
     ],
     outcomes: [
       "Hauts fonctionnaires et directeurs d'administration",
@@ -42,14 +42,14 @@ const PILLARS: Record<string, Pillar> = {
     title: "Diplomatie & Relations Internationales",
     tagline: "Géopolitique africaine · Négociation multilatérale · Soft power",
     intro:
-      "Préparer les diplomates et négociateurs de demain à défendre les intérêts du Cameroun et de l'Afrique centrale sur la scène mondiale.",
+      "Préparer les diplomates et négociateurs de demain à défendre les intérêts des territoires européens et africains sur la scène mondiale.",
     cover: pillarDiplomatie1,
     modules: [
-      "Géopolitique de l'Afrique centrale et zones d'influence",
+      "Géopolitique européenne, africaine et zones d'influence",
       "Droit international public et organisations multilatérales",
       "Techniques de négociation diplomatique avancées",
       "Économie politique internationale et accords commerciaux",
-      "Diplomatie culturelle et soft power africain",
+      "Diplomatie culturelle et soft power",
     ],
     outcomes: [
       "Diplomates et attachés d'ambassade",
@@ -81,7 +81,7 @@ const PILLARS: Record<string, Pillar> = {
     title: "L'Observatoire Inpolitics",
     tagline: "Data analytics politique · Baromètres d'opinion · Cartographie électorale",
     intro:
-      "Infrastructure de pointe d'analyse en temps réel des tendances électorales, de la sociologie des votes et de la situation géopolitique du Cameroun. Rapports stratégiques destinés aux particuliers, partis politiques et analystes.",
+      "Infrastructure de pointe d'analyse en temps réel des dynamiques politiques, sociologiques et territoriales européennes et africaines. Rapports stratégiques destinés aux collectivités, institutions et entreprises.",
     cover: pillarObservatoire,
     modules: [
       "Méthodologie d'enquête et échantillonnage par quotas",

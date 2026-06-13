@@ -27,6 +27,9 @@ import pillarGouvernance from "@/assets/pillar-gouvernance.jpg";
 import pillarDiplomatie from "@/assets/pillar-diplomatie-1.jpg";
 import pillarCommunication from "@/assets/pillar-communication.jpg";
 import pillarObservatoire from "@/assets/pillar-observatoire.jpg";
+import admissionDossier from "@/assets/admission-dossier.png";
+import admissionEntretien from "@/assets/admission-entretien.png";
+import admissionAdmission from "@/assets/admission-admission.png";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -36,11 +39,10 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique." },
       { property: "og:title", content: "InPolitics Institute" },
       { property: "og:description", content: "L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale." },
-      { property: "og:image", content: "https://inpolitics-institute.vercel.app/favicon-96x96.png" },
-      { property: "og:url", content: "https://inpolitics-institute.vercel.app/" },
-      { name: "twitter:image", content: "https://inpolitics-institute.vercel.app/favicon-96x96.png" },
+      { property: "og:url", content: "https://inpoliticsinstitute.com/" },
+      { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://inpolitics-institute.vercel.app/" }],
+    links: [{ rel: "canonical", href: "https://inpoliticsinstitute.com/" }],
   }),
 });
 
@@ -105,8 +107,14 @@ function TeamFounders() {
         <div className="grid md:grid-cols-3 gap-10">
           {team.map((m) => (
             <div key={m.slug} className="flex flex-col items-center text-center">
-              <div className="size-44 rounded-full overflow-hidden ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]">
-                <img src={m.img} alt={m.name} className="w-full h-full object-cover" loading="lazy" />
+              <div className="size-44 rounded-full overflow-hidden ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)] bg-white">
+                <img
+                  src={m.img}
+                  alt={m.name}
+                  className="w-full h-full object-cover object-top"
+                  style={{ transform: "scale(0.8)" }}
+                  loading="lazy"
+                />
               </div>
               <div className="mt-6">
                 <div className="text-lg font-bold text-anthracite">{m.name}</div>
@@ -396,9 +404,9 @@ function Proof() {
 /* ---------- ADMISSION ---------- */
 function Admission() {
   const steps = [
-    { n: "01", t: "Étude de dossier", d: "Soumission du CV et d'une lettre de motivation en ligne." },
-    { n: "02", t: "Entretien de sélection", d: "Grand oral devant le jury de l'institut (physique ou en ligne)." },
-    { n: "03", t: "Admission définitive", d: "Intégration officielle de la nouvelle cohorte des élites." },
+    { n: "01", t: "Étude de dossier", d: "Soumission du CV et d'une lettre de motivation en ligne.", img: admissionDossier },
+    { n: "02", t: "Entretien de sélection", d: "Grand oral devant le jury de l'institut (physique ou en ligne).", img: admissionEntretien },
+    { n: "03", t: "Admission définitive", d: "Intégration officielle de la nouvelle cohorte des élites.", img: admissionAdmission },
   ];
   return (
     <section id="admission" className="py-28 md:py-36">
@@ -412,15 +420,17 @@ function Admission() {
           </h2>
         </div>
 
-        <div className="relative grid md:grid-cols-3 gap-10 md:gap-6">
-          <div className="hidden md:block absolute top-10 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-anthracite/20 to-transparent" />
+        <div className="grid md:grid-cols-3 gap-10 md:gap-8">
           {steps.map((s) => (
-            <div key={s.n} className="group text-center md:text-left relative">
-              <div className="size-20 rounded-full bg-background border-2 border-border grid place-items-center mx-auto md:mx-0 text-2xl font-bold text-muted-foreground transition-all group-hover:bg-crimson group-hover:border-crimson group-hover:text-white group-hover:shadow-xl">
-                {s.n}
+            <div key={s.n} className="group text-center md:text-left">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_20px_50px_-20px_rgba(15,23,42,0.25)] mb-6">
+                <img src={s.img} alt={s.t} loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute top-4 left-4 size-12 rounded-2xl bg-crimson text-white grid place-items-center text-base font-bold shadow-lg">
+                  {s.n}
+                </div>
               </div>
-              <h3 className="mt-6 text-xl font-bold text-anthracite">{s.t}</h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto md:mx-0">{s.d}</p>
+              <h3 className="text-xl font-bold text-anthracite">{s.t}</h3>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.d}</p>
             </div>
           ))}
         </div>
@@ -595,7 +605,7 @@ function ContactCta() {
                 <ArrowRight className="size-4" />
               </a>
               <a
-                href="mailto:info@inpolitics-institute.cm?subject=Demande%20de%20brochure"
+                href="mailto:contact@inpoliticsinstitute.com?subject=Demande%20de%20brochure"
                 className="inline-flex items-center justify-between gap-3 px-6 h-14 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-white transition"
               >
                 <span className="flex items-center gap-3">
@@ -634,8 +644,8 @@ function Footer() {
             </div>
             <div className="flex items-start gap-3">
               <Mail className="size-4 mt-0.5 text-crimson" />
-              <a href="mailto:contact@inpolitics-institute.org" className="hover:text-white transition">
-                contact@inpolitics-institute.org
+              <a href="mailto:contact@inpoliticsinstitute.com" className="hover:text-white transition">
+                contact@inpoliticsinstitute.com
               </a>
             </div>
           </div>

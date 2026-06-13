@@ -12,7 +12,10 @@ export const Route = createFileRoute("/institut/vision-manifeste")({
       { name: "description", content: "Le manifeste fondateur d'Arnaud SIGHANO, Directeur Associé d'InPolitics Institute." },
       { property: "og:title", content: "Vision & Manifeste — InPolitics Institute" },
       { property: "og:description", content: "Le manifeste fondateur d'Arnaud SIGHANO." },
+      { property: "og:url", content: "https://inpoliticsinstitute.com/institut/vision-manifeste" },
+      { property: "og:type", content: "article" },
     ],
+    links: [{ rel: "canonical", href: "https://inpoliticsinstitute.com/institut/vision-manifeste" }],
   }),
 });
 

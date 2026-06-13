@@ -11,7 +11,6 @@ export type NavMenu = {
 
 export const NAV: NavMenu[] = [
   {
-  
     label: "L'Institut",
     items: [
       { to: "/institut/vision-manifeste", label: "Vision & Manifeste", desc: "Le texte officiel d'Arnaud SIGHANO." },
@@ -22,7 +21,6 @@ export const NAV: NavMenu[] = [
     ],
   },
   {
-  
     label: "Programmes Exécutifs",
     items: [
       { to: "/programmes/seminaires-gigean", label: "Séminaires d'Immersion (Gigean)", desc: "Formations de 3 à 5 jours pour l'élite publique." },
@@ -33,7 +31,6 @@ export const NAV: NavMenu[] = [
     ],
   },
   {
-  
     label: "Lobbying & Réseau",
     items: [
       { to: "/lobbying-reseau/methode-6-axes", label: "Notre Méthode en 6 Axes", desc: "Les 3 phases d'InPolitics Influence." },
@@ -42,7 +39,6 @@ export const NAV: NavMenu[] = [
     ],
   },
   {
-  
     label: "Gouvernance Digitale",
     items: [
       { to: "/gouvernance-digitale/solutions-saas", label: "Solutions SaaS Municipales", desc: "Sécurisation numérique des taxes locales." },
@@ -51,7 +47,6 @@ export const NAV: NavMenu[] = [
     ],
   },
   {
-  
     label: "Espace Diaspora",
     items: [
       { to: "/diaspora/programme-landing", label: 'Programme "Landing"', desc: "Bootcamp de reconnexion économique à Gigean." },
@@ -60,7 +55,6 @@ export const NAV: NavMenu[] = [
     ],
   },
   {
-  
     label: "Le Lab",
     items: [
       { to: "/lab/publications", label: "Publications & Recherche", desc: "Analyses et rapports de l'Observatoire." },
