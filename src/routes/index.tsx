@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "InPolitics Institute — Campus Europe à Gigean" },
-      { name: "description", content: "Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au[...]
+      { name: "description", content: "Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service des décideurs publics." },
       { property: "og:title", content: "InPolitics Institute" },
       { property: "og:description", content: "L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale." },
       { property: "og:url", content: "https://inpoliticsinstitute.com/" },
@@ -76,21 +76,21 @@ function TeamFounders() {
       name: "Arnaud SIGHANO",
       role: "Fondateur & Directeur",
       img: teamSighano,
-      bio: "Arnaud SIGHANO est le fondateur et directeur d'InPolitics Institute. À travers sa vision, il a créé une institution dédiée à la transformation des décideurs publics et à la performance des territoires par l'excellence pédagogique et la diplomatie d'influence.",
+      bio: "Arnaud SIGHANO est le fondateur et directeur d'InPolitics Institute. À travers sa vision, il a créé une institution dédiée à la transformation des décideurs publics et à la performance des territoires.",
     },
     {
       slug: "antoine-obtel",
       name: "Antoine OBTEL",
       role: "Directeur Associé",
       img: teamObtel,
-      bio: "Antoine OBTEL est Directeur Associé d'inPolitics Institute, où il apporte une expertise nourrie par la recherche universitaire et l'expérience de terrain. Étudiant-chercheur en Histoire et Relations Internationales au sein de trois institutions d'excellence (Université Paris Cité, Sorbonne Université et Université Paris-Panthéon-Assas), il évolue au contact direct des décideurs politiques européens.",
+      bio: "Antoine OBTEL est Directeur Associé d'inPolitics Institute, apportant une expertise nourrie par la recherche universitaire et l'expérience de terrain en relations internationales.",
     },
     {
       slug: "hacene-boumediene",
       name: "Bloukli Hacene BOUMEDIENE",
       role: "Co-fondateur",
       img: teamBoumediene,
-      bio: "Bloukli Hacene Boumediene est co-fondateur d'InPolitics Institute, où il apporte son expertise unique à l'intersection de l'architecture, de l'urbanisme et de la décision publique. Reconnu par les Architectes des Bâtiments de France (ABF), il conjugue tradition haussmannienne et innovations urbanistiques.",
+      bio: "Bloukli Hacene Boumediene est co-fondateur d'InPolitics Institute, apportant son expertise unique à l'intersection de l'architecture, de l'urbanisme et de la décision publique.",
     },
   ];
   
@@ -164,7 +164,7 @@ function Hero() {
               <span className="text-crimson">sphères du pouvoir</span>, de la diplomatie et de la gouvernance digitale.
             </h1>
             <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
-              <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et d[...]
+              <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et de la Gouvernance Digitale.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -177,7 +177,7 @@ function Hero() {
               </a>
               <a
                 href="#formations"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-anthracite-fore[...]
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-white transition"
               >
                 Découvrir l'institut
                 <ArrowUpRight className="size-4" />
@@ -492,23 +492,23 @@ function Founder() {
 const FAQS = [
   {
     q: "Quels sont les débouchés professionnels après un cursus à l'Inpolitics Institute ?",
-    a: "Nos diplômés intègrent des fonctions de premier plan : hauts fonctionnaires, conseillers en cabinet ministériel, diplomates, directeurs d'administrations publiques et d'institutions r[...]
+    a: "Nos diplômés intègrent des fonctions de premier plan : hauts fonctionnaires, conseillers en cabinet ministériel, diplomates, directeurs d'administrations publiques et d'institutions républicaines.",
   },
   {
     q: "Comment l'Observatoire Inpolitics garantit-il la neutralité, l'anonymat et la précision de ses données ?",
-    a: "Notre crédibilité repose sur une méthodologie scientifique stricte : protocoles d'échantillonnage rigoureux (méthode des quotas) validés par des experts en statistiques, anonymisati[...]
+    a: "Notre crédibilité repose sur une méthodologie scientifique stricte : protocoles d'échantillonnage rigoureux validés par des experts en statistiques, anonymisation totale des données et conformité aux standards internationaux.",
   },
   {
     q: "Les formations sont-elles adaptées aux professionnels en activité ?",
-    a: "Oui. Nous proposons un format Executive Education (cours du soir & week-ends) pour les cadres, ainsi qu'un format hybride / en ligne avec une plateforme e-learning sécurisée accessible [...]
+    a: "Oui. Nous proposons un format Executive Education (cours du soir & week-ends) pour les cadres, ainsi qu'un format hybride et en ligne avec plateforme e-learning sécurisée.",
   },
   {
     q: "Les diplômes et certifications sont-ils reconnus à l'international ?",
-    a: "Inpolitics Institute opère en totale conformité avec les exigences académiques nationales. Nos programmes suivent les standards des plus grands instituts de sciences politiques mondiau[...]
+    a: "Inpolitics Institute opère en totale conformité avec les exigences académiques nationales. Nos programmes suivent les standards des plus grands instituts de sciences politiques mondiaux.",
   },
   {
     q: "Comment fonctionne l'achat et l'accès aux rapports de l'Observatoire ?",
-    a: "Deux modes : l'achat à l'unité (téléchargement d'un rapport sectoriel en PDF dynamique) ou l'abonnement annuel (tableau de bord interactif, mises à jour mensuelles, accès Grand Publ[...]
+    a: "Deux modes : l'achat à l'unité (téléchargement d'un rapport sectoriel en PDF dynamique) ou l'abonnement annuel (tableau de bord interactif, mises à jour mensuelles).",
   },
 ];
 
@@ -611,7 +611,7 @@ function ContactCta() {
               </a>
               <a
                 href="mailto:contact@inpoliticsinstitute.com?subject=Demande%20de%20brochure"
-                className="inline-flex items-center justify-between gap-3 px-6 h-14 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-w[...]
+                className="inline-flex items-center justify-between gap-3 px-6 h-14 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-white transition"
               >
                 <span className="flex items-center gap-3">
                   <Mail className="size-4" /> Demander par email
