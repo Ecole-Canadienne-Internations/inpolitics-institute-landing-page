@@ -2,17 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Mail } from "lucide-react";
 import { Header } from "@/components/Header";
 import { useContactModal } from "@/components/ContactModal";
-import teamSighano from "@/assets/team-sighano.png";
+import arnaudSighanoImage from "@/assets/arnaud sighano image.jpeg";
 
 const SITE = "https://inpoliticsinstitute.com";
-const BIO = `Arnaud SIGHANO est un acteur reconnu de la diplomatie d'influence et des relations internationales. Fondateur et Directeur Associé d'inPolitics Institute, il accompagne les États, acteurs politiques et décideurs publics dans l'élaboration de stratégies d'influence internationale. Son approche s'appuie sur les leviers du soft power, avec une expertise singulière en Sport Diplomatie. Diplômé de l'Université de Picardie Jules Verne et formé à la diplomatie à l'Université Jean Moulin Lyon 3, il allie rigueur académique et action de terrain. Engagé pour le leadership africain, Arnaud est alumni du programme créé en 2010 par l'ancien Président Américain Barack Obama, le programme Young African Leaders Initiative (YALI). En 2021, Arnaud a fondé le YALI Sport Africa, réseau thématique dédié au sport comme vecteur d'influence et de développement. Éducateur dans l'âme, il est également Directeur de l'École canadienne Inter-Nations.`;
+const BIO = `Arnaud SIGHANO est un acteur reconnu de la diplomatie d'influence et des relations internationales. Fondateur et Directeur d'inPolitics Institute, il accompagne les États, acteurs publics et décideurs aux défis de la gouvernance moderne, de la performance territoriale et de la diplomatie d'influence. Expert en Sport Diplomatie et en relations diplomatiques multilatérales, il a développé une approche innovante combinant l'expertise académique à l'expérience du terrain. Éducateur passionné, il forme la nouvelle génération de décideurs publics aux disciplines essentielles de la République : diplomatie territoriale, gouvernance digitale, lobbying d'intégrité et performance des territoires. Son engagement envers l'excellence républicaine et l'intégrité dans la prise de décision publique guide tous les programmes et initiatives de l'Institut.`;
 
 export const Route = createFileRoute("/biographie/arnaud-sighano")({
   component: BioPage,
   head: () => ({
     meta: [
       { title: "Arnaud SIGHANO — Biographie | InPolitics Institute" },
-      { name: "description", content: "Biographie d'Arnaud SIGHANO, Fondateur et Directeur Associé d'InPolitics Institute." },
+      { name: "description", content: "Biographie d'Arnaud SIGHANO, Fondateur et Directeur d'InPolitics Institute." },
       { property: "og:title", content: "Arnaud SIGHANO — InPolitics Institute" },
       { property: "og:description", content: "Diplomate d'influence et fondateur d'InPolitics Institute." },
       { property: "og:url", content: `${SITE}/biographie/arnaud-sighano` },
@@ -41,7 +41,7 @@ function BioPage() {
                 Arnaud SIGHANO
               </h1>
               <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Fondateur & Directeur Associé d'InPolitics Institute. Diplomate d'influence, expert en Sport Diplomatie, éducateur.
+                Fondateur & Directeur d'InPolitics Institute. Diplomate d'influence, expert en Sport Diplomatie, éducateur.
               </p>
               <div className="mt-10 space-y-5 text-[17px] leading-[1.8] text-foreground/85">
                 {BIO.split(/(?<=\. )(?=[A-ZÉÈÀ])/).map((p, i) => <p key={i}>{p}</p>)}
@@ -49,7 +49,7 @@ function BioPage() {
             </div>
             <div className="md:col-span-5 order-1 md:order-2 md:sticky md:top-40">
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-white">
-                <img src={teamSighano} alt="Arnaud SIGHANO" className="h-full w-full object-cover" />
+                <img src={arnaudSighanoImage} alt="Arnaud SIGHANO" className="h-full w-full object-cover" />
               </div>
             </div>
           </div>
