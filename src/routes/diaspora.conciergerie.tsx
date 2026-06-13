@@ -1,14 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SubPage } from "@/components/SubPage";
+import { RichSubPage } from "@/lib/subpage-content";
 
 export const Route = createFileRoute("/diaspora/conciergerie")({
-  component: () => (
-    <SubPage eyebrow={`Diaspora — 03`} title={`Conciergerie & Sécurisation`} intro={`Sécurisation foncière, juridique et fiscale.`} />
-  ),
-  head: () => ({ meta: [
-    { title: "Conciergerie & Sécurisation — InPolitics Institute" },
-    { name: "description", content: "Sécurisation foncière, juridique et fiscale." },
-    { property: "og:title", content: "Conciergerie & Sécurisation — InPolitics Institute" },
-    { property: "og:description", content: "Sécurisation foncière, juridique et fiscale." },
-  ]}),
+  component: () => <RichSubPage k="diaspora/conciergerie" />,
+  head: () => ({
+    meta: [
+      { title: "Conciergerie & Sécurisation — InPolitics Institute" },
+      { name: "description", content: "Accompagnement foncier, juridique et fiscal pour sécuriser les projets de la diaspora." },
+      { property: "og:title", content: "Conciergerie & Sécurisation — InPolitics Institute" },
+      { property: "og:description", content: "Accompagnement foncier, juridique et fiscal pour sécuriser les projets de la diaspora." },
+      { property: "og:url", content: "https://inpoliticsinstitute.com/diaspora/conciergerie" },
+      { property: "og:type", content: "article" },
+    ],
+    links: [{ rel: "canonical", href: "https://inpoliticsinstitute.com/diaspora/conciergerie" }],
+  }),
 });

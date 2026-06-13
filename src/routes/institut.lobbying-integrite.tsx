@@ -1,14 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SubPage } from "@/components/SubPage";
+import { RichSubPage } from "@/lib/subpage-content";
 
 export const Route = createFileRoute("/institut/lobbying-integrite")({
-  component: () => (
-    <SubPage eyebrow={`04 — Intégrité`} title={`Lobbying, Plaidoyer & Intégrité`} intro={`Charte éthique et conformité OCDE / Union Européenne.`} />
-  ),
-  head: () => ({ meta: [
-    { title: "Lobbying, Plaidoyer & Intégrité — InPolitics Institute" },
-    { name: "description", content: "Charte éthique et conformité OCDE / Union Européenne." },
-    { property: "og:title", content: "Lobbying, Plaidoyer & Intégrité — InPolitics Institute" },
-    { property: "og:description", content: "Charte éthique et conformité OCDE / Union Européenne." },
-  ]}),
+  component: () => <RichSubPage k="institut/lobbying-integrite" />,
+  head: () => ({
+    meta: [
+      { title: "Lobbying, Plaidoyer & Intégrité — InPolitics Institute" },
+      { name: "description", content: "Charte éthique et conformité aux standards OCDE et UE en matière d'influence publique." },
+      { property: "og:title", content: "Lobbying, Plaidoyer & Intégrité — InPolitics Institute" },
+      { property: "og:description", content: "Charte éthique et conformité aux standards OCDE et UE en matière d'influence publique." },
+      { property: "og:url", content: "https://inpoliticsinstitute.com/institut/lobbying-integrite" },
+      { property: "og:type", content: "article" },
+    ],
+    links: [{ rel: "canonical", href: "https://inpoliticsinstitute.com/institut/lobbying-integrite" }],
+  }),
 });
