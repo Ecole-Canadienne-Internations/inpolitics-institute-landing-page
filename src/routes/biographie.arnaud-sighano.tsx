@@ -56,7 +56,7 @@ function BioPage() {
                 Fondateur & Directeur d'InPolitics Institute. Diplomate d'influence, expert en Sport Diplomatie, éducateur.
               </p>
               <div className="mt-10 space-y-5 text-[17px] leading-[1.8] text-foreground/85">
-                {BIO.split(/(?<=\. )(?=[A-ZÉÈÀ])/).map((p, i) => <p key={i}>{p}</p>)}
+                {BIO_PARAGRAPHS.map((p, i) => <p key={i}>{p}</p>)}
               </div>
             </div>
             <div className="md:col-span-5 order-1 md:order-2 md:sticky md:top-40">
