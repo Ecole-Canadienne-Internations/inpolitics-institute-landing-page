@@ -19,7 +19,7 @@ import { useState } from "react";
 import { Header } from "@/components/Header";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import heroBg from "@/assets/hero-bg-collage.png";
-import teamSighano from "@/assets/team-sighano.png";
+import teamSighano from "@/assets/arnaud sighano image.jpeg";
 import teamObtel from "@/assets/team-obtel.jpeg";
 import teamBoumediene from "@/assets/team-boumediene.jpeg";
 import logo from "@/assets/logo-inpolitics.jpg";
@@ -460,11 +460,12 @@ function Founder() {
             06 — Mot du Directeur
           </div>
           <Quote className="size-8 text-crimson mb-4" strokeWidth={1.5} />
-          <blockquote className="font-serif italic text-2xl md:text-[32px] leading-[1.35] text-anthracite">
-            « Diriger est une science qui s'apprend. Notre mission est d'armer
-            les décideurs publics et la diaspora des meilleurs outils
-            d'analyse pour servir leurs territoires avec rigueur, vision et intégrité. »
+          <blockquote className="font-serif italic text-[22px] md:text-[28px] leading-[1.45] text-anthracite">
+            « Bienvenue sur la plateforme officielle d'InPolitics Institute. À l'ère des mutations géopolitiques majeures et de l'accélération numérique, la gestion des affaires publiques exige des paradigmes renouvelés. Nous avons conçu cette institution comme une plateforme internationale de <strong className="not-italic font-semibold">diplomatie territoriale, de lobbying d'intégrité, de recherche et de gouvernance digitale</strong> — au point de convergence entre la haute décision politique et l'innovation technologique. »
           </blockquote>
+          <Link to="/biographie/arnaud-sighano" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-crimson hover:underline">
+            Lire le mot complet du Directeur →
+          </Link>
           <div className="mt-8 flex items-center gap-4">
             <div className="h-px w-12 bg-anthracite/30" />
             <div>
