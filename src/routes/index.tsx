@@ -461,10 +461,13 @@ function Founder() {
           </div>
           <Quote className="size-8 text-crimson mb-4" strokeWidth={1.5} />
           <blockquote className="font-serif italic text-[22px] md:text-[28px] leading-[1.45] text-anthracite">
-            « Bienvenue sur la plateforme officielle d'InPolitics Institute. À l'ère des mutations géopolitiques majeures et de l'accélération numérique, la gestion des affaires publiques exige des paradigmes renouvelés. Nous avons conçu cette institution comme une plateforme internationale de <strong className="not-italic font-semibold">diplomatie territoriale, de lobbying d'intégrité, de recherche et de gouvernance digitale</strong> — au point de convergence entre la haute décision politique et l'innovation technologique. »
+            « Bienvenue sur la plateforme officielle d'InPolitics Institute. À l'ère des mutations géopolitiques majeures, nous avons conçu cette institution comme une plateforme internationale de diplomatie territoriale, de lobbying d'intégrité et de gouvernance digitale. »
           </blockquote>
-          <Link to="/biographie/arnaud-sighano" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-crimson hover:underline">
-            Lire le mot complet du Directeur →
+          <Link
+            to="/biographie/arnaud-sighano"
+            className="mt-8 inline-flex items-center gap-2 bg-crimson text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-crimson/90 transition-colors shadow-lg shadow-crimson/20"
+          >
+            Voir plus <ArrowRight className="size-4" />
           </Link>
           <div className="mt-8 flex items-center gap-4">
             <div className="h-px w-12 bg-anthracite/30" />
