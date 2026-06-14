@@ -19,7 +19,7 @@ import { useState } from "react";
 import { Header } from "@/components/Header";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import heroBg from "@/assets/hero-bg-collage.png";
-import teamSighano from "@/assets/arnaud sighano image.jpeg";
+import teamSighano from "@/assets/arnaud-sighano-image.jpeg";
 import teamObtel from "@/assets/team-obtel.jpeg";
 import teamBoumediene from "@/assets/team-boumediene.jpeg";
 import logo from "@/assets/logo-inpolitics.jpg";
