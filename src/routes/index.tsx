@@ -3,7 +3,6 @@ import {
   ArrowRight,
   Landmark,
   Globe2,
-  Radio,
   BarChart3,
   Quote,
   ArrowUpRight,
@@ -18,14 +17,17 @@ import {
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import heroBg from "@/assets/hero-bg-collage.png";
-import teamSighano from "@/assets/arnaud-sighano-image.jpeg";
+import heroGroup from "@/assets/hero-group.png.asset.json";
+import heroCampusDark from "@/assets/hero-campus-dark.png.asset.json";
+import heroCampusDay from "@/assets/hero-campus-day.png.asset.json";
+import heroCampusLight from "@/assets/hero-campus-light.png.asset.json";
+import teamSighano from "@/assets/team-sighano.png";
+import founderPortrait from "@/assets/founder.jpg";
 import teamObtel from "@/assets/team-obtel.jpeg";
 import teamBoumediene from "@/assets/team-boumediene.jpeg";
 import logo from "@/assets/logo-inpolitics.jpg";
 import pillarGouvernance from "@/assets/pillar-gouvernance.jpg";
 import pillarDiplomatie from "@/assets/pillar-diplomatie-1.jpg";
-import pillarCommunication from "@/assets/pillar-communication.jpg";
 import pillarObservatoire from "@/assets/pillar-observatoire.jpg";
 import admissionDossier from "@/assets/admission-dossier.png";
 import admissionEntretien from "@/assets/admission-entretien.png";
@@ -74,7 +76,7 @@ function TeamFounders() {
     {
       slug: "arnaud-sighano",
       name: "Arnaud SIGHANO",
-      role: "Fondateur & Directeur",
+      role: "Fondateur & Directeur Associé",
       img: teamSighano,
     },
     {
@@ -102,7 +104,7 @@ function TeamFounders() {
             La Direction de l'Institut
           </h2>
           <p className="mt-5 text-muted-foreground">
-            Trois fondateurs, trois disciplines, une même exigence républicaine.
+            Trois fondateurs, une même exigence de leadership, d'intégrité et d'influence.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-10">
@@ -143,40 +145,51 @@ function BioLink({ slug }: { slug: string }) {
 /* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section
-      className="hero-campus relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white"
-      style={{ "--hero-campus-image": `url(${heroBg})` } as React.CSSProperties}
-    >
+    <section className="hero-campus relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white">
+      <div className="hero-campus-grid hidden lg:block" aria-hidden="true">
+        <div className="hero-campus-panel top-[8.5rem] right-[5%] w-[34vw] max-w-[520px] aspect-[5/4]">
+          <img src={heroCampusDark.url} alt="" />
+          <div className="hero-campus-fog" />
+        </div>
+        <div className="hero-campus-panel top-[14rem] right-[30%] w-[23vw] max-w-[360px] aspect-[5/4]">
+          <img src={heroGroup.url} alt="" />
+          <div className="hero-campus-fog" />
+        </div>
+        <div className="hero-campus-panel top-[27rem] right-[10%] w-[26vw] max-w-[410px] aspect-[5/4]">
+          <img src={heroCampusLight.url} alt="" />
+          <div className="hero-campus-fog" />
+        </div>
+      </div>
+      <div className="hero-campus-grid lg:hidden" aria-hidden="true">
+        <div className="hero-campus-panel top-[8.5rem] left-1/2 -translate-x-1/2 w-[88vw] aspect-[5/4] rounded-[1.75rem]">
+          <img src={heroCampusDay.url} alt="" />
+          <div className="hero-campus-fog" />
+        </div>
+      </div>
+
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
-              <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
-              Gigean · Montpellier Métropole · Campus Afrique
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.05] font-bold text-anthracite">
-              Formez-vous aux plus hautes{" "}
-              <span className="text-crimson">sphères du pouvoir</span>, de la diplomatie et de la gouvernance digitale.
-            </h1>
-            <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
-              <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et de la Gouvernance Digitale.
-            </p>
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
+            <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
+            Gigean · Montpellier Métropole
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.05] font-bold text-anthracite">
+            Formez-vous aux plus hautes <span className="text-crimson">sphères du pouvoir</span>, de la diplomatie et de la gouvernance digitale.
+          </h1>
+          <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
+            <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et de la Gouvernance Digitale.
+          </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href="#contact"
-                className="btn-crimson inline-flex items-center gap-2 px-7 h-13 py-3.5 rounded-full font-semibold text-sm"
-              >
-                Demander la brochure
-                <ArrowRight className="size-4" />
-              </a>
-              <a
-                href="#formations"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-white transition"
-              >
-                Découvrir l'institut
-                <ArrowUpRight className="size-4" />
-              </a>
-            </div>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <a href="#contact" className="btn-crimson inline-flex items-center gap-2 px-7 h-13 py-3.5 rounded-full font-semibold text-sm">
+              Demander la brochure
+              <ArrowRight className="size-4" />
+            </a>
+            <a href="#formations" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-white transition">
+              Découvrir l'institut
+              <ArrowUpRight className="size-4" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -220,30 +233,23 @@ const PILLARS = [
   {
     slug: "gouvernance",
     icon: Landmark,
-    title: "Gouvernance & Stratégie d'État",
-    desc: "Administration publique, éthique républicaine et leadership d'institution.",
+    title: "L'Executive Education de Haute Performance",
+    desc: "Programmes d'excellence, séminaires d'immersion et direction scientifique universitaire rigoureuse.",
     img: pillarGouvernance,
+  },
+  {
+    slug: "technopolitiques",
+    icon: BarChart3,
+    title: "Les Enjeux Technopolitiques",
+    desc: "Science des données, SaaS territoriaux et intelligence artificielle au cœur de la décision publique.",
+    img: pillarObservatoire,
   },
   {
     slug: "diplomatie",
     icon: Globe2,
-    title: "Diplomatie & Relations Internationales",
-    desc: "Géopolitique africaine, négociation multilatérale et soft power.",
+    title: "La Diplomatie d'Influence et de Réseau",
+    desc: "Lobbying d'intégrité, plaidoyer éthique, connexions stratégiques et mobilisation de la diaspora.",
     img: pillarDiplomatie,
-  },
-  {
-    slug: "communication",
-    icon: Radio,
-    title: "Communication & Analyse Politique",
-    desc: "Stratégie de campagne, gestion des médias et décryptage de l'opinion.",
-    img: pillarCommunication,
-  },
-  {
-    slug: "observatoire",
-    icon: BarChart3,
-    title: "L'Observatoire Inpolitics",
-    desc: "Data analytics politique, baromètres d'opinion et cartographie électorale en temps réel.",
-    img: pillarObservatoire,
   },
 ];
 
@@ -260,7 +266,7 @@ function Pillars() {
               02 — Piliers de l'institut
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-anthracite leading-tight">
-              Quatre disciplines. Une seule exigence : l'excellence.
+              Trois piliers pour former, équiper et connecter les décideurs.
             </h2>
           </div>
           <a
@@ -271,7 +277,7 @@ function Pillars() {
           </a>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PILLARS.map((p, i) => {
             const Icon = p.icon;
             return (
@@ -448,8 +454,8 @@ function Founder() {
           <div className="relative aspect-[4/5] max-w-sm">
             <div className="absolute -top-3 -right-3 left-10 bottom-10 rounded-[2rem] border border-crimson/40" />
             <img
-              src={teamSighano}
-              alt="Arnaud Sighano, Directeur d'Inpolitics Institute"
+              src={founderPortrait}
+              alt="Arnaud Sighano, Fondateur & Directeur Associé d'InPolitics Institute"
               loading="lazy"
               className="relative h-full w-full object-cover rounded-[2rem] shadow-2xl"
             />
@@ -461,10 +467,10 @@ function Founder() {
           </div>
           <Quote className="size-8 text-crimson mb-4" strokeWidth={1.5} />
           <blockquote className="font-serif italic text-[22px] md:text-[28px] leading-[1.45] text-anthracite">
-            « Bienvenue sur la plateforme officielle d'InPolitics Institute. À l'ère des mutations géopolitiques majeures, nous avons conçu cette institution comme une plateforme internationale de diplomatie territoriale, de lobbying d'intégrité et de gouvernance digitale. »
+            « Arnaud SIGHANO est un acteur reconnu de la diplomatie d'influence et des relations internationales. Fondateur et Directeur Associé d'InPolitics Institute, il accompagne les États et décideurs publics dans l'élaboration de stratégies d'influence internationale. »
           </blockquote>
           <Link
-            to="/biographie/arnaud-sighano"
+            to="/mot-du-directeur"
             className="mt-8 inline-flex items-center gap-2 bg-crimson text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-crimson/90 transition-colors shadow-lg shadow-crimson/20"
           >
             Voir plus <ArrowRight className="size-4" />
@@ -476,7 +482,7 @@ function Founder() {
                 Arnaud Sighano
               </div>
               <div className="text-xs text-muted-foreground tracking-wide">
-                Fondateur & Directeur — InPolitics Institute
+                Fondateur & Directeur Associé — InPolitics Institute
               </div>
             </div>
           </div>
