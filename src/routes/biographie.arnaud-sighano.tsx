@@ -6,17 +6,10 @@ import arnaudSighanoImage from "@/assets/arnaud-sighano-image.jpeg";
 
 const SITE = "https://inpoliticsinstitute.com";
 const BIO_PARAGRAPHS: string[] = [
-  "Bienvenue sur la plateforme officielle d'InPolitics Institute.",
-  "À l'ère des mutations géopolitiques majeures et de l'accélération numérique, la gestion des affaires publiques et le développement économique exigent des paradigmes entièrement renouvelés. Les territoires, qu'ils soient en Europe ou au cœur de l'Afrique francophone, font face à un défi historique : maîtriser les forces Techno-Politiques pour bâtir une performance territoriale concrète, souveraine et durable.",
-  "C'est pour répondre à cette exigence de modernité qu'est né InPolitics Institute.",
-  "Nous avons conçu cette institution non pas comme un simple institut de formation, mais comme une plateforme internationale de diplomatie territoriale, de lobbying d'intégrité, de recherche et de gouvernance digitale. À travers notre double ancrage stratégique — Europe à Gigean (Montpellier Métropole, France) et localisations en Afrique — nous opérons au point de convergence entre la haute décision politique et l'innovation technologique.",
-  "Notre action se déploie autour de trois priorités majeures qui redéfinissent l'exercice du pouvoir moderne :",
-  "1 — L'Executive Education de Haute Performance. Nous proposons des programmes d'excellence (en ligne et en présentiel) et des séminaires d'immersion de 3 à 5 jours ou plus au sein de notre siège à l'international, validés par une direction scientifique universitaire rigoureuse. Adaptés aux agendas des décideurs publics, des élus locaux et territoriaux, des directeurs et hauts dirigeants du secteur privé, des hommes politiques et de toute personne désireuse de s'outiller. Nos parcours lient la théorie aux réalités du terrain : gouvernance financière, droit OHADA, partenariats public-privé, intelligence artificielle au service de la gouvernance et Technopolitique, diplomatie territoriale et diplomatie d'influence, communication politique et de crise, relations internationales, innovations urbanistiques et territoriales.",
-  "2 — Les Enjeux Technopolitiques. La politique et la technologie sont désormais indissociables. Nous intégrons la science des données, les solutions logicielles SaaS de gestion territoriale et municipale avec l'Intelligence Artificielle au cœur de la décision publique. Notre but est clair : outiller les élus pour automatiser la transparence, éradiquer la déperdition financière et doubler les recettes propres des collectivités territoriales.",
-  "3 — La Diplomatie d'Influence et de Réseau. Nous faisons du lobbying d'intégrité et du plaidoyer éthique des leviers légitimes du développement. À travers une ingénierie rigoureuse de mise en relation, nous connectons les décideurs publics, les investisseurs privés et les réseaux d'influenceurs pour orienter les décisions stratégiques et capter les financements internationaux. C'est aussi le cœur du programme Diaspo Back-Home, qui sécurise le retour des compétences et des capitaux de la diaspora d'Europe vers les projets du continent.",
-  "Ensemble, faisons de la technopolitique, de la haute formation et de l'influence éthique les moteurs de la transformation et du rayonnement de nos territoires.",
-  "Je vous souhaite une excellente navigation et me réjouis de vous accueillir très prochainement.",
-  "Arnaud SIGHANO — Fondateur, InPolitics Institute.",
+  "Arnaud SIGHANO est un acteur reconnu de la diplomatie d’influence et des relations internationales. Fondateur et Directeur Associé d’inPolitics Institute, il accompagne les États, acteurs politiques et décideurs publics dans l’élaboration de stratégies d’influence internationale.",
+  "Son approche s’appuie sur les leviers du soft power, avec une expertise singulière en Sport Diplomatie. Diplômé de l’Université de Picardie Jules Verne et formé à la diplomatie à l’Université Jean Moulin Lyon 3, il allie rigueur académique et action de terrain.",
+  "Engagé pour le leadership africain, Arnaud est alumni du programme créé en 2010 par l'ancien Président Américain Barack Obama, le programme Young African Leaders Initiative (YALI). En 2021, Arnaud a fondé le YALI Sport Africa, réseau thématique dédié au sport comme vecteur d’influence et de développement.",
+  "Éducateur dans l’âme, il est également Directeur de l’École canadienne Inter-Nations.",
 ];
 
 export const Route = createFileRoute("/biographie/arnaud-sighano")({
@@ -24,9 +17,9 @@ export const Route = createFileRoute("/biographie/arnaud-sighano")({
   head: () => ({
     meta: [
       { title: "Arnaud SIGHANO — Biographie | InPolitics Institute" },
-      { name: "description", content: "Biographie d'Arnaud SIGHANO, Fondateur et Directeur d'InPolitics Institute." },
+      { name: "description", content: "Biographie d'Arnaud SIGHANO, Fondateur & Directeur Associé d'InPolitics Institute." },
       { property: "og:title", content: "Arnaud SIGHANO — InPolitics Institute" },
-      { property: "og:description", content: "Diplomate d'influence et fondateur d'InPolitics Institute." },
+      { property: "og:description", content: "Acteur reconnu de la diplomatie d'influence et des relations internationales." },
       { property: "og:url", content: `${SITE}/biographie/arnaud-sighano` },
       { property: "og:type", content: "profile" },
     ],
@@ -53,7 +46,7 @@ function BioPage() {
                 Arnaud SIGHANO
               </h1>
               <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Fondateur & Directeur d'InPolitics Institute. Diplomate d'influence, expert en Sport Diplomatie, éducateur.
+                Fondateur & Directeur Associé d'InPolitics Institute. Diplomatie d'influence, relations internationales, Sport Diplomatie.
               </p>
               <div className="mt-10 space-y-5 text-[17px] leading-[1.8] text-foreground/85">
                 {BIO_PARAGRAPHS.map((p, i) => <p key={i}>{p}</p>)}
