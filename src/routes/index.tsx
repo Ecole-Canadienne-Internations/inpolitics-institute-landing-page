@@ -21,8 +21,7 @@ import heroGroup from "@/assets/hero-group.png.asset.json";
 import heroCampusDark from "@/assets/hero-campus-dark.png.asset.json";
 import heroCampusDay from "@/assets/hero-campus-day.png.asset.json";
 import heroCampusLight from "@/assets/hero-campus-light.png.asset.json";
-import teamSighano from "@/assets/team-sighano.png";
-import founderPortrait from "@/assets/founder.jpg";
+import arnaudNavy from "@/assets/arnaud-navy.png.asset.json";
 import teamObtel from "@/assets/team-obtel.jpeg";
 import teamBoumediene from "@/assets/team-boumediene.jpeg";
 import logo from "@/assets/logo-inpolitics.jpg";
@@ -77,7 +76,7 @@ function TeamFounders() {
       slug: "arnaud-sighano",
       name: "Arnaud SIGHANO",
       role: "Fondateur & Directeur Associé",
-      img: teamSighano,
+      img: arnaudNavy.url,
     },
     {
       slug: "antoine-obtel",
@@ -144,40 +143,23 @@ function BioLink({ slug }: { slug: string }) {
 
 /* ---------- HERO ---------- */
 function Hero() {
+  const slides = [heroCampusDark.url, heroGroup.url, heroCampusDay.url, heroCampusLight.url];
   return (
-    <section className="hero-campus relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white">
-      <div className="hero-campus-grid hidden lg:block" aria-hidden="true">
-        <div className="hero-campus-panel top-[8.5rem] right-[5%] w-[34vw] max-w-[520px] aspect-[5/4]">
-          <img src={heroCampusDark.url} alt="" />
-          <div className="hero-campus-fog" />
-        </div>
-        <div className="hero-campus-panel top-[14rem] right-[30%] w-[23vw] max-w-[360px] aspect-[5/4]">
-          <img src={heroGroup.url} alt="" />
-          <div className="hero-campus-fog" />
-        </div>
-        <div className="hero-campus-panel top-[27rem] right-[10%] w-[26vw] max-w-[410px] aspect-[5/4]">
-          <img src={heroCampusLight.url} alt="" />
-          <div className="hero-campus-fog" />
-        </div>
-      </div>
-      <div className="hero-campus-grid lg:hidden" aria-hidden="true">
-        <div className="hero-campus-panel top-[8.5rem] left-1/2 -translate-x-1/2 w-[88vw] aspect-[5/4] rounded-[1.75rem]">
-          <img src={heroCampusDay.url} alt="" />
-          <div className="hero-campus-fog" />
-        </div>
+    <section className="relative pt-40 md:pt-48 pb-24 md:pb-32 overflow-hidden min-h-[88vh] flex items-center">
+      <div className="hero-bg" aria-hidden="true">
+        {slides.map((src, i) => (
+          <div key={i} className="hero-bg-slide" style={{ backgroundImage: `url(${src})` }} />
+        ))}
+        <div className="hero-bg-veil" />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 w-full">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
-            <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
-            Gigean · Montpellier Métropole
-          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.05] font-bold text-anthracite">
             Formez-vous aux plus hautes <span className="text-crimson">sphères du pouvoir</span>, de la diplomatie et de la gouvernance digitale.
           </h1>
-          <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
-            <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et de la Gouvernance Digitale.
+          <p className="mt-7 text-base md:text-lg text-anthracite/85 leading-relaxed max-w-xl">
+            <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -185,7 +167,7 @@ function Hero() {
               Demander la brochure
               <ArrowRight className="size-4" />
             </a>
-            <a href="#formations" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-white transition">
+            <a href="#formations" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite bg-white/70 backdrop-blur hover:bg-anthracite hover:text-white transition">
               Découvrir l'institut
               <ArrowUpRight className="size-4" />
             </a>
@@ -454,7 +436,7 @@ function Founder() {
           <div className="relative aspect-[4/5] max-w-sm">
             <div className="absolute -top-3 -right-3 left-10 bottom-10 rounded-[2rem] border border-crimson/40" />
             <img
-              src={founderPortrait}
+              src={arnaudNavy.url}
               alt="Arnaud Sighano, Fondateur & Directeur Associé d'InPolitics Institute"
               loading="lazy"
               className="relative h-full w-full object-cover rounded-[2rem] shadow-2xl"
@@ -463,7 +445,7 @@ function Founder() {
         </div>
         <div className="md:col-span-7">
           <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-5">
-            06 — Mot du Directeur
+            06 — Mot de Bienvenue
           </div>
           <Quote className="size-8 text-crimson mb-4" strokeWidth={1.5} />
           <blockquote className="font-serif italic text-[22px] md:text-[28px] leading-[1.45] text-anthracite">
