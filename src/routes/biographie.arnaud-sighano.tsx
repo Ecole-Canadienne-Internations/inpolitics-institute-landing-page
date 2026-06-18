@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Mail } from "lucide-react";
 import { Header } from "@/components/Header";
 import { useContactModal } from "@/components/ContactModal";
-import arnaudSighanoImage from "@/assets/arnaud-sighano-image.jpeg";
+import arnaudSighanoImage from "@/assets/arnaud-grey.png.asset.json";
 
 const SITE = "https://inpoliticsinstitute.com";
 const BIO_PARAGRAPHS: string[] = [
