@@ -449,7 +449,8 @@ function Founder() {
           </div>
           <Quote className="size-8 text-crimson mb-4" strokeWidth={1.5} />
           <blockquote className="font-serif italic text-[22px] md:text-[28px] leading-[1.45] text-anthracite">
-            « Arnaud SIGHANO est un acteur reconnu de la diplomatie d'influence et des relations internationales. Fondateur et Directeur Associé d'InPolitics Institute, il accompagne les États et décideurs publics dans l'élaboration de stratégies d'influence internationale. »
+            « Bienvenue sur la plateforme officielle d'InPolitics Institute.
+À l'ère des mutations géopolitiques majeures et de l'accélération numérique, la gestion des affaires publiques et le développement économique exigent des paradigmes entièrement renouvelés. Les territoires, qu'ils soient en Europe ou au cœur de l'Afrique francophone, font face à un défi historique : maîtriser les forces Techno-Politiques pour bâtir une performance territoriale concrète, souveraine et durable. »
           </blockquote>
           <Link
             to="/mot-du-directeur"
