@@ -76,7 +76,7 @@ function TeamFounders() {
       slug: "arnaud-sighano",
       name: "Arnaud SIGHANO",
       role: "Fondateur & Directeur Associé",
-      img: teamSighano,
+      img: arnaudNavy.url,
     },
     {
       slug: "antoine-obtel",
