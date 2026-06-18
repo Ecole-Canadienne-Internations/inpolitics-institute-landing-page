@@ -57,20 +57,20 @@ export function Header() {
             <img src={logo} alt="InPolitics Institute" className="h-24 md:h-28 lg:h-30 w-auto object-contain" />
           </Link>
 
-          <nav className="hidden xl:flex items-center gap-1" onMouseLeave={() => setOpenIdx(null)}>
+          <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1" onMouseLeave={() => setOpenIdx(null)}>
             <Link
               to="/"
               onMouseEnter={() => setOpenIdx(null)}
-              className="px-3 py-2 text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors"
+              className="px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors whitespace-nowrap"
               activeOptions={{ exact: true }}
-              activeProps={{ className: "px-3 py-2 text-[13px] font-semibold text-crimson" }}
+              activeProps={{ className: "px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-semibold text-crimson whitespace-nowrap" }}
             >
               Accueil
             </Link>
             {NAV.map((menu, i) => (
               <div key={menu.label} className="relative" onMouseEnter={() => setOpenIdx(i)}>
                 <button
-                  className="flex items-center gap-1 px-3 py-2 text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors"
+                  className="flex items-center gap-1 px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors whitespace-nowrap"
                   aria-expanded={openIdx === i}
                 >
                   {menu.label}
