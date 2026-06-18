@@ -145,43 +145,35 @@
     transform: translateY(-1px);
   }
 
-  .hero-campus {
-    background:
-      linear-gradient(180deg, color-mix(in oklab, white 88%, transparent), white 70%),
-      linear-gradient(90deg, white 0%, color-mix(in oklab, white 90%, transparent) 34%, color-mix(in oklab, white 58%, transparent) 58%, color-mix(in oklab, white 84%, transparent) 100%);
-  }
-
-  .hero-campus-grid {
+  .hero-bg {
     position: absolute;
     inset: 0;
-    pointer-events: none;
-  }
-
-  .hero-campus-panel {
-    position: absolute;
     overflow: hidden;
-    border-radius: 2rem;
-    box-shadow: 0 30px 70px -28px color-mix(in oklab, black 24%, transparent);
-    background: color-mix(in oklab, white 72%, transparent);
+    z-index: 0;
   }
-
-  .hero-campus-panel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: saturate(0.96) contrast(0.98);
-  }
-
-  .hero-campus-fog {
+  .hero-bg-slide {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, color-mix(in oklab, white 92%, transparent) 0%, color-mix(in oklab, white 78%, transparent) 30%, color-mix(in oklab, white 32%, transparent) 72%, color-mix(in oklab, white 20%, transparent) 100%);
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: heroFade 24s infinite;
   }
-
-  @media (max-width: 1023px) {
-    .hero-campus-fog {
-      background: linear-gradient(180deg, color-mix(in oklab, white 90%, transparent) 0%, color-mix(in oklab, white 78%, transparent) 32%, color-mix(in oklab, white 56%, transparent) 65%, color-mix(in oklab, white 28%, transparent) 100%);
-    }
+  .hero-bg-slide:nth-child(1) { animation-delay: 0s; }
+  .hero-bg-slide:nth-child(2) { animation-delay: 6s; }
+  .hero-bg-slide:nth-child(3) { animation-delay: 12s; }
+  .hero-bg-slide:nth-child(4) { animation-delay: 18s; }
+  @keyframes heroFade {
+    0%   { opacity: 0; }
+    4%   { opacity: 1; }
+    25%  { opacity: 1; }
+    29%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  .hero-bg-veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.78) 50%, rgba(255,255,255,0.92) 100%);
   }
 
   .pillar-card {
