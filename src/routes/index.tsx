@@ -436,7 +436,7 @@ function Founder() {
           <div className="relative aspect-[4/5] max-w-sm">
             <div className="absolute -top-3 -right-3 left-10 bottom-10 rounded-[2rem] border border-crimson/40" />
             <img
-              src={founderPortrait}
+              src={arnaudNavy.url}
               alt="Arnaud Sighano, Fondateur & Directeur Associé d'InPolitics Institute"
               loading="lazy"
               className="relative h-full w-full object-cover rounded-[2rem] shadow-2xl"
@@ -445,7 +445,7 @@ function Founder() {
         </div>
         <div className="md:col-span-7">
           <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-5">
-            06 — Mot du Directeur
+            06 — Mot de Bienvenue
           </div>
           <Quote className="size-8 text-crimson mb-4" strokeWidth={1.5} />
           <blockquote className="font-serif italic text-[22px] md:text-[28px] leading-[1.45] text-anthracite">
