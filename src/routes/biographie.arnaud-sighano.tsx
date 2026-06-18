@@ -54,7 +54,7 @@ function BioPage() {
             </div>
             <div className="md:col-span-5 order-1 md:order-2 md:sticky md:top-40">
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-white">
-                <img src={arnaudSighanoImage} alt="Arnaud SIGHANO" className="h-full w-full object-cover" />
+                <img src={arnaudSighanoImage.url} alt="Arnaud SIGHANO" className="h-full w-full object-cover" />
               </div>
             </div>
           </div>
