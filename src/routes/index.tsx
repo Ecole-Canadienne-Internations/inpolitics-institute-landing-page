@@ -3,7 +3,6 @@ import {
   ArrowRight,
   Landmark,
   Globe2,
-  Radio,
   BarChart3,
   Quote,
   ArrowUpRight,
@@ -27,7 +26,6 @@ import teamToukea from "@/assets/Dr-Dieudonné-Toukea.jpeg";
 import logo from "@/assets/inpolitics-insititute-new-logo.png";
 import pillarGouvernance from "@/assets/pillar-gouvernance.jpg";
 import pillarDiplomatie from "@/assets/pillar-diplomatie-1.jpg";
-import pillarCommunication from "@/assets/pillar-communication.jpg";
 import pillarObservatoire from "@/assets/pillar-observatoire.jpg";
 import admissionDossier from "@/assets/admission-dossier.png";
 import admissionEntretien from "@/assets/admission-entretien.png";
@@ -155,10 +153,6 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/75 to-white/90" />
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
-              <span className="size-1.5 rounded-full bg-crimson animate-pulse" />
-              Gigean · Montpellier Métropole · Campus Afrique
-            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.05] font-bold text-anthracite">
               Formez-vous aux plus hautes{" "}
               <span className="text-crimson">sphères du pouvoir</span>, de la diplomatie et de la gouvernance digitale.
@@ -226,30 +220,23 @@ const PILLARS = [
   {
     slug: "gouvernance",
     icon: Landmark,
-    title: "Gouvernance & Stratégie d'État",
-    desc: "Administration publique, éthique républicaine et leadership d'institution.",
+    title: "L'Executive Education de Haute Performance",
+    desc: "Programmes d'excellence (en ligne et présentiel) et séminaires d'immersion de 3 à 5 jours, validés par une direction scientifique universitaire rigoureuse.",
     img: pillarGouvernance,
+  },
+  {
+    slug: "technopolitiques",
+    icon: BarChart3,
+    title: "Les Enjeux Technopolitiques",
+    desc: "La politique et la technologie désormais indissociables. Science des données, SaaS et IA au cœur de la décision publique.",
+    img: pillarObservatoire,
   },
   {
     slug: "diplomatie",
     icon: Globe2,
-    title: "Diplomatie & Relations Internationales",
-    desc: "Géopolitique africaine, négociation multilatérale et soft power.",
+    title: "La Diplomatie d'Influence et de Réseau",
+    desc: "Lobbying d'intégrité et plaidoyer éthique comme leviers légitimes du développement. Mise en relation des décideurs et investisseurs.",
     img: pillarDiplomatie,
-  },
-  {
-    slug: "communication",
-    icon: Radio,
-    title: "Communication & Analyse Politique",
-    desc: "Stratégie de campagne, gestion des médias et décryptage de l'opinion.",
-    img: pillarCommunication,
-  },
-  {
-    slug: "observatoire",
-    icon: BarChart3,
-    title: "L'Observatoire Inpolitics",
-    desc: "Data analytics politique, baromètres d'opinion et cartographie électorale en temps réel.",
-    img: pillarObservatoire,
   },
 ];
 
@@ -266,7 +253,7 @@ function Pillars() {
               02 — Piliers de l'institut
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-anthracite leading-tight">
-              Quatre disciplines. Une seule exigence : l'excellence.
+              Trois piliers. Une seule exigence : l'excellence.
             </h2>
           </div>
           <a
@@ -277,7 +264,7 @@ function Pillars() {
           </a>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PILLARS.map((p, i) => {
             const Icon = p.icon;
             return (

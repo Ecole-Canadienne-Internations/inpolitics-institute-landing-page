@@ -41,6 +41,8 @@ export function Header() {
             <a href="tel:+33746440427" className="inline-flex items-center gap-1.5 hover:opacity-90 whitespace-nowrap"><Phone className="size-3.5" /> +33 7 46 44 04 27</a>
             <span className="opacity-60">|</span>
             <span className="inline-flex items-center gap-1.5 whitespace-nowrap"><MapPin className="size-3.5 shrink-0" /> Gigean · Montpellier Métropole</span>
+            <span className="opacity-60">|</span>
+            <span className="whitespace-nowrap">L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale.</span>
           </div>
           <div className="md:hidden flex items-center gap-2 font-medium w-full justify-center text-center">
             <Phone className="size-3.5 shrink-0" />
