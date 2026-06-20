@@ -33,40 +33,44 @@ export function Header() {
   return (
     <header className="fixed top-0 inset-x-0 z-50">
       {/* Red institutional top bar */}
-      <div className="bg-crimson text-white text-[12px]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-9 flex items-center justify-between gap-6">
-          <div className="hidden md:flex items-center gap-5 font-medium">
-            <a href="mailto:contact@inpoliticsinstitute.com" className="inline-flex items-center gap-1.5 hover:opacity-90"><Mail className="size-3.5" /> contact@inpoliticsinstitute.com</a>
+      <div className="bg-crimson text-white text-[11px] md:text-[12px]">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-10 min-h-9 py-2 flex items-center justify-between gap-3 md:gap-5 flex-wrap md:flex-nowrap">
+          <div className="hidden md:flex items-center gap-3 lg:gap-5 font-medium min-w-0 shrink">
+            <a href="mailto:contact@inpoliticsinstitute.com" className="inline-flex items-center gap-1.5 hover:opacity-90 whitespace-nowrap"><Mail className="size-3.5" /> contact@inpoliticsinstitute.com</a>
             <span className="opacity-60">|</span>
-            <a href="tel:+33746440427" className="inline-flex items-center gap-1.5 hover:opacity-90"><Phone className="size-3.5" /> +33 7 46 44 04 27</a>
+            <a href="tel:+33746440427" className="inline-flex items-center gap-1.5 hover:opacity-90 whitespace-nowrap"><Phone className="size-3.5" /> +33 7 46 44 04 27</a>
+            <span className="opacity-60">|</span>
+            <span className="inline-flex items-center gap-1.5 whitespace-nowrap"><MapPin className="size-3.5 shrink-0" /> Gigean · Montpellier Métropole</span>
           </div>
-          <div className="flex items-center gap-1.5 ml-auto truncate">
-            <MapPin className="size-3.5 shrink-0" />
-            <span className="truncate">L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale.</span>
+          <div className="md:hidden flex items-center gap-2 font-medium w-full justify-center text-center">
+            <Phone className="size-3.5 shrink-0" />
+            <a href="tel:+33746440427" className="hover:opacity-90">+33 7 46 44 04 27</a>
+            <span className="opacity-60">|</span>
+            <span>Gigean · Montpellier Métropole</span>
           </div>
         </div>
       </div>
 
       <div className={`transition-all ${scrolled || !isHome ? "glass-header" : "bg-white/85 backdrop-blur"}`}>
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-24 md:h-28 flex items-center justify-between gap-6">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-26 md:h-32 flex items-center justify-between gap-6">
           <Link to="/" className="flex items-center shrink-0" aria-label="InPolitics Institute">
-            <img src={logo} alt="InPolitics Institute" className="h-20 md:h-24 w-auto object-contain" />
+            <img src={logo} alt="InPolitics Institute" className="h-24 md:h-28 lg:h-30 w-auto object-contain" />
           </Link>
 
-          <nav className="hidden xl:flex items-center gap-1" onMouseLeave={() => setOpenIdx(null)}>
+          <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1" onMouseLeave={() => setOpenIdx(null)}>
             <Link
               to="/"
               onMouseEnter={() => setOpenIdx(null)}
-              className="px-3 py-2 text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors"
+              className="px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors whitespace-nowrap"
               activeOptions={{ exact: true }}
-              activeProps={{ className: "px-3 py-2 text-[13px] font-semibold text-crimson" }}
+              activeProps={{ className: "px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-semibold text-crimson whitespace-nowrap" }}
             >
               Accueil
             </Link>
             {NAV.map((menu, i) => (
               <div key={menu.label} className="relative" onMouseEnter={() => setOpenIdx(i)}>
                 <button
-                  className="flex items-center gap-1 px-3 py-2 text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors"
+                  className="flex items-center gap-1 px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors whitespace-nowrap"
                   aria-expanded={openIdx === i}
                 >
                   {menu.label}

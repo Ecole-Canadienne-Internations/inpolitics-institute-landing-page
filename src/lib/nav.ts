@@ -21,13 +21,22 @@ export const NAV: NavMenu[] = [
     ],
   },
   {
-    label: "Programmes Exécutifs",
+    label: "Programmes",
     items: [
       { to: "/programmes/seminaires-gigean", label: "Séminaires d'Immersion (Gigean)", desc: "Formations de 3 à 5 jours pour l'élite publique." },
       { to: "/programmes/plaidoyer-influence", label: "Plaidoyer & Stratégies d'Influence", desc: "Programme phare d'ingénierie d'influence." },
       { to: "/programmes/formations-afrique", label: "Formations Continues (Afrique)", desc: "Sessions de mise à niveau sur le continent." },
       { to: "/programmes/cursus-hybrides", label: "Cursus Hybrides & E-learning", desc: "Plateforme 24/7 — 80% en ligne, 20% présentiel." },
       { to: "/programmes/visites-techniques", label: "Visites Techniques", desc: "Smart Cities, eau, gestion des déchets." },
+    ],
+  },
+  {
+    label: "Executifs",
+    items: [
+      { to: "/pilier/gouvernance", label: "Gouvernance & Stratégie d'État", desc: "Administration publique, éthique républicaine et leadership institutionnel." },
+      { to: "/pilier/diplomatie", label: "Diplomatie & Relations Internationales", desc: "Géopolitique, négociation multilatérale et soft power." },
+      { to: "/pilier/communication", label: "Communication & Analyse Politique", desc: "Communication de crise, opinion et stratégie d'influence." },
+      { to: "/pilier/technopolitiques", label: "Techno Politiques", desc: "Data, SaaS territoriaux et IA pour la décision publique." },
     ],
   },
   {
@@ -41,6 +50,7 @@ export const NAV: NavMenu[] = [
   {
     label: "Gouvernance Digitale",
     items: [
+      { to: "/pilier/observatoire-politique", label: "Observatoire Politique", desc: "Baromètres, cartographie électorale et analyse territoriale." },
       { to: "/gouvernance-digitale/solutions-saas", label: "Solutions SaaS Municipales", desc: "Sécurisation numérique des taxes locales." },
       { to: "/gouvernance-digitale/ia-data-science", label: "IA & Data Science", desc: "Algorithmes prédictifs pour l'aménagement urbain." },
       { to: "/gouvernance-digitale/etudes-de-cas", label: "Études de Cas", desc: "Analyses réelles des municipalités partenaires." },

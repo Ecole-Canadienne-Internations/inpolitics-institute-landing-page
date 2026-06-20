@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as MotDuDirecteurRouteImport } from './routes/mot-du-directeur'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProgrammesVisitesTechniquesRouteImport } from './routes/programmes.visites-techniques'
 import { Route as ProgrammesSeminairesGigeanRouteImport } from './routes/programmes.seminaires-gigean'
@@ -39,6 +40,11 @@ import { Route as BiographieDieudonneToukeaRouteImport } from './routes/biograph
 import { Route as BiographieArnaudSighanoRouteImport } from './routes/biographie.arnaud-sighano'
 import { Route as BiographieAntoineObtelRouteImport } from './routes/biographie.antoine-obtel'
 
+const MotDuDirecteurRoute = MotDuDirecteurRouteImport.update({
+  id: '/mot-du-directeur',
+  path: '/mot-du-directeur',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -203,6 +209,7 @@ const BiographieAntoineObtelRoute = BiographieAntoineObtelRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/mot-du-directeur': typeof MotDuDirecteurRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
   '/biographie/dieudonne-toukea': typeof BiographieDieudonneToukeaRoute
@@ -234,6 +241,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/mot-du-directeur': typeof MotDuDirecteurRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
   '/biographie/dieudonne-toukea': typeof BiographieDieudonneToukeaRoute
@@ -266,6 +274,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/mot-du-directeur': typeof MotDuDirecteurRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
   '/biographie/dieudonne-toukea': typeof BiographieDieudonneToukeaRoute
@@ -299,6 +308,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/mot-du-directeur'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
     | '/biographie/dieudonne-toukea'
@@ -330,6 +340,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/mot-du-directeur'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
     | '/biographie/dieudonne-toukea'
@@ -361,6 +372,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/mot-du-directeur'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
     | '/biographie/dieudonne-toukea'
@@ -393,6 +405,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MotDuDirecteurRoute: typeof MotDuDirecteurRoute
   BiographieAntoineObtelRoute: typeof BiographieAntoineObtelRoute
   BiographieArnaudSighanoRoute: typeof BiographieArnaudSighanoRoute
   BiographieDieudonneToukeaRoute: typeof BiographieDieudonneToukeaRoute
@@ -425,6 +438,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/mot-du-directeur': {
+      id: '/mot-du-directeur'
+      path: '/mot-du-directeur'
+      fullPath: '/mot-du-directeur'
+      preLoaderRoute: typeof MotDuDirecteurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -633,6 +653,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MotDuDirecteurRoute: MotDuDirecteurRoute,
   BiographieAntoineObtelRoute: BiographieAntoineObtelRoute,
   BiographieArnaudSighanoRoute: BiographieArnaudSighanoRoute,
   BiographieDieudonneToukeaRoute: BiographieDieudonneToukeaRoute,

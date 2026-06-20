@@ -20,41 +20,60 @@ type Pillar = {
 
 const PILLARS: Record<string, Pillar> = {
   gouvernance: {
-    title: "Gouvernance & Stratégie d'État",
-    tagline: "Administration publique · Éthique républicaine · Leadership institutionnel",
+    title: "L'Executive Education de Haute Performance",
+    tagline: "Programmes d'excellence · Séminaires d'immersion · Direction scientifique rigoureuse",
     intro:
-      "Former les futurs hauts commis de l'État capables de penser, décider et conduire la machine publique avec rigueur, légalité et vision stratégique.",
+      "Des programmes d'excellence en ligne et en présentiel, conçus pour les décideurs publics, élus territoriaux, dirigeants privés et acteurs politiques souhaitant transformer leurs compétences en leviers d'action immédiats.",
     cover: pillarGouvernance,
     modules: [
-      "Théorie de l'État et droit constitutionnel comparé",
-      "Politiques publiques et évaluation de l'action gouvernementale",
-      "Éthique républicaine et lutte contre la corruption",
-      "Leadership institutionnel et conduite du changement",
-      "Diplomatie territoriale et gouvernance locale en Europe et Afrique",
+      "Gouvernance financière et pilotage stratégique",
+      "Droit OHADA et sécurité juridique des décisions",
+      "Partenariats public-privé et montage institutionnel",
+      "Technopolitique et intelligence artificielle appliquée à la gouvernance",
+      "Diplomatie territoriale, relations internationales et innovation urbanistique",
     ],
     outcomes: [
-      "Hauts fonctionnaires et directeurs d'administration",
-      "Conseillers en cabinet ministériel",
-      "Cadres d'institutions régionales (CEMAC, UA)",
+      "Décideurs publics mieux outillés pour l'action",
+      "Dirigeants capables d'arbitrer avec rigueur et impact",
+      "Cadres aptes à relier théorie, terrain et transformation territoriale",
+    ],
+  },
+  technopolitiques: {
+    title: "Les Enjeux Technopolitiques",
+    tagline: "Science des données · SaaS territoriaux · IA au cœur de la décision publique",
+    intro:
+      "La politique et la technologie sont désormais indissociables. Ce pilier outille les élus et institutions pour automatiser la transparence, réduire la déperdition financière et renforcer durablement les recettes propres des collectivités territoriales.",
+    cover: pillarObservatoire,
+    modules: [
+      "Science des données au service de la décision publique",
+      "Solutions logicielles SaaS de gestion territoriale et municipale",
+      "Automatisation de la transparence et traçabilité des flux",
+      "Pilotage des recettes locales par la donnée",
+      "IA appliquée à la performance territoriale",
+    ],
+    outcomes: [
+      "Collectivités plus transparentes et plus pilotées",
+      "Réduction de la déperdition financière locale",
+      "Doublement potentiel des recettes propres via l'outillage numérique",
     ],
   },
   diplomatie: {
-    title: "Diplomatie & Relations Internationales",
-    tagline: "Géopolitique africaine · Négociation multilatérale · Soft power",
+    title: "La Diplomatie d'Influence et de Réseau",
+    tagline: "Lobbying d'intégrité · Plaidoyer éthique · Connexions stratégiques",
     intro:
-      "Préparer les diplomates et négociateurs de demain à défendre les intérêts des territoires européens et africains sur la scène mondiale.",
+      "Nous faisons du lobbying d'intégrité et du plaidoyer éthique des leviers légitimes du développement, en reliant décideurs publics, investisseurs privés et réseaux d'influence pour orienter les décisions stratégiques et capter les financements internationaux.",
     cover: pillarDiplomatie1,
     modules: [
-      "Géopolitique européenne, africaine et zones d'influence",
-      "Droit international public et organisations multilatérales",
-      "Techniques de négociation diplomatique avancées",
-      "Économie politique internationale et accords commerciaux",
-      "Diplomatie culturelle et soft power",
+      "Lobbying d'intégrité et plaidoyer éthique",
+      "Ingénierie de mise en relation et cartographie des acteurs",
+      "Mobilisation des investisseurs et partenaires institutionnels",
+      "Stratégies d'influence internationale et soft power",
+      "Diaspo Back-Home et sécurisation du retour des compétences et capitaux",
     ],
     outcomes: [
-      "Diplomates et attachés d'ambassade",
-      "Négociateurs en organisations internationales",
-      "Conseillers en affaires publiques internationales",
+      "Accès facilité aux réseaux d'influence et de décision",
+      "Structuration de partenariats et financements internationaux",
+      "Activation de la diaspora au service des projets territoriaux",
     ],
     extras: [pillarDiplomatie2],
   },
@@ -77,23 +96,23 @@ const PILLARS: Record<string, Pillar> = {
       "Porte-parole et conseillers en image",
     ],
   },
-  observatoire: {
-    title: "L'Observatoire Inpolitics",
-    tagline: "Data analytics politique · Baromètres d'opinion · Cartographie électorale",
+  "observatoire-politique": {
+    title: "Observatoire Politique",
+    tagline: "Baromètres d'opinion · Cartographie électorale · Analyse territoriale",
     intro:
-      "Infrastructure de pointe d'analyse en temps réel des dynamiques politiques, sociologiques et territoriales européennes et africaines. Rapports stratégiques destinés aux collectivités, institutions et entreprises.",
+      "Infrastructure d'analyse en temps réel des dynamiques politiques, sociologiques et territoriales, destinée aux institutions, collectivités, entreprises et acteurs publics en quête de lecture stratégique fiable.",
     cover: pillarObservatoire,
     modules: [
-      "Méthodologie d'enquête et échantillonnage par quotas",
-      "Statistiques appliquées et modélisation prédictive",
-      "Cartographie électorale et SIG politique",
+      "Méthodologie d'enquête et échantillonnage",
+      "Baromètres d'opinion et lecture des perceptions citoyennes",
+      "Cartographie électorale et dynamiques territoriales",
       "Sociologie du vote et fractures régionales",
       "Visualisation de données et restitution stratégique",
     ],
     outcomes: [
-      "Analystes Data politique et électoraux",
-      "Chercheurs en think tanks et observatoires",
-      "Consultants quantitatifs pour partis et institutions",
+      "Analystes politiques et territoriaux",
+      "Think tanks, collectivités et institutions mieux informés",
+      "Décisions publiques appuyées sur une lecture fine du terrain",
     ],
   },
 };
@@ -129,11 +148,7 @@ export const Route = createFileRoute("/pilier/$slug")({
     const p = PILLARS[params.slug];
     return {
       meta: [
-        {
-          title: p
-            ? `${p.title} — Inpolitics Institute`
-            : "Pilier — Inpolitics Institute",
-        },
+        { title: p ? `${p.title} — InPolitics Institute` : "Pilier — InPolitics Institute" },
         { name: "description", content: p?.intro ?? "" },
       ],
     };
@@ -146,13 +161,9 @@ function PillarPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main>
-        {/* Hero */}
         <section className="relative pt-32 md:pt-40 pb-16">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-crimson transition mb-10"
-            >
+            <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-crimson transition mb-10">
               <ArrowLeft className="size-4" /> Retour à l'accueil
             </Link>
             <div className="grid lg:grid-cols-12 gap-12 items-end">
@@ -169,18 +180,13 @@ function PillarPage() {
               </div>
               <div className="lg:col-span-5">
                 <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl">
-                  <img
-                    src={pillar.cover}
-                    alt={pillar.title}
-                    className="h-full w-full object-cover"
-                  />
+                  <img src={pillar.cover} alt={pillar.title} className="h-full w-full object-cover" />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Modules */}
         <section className="py-20 md:py-28 bg-secondary/40 border-y border-border">
           <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
@@ -188,18 +194,13 @@ function PillarPage() {
                 Programme
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-anthracite leading-tight">
-                Les modules clés du cursus.
+                Les modules clés du pilier.
               </h2>
             </div>
             <div className="lg:col-span-8 space-y-3">
               {pillar.modules.map((m, i) => (
-                <div
-                  key={m}
-                  className="flex items-start gap-5 bg-background border border-border rounded-2xl p-5 md:p-6 hover:border-crimson/40 transition"
-                >
-                  <span className="text-xs font-mono text-crimson font-bold mt-1">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                <div key={m} className="flex items-start gap-5 bg-background border border-border rounded-2xl p-5 md:p-6 hover:border-crimson/40 transition">
+                  <span className="text-xs font-mono text-crimson font-bold mt-1">{String(i + 1).padStart(2, "0")}</span>
                   <p className="text-anthracite font-medium">{m}</p>
                 </div>
               ))}
@@ -207,21 +208,17 @@ function PillarPage() {
           </div>
         </section>
 
-        {/* Outcomes */}
         <section className="py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-4">
-              Débouchés
+              Impact
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-anthracite leading-tight mb-12 max-w-2xl">
-              Vers quelles fonctions ce cursus mène-t-il ?
+              Ce que ce pilier permet de produire.
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {pillar.outcomes.map((o) => (
-                <div
-                  key={o}
-                  className="bg-secondary/50 border border-border rounded-3xl p-7"
-                >
+                <div key={o} className="bg-secondary/50 border border-border rounded-3xl p-7">
                   <CheckCircle2 className="size-7 text-crimson mb-4" strokeWidth={1.6} />
                   <p className="text-anthracite font-semibold leading-snug">{o}</p>
                 </div>
@@ -230,23 +227,14 @@ function PillarPage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="pb-24">
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
             <div className="bg-anthracite text-white rounded-[2rem] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold leading-tight">
-                  Prêt à intégrer ce cursus ?
-                </h3>
-                <p className="mt-2 text-white/70">
-                  Échangez avec un conseiller d'orientation Inpolitics.
-                </p>
+                <h3 className="text-2xl md:text-3xl font-bold leading-tight">Prêt à intégrer ce pilier ?</h3>
+                <p className="mt-2 text-white/70">Échangez avec un conseiller d'orientation InPolitics.</p>
               </div>
-              <Link
-                to="/"
-                hash="contact"
-                className="btn-crimson inline-flex items-center gap-2 px-7 h-14 rounded-full font-semibold text-sm"
-              >
+              <Link to="/" hash="contact" className="btn-crimson inline-flex items-center gap-2 px-7 h-14 rounded-full font-semibold text-sm">
                 Contacter l'institut <ArrowRight className="size-4" />
               </Link>
             </div>

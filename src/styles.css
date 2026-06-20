@@ -145,21 +145,35 @@
     transform: translateY(-1px);
   }
 
-  .hero-campus {
-    background-image:
-      linear-gradient(90deg, white 0%, white 47%, color-mix(in oklab, white 74%, transparent) 59%, transparent 76%),
-      var(--hero-campus-image);
-    background-repeat: no-repeat, no-repeat;
-    background-position: center, right -1rem center;
-    background-size: cover, min(60vw, 850px) auto;
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
   }
-
-  @media (max-width: 1023px) {
-    .hero-campus {
-      background-image: linear-gradient(180deg, color-mix(in oklab, white 82%, transparent), white 58%), var(--hero-campus-image);
-      background-position: center, center top 8rem;
-      background-size: cover, 105vw auto;
-    }
+  .hero-bg-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: heroFade 24s infinite;
+  }
+  .hero-bg-slide:nth-child(1) { animation-delay: 0s; }
+  .hero-bg-slide:nth-child(2) { animation-delay: 6s; }
+  .hero-bg-slide:nth-child(3) { animation-delay: 12s; }
+  .hero-bg-slide:nth-child(4) { animation-delay: 18s; }
+  @keyframes heroFade {
+    0%   { opacity: 0; }
+    4%   { opacity: 1; }
+    25%  { opacity: 1; }
+    29%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  .hero-bg-veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.78) 50%, rgba(255,255,255,0.92) 100%);
   }
 
   .pillar-card {
