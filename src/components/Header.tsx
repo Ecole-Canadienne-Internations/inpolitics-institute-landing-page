@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, Mail, Phone, MapPin } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import logo from "@/assets/logo-inpolitics.jpg";
+import logo from "@/assets/inpolitics-insititute-new-logo.png";
 import { NAV } from "@/lib/nav";
 import { useContactModal } from "@/components/ContactModal";
 

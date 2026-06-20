@@ -20,9 +20,11 @@ import { Header } from "@/components/Header";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import heroBg from "@/assets/hero-bg-collage.png";
 import teamSighano from "@/assets/team-sighano.png";
+import arnaudProfile from "@/assets/arnaud-sighano-profile-picture.jpeg";
 import teamObtel from "@/assets/team-obtel.jpeg";
 import teamBoumediene from "@/assets/team-boumediene.jpeg";
-import logo from "@/assets/logo-inpolitics.jpg";
+import teamToukea from "@/assets/Dr-Dieudonné-Toukea.jpeg";
+import logo from "@/assets/inpolitics-insititute-new-logo.png";
 import pillarGouvernance from "@/assets/pillar-gouvernance.jpg";
 import pillarDiplomatie from "@/assets/pillar-diplomatie-1.jpg";
 import pillarCommunication from "@/assets/pillar-communication.jpg";
@@ -75,7 +77,7 @@ function TeamFounders() {
       slug: "arnaud-sighano",
       name: "Arnaud SIGHANO",
       role: "Fondateur & Directeur Associé",
-      img: teamSighano,
+      img: arnaudProfile,
     },
     {
       slug: "antoine-obtel",
@@ -89,6 +91,12 @@ function TeamFounders() {
       role: "Co-fondateur — Architecture & Urbanisme",
       img: teamBoumediene,
     },
+    {
+      slug: "dieudonne-toukea",
+      name: "Dr Dieudonné TOUKEA",
+      role: "Directeur Afrique",
+      img: teamToukea,
+    },
   ];
   return (
     <section id="equipe" className="py-24 md:py-32">
@@ -101,10 +109,10 @@ function TeamFounders() {
             La Direction de l'Institut
           </h2>
           <p className="mt-5 text-muted-foreground">
-            Trois fondateurs, trois disciplines, une même exigence républicaine.
+            Une équipe pluridisciplinaire unie par une même exigence d'excellence.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {team.map((m) => (
             <div key={m.slug} className="flex flex-col items-center text-center">
               <div className="size-44 rounded-full overflow-hidden ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)] bg-white">
@@ -134,7 +142,8 @@ function BioLink({ slug }: { slug: string }) {
   const inner = (<>En savoir plus <ArrowRight className="size-3.5" /></>);
   if (slug === "arnaud-sighano") return <Link to="/biographie/arnaud-sighano" className={cls}>{inner}</Link>;
   if (slug === "antoine-obtel") return <Link to="/biographie/antoine-obtel" className={cls}>{inner}</Link>;
-  return <Link to="/biographie/hacene-boumediene" className={cls}>{inner}</Link>;
+  if (slug === "hacene-boumediene") return <Link to="/biographie/hacene-boumediene" className={cls}>{inner}</Link>;
+  return <Link to="/biographie/dieudonne-toukea" className={cls}>{inner}</Link>;
 }
 
 
@@ -462,9 +471,7 @@ function Founder() {
           </div>
           <Quote className="size-8 text-crimson mb-4" strokeWidth={1.5} />
           <blockquote className="font-serif italic text-2xl md:text-[32px] leading-[1.35] text-anthracite">
-            « Diriger est une science qui s'apprend. Notre mission est d'armer
-            les décideurs publics et la diaspora des meilleurs outils
-            d'analyse pour servir leurs territoires avec rigueur, vision et intégrité. »
+            « Bienvenue sur la plateforme officielle d'InPolitics Institute. À l'ère des mutations géopolitiques majeures et de l'accélération numérique, la gestion des affaires publiques et le développement économique exigent des paradigmes entièrement renouvelés. »
           </blockquote>
           <div className="mt-8 flex items-center gap-4">
             <div className="h-px w-12 bg-anthracite/30" />

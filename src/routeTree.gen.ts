@@ -35,6 +35,7 @@ import { Route as DiasporaProgrammeLandingRouteImport } from './routes/diaspora.
 import { Route as DiasporaConnectRouteImport } from './routes/diaspora.connect'
 import { Route as DiasporaConciergerieRouteImport } from './routes/diaspora.conciergerie'
 import { Route as BiographieHaceneBoumedieneRouteImport } from './routes/biographie.hacene-boumediene'
+import { Route as BiographieDieudonneToukeaRouteImport } from './routes/biographie.dieudonne-toukea'
 import { Route as BiographieArnaudSighanoRouteImport } from './routes/biographie.arnaud-sighano'
 import { Route as BiographieAntoineObtelRouteImport } from './routes/biographie.antoine-obtel'
 
@@ -183,6 +184,12 @@ const BiographieHaceneBoumedieneRoute =
     path: '/biographie/hacene-boumediene',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BiographieDieudonneToukeaRoute =
+  BiographieDieudonneToukeaRouteImport.update({
+    id: '/biographie/dieudonne-toukea',
+    path: '/biographie/dieudonne-toukea',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BiographieArnaudSighanoRoute = BiographieArnaudSighanoRouteImport.update({
   id: '/biographie/arnaud-sighano',
   path: '/biographie/arnaud-sighano',
@@ -198,6 +205,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
+  '/biographie/dieudonne-toukea': typeof BiographieDieudonneToukeaRoute
   '/biographie/hacene-boumediene': typeof BiographieHaceneBoumedieneRoute
   '/diaspora/conciergerie': typeof DiasporaConciergerieRoute
   '/diaspora/connect': typeof DiasporaConnectRoute
@@ -228,6 +236,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
+  '/biographie/dieudonne-toukea': typeof BiographieDieudonneToukeaRoute
   '/biographie/hacene-boumediene': typeof BiographieHaceneBoumedieneRoute
   '/diaspora/conciergerie': typeof DiasporaConciergerieRoute
   '/diaspora/connect': typeof DiasporaConnectRoute
@@ -259,6 +268,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
+  '/biographie/dieudonne-toukea': typeof BiographieDieudonneToukeaRoute
   '/biographie/hacene-boumediene': typeof BiographieHaceneBoumedieneRoute
   '/diaspora/conciergerie': typeof DiasporaConciergerieRoute
   '/diaspora/connect': typeof DiasporaConnectRoute
@@ -291,6 +301,7 @@ export interface FileRouteTypes {
     | '/'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
+    | '/biographie/dieudonne-toukea'
     | '/biographie/hacene-boumediene'
     | '/diaspora/conciergerie'
     | '/diaspora/connect'
@@ -321,6 +332,7 @@ export interface FileRouteTypes {
     | '/'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
+    | '/biographie/dieudonne-toukea'
     | '/biographie/hacene-boumediene'
     | '/diaspora/conciergerie'
     | '/diaspora/connect'
@@ -351,6 +363,7 @@ export interface FileRouteTypes {
     | '/'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
+    | '/biographie/dieudonne-toukea'
     | '/biographie/hacene-boumediene'
     | '/diaspora/conciergerie'
     | '/diaspora/connect'
@@ -382,6 +395,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BiographieAntoineObtelRoute: typeof BiographieAntoineObtelRoute
   BiographieArnaudSighanoRoute: typeof BiographieArnaudSighanoRoute
+  BiographieDieudonneToukeaRoute: typeof BiographieDieudonneToukeaRoute
   BiographieHaceneBoumedieneRoute: typeof BiographieHaceneBoumedieneRoute
   DiasporaConciergerieRoute: typeof DiasporaConciergerieRoute
   DiasporaConnectRoute: typeof DiasporaConnectRoute
@@ -593,6 +607,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BiographieHaceneBoumedieneRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/biographie/dieudonne-toukea': {
+      id: '/biographie/dieudonne-toukea'
+      path: '/biographie/dieudonne-toukea'
+      fullPath: '/biographie/dieudonne-toukea'
+      preLoaderRoute: typeof BiographieDieudonneToukeaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/biographie/arnaud-sighano': {
       id: '/biographie/arnaud-sighano'
       path: '/biographie/arnaud-sighano'
@@ -614,6 +635,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BiographieAntoineObtelRoute: BiographieAntoineObtelRoute,
   BiographieArnaudSighanoRoute: BiographieArnaudSighanoRoute,
+  BiographieDieudonneToukeaRoute: BiographieDieudonneToukeaRoute,
   BiographieHaceneBoumedieneRoute: BiographieHaceneBoumedieneRoute,
   DiasporaConciergerieRoute: DiasporaConciergerieRoute,
   DiasporaConnectRoute: DiasporaConnectRoute,
@@ -644,3 +666,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
