@@ -199,7 +199,7 @@ function About() {
             01 — Qui sommes-nous
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-anthracite leading-tight">
-            Un think tank pédagogique au service de la Nation.
+            Un think tank pédagogique au service des Nations.
           </h2>
         </div>
         <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
