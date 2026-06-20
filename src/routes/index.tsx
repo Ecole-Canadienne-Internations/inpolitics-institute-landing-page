@@ -18,8 +18,8 @@ import {
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import heroBg from "@/assets/hero-bg-collage.png";
-import teamSighano from "@/assets/team-sighano.png";
+import heroBg from "@/assets/hero-bg-collage.jpeg";
+import arnaudDirectorImage from "@/assets/arnaud-sighano-image.jpeg";
 import arnaudProfile from "@/assets/arnaud-sighano-profile-picture.jpeg";
 import teamObtel from "@/assets/team-obtel.jpeg";
 import teamBoumediene from "@/assets/team-boumediene.jpeg";
@@ -114,16 +114,13 @@ function TeamFounders() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {team.map((m) => (
-            <div key={m.slug} className="flex flex-col items-center text-center">
-              <div className="size-44 rounded-full overflow-hidden ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)] bg-white">
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  className="w-full h-full object-cover object-top"
-                  style={{ transform: "scale(0.8)" }}
-                  loading="lazy"
-                />
-              </div>
+            <div key={m.slug} className="flex flex-col justify-between h-full items-center text-center">
+              <img
+                src={m.img}
+                alt={m.name}
+                className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-center mx-auto aspect-square ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]"
+                loading="lazy"
+              />
               <div className="mt-6">
                 <div className="text-lg font-bold text-anthracite">{m.name}</div>
                 <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">{m.role}</div>
@@ -153,10 +150,9 @@ function BioLink({ slug }: { slug: string }) {
 /* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section
-      className="hero-campus relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden bg-white"
-      style={{ "--hero-campus-image": `url(${heroBg})` } as React.CSSProperties}
-    >
+    <section className="relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/75 to-white/90" />
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.22em] uppercase mb-7">
@@ -458,7 +454,7 @@ function Founder() {
           <div className="relative aspect-[4/5] max-w-sm">
             <div className="absolute -top-3 -right-3 left-10 bottom-10 rounded-[2rem] border border-crimson/40" />
             <img
-              src={teamSighano}
+              src={arnaudDirectorImage}
               alt="Arnaud Sighano, Directeur d'Inpolitics Institute"
               loading="lazy"
               className="relative h-full w-full object-cover rounded-[2rem] shadow-2xl"

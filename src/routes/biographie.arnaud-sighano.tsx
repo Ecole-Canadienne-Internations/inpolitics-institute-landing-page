@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Mail } from "lucide-react";
 import { Header } from "@/components/Header";
 import { useContactModal } from "@/components/ContactModal";
-import arnaudSighanoImage from "@/assets/arnaud-grey.png.asset.json";
+import arnaudSighanoImage from "@/assets/arnaud-sighano-image.jpeg";
 
 const SITE = "https://inpoliticsinstitute.com";
 const BIO_PARAGRAPHS: string[] = [
@@ -54,7 +54,7 @@ function BioPage() {
             </div>
             <div className="md:col-span-5 order-1 md:order-2 md:sticky md:top-40">
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-white">
-                <img src={arnaudSighanoImage.url} alt="Arnaud SIGHANO" className="h-full w-full object-cover" />
+                <img src={arnaudSighanoImage} alt="Arnaud SIGHANO" className="h-full w-full object-cover" />
               </div>
             </div>
           </div>
