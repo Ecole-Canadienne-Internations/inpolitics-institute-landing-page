@@ -110,9 +110,28 @@ function TeamFounders() {
             Une équipe pluridisciplinaire unie par une même exigence d'excellence.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {team.map((m) => (
-            <div key={m.slug} className="flex flex-col justify-between h-full items-center text-center">
+
+        <div className="flex flex-wrap justify-center gap-10">
+          {team.slice(0, 3).map((m) => (
+            <div key={m.slug} className="flex flex-col justify-between h-full items-center text-center w-[250px]">
+              <img
+                src={m.img}
+                alt={m.name}
+                className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-center mx-auto aspect-square ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]"
+                loading="lazy"
+              />
+              <div className="mt-6">
+                <div className="text-lg font-bold text-anthracite">{m.name}</div>
+                <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">{m.role}</div>
+              </div>
+              <BioLink slug={m.slug} />
+            </div>
+          ))}
+        </div>
+
+        <div className="flex justify-center mt-10">
+          {team.slice(3).map((m) => (
+            <div key={m.slug} className="flex flex-col justify-between h-full items-center text-center w-[250px]">
               <img
                 src={m.img}
                 alt={m.name}
