@@ -41,7 +41,7 @@ function BioPage() {
                 Antoine OBTEL
               </h1>
               <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Directeur Associé. Étudiant-chercheur en Histoire et Relations Internationales. Réserviste du Quai d'Orsay.
+                Directeur Associé. Chercheur en Histoire et Relations Internationales. Réserviste du Quai d'Orsay.
               </p>
               <div className="mt-10 space-y-5 text-[17px] leading-[1.8] text-foreground/85">
                 {BIO.split(/(?<=\. )(?=[A-ZÉÈÀ])/).map((p, i) => <p key={i}>{p}</p>)}
