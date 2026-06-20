@@ -465,6 +465,7 @@ function Founder() {
             />
           </div>
         </div>
+        
         <div className="md:col-span-7">
           <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-5">
             06 — Mot du Directeur
