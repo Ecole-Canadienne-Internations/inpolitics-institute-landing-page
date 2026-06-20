@@ -4,11 +4,8 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
 
-import appCss from "../styles.css?url";
 import { ContactProvider } from "@/components/ContactModal";
 
 function NotFoundComponent() {
@@ -69,51 +66,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "InPolitics Institute — Campus Europe à Gigean" },
-      { name: "description", content: "InPolitics Institute — Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'excellence des décideurs publics, diplomatie territoriale, lobbying d'intégrité et gouvernance digitale." },
-      { name: "author", content: "InPolitics Institute" },
-      { name: "theme-color", content: "#DC2626" },
-      { property: "og:site_name", content: "InPolitics Institute" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { property: "og:title", content: "InPolitics Institute — Campus Europe à Gigean" },
-      { name: "twitter:title", content: "InPolitics Institute — Campus Europe à Gigean" },
-      { property: "og:description", content: "InPolitics Institute — Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'excellence des décideurs publics, diplomatie territoriale, lobbying d'intégrité et gouvernance digitale." },
-      { name: "twitter:description", content: "InPolitics Institute — Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'excellence des décideurs publics, diplomatie territoriale, lobbying d'intégrité et gouvernance digitale." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ba04b5ba-1f89-4d99-bd1f-499a3743b5e2/id-preview-1aed82cf--420836d1-978d-42a7-b6c1-c1a3617ca13b.lovable.app-1781310438448.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ba04b5ba-1f89-4d99-bd1f-499a3743b5e2/id-preview-1aed82cf--420836d1-978d-42a7-b6c1-c1a3617ca13b.lovable.app-1781310438448.png" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96x96.png" },
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
-      { rel: "shortcut icon", href: "/favicon-96x96.png" },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="fr">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
