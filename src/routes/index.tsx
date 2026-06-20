@@ -14,9 +14,12 @@ import {
   Siren,
   Plus,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import hero1 from "@/assets/hero-1.png";
+import hero2 from "@/assets/hero-2.png";
+import hero3 from "@/assets/hero-3.png";
 import heroBg from "@/assets/hero-bg-collage.jpeg";
 import arnaudDirectorImage from "@/assets/arnaud-sighano-image.jpeg";
 import arnaudProfile from "@/assets/arnaud-sighano-profile-picture.jpeg";
@@ -165,11 +168,29 @@ function BioLink({ slug }: { slug: string }) {
 
 
 /* ---------- HERO ---------- */
+const HERO_IMAGES = [heroBg, hero1, hero2, hero3];
+
 function Hero() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setCurrent((p) => (p + 1) % HERO_IMAGES.length), 5000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative pt-40 md:pt-48 pb-20 md:pb-28 overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }} />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/75 to-white/90" />
+      {HERO_IMAGES.map((img, i) => (
+        <div
+          key={i}
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
+          style={{
+            backgroundImage: `url(${img})`,
+            opacity: i === current ? 1 : 0,
+          }}
+        />
+      ))}
+      <div className="absolute inset-0 bg-white/50" />
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="max-w-2xl">
             <h1 className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.05] font-bold text-anthracite">

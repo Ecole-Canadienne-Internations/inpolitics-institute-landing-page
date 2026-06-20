@@ -6,10 +6,10 @@ import arnaudSighanoImage from "@/assets/arnaud-sighano-image.jpeg";
 
 const SITE = "https://inpoliticsinstitute.com";
 const BIO_PARAGRAPHS: string[] = [
-  "Arnaud SIGHANO est un acteur reconnu de la diplomatie d’influence et des relations internationales. Fondateur et Directeur Associé d’inPolitics Institute, il accompagne les États, acteurs politiques et décideurs publics dans l’élaboration de stratégies d’influence internationale.",
-  "Son approche s’appuie sur les leviers du soft power, avec une expertise singulière en Sport Diplomatie. Diplômé de l’Université de Picardie Jules Verne et formé à la diplomatie à l’Université Jean Moulin Lyon 3, il allie rigueur académique et action de terrain.",
-  "Engagé pour le leadership africain, Arnaud est alumni du programme créé en 2010 par l'ancien Président Américain Barack Obama, le programme Young African Leaders Initiative (YALI). En 2021, Arnaud a fondé le YALI Sport Africa, réseau thématique dédié au sport comme vecteur d’influence et de développement.",
-  "Éducateur dans l’âme, il est également Directeur de l’École canadienne Inter-Nations.",
+  "Arnaud SIGHANO est un acteur reconnu de la diplomatie d\u2019influence et des relations internationales. Fondateur et Directeur Associ\u00e9 d\u2019inPolitics Institute, il accompagne les \u00c9tats, acteurs politiques et d\u00e9cideurs publics dans l\u2019\u00e9laboration de strat\u00e9gies d\u2019influence internationale.",
+  "Son approche s\u2019appuie sur les leviers du soft power, avec une expertise singuli\u00e8re en Sport Diplomatie. Dipl\u00f4m\u00e9 MIAGE de l\u2019Universit\u00e9 Picardie Jules Verne d\u2019Amiens et form\u00e9 en diplomatie a l\u2019universit\u00e9 Jean Moulin Lyon 3, il combine la Technologie et Politique dans les questions de relations internationales en alliant rigueur acad\u00e9mique et action de terrain.",
+  "Engag\u00e9 pour le leadership africain, Arnaud est alumni du programme cr\u00e9\u00e9 en 2010 par l'ancien Pr\u00e9sident Am\u00e9ricain Barack Obama, le programme Young African Leaders Initiative (YALI). En 2021 Arnaud \u00e0 fond\u00e9 le YALI Sport Africa, r\u00e9seau th\u00e9matique d\u00e9di\u00e9 au sport comme vecteur d\u2019influence et de d\u00e9veloppement.",
+  "\u00c9ducateur dans l\u2019\u00e2me, il est \u00e9galement Directeur de l\u2019\u00c9cole canadienne Inter-Nations.",
 ];
 
 export const Route = createFileRoute("/biographie/arnaud-sighano")({
