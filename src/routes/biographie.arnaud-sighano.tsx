@@ -9,7 +9,7 @@ const BIO_PARAGRAPHS: string[] = [
   "Arnaud SIGHANO est un acteur reconnu de la diplomatie d\u2019influence et des relations internationales. Fondateur et Directeur Associ\u00e9 d\u2019inPolitics Institute, il accompagne les \u00c9tats, acteurs politiques et d\u00e9cideurs publics dans l\u2019\u00e9laboration de strat\u00e9gies d\u2019influence internationale.",
   "Son approche s\u2019appuie sur les leviers du soft power, avec une expertise singuli\u00e8re en Sport Diplomatie. Dipl\u00f4m\u00e9 MIAGE de l\u2019Universit\u00e9 Picardie Jules Verne d\u2019Amiens et form\u00e9 en diplomatie a l\u2019universit\u00e9 Jean Moulin Lyon 3, il combine la Technologie et Politique dans les questions de relations internationales en alliant rigueur acad\u00e9mique et action de terrain.",
   "Engag\u00e9 pour le leadership africain, Arnaud est alumni du programme cr\u00e9\u00e9 en 2010 par l'ancien Pr\u00e9sident Am\u00e9ricain Barack Obama, le programme Young African Leaders Initiative (YALI). En 2021 Arnaud \u00e0 fond\u00e9 le YALI Sport Africa, r\u00e9seau th\u00e9matique d\u00e9di\u00e9 au sport comme vecteur d\u2019influence et de d\u00e9veloppement.",
-  "\u00c9ducateur dans l\u2019\u00e2me, il est \u00e9galement Directeur de l\u2019\u00c9cole canadienne Inter-Nations.",
+  "\u00c9ducateur dans l\u2019\u00e2me, Il est \u00e9galement Directeur de L\u2019\u00c9cole canadienne Inter-Nations, une \u00e9cole Inspect\u00e9e par le minist\u00e8re de l'\u00e9ducation de l'Ontario au Canada.",
 ];
 
 export const Route = createFileRoute("/biographie/arnaud-sighano")({
