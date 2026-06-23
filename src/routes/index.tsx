@@ -518,7 +518,7 @@ function Founder() {
 const FAQS = [
   {
     q: "Quels sont les débouchés professionnels après un cursus à l'Inpolitics Institute ?",
-    a: "Nos diplômés intègrent des fonctions de premier plan : hauts fonctionnaires, conseillers en cabinet ministériel, diplomates, directeurs d'administrations publiques et d'institutions régionales (CEMAC, Union Africaine), directeurs des affaires publiques en entreprise, consultants en stratégie de crise, analystes politiques seniors et spécialistes en Data Analytics politique.",
+    a: "Nos diplômés intègrent des fonctions de premier plan : hauts fonctionnaires, conseillers en cabinet ministériel, diplomates, directeurs d'administrations publiques et d'institutions régionales, directeurs des affaires publiques en entreprise, consultants en stratégie de crise, analystes politiques seniors et spécialistes en Data Analytics politique.",
   },
   {
     q: "Comment l'Observatoire Inpolitics garantit-il la neutralité, l'anonymat et la précision de ses données ?",
