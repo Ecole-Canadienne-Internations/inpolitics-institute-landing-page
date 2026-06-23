@@ -39,6 +39,8 @@ import { Route as BiographieHaceneBoumedieneRouteImport } from './routes/biograp
 import { Route as BiographieDieudonneToukeaRouteImport } from './routes/biographie.dieudonne-toukea'
 import { Route as BiographieArnaudSighanoRouteImport } from './routes/biographie.arnaud-sighano'
 import { Route as BiographieAntoineObtelRouteImport } from './routes/biographie.antoine-obtel'
+import { Route as SchoolsOfPoliticsVisionMissionRouteImport } from './routes/schools-of-politics.vision-mission'
+import { Route as SchoolsOfPoliticsApplyRouteImport } from './routes/schools-of-politics.apply'
 
 const MotDuDirecteurRoute = MotDuDirecteurRouteImport.update({
   id: '/mot-du-directeur',
@@ -207,6 +209,20 @@ const BiographieAntoineObtelRoute = BiographieAntoineObtelRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 
+const SchoolsOfPoliticsVisionMissionRoute =
+  SchoolsOfPoliticsVisionMissionRouteImport.update({
+    id: '/schools-of-politics/vision-mission',
+    path: '/schools-of-politics/vision-mission',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+
+const SchoolsOfPoliticsApplyRoute =
+  SchoolsOfPoliticsApplyRouteImport.update({
+    id: '/schools-of-politics/apply',
+    path: '/schools-of-politics/apply',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/mot-du-directeur': typeof MotDuDirecteurRoute
@@ -238,6 +254,8 @@ export interface FileRoutesByFullPath {
   '/programmes/plaidoyer-influence': typeof ProgrammesPlaidoyerInfluenceRoute
   '/programmes/seminaires-gigean': typeof ProgrammesSeminairesGigeanRoute
   '/programmes/visites-techniques': typeof ProgrammesVisitesTechniquesRoute
+  '/schools-of-politics/apply': typeof SchoolsOfPoliticsApplyRoute
+  '/schools-of-politics/vision-mission': typeof SchoolsOfPoliticsVisionMissionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -270,6 +288,8 @@ export interface FileRoutesByTo {
   '/programmes/plaidoyer-influence': typeof ProgrammesPlaidoyerInfluenceRoute
   '/programmes/seminaires-gigean': typeof ProgrammesSeminairesGigeanRoute
   '/programmes/visites-techniques': typeof ProgrammesVisitesTechniquesRoute
+  '/schools-of-politics/apply': typeof SchoolsOfPoliticsApplyRoute
+  '/schools-of-politics/vision-mission': typeof SchoolsOfPoliticsVisionMissionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -303,6 +323,8 @@ export interface FileRoutesById {
   '/programmes/plaidoyer-influence': typeof ProgrammesPlaidoyerInfluenceRoute
   '/programmes/seminaires-gigean': typeof ProgrammesSeminairesGigeanRoute
   '/programmes/visites-techniques': typeof ProgrammesVisitesTechniquesRoute
+  '/schools-of-politics/apply': typeof SchoolsOfPoliticsApplyRoute
+  '/schools-of-politics/vision-mission': typeof SchoolsOfPoliticsVisionMissionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -337,6 +359,8 @@ export interface FileRouteTypes {
     | '/programmes/plaidoyer-influence'
     | '/programmes/seminaires-gigean'
     | '/programmes/visites-techniques'
+    | '/schools-of-politics/apply'
+    | '/schools-of-politics/vision-mission'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -369,6 +393,8 @@ export interface FileRouteTypes {
     | '/programmes/plaidoyer-influence'
     | '/programmes/seminaires-gigean'
     | '/programmes/visites-techniques'
+    | '/schools-of-politics/apply'
+    | '/schools-of-politics/vision-mission'
   id:
     | '__root__'
     | '/'
@@ -401,6 +427,8 @@ export interface FileRouteTypes {
     | '/programmes/plaidoyer-influence'
     | '/programmes/seminaires-gigean'
     | '/programmes/visites-techniques'
+    | '/schools-of-politics/apply'
+    | '/schools-of-politics/vision-mission'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -434,6 +462,8 @@ export interface RootRouteChildren {
   ProgrammesPlaidoyerInfluenceRoute: typeof ProgrammesPlaidoyerInfluenceRoute
   ProgrammesSeminairesGigeanRoute: typeof ProgrammesSeminairesGigeanRoute
   ProgrammesVisitesTechniquesRoute: typeof ProgrammesVisitesTechniquesRoute
+  SchoolsOfPoliticsApplyRoute: typeof SchoolsOfPoliticsApplyRoute
+  SchoolsOfPoliticsVisionMissionRoute: typeof SchoolsOfPoliticsVisionMissionRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -492,6 +522,20 @@ declare module '@tanstack/react-router' {
       path: '/pilier/$slug'
       fullPath: '/pilier/$slug'
       preLoaderRoute: typeof PilierSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schools-of-politics/apply': {
+      id: '/schools-of-politics/apply'
+      path: '/schools-of-politics/apply'
+      fullPath: '/schools-of-politics/apply'
+      preLoaderRoute: typeof SchoolsOfPoliticsApplyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schools-of-politics/vision-mission': {
+      id: '/schools-of-politics/vision-mission'
+      path: '/schools-of-politics/vision-mission'
+      fullPath: '/schools-of-politics/vision-mission'
+      preLoaderRoute: typeof SchoolsOfPoliticsVisionMissionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lobbying-reseau/services-entreprises': {
@@ -683,6 +727,8 @@ const rootRouteChildren: RootRouteChildren = {
   ProgrammesPlaidoyerInfluenceRoute: ProgrammesPlaidoyerInfluenceRoute,
   ProgrammesSeminairesGigeanRoute: ProgrammesSeminairesGigeanRoute,
   ProgrammesVisitesTechniquesRoute: ProgrammesVisitesTechniquesRoute,
+  SchoolsOfPoliticsApplyRoute: SchoolsOfPoliticsApplyRoute,
+  SchoolsOfPoliticsVisionMissionRoute: SchoolsOfPoliticsVisionMissionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

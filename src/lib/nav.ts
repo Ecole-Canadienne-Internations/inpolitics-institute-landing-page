@@ -65,6 +65,13 @@ export const NAV: NavMenu[] = [
     ],
   },
   {
+    label: "Schools of Politics",
+    items: [
+      { to: "/schools-of-politics/vision-mission", label: "Vision & Mission", desc: "Why School of Politics? — Discover our vision and mission." },
+      { to: "/schools-of-politics/apply", label: "Apply", desc: "Submit your application to join the School of Politics." },
+    ],
+  },
+  {
     label: "Le Lab",
     items: [
       { to: "/lab/publications", label: "Publications & Recherche", desc: "Analyses et rapports de l'Observatoire." },
