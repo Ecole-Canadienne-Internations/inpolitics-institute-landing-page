@@ -729,6 +729,7 @@ function Footer() {
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition">Mentions légales</a>
             <a href="#" className="hover:text-white transition">Confidentialité</a>
+            <a href="https://delmarwebstudios.qzz.io" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Built by Delmar Web Studios</a>
           </div>
         </div>
       </div>
