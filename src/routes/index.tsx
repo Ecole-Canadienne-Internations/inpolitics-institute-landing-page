@@ -38,6 +38,7 @@ export const Route = createFileRoute("/")({
   component: Landing,
   head: () => ({
     meta: [
+      { name: "google-site-verification", content: "Ph4KWMKdgySfCMkTFEgzM8ZsjQ3bDnozmqF6kt2NFfw" },
       { title: "InPolitics Institute — Campus Europe à Gigean" },
       { name: "description", content: "Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique." },
       { property: "og:title", content: "InPolitics Institute" },
