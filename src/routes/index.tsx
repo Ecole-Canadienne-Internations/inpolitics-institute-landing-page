@@ -726,11 +726,11 @@ function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
           <div>© {new Date().getFullYear()} InPolitics Institute. Tous droits réservés.</div>
+          <a href="https://delmarwebstudios.qzz.io" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Built by Delmar Web Studios</a>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition">Mentions légales</a>
             <a href="#" className="hover:text-white transition">Confidentialité</a>
           </div>
-          <a href="https://delmarwebstudios.qzz.io" target="_blank" rel="noopener noreferrer" className="text-[11px] text-white/50 hover:text-white transition mt-3">Built by Delmar Web Studios</a>
         </div>
       </div>
     </footer>
