@@ -62,7 +62,7 @@ export const NAV: NavMenu[] = [
     items: [
       { to: "/diaspora/programme-landing", label: 'Programme "Landing"', desc: "Bootcamp de reconnexion économique à Gigean.", banner: true },
       { to: "/diaspora/connect", label: "Diaspora Connect", desc: "Matching profils Europe / besoins locaux Afrique.", banner: true },
-      { to: "/diaspora/concierge", label: "Conciergerie & Sécurisation", desc: "Foncier, juridique et fiscal.", banner: true },
+      { to: "/diaspora/conciergerie", label: "Conciergerie & Sécurisation", desc: "Foncier, juridique et fiscal.", banner: true },
     ],
   },
   {

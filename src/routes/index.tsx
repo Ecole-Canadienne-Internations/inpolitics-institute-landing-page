@@ -45,7 +45,10 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "https://inpoliticsinstitute.com/" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://inpoliticsinstitute.com/" }],
+    links: [
+      { rel: "canonical", href: "https://inpoliticsinstitute.com/" },
+      { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96x96.png" },
+    ],
   }),
 });
 
