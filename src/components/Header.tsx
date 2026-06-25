@@ -5,13 +5,10 @@ import logo from "@/assets/inpolitics-insititute-new-logo.png";
 import { NAV } from "@/lib/nav";
 import { useContactModal } from "@/components/ContactModal";
 
-const DROPDOWN_WIDTH = 360;
-
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [openIdx, setOpenIdx] = useState<number | null>(null);
-  const [rightAlignIdx, setRightAlignIdx] = useState<number | null>(null);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isHome = pathname === "/";
   const { open: openContact } = useContactModal();
@@ -62,10 +59,10 @@ export function Header() {
             <img src={logo} alt="InPolitics Institute" className="h-24 md:h-28 lg:h-30 w-auto object-contain" />
           </Link>
 
-          <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1" onMouseLeave={() => { setOpenIdx(null); setRightAlignIdx(null); }}>
+          <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1" onMouseLeave={() => setOpenIdx(null)}>
             <Link
               to="/"
-              onMouseEnter={() => { setOpenIdx(null); setRightAlignIdx(null); }}
+              onMouseEnter={() => setOpenIdx(null)}
               className="px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors whitespace-nowrap"
               activeOptions={{ exact: true }}
               activeProps={{ className: "px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-semibold text-crimson whitespace-nowrap" }}
@@ -73,15 +70,7 @@ export function Header() {
               Accueil
             </Link>
             {NAV.map((menu, i) => (
-              <div
-                key={menu.label}
-                className="relative"
-                onMouseEnter={(e) => {
-                  setOpenIdx(i);
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  setRightAlignIdx(rect.left + DROPDOWN_WIDTH > window.innerWidth - 16 ? i : null);
-                }}
-              >
+              <div key={menu.label} className="relative" onMouseEnter={() => setOpenIdx(i)}>
                 <button
                   className="flex items-center gap-1 px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors whitespace-nowrap"
                   aria-expanded={openIdx === i}
@@ -90,7 +79,7 @@ export function Header() {
                   <ChevronDown className="size-3.5 opacity-60" />
                 </button>
                 {openIdx === i && (
-                  <div className={`absolute top-full pt-2 ${rightAlignIdx === i ? "right-0" : "left-0"}`}>
+                  <div className="absolute left-0 last:right-0 last:left-auto top-full pt-2">
                     <div className="w-[360px] bg-white rounded-xl shadow-[0_20px_60px_-15px_rgba(15,23,42,0.18)] p-3">
                       {menu.items.map((it) => (
                         <Link
