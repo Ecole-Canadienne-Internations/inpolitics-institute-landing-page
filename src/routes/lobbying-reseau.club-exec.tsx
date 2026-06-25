@@ -1,23 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SubPageWithBanner } from "@/components/SubPage";
-import banner3 from "@/assets/banner3.png";
-import { useContactModal } from "@/components/ContactModal";
-import { Mail } from "lucide-react";
-
-function ClubExec() {
-  const { open } = useContactModal();
-  return (
-    <SubPageWithBanner
-      eyebrow="Lobbying & Réseau — Club Exec"
-      title="Club InPolitics Exec"
-      intro="Le cercle de réflexion privé de l'Institut. Un dispositif confidentiel réservé aux dirigeants, élus, hauts fonctionnaires et décideurs économiques."
-      bannerImage={banner3}
-    />
-  );
-}
+import { RichSubPageWithBanner } from "@/lib/subpage-content";
+import banner from "@/assets/banner3.png";
 
 export const Route = createFileRoute("/lobbying-reseau/club-exec")({
-  component: ClubExec,
+  component: () => <RichSubPageWithBanner k="lobbying-reseau/club-exec" bannerImage={banner} />,
   head: () => ({
     meta: [
       { title: "Club InPolitics Exec — InPolitics Institute" },

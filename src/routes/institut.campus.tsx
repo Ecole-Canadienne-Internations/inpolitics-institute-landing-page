@@ -1,10 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SubPageWithBanner } from "@/components/SubPage";
-import banner1 from "@/assets/banner1.png";
-import { useContactModal } from "@/components/ContactModal";
+import { RichSubPageWithBanner } from "@/lib/subpage-content";
+import banner from "@/assets/banner1.png";
 
 export const Route = createFileRoute("/institut/campus")({
-  component: InstitutCampus,
+  component: () => <RichSubPageWithBanner k="institut/campus" bannerImage={banner} />,
   head: () => ({
     meta: [
       { title: "Nos Campus — InPolitics Institute" },
@@ -18,14 +17,4 @@ export const Route = createFileRoute("/institut/campus")({
   }),
 });
 
-function InstitutCampus() {
-  const { open } = useContactModal();
-  return (
-    <SubPageWithBanner
-      eyebrow="L'Institut — Campus"
-      title="Nos Campus"
-      intro="Un Campus Europe à Gigean (Montpellier Métropole) et des perspectives d'extension en Afrique. Une seule exigence : former une élite publique et privée capable de transformer ses territoires."
-      bannerImage={banner1}
-    />
-  );
-}
+

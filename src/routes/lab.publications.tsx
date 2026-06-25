@@ -1,22 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SubPageWithBanner } from "@/components/SubPage";
-import banner2 from "@/assets/banner2.png";
-import { useContactModal } from "@/components/ContactModal";
-
-function LabPublications() {
-  const { open } = useContactModal();
-  return (
-    <SubPageWithBanner
-      eyebrow="Le Lab — Publications"
-      title="Publications & Recherche"
-      intro="Les analyses, rapports et notes de l'Observatoire InPolitics : décryptage rigoureux des dynamiques politiques, territoriales et numériques."
-      bannerImage={banner2}
-    />
-  );
-}
+import { RichSubPageWithBanner } from "@/lib/subpage-content";
+import banner from "@/assets/banner3.png";
 
 export const Route = createFileRoute("/lab/publications")({
-  component: LabPublications,
+  component: () => <RichSubPageWithBanner k="lab/publications" bannerImage={banner} />,
   head: () => ({
     meta: [
       { title: "Publications & Recherche — InPolitics Institute" },

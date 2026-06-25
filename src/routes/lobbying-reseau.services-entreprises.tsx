@@ -1,22 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SubPageWithBanner } from "@/components/SubPage";
-import banner2 from "@/assets/banner2.png";
-import { useContactModal } from "@/components/ContactModal";
-
-function ServicesEntreprises() {
-  const { open } = useContactModal();
-  return (
-    <SubPageWithBanner
-      eyebrow="Lobbying & Réseau — Entreprises"
-      title="Services aux Entreprises"
-      intro="Position papers, veille parlementaire, accès aux marchés publics, accompagnement réglementaire. Notre cabinet d'affaires publiques."
-      bannerImage={banner2}
-    />
-  );
-}
+import { RichSubPageWithBanner } from "@/lib/subpage-content";
+import banner from "@/assets/banner2.png";
 
 export const Route = createFileRoute("/lobbying-reseau/services-entreprises")({
-  component: ServicesEntreprises,
+  component: () => <RichSubPageWithBanner k="lobbying-reseau/services-entreprises" bannerImage={banner} />,
   head: () => ({
     meta: [
       { title: "Services aux Entreprises — InPolitics Institute" },
