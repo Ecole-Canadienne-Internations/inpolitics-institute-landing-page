@@ -1,8 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
+import { SubPageWithBanner } from "@/components/SubPage";
 import { useContactModal } from "@/components/ContactModal";
-import { Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
+import banner from "@/assets/banner1.png";
 
 export const Route = createFileRoute("/institut/vision-manifeste")({
   component: Manifeste,
@@ -25,21 +26,31 @@ function Manifeste() {
     <div className="min-h-screen bg-white text-foreground">
       <Header />
       <main className="pt-32 md:pt-40 pb-24">
-        <article className="max-w-3xl mx-auto px-6 lg:px-10">
+        <article className="max-w-4xl mx-auto px-6 lg:px-10">
           <Link to="/" className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-muted-foreground hover:text-crimson transition-colors mb-10">
             <ArrowLeft className="size-3.5" /> Retour à l'accueil
           </Link>
-          <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-6">
-            01 — Manifeste fondateur
-          </div>
-          <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-anthracite">
-            Vision & Manifeste
-          </h1>
-          <p className="mt-4 text-sm uppercase tracking-[0.22em] text-muted-foreground">
+
+          <section className="relative w-full h-[320px] md:h-[420px] overflow-hidden mb-12">
+            <img src={banner} alt="Vision & Manifeste" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
+              <div className="max-w-3xl mx-auto">
+                <div className="inline-flex px-3 py-1.5 rounded-full bg-white/20 backdrop-blur text-white text-[11px] font-semibold tracking-[0.18em] uppercase mb-4">
+                  L'Institut — Manifeste
+                </div>
+                <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-white">
+                  Vision & Manifeste
+                </h1>
+              </div>
+            </div>
+          </section>
+
+          <p className="text-sm uppercase tracking-[0.22em] text-muted-foreground mb-6">
             Par Arnaud SIGHANO — Directeur Associé
           </p>
 
-          <div className="mt-14 space-y-7 font-serif text-[20px] md:text-[22px] leading-[1.75] text-foreground/90">
+          <div className="mt-8 space-y-7 font-serif text-[20px] md:text-[22px] leading-[1.75] text-foreground/90">
             <p className="first-letter:font-serif first-letter:text-[5.5rem] first-letter:leading-[0.85] first-letter:float-left first-letter:mr-3 first-letter:mt-2 first-letter:text-crimson first-letter:font-bold">
               Bienvenue sur la plateforme officielle d'InPolitics Institute. À l'ère des mutations géopolitiques majeures et de l'accélération numérique, la gestion des affaires publiques et le développement économique exigent des paradigmes entièrement renouvelés.
             </p>

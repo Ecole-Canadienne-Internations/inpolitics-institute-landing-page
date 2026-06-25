@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { RichSubPage } from "@/lib/subpage-content";
+import { RichSubPageWithBanner } from "@/lib/subpage-content";
+import banner from "@/assets/banner4.png";
 
 export const Route = createFileRoute("/gouvernance-digitale/solutions-saas")({
-  component: () => <RichSubPage k="gouvernance-digitale/solutions-saas" />,
+  component: () => <RichSubPageWithBanner k="gouvernance-digitale/solutions-saas" bannerImage={banner} />,
   head: () => ({
     meta: [
       { title: "Solutions SaaS Municipales — InPolitics Institute" },

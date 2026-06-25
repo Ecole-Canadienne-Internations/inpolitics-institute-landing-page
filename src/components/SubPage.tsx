@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, Mail } from "lucide-react";
+import { ArrowLeft, Languages, Mail } from "lucide-react";
 import { Header } from "@/components/Header";
 import { useContactModal } from "@/components/ContactModal";
 
@@ -81,30 +81,34 @@ export function SubPageWithBanner({
             <ArrowLeft className="size-3.5" /> Retour à l'accueil
           </Link>
 
-          <section className="relative w-full h-[240px] md:h-[340px] rounded-xl overflow-hidden mb-12">
+          <section className="relative w-full h-[320px] md:h-[420px] overflow-hidden mb-12">
             <img
               src={bannerImage}
               alt="Banner"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-              <div className="inline-flex px-3 py-1.5 rounded-full bg-white/20 backdrop-blur text-white text-[11px] font-semibold tracking-[0.18em] uppercase mb-4">
-                {eyebrow}
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
+              <div className="max-w-3xl mx-auto">
+                <div className="inline-flex px-3 py-1.5 rounded-full bg-white/20 backdrop-blur text-white text-[11px] font-semibold tracking-[0.18em] uppercase mb-4">
+                  {eyebrow}
+                </div>
+                <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-white">
+                  {title}
+                </h1>
               </div>
-              <h1 className="font-serif text-4xl md:text-5xl leading-[1.05] tracking-tight text-white">
-                {title}
-              </h1>
             </div>
           </section>
 
           {intro && (
-            <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto text-center">
-              {intro}
-            </p>
+            <div className="max-w-3xl mx-auto mb-12">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                {intro}
+              </p>
+            </div>
           )}
 
-          <div className="mt-12 prose-content space-y-10 text-[17px] leading-[1.8] text-foreground/85">
+          <div className="prose-content space-y-10 text-[17px] leading-[1.8] text-foreground/85">
             {children}
           </div>
 

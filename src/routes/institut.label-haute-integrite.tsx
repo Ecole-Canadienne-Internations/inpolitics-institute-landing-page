@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { RichSubPage } from "@/lib/subpage-content";
+import { RichSubPageWithBanner } from "@/lib/subpage-content";
+import banner from "@/assets/banner1.png";
 
 export const Route = createFileRoute("/institut/label-haute-integrite")({
-  component: () => <RichSubPage k="institut/label-haute-integrite" />,
+  component: () => <RichSubPageWithBanner k="institut/label-haute-integrite" bannerImage={banner} />,
   head: () => ({
     meta: [
       { title: "Label \"Commune de Haute Intégrité\" — InPolitics Institute" },

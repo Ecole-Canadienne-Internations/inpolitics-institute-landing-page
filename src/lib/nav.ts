@@ -2,6 +2,7 @@ export type NavItem = {
   to: string;
   label: string;
   desc: string;
+  banner?: boolean;
 };
 
 export type NavMenu = {

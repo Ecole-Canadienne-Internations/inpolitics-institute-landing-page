@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { RichSubPage } from "@/lib/subpage-content";
+import { RichSubPageWithBanner } from "@/lib/subpage-content";
+import banner from "@/assets/banner2.png";
 
 export const Route = createFileRoute("/programmes/seminaires-gigean")({
-  component: () => <RichSubPage k="programmes/seminaires-gigean" />,
+  component: () => <RichSubPageWithBanner k="programmes/seminaires-gigean" bannerImage={banner} />,
   head: () => ({
     meta: [
       { title: "Séminaires d'Immersion à Gigean — InPolitics Institute" },

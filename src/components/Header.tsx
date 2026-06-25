@@ -4,18 +4,14 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import logo from "@/assets/inpolitics-insititute-new-logo.png";
 import { NAV } from "@/lib/nav";
 import { useContactModal } from "@/components/ContactModal";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+
+const DROPDOWN_WIDTH = 360;
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const [rightAlignIdx, setRightAlignIdx] = useState<number | null>(null);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isHome = pathname === "/";
   const { open: openContact } = useContactModal();
@@ -60,68 +56,68 @@ export function Header() {
         </div>
       </div>
 
-        <div className={`transition-all ${scrolled || !isHome ? "glass-header" : "bg-white/85 backdrop-blur"}`}>
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-26 md:h-32 flex items-center justify-between gap-6">
-            <Link to="/" className="flex items-center shrink-0" aria-label="InPolitics Institute">
-              <img src={logo} alt="InPolitics Institute" className="h-24 md:h-28 lg:h-30 w-auto object-contain" />
-            </Link>
+      <div className={`transition-all ${scrolled || !isHome ? "glass-header" : "bg-white/85 backdrop-blur"}`}>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-26 md:h-32 flex items-center justify-between gap-6">
+          <Link to="/" className="flex items-center shrink-0" aria-label="InPolitics Institute">
+            <img src={logo} alt="InPolitics Institute" className="h-24 md:h-28 lg:h-30 w-auto object-contain" />
+          </Link>
 
-            <NavigationMenu
-              className="hidden xl:flex items-center gap-0.5 2xl:gap-1"
-              onMouseLeave={() => setOpenIdx(null)}
+          <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1" onMouseLeave={() => { setOpenIdx(null); setRightAlignIdx(null); }}>
+            <Link
+              to="/"
+              onMouseEnter={() => { setOpenIdx(null); setRightAlignIdx(null); }}
+              className="px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors whitespace-nowrap"
+              activeOptions={{ exact: true }}
+              activeProps={{ className: "px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-semibold text-crimson whitespace-nowrap" }}
             >
-              <NavigationMenuItem>
-                <Link
-                  to="/"
-                  className="px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors whitespace-nowrap"
-                  onMouseEnter={() => setOpenIdx(null)}
-                  activeOptions={{ exact: true }}
-                  activeProps={{ className: "px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-semibold text-crimson whitespace-nowrap" }}
+              Accueil
+            </Link>
+            {NAV.map((menu, i) => (
+              <div
+                key={menu.label}
+                className="relative"
+                onMouseEnter={(e) => {
+                  setOpenIdx(i);
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  setRightAlignIdx(rect.left + DROPDOWN_WIDTH > window.innerWidth - 16 ? i : null);
+                }}
+              >
+                <button
+                  className="flex items-center gap-1 px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors whitespace-nowrap"
+                  aria-expanded={openIdx === i}
                 >
-                  Accueil
-                </Link>
-              </NavigationMenuItem>
-
-              {NAV.map((menu, i) => (
-                <NavigationMenuItem key={menu.label} className="relative" onMouseEnter={() => setOpenIdx(i)}>
-                  <NavigationMenuTrigger
-                    className="flex items-center gap-1 px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-medium text-foreground/80 hover:text-crimson transition-colors whitespace-nowrap"
-                  >
-                    {menu.label}
-                    <ChevronDown className="size-3.5 opacity-60" />
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent
-                    className="absolute left-0 top-full pt-2"
-                  >
+                  {menu.label}
+                  <ChevronDown className="size-3.5 opacity-60" />
+                </button>
+                {openIdx === i && (
+                  <div className={`absolute top-full pt-2 ${rightAlignIdx === i ? "right-0" : "left-0"}`}>
                     <div className="w-[360px] bg-white rounded-xl shadow-[0_20px_60px_-15px_rgba(15,23,42,0.18)] p-3">
                       {menu.items.map((it) => (
-                        <NavigationMenuItem key={it.to}>
-                          <Link
-                            to={it.to}
-                            className="block px-4 py-3 rounded-lg hover:bg-secondary transition-colors group"
-                          >
-                            <div className="text-sm font-semibold text-anthracite group-hover:text-crimson transition-colors">
-                              {it.label}
-                            </div>
-                            <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
-                              {it.desc}
-                            </div>
-                          </Link>
-                        </NavigationMenuItem>
+                        <Link
+                          key={it.to}
+                          to={it.to}
+                          className="block px-4 py-3 rounded-lg hover:bg-secondary transition-colors group"
+                        >
+                          <div className="text-sm font-semibold text-anthracite group-hover:text-crimson transition-colors">
+                            {it.label}
+                          </div>
+                          <div className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+                            {it.desc}
+                          </div>
+                        </Link>
                       ))}
                     </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              ))}
-              <NavigationMenuItem>
-                <button
-                  onClick={handleContact}
-                  className="btn-crimson px-5 py-2.5 text-sm font-semibold rounded-full inline-flex items-center gap-2 ml-3"
-                >
-                  Contact
-                </button>
-              </NavigationMenuItem>
-            </NavigationMenu>
+                  </div>
+                )}
+              </div>
+            ))}
+            <button
+              onClick={handleContact}
+              className="ml-3 btn-crimson px-5 py-2.5 text-sm font-semibold rounded-full inline-flex items-center gap-2"
+            >
+              Contact
+            </button>
+          </nav>
 
           <button
             className="xl:hidden p-2 -mr-2"

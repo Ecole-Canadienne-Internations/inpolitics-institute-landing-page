@@ -1,11 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Header } from "@/components/Header";
-import { Link } from "@tanstack/react-router";
 import { ArrowLeft, Check, Send, Loader2 } from "lucide-react";
+import banner from "@/assets/banner4.png";
 
 export const Route = createFileRoute("/schools-of-politics/apply")({
   component: Apply,
@@ -129,7 +129,7 @@ function Apply() {
     <div className="min-h-screen bg-white text-foreground">
       <Header />
       <main className="pt-32 md:pt-40 pb-24">
-        <div className="max-w-3xl mx-auto px-6 lg:px-10">
+        <div className="max-w-4xl mx-auto px-6 lg:px-10">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-muted-foreground hover:text-crimson transition-colors mb-10"
@@ -137,12 +137,21 @@ function Apply() {
             <ArrowLeft className="size-3.5" /> Retour à l'accueil
           </Link>
 
-          <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-6">
-            School of Politics
-          </div>
-          <h1 className="font-serif text-4xl md:text-5xl leading-[1.05] tracking-tight text-anthracite mb-4">
-            Application Form
-          </h1>
+          <section className="relative w-full h-[320px] md:h-[420px] overflow-hidden mb-12">
+            <img src={banner} alt="School of Politics" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
+              <div className="max-w-3xl mx-auto">
+                <div className="inline-flex px-3 py-1.5 rounded-full bg-white/20 backdrop-blur text-white text-[11px] font-semibold tracking-[0.18em] uppercase mb-4">
+                  School of Politics
+                </div>
+                <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-white">
+                  Application Form
+                </h1>
+              </div>
+            </div>
+          </section>
+
           <p className="text-lg text-muted-foreground mb-12 max-w-xl">
             Take the first step toward joining the next generation of political leaders.
             Fill out the form below and our team will contact you.

@@ -1,4 +1,4 @@
-import { SubPage } from "@/components/SubPage";
+import { SubPage, SubPageWithBanner } from "@/components/SubPage";
 
 export type Section = { h: string; p: string[]; list?: string[] };
 export type PageContent = {
@@ -739,5 +739,37 @@ export function RichSubPage({ k }: { k: string }) {
         </section>
       ))}
     </SubPage>
+  );
+}
+
+export function RichSubPageWithBanner({ k, bannerImage }: { k: string; bannerImage: string }) {
+  const c = SUBPAGE_CONTENT[k];
+  if (!c) {
+    return (
+      <SubPageWithBanner eyebrow="InPolitics Institute" title="Page" intro="" bannerImage={bannerImage}>
+        <p>Contenu en préparation.</p>
+      </SubPageWithBanner>
+    );
+  }
+  return (
+    <SubPageWithBanner eyebrow={c.eyebrow} title={c.title} intro={c.intro} bannerImage={bannerImage}>
+      {c.sections.map((s, i) => (
+        <section key={i} className="space-y-4">
+          <h2 className="font-serif text-2xl md:text-3xl text-anthracite leading-tight mt-2">
+            {s.h}
+          </h2>
+          {s.p.map((para, pi) => (
+            <p key={pi}>{para}</p>
+          ))}
+          {s.list && (
+            <ul className="list-disc pl-6 space-y-2 marker:text-crimson">
+              {s.list.map((li, li_i) => (
+                <li key={li_i}>{li}</li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))}
+    </SubPageWithBanner>
   );
 }

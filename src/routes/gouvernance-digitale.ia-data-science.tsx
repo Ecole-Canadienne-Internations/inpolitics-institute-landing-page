@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { RichSubPage } from "@/lib/subpage-content";
+import { RichSubPageWithBanner } from "@/lib/subpage-content";
+import banner from "@/assets/banner4.png";
 
 export const Route = createFileRoute("/gouvernance-digitale/ia-data-science")({
-  component: () => <RichSubPage k="gouvernance-digitale/ia-data-science" />,
+  component: () => <RichSubPageWithBanner k="gouvernance-digitale/ia-data-science" bannerImage={banner} />,
   head: () => ({
     meta: [
       { title: "IA & Data Science Publique — InPolitics Institute" },

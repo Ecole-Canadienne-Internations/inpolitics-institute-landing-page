@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { RichSubPage } from "@/lib/subpage-content";
+import { RichSubPageWithBanner } from "@/lib/subpage-content";
+import banner from "@/assets/banner2.png";
 
 export const Route = createFileRoute("/programmes/plaidoyer-influence")({
-  component: () => <RichSubPage k="programmes/plaidoyer-influence" />,
+  component: () => <RichSubPageWithBanner k="programmes/plaidoyer-influence" bannerImage={banner} />,
   head: () => ({
     meta: [
       { title: "Plaidoyer & Stratégies d'Influence — InPolitics Institute" },

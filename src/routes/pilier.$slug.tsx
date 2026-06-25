@@ -7,6 +7,7 @@ import pillarDiplomatie1 from "@/assets/pillar-diplomatie-1.jpg";
 import pillarDiplomatie2 from "@/assets/pillar-diplomatie-2.jpg";
 import pillarCommunication from "@/assets/pillar-communication.jpg";
 import pillarObservatoire from "@/assets/pillar-observatoire.jpg";
+import banner from "@/assets/banner3.png";
 
 type Pillar = {
   title: string;
@@ -161,7 +162,21 @@ function PillarPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main>
-        <section className="relative pt-32 md:pt-40 pb-16">
+        <section className="relative w-full h-[320px] md:h-[420px] overflow-hidden">
+          <img src={banner} alt={pillar.title} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
+            <div className="max-w-7xl mx-auto px-6 lg:px-10">
+              <div className="inline-flex px-3 py-1.5 rounded-full bg-white/20 backdrop-blur text-white text-[11px] font-semibold tracking-[0.18em] uppercase mb-4">
+                Executifs — {pillar.tagline.split("·")[0].trim()}
+              </div>
+              <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-white max-w-3xl">
+                {pillar.title}
+              </h1>
+            </div>
+          </div>
+        </section>
+        <section className="relative pb-16">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-crimson transition mb-10">
               <ArrowLeft className="size-4" /> Retour à l'accueil
