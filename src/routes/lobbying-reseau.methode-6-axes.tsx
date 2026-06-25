@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { RichSubPage } from "@/lib/subpage-content";
+import { SubPageWithBanner } from "@/components/SubPage";
+import banner4 from "@/assets/banner4.png";
+import { useContactModal } from "@/components/ContactModal";
+import { Mail } from "lucide-react";
 
 export const Route = createFileRoute("/lobbying-reseau/methode-6-axes")({
-  component: () => <RichSubPage k="lobbying-reseau/methode-6-axes" />,
+  component: MethodeSixAxes,
   head: () => ({
     meta: [
       { title: "Notre Méthode en 6 Axes — InPolitics Institute" },
@@ -15,3 +18,15 @@ export const Route = createFileRoute("/lobbying-reseau/methode-6-axes")({
     links: [{ rel: "canonical", href: "https://inpoliticsinstitute.com/lobbying-reseau/methode-6-axes" }],
   }),
 });
+
+function MethodeSixAxes() {
+  const { open } = useContactModal();
+  return (
+    <SubPageWithBanner
+      eyebrow="Lobbying & Réseau — Méthode"
+      title="Notre Méthode en 6 Axes"
+      intro="InPolitics Influence : une méthode propriétaire structurée en trois phases et six axes opérationnels. La signature de l'Institut en matière d'affaires publiques."
+      bannerImage={banner4}
+    />
+  );
+}

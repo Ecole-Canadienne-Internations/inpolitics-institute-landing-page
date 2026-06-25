@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { RichSubPage } from "@/lib/subpage-content";
+import { SubPageWithBanner } from "@/components/SubPage";
+import banner1 from "@/assets/banner1.png";
+import { useContactModal } from "@/components/ContactModal";
 
 export const Route = createFileRoute("/institut/campus")({
-  component: () => <RichSubPage k="institut/campus" />,
+  component: InstitutCampus,
   head: () => ({
     meta: [
       { title: "Nos Campus — InPolitics Institute" },
@@ -15,3 +17,15 @@ export const Route = createFileRoute("/institut/campus")({
     links: [{ rel: "canonical", href: "https://inpoliticsinstitute.com/institut/campus" }],
   }),
 });
+
+function InstitutCampus() {
+  const { open } = useContactModal();
+  return (
+    <SubPageWithBanner
+      eyebrow="L'Institut — Campus"
+      title="Nos Campus"
+      intro="Un Campus Europe à Gigean (Montpellier Métropole) et des perspectives d'extension en Afrique. Une seule exigence : former une élite publique et privée capable de transformer ses territoires."
+      bannerImage={banner1}
+    />
+  );
+}

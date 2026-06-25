@@ -168,7 +168,7 @@ function BioLink({ slug }: { slug: string }) {
 
 
 /* ---------- HERO ---------- */
-const HERO_IMAGES = [heroBg, hero1, hero2, hero3];
+const HERO_IMAGES = [hero1, hero2, hero3];
 
 function Hero() {
   const [current, setCurrent] = useState(0);
