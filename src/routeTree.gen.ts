@@ -29,6 +29,7 @@ import { Route as InstitutLobbyingIntegriteRouteImport } from './routes/institut
 import { Route as InstitutLabelHauteIntegriteRouteImport } from './routes/institut.label-haute-integrite'
 import { Route as InstitutDiplomatieTerritorialeRouteImport } from './routes/institut.diplomatie-territoriale'
 import { Route as InstitutCampusRouteImport } from './routes/institut.campus'
+import { Route as InstitutGalerieImageRouteImport } from './routes/institut.galerie-image'
 import { Route as GouvernanceDigitaleSolutionsSaasRouteImport } from './routes/gouvernance-digitale.solutions-saas'
 import { Route as GouvernanceDigitaleIaDataScienceRouteImport } from './routes/gouvernance-digitale.ia-data-science'
 import { Route as GouvernanceDigitaleEtudesDeCasRouteImport } from './routes/gouvernance-digitale.etudes-de-cas'
@@ -152,6 +153,11 @@ const InstitutCampusRoute = InstitutCampusRouteImport.update({
   path: '/institut/campus',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InstitutGalerieImageRoute = InstitutGalerieImageRouteImport.update({
+  id: '/institut/galerie-image',
+  path: '/institut/galerie-image',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GouvernanceDigitaleSolutionsSaasRoute =
   GouvernanceDigitaleSolutionsSaasRouteImport.update({
     id: '/gouvernance-digitale/solutions-saas',
@@ -237,6 +243,7 @@ export interface FileRoutesByFullPath {
   '/gouvernance-digitale/ia-data-science': typeof GouvernanceDigitaleIaDataScienceRoute
   '/gouvernance-digitale/solutions-saas': typeof GouvernanceDigitaleSolutionsSaasRoute
   '/institut/campus': typeof InstitutCampusRoute
+  '/institut/galerie-image': typeof InstitutGalerieImageRoute
   '/institut/diplomatie-territoriale': typeof InstitutDiplomatieTerritorialeRoute
   '/institut/label-haute-integrite': typeof InstitutLabelHauteIntegriteRoute
   '/institut/lobbying-integrite': typeof InstitutLobbyingIntegriteRoute
@@ -271,6 +278,7 @@ export interface FileRoutesByTo {
   '/gouvernance-digitale/ia-data-science': typeof GouvernanceDigitaleIaDataScienceRoute
   '/gouvernance-digitale/solutions-saas': typeof GouvernanceDigitaleSolutionsSaasRoute
   '/institut/campus': typeof InstitutCampusRoute
+  '/institut/galerie-image': typeof InstitutGalerieImageRoute
   '/institut/diplomatie-territoriale': typeof InstitutDiplomatieTerritorialeRoute
   '/institut/label-haute-integrite': typeof InstitutLabelHauteIntegriteRoute
   '/institut/lobbying-integrite': typeof InstitutLobbyingIntegriteRoute
@@ -306,6 +314,7 @@ export interface FileRoutesById {
   '/gouvernance-digitale/ia-data-science': typeof GouvernanceDigitaleIaDataScienceRoute
   '/gouvernance-digitale/solutions-saas': typeof GouvernanceDigitaleSolutionsSaasRoute
   '/institut/campus': typeof InstitutCampusRoute
+  '/institut/galerie-image': typeof InstitutGalerieImageRoute
   '/institut/diplomatie-territoriale': typeof InstitutDiplomatieTerritorialeRoute
   '/institut/label-haute-integrite': typeof InstitutLabelHauteIntegriteRoute
   '/institut/lobbying-integrite': typeof InstitutLobbyingIntegriteRoute
@@ -342,6 +351,7 @@ export interface FileRouteTypes {
     | '/gouvernance-digitale/ia-data-science'
     | '/gouvernance-digitale/solutions-saas'
     | '/institut/campus'
+    | '/institut/galerie-image'
     | '/institut/diplomatie-territoriale'
     | '/institut/label-haute-integrite'
     | '/institut/lobbying-integrite'
@@ -376,6 +386,7 @@ export interface FileRouteTypes {
     | '/gouvernance-digitale/ia-data-science'
     | '/gouvernance-digitale/solutions-saas'
     | '/institut/campus'
+    | '/institut/galerie-image'
     | '/institut/diplomatie-territoriale'
     | '/institut/label-haute-integrite'
     | '/institut/lobbying-integrite'
@@ -410,6 +421,7 @@ export interface FileRouteTypes {
     | '/gouvernance-digitale/ia-data-science'
     | '/gouvernance-digitale/solutions-saas'
     | '/institut/campus'
+    | '/institut/galerie-image'
     | '/institut/diplomatie-territoriale'
     | '/institut/label-haute-integrite'
     | '/institut/lobbying-integrite'
@@ -445,6 +457,7 @@ export interface RootRouteChildren {
   GouvernanceDigitaleIaDataScienceRoute: typeof GouvernanceDigitaleIaDataScienceRoute
   GouvernanceDigitaleSolutionsSaasRoute: typeof GouvernanceDigitaleSolutionsSaasRoute
   InstitutCampusRoute: typeof InstitutCampusRoute
+  InstitutGalerieImageRoute: typeof InstitutGalerieImageRoute
   InstitutDiplomatieTerritorialeRoute: typeof InstitutDiplomatieTerritorialeRoute
   InstitutLabelHauteIntegriteRoute: typeof InstitutLabelHauteIntegriteRoute
   InstitutLobbyingIntegriteRoute: typeof InstitutLobbyingIntegriteRoute
@@ -622,6 +635,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InstitutCampusRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/institut/galerie-image': {
+      id: '/institut/galerie-image'
+      path: '/institut/galerie-image'
+      fullPath: '/institut/galerie-image'
+      preLoaderRoute: typeof InstitutGalerieImageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gouvernance-digitale/solutions-saas': {
       id: '/gouvernance-digitale/solutions-saas'
       path: '/gouvernance-digitale/solutions-saas'
@@ -709,6 +729,7 @@ const rootRouteChildren: RootRouteChildren = {
   GouvernanceDigitaleIaDataScienceRoute: GouvernanceDigitaleIaDataScienceRoute,
   GouvernanceDigitaleSolutionsSaasRoute: GouvernanceDigitaleSolutionsSaasRoute,
   InstitutCampusRoute: InstitutCampusRoute,
+  InstitutGalerieImageRoute: InstitutGalerieImageRoute,
   InstitutDiplomatieTerritorialeRoute: InstitutDiplomatieTerritorialeRoute,
   InstitutLabelHauteIntegriteRoute: InstitutLabelHauteIntegriteRoute,
   InstitutLobbyingIntegriteRoute: InstitutLobbyingIntegriteRoute,
