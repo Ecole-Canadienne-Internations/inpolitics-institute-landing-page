@@ -619,7 +619,7 @@ function ContactCta() {
                 Rejoindre l'élite
               </div>
               <h2 className="text-3xl md:text-5xl font-bold leading-tight text-anthracite">
-                Échangeons directement avec un conseiller d'orientation.
+                Échangeons directement avec nos conseillers.
               </h2>
               <p className="mt-5 text-muted-foreground max-w-xl leading-relaxed">
                 Brochure des programmes, accès en avant-première aux analyses
