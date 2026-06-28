@@ -52,6 +52,8 @@ const programs = [
   { value: "governance", label: "Governance & Public Policy" },
   { value: "digital-governance", label: "Digital Governance & Tech Politics" },
   { value: "lobbying", label: "Lobbying & Advocacy" },
+  { value: "individual-program", label: "Individual Program" },
+  { value: "school-of-politics", label: "School of politics" },
   { value: "leadership", label: "Executive Leadership" },
 ];
 
