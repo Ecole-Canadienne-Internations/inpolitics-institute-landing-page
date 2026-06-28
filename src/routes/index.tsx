@@ -28,7 +28,7 @@ import teamBoumediene from "@/assets/team-boumediene.jpeg";
 import teamToukea from "@/assets/Dr-Dieudonné-Toukea.jpeg";
 import logo from "@/assets/inpolitics-insititute-new-logo.png";
 import pillarGouvernance from "@/assets/pillar-gouvernance.jpg";
-import pillarDiplomatie from "@/assets/pillar-diplomatie-1.jpg";
+import pillarDiplomatie from "@/assets/pillar-diplomatie-1-UA.png";
 import pillarObservatoire from "@/assets/pillar-observatoire.jpg";
 import admissionDossier from "@/assets/admission-dossier.png";
 import admissionEntretien from "@/assets/admission-entretien.png";

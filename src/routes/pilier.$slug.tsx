@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import pillarGouvernance from "@/assets/pillar-gouvernance.jpg";
-import pillarDiplomatie1 from "@/assets/pillar-diplomatie-1.jpg";
+import pillarDiplomatie1 from "@/assets/pillar-diplomatie-1-UA.png";
 import pillarDiplomatie2 from "@/assets/pillar-diplomatie-2.jpg";
 import pillarCommunication from "@/assets/pillar-communication.jpg";
 import pillarObservatoire from "@/assets/pillar-observatoire.jpg";
