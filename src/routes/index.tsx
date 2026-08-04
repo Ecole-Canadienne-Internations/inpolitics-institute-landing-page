@@ -25,7 +25,8 @@ import arnaudDirectorImage from "@/assets/arnaud-sighano-image.jpeg";
 import arnaudProfile from "@/assets/arnaud-sighano-profile-picture.jpeg";
 import teamObtel from "@/assets/team-obtel.jpeg";
 import teamBoumediene from "@/assets/team-boumediene.jpeg";
-import teamToukea from "@/assets/Dr-Dieudonné-Toukea.jpeg";
+import teamToukea from "@/assets/toukea-2026.jpeg.asset.json";
+import arnaudPortrait2026 from "@/assets/arnaud-portrait-2026.jpeg.asset.json";
 import logo from "@/assets/inpolitics-insititute-new-logo.png";
 import pillarGouvernance from "@/assets/pillar-gouvernance.jpg";
 import pillarDiplomatie from "@/assets/pillar-diplomatie-1-UA.png";
@@ -95,12 +96,13 @@ function TeamFounders() {
       name: "Bloukli Hacene BOUMEDIENE",
       role: "Co-fondateur — Architecture & Urbanisme",
       img: teamBoumediene,
+      imgCls: "w-36 h-36 md:w-48 md:h-48",
     },
     {
       slug: "dieudonne-toukea",
       name: "Dr Dieudonné TOUKEA",
       role: "Directeur Afrique",
-      img: teamToukea,
+      img: teamToukea.url,
     },
   ];
   return (
@@ -124,7 +126,7 @@ function TeamFounders() {
               <img
                 src={m.img}
                 alt={m.name}
-                className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-center mx-auto aspect-square ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]"
+                className={`${(m as { imgCls?: string }).imgCls ?? "w-32 h-32 md:w-40 md:h-40"} rounded-full object-cover object-center mx-auto aspect-square ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]`}
                 loading="lazy"
               />
               <div className="mt-6">
@@ -142,7 +144,7 @@ function TeamFounders() {
               <img
                 src={m.img}
                 alt={m.name}
-                className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-center mx-auto aspect-square ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]"
+                className={`${(m as { imgCls?: string }).imgCls ?? "w-32 h-32 md:w-40 md:h-40"} rounded-full object-cover object-center mx-auto aspect-square ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)]`}
                 loading="lazy"
               />
               <div className="mt-6">
@@ -485,7 +487,7 @@ function Founder() {
           <div className="relative aspect-[4/5] max-w-sm">
             <div className="absolute -top-3 -right-3 left-10 bottom-10 rounded-[2rem] border border-crimson/40" />
             <img
-              src={arnaudDirectorImage}
+              src={arnaudPortrait2026.url}
               alt="Arnaud Sighano, Directeur d'Inpolitics Institute"
               loading="lazy"
               className="relative h-full w-full object-cover rounded-[2rem] shadow-2xl"
@@ -726,9 +728,8 @@ function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
           <div>© {new Date().getFullYear()} InPolitics Institute. Tous droits réservés.</div>
-          <a href="https://delmarwebstudios.qzz.io" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Built by Delmar Web Studios</a>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition">Mentions légales</a>
+            <Link to="/mentions-legales" className="hover:text-white transition">Mentions légales</Link>
             <a href="#" className="hover:text-white transition">Confidentialité</a>
           </div>
         </div>
