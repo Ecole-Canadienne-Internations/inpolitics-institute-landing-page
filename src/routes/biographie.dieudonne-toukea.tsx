@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Mail } from "lucide-react";
 import { Header } from "@/components/Header";
 import { useContactModal } from "@/components/ContactModal";
-import teamToukea from "@/assets/Dr-Dieudonné-Toukea.jpeg";
+import teamToukea from "@/assets/toukea-2026.jpeg.asset.json";
 
 const SITE = "https://inpoliticsinstitute.com";
 const BIO = `Docteur en Études Internationales, il est enseignant-chercheur en Science Politique à l’Université de Dschang au Cameroun. Ses travaux portent sur la diplomatie climatique, la transformation des villes, la gouvernance environnementale et l’infrapolitique des communautés locales face aux technologies numériques de surveillance. Certifié SETYM en gestion de projet, il accompagne des institutions gouvernementales et des ONG en tant que consultant sur des projets de développement local, de formation, d’assainissement urbain et de gestion des données publiques.`;
@@ -49,7 +49,7 @@ function BioPage() {
             </div>
             <div className="md:col-span-5 order-1 md:order-2 md:sticky md:top-40">
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-white">
-                <img src={teamToukea} alt="Dr Dieudonné TOUKEA" className="h-full w-full object-cover" />
+                <img src={teamToukea.url} alt="Dr Dieudonné TOUKEA" className="h-full w-full object-cover" />
               </div>
             </div>
           </div>

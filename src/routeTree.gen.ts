@@ -10,7 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MotDuDirecteurRouteImport } from './routes/mot-du-directeur'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SchoolsOfPoliticsVisionMissionRouteImport } from './routes/schools-of-politics.vision-mission'
+import { Route as SchoolsOfPoliticsApplyRouteImport } from './routes/schools-of-politics.apply'
 import { Route as ProgrammesVisitesTechniquesRouteImport } from './routes/programmes.visites-techniques'
 import { Route as ProgrammesSeminairesGigeanRouteImport } from './routes/programmes.seminaires-gigean'
 import { Route as ProgrammesPlaidoyerInfluenceRouteImport } from './routes/programmes.plaidoyer-influence'
@@ -27,9 +30,9 @@ import { Route as LabActualitesEvenementsRouteImport } from './routes/lab.actual
 import { Route as InstitutVisionManifesteRouteImport } from './routes/institut.vision-manifeste'
 import { Route as InstitutLobbyingIntegriteRouteImport } from './routes/institut.lobbying-integrite'
 import { Route as InstitutLabelHauteIntegriteRouteImport } from './routes/institut.label-haute-integrite'
+import { Route as InstitutGalerieImageRouteImport } from './routes/institut.galerie-image'
 import { Route as InstitutDiplomatieTerritorialeRouteImport } from './routes/institut.diplomatie-territoriale'
 import { Route as InstitutCampusRouteImport } from './routes/institut.campus'
-import { Route as InstitutGalerieImageRouteImport } from './routes/institut.galerie-image'
 import { Route as GouvernanceDigitaleSolutionsSaasRouteImport } from './routes/gouvernance-digitale.solutions-saas'
 import { Route as GouvernanceDigitaleIaDataScienceRouteImport } from './routes/gouvernance-digitale.ia-data-science'
 import { Route as GouvernanceDigitaleEtudesDeCasRouteImport } from './routes/gouvernance-digitale.etudes-de-cas'
@@ -40,17 +43,31 @@ import { Route as BiographieHaceneBoumedieneRouteImport } from './routes/biograp
 import { Route as BiographieDieudonneToukeaRouteImport } from './routes/biographie.dieudonne-toukea'
 import { Route as BiographieArnaudSighanoRouteImport } from './routes/biographie.arnaud-sighano'
 import { Route as BiographieAntoineObtelRouteImport } from './routes/biographie.antoine-obtel'
-import { Route as SchoolsOfPoliticsVisionMissionRouteImport } from './routes/schools-of-politics.vision-mission'
-import { Route as SchoolsOfPoliticsApplyRouteImport } from './routes/schools-of-politics.apply'
 
 const MotDuDirecteurRoute = MotDuDirecteurRouteImport.update({
   id: '/mot-du-directeur',
   path: '/mot-du-directeur',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchoolsOfPoliticsVisionMissionRoute =
+  SchoolsOfPoliticsVisionMissionRouteImport.update({
+    id: '/schools-of-politics/vision-mission',
+    path: '/schools-of-politics/vision-mission',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SchoolsOfPoliticsApplyRoute = SchoolsOfPoliticsApplyRouteImport.update({
+  id: '/schools-of-politics/apply',
+  path: '/schools-of-politics/apply',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProgrammesVisitesTechniquesRoute =
@@ -142,6 +159,11 @@ const InstitutLabelHauteIntegriteRoute =
     path: '/institut/label-haute-integrite',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InstitutGalerieImageRoute = InstitutGalerieImageRouteImport.update({
+  id: '/institut/galerie-image',
+  path: '/institut/galerie-image',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InstitutDiplomatieTerritorialeRoute =
   InstitutDiplomatieTerritorialeRouteImport.update({
     id: '/institut/diplomatie-territoriale',
@@ -151,11 +173,6 @@ const InstitutDiplomatieTerritorialeRoute =
 const InstitutCampusRoute = InstitutCampusRouteImport.update({
   id: '/institut/campus',
   path: '/institut/campus',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InstitutGalerieImageRoute = InstitutGalerieImageRouteImport.update({
-  id: '/institut/galerie-image',
-  path: '/institut/galerie-image',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GouvernanceDigitaleSolutionsSaasRoute =
@@ -215,22 +232,9 @@ const BiographieAntoineObtelRoute = BiographieAntoineObtelRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 
-const SchoolsOfPoliticsVisionMissionRoute =
-  SchoolsOfPoliticsVisionMissionRouteImport.update({
-    id: '/schools-of-politics/vision-mission',
-    path: '/schools-of-politics/vision-mission',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-
-const SchoolsOfPoliticsApplyRoute =
-  SchoolsOfPoliticsApplyRouteImport.update({
-    id: '/schools-of-politics/apply',
-    path: '/schools-of-politics/apply',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/mot-du-directeur': typeof MotDuDirecteurRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
@@ -243,8 +247,8 @@ export interface FileRoutesByFullPath {
   '/gouvernance-digitale/ia-data-science': typeof GouvernanceDigitaleIaDataScienceRoute
   '/gouvernance-digitale/solutions-saas': typeof GouvernanceDigitaleSolutionsSaasRoute
   '/institut/campus': typeof InstitutCampusRoute
-  '/institut/galerie-image': typeof InstitutGalerieImageRoute
   '/institut/diplomatie-territoriale': typeof InstitutDiplomatieTerritorialeRoute
+  '/institut/galerie-image': typeof InstitutGalerieImageRoute
   '/institut/label-haute-integrite': typeof InstitutLabelHauteIntegriteRoute
   '/institut/lobbying-integrite': typeof InstitutLobbyingIntegriteRoute
   '/institut/vision-manifeste': typeof InstitutVisionManifesteRoute
@@ -266,6 +270,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/mot-du-directeur': typeof MotDuDirecteurRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
@@ -278,8 +283,8 @@ export interface FileRoutesByTo {
   '/gouvernance-digitale/ia-data-science': typeof GouvernanceDigitaleIaDataScienceRoute
   '/gouvernance-digitale/solutions-saas': typeof GouvernanceDigitaleSolutionsSaasRoute
   '/institut/campus': typeof InstitutCampusRoute
-  '/institut/galerie-image': typeof InstitutGalerieImageRoute
   '/institut/diplomatie-territoriale': typeof InstitutDiplomatieTerritorialeRoute
+  '/institut/galerie-image': typeof InstitutGalerieImageRoute
   '/institut/label-haute-integrite': typeof InstitutLabelHauteIntegriteRoute
   '/institut/lobbying-integrite': typeof InstitutLobbyingIntegriteRoute
   '/institut/vision-manifeste': typeof InstitutVisionManifesteRoute
@@ -302,6 +307,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/mot-du-directeur': typeof MotDuDirecteurRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
@@ -314,8 +320,8 @@ export interface FileRoutesById {
   '/gouvernance-digitale/ia-data-science': typeof GouvernanceDigitaleIaDataScienceRoute
   '/gouvernance-digitale/solutions-saas': typeof GouvernanceDigitaleSolutionsSaasRoute
   '/institut/campus': typeof InstitutCampusRoute
-  '/institut/galerie-image': typeof InstitutGalerieImageRoute
   '/institut/diplomatie-territoriale': typeof InstitutDiplomatieTerritorialeRoute
+  '/institut/galerie-image': typeof InstitutGalerieImageRoute
   '/institut/label-haute-integrite': typeof InstitutLabelHauteIntegriteRoute
   '/institut/lobbying-integrite': typeof InstitutLobbyingIntegriteRoute
   '/institut/vision-manifeste': typeof InstitutVisionManifesteRoute
@@ -339,6 +345,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/mentions-legales'
     | '/mot-du-directeur'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
@@ -351,8 +358,8 @@ export interface FileRouteTypes {
     | '/gouvernance-digitale/ia-data-science'
     | '/gouvernance-digitale/solutions-saas'
     | '/institut/campus'
-    | '/institut/galerie-image'
     | '/institut/diplomatie-territoriale'
+    | '/institut/galerie-image'
     | '/institut/label-haute-integrite'
     | '/institut/lobbying-integrite'
     | '/institut/vision-manifeste'
@@ -374,6 +381,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/mentions-legales'
     | '/mot-du-directeur'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
@@ -386,8 +394,8 @@ export interface FileRouteTypes {
     | '/gouvernance-digitale/ia-data-science'
     | '/gouvernance-digitale/solutions-saas'
     | '/institut/campus'
-    | '/institut/galerie-image'
     | '/institut/diplomatie-territoriale'
+    | '/institut/galerie-image'
     | '/institut/label-haute-integrite'
     | '/institut/lobbying-integrite'
     | '/institut/vision-manifeste'
@@ -409,6 +417,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/mentions-legales'
     | '/mot-du-directeur'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
@@ -421,8 +430,8 @@ export interface FileRouteTypes {
     | '/gouvernance-digitale/ia-data-science'
     | '/gouvernance-digitale/solutions-saas'
     | '/institut/campus'
-    | '/institut/galerie-image'
     | '/institut/diplomatie-territoriale'
+    | '/institut/galerie-image'
     | '/institut/label-haute-integrite'
     | '/institut/lobbying-integrite'
     | '/institut/vision-manifeste'
@@ -445,6 +454,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
   MotDuDirecteurRoute: typeof MotDuDirecteurRoute
   BiographieAntoineObtelRoute: typeof BiographieAntoineObtelRoute
   BiographieArnaudSighanoRoute: typeof BiographieArnaudSighanoRoute
@@ -457,8 +467,8 @@ export interface RootRouteChildren {
   GouvernanceDigitaleIaDataScienceRoute: typeof GouvernanceDigitaleIaDataScienceRoute
   GouvernanceDigitaleSolutionsSaasRoute: typeof GouvernanceDigitaleSolutionsSaasRoute
   InstitutCampusRoute: typeof InstitutCampusRoute
-  InstitutGalerieImageRoute: typeof InstitutGalerieImageRoute
   InstitutDiplomatieTerritorialeRoute: typeof InstitutDiplomatieTerritorialeRoute
+  InstitutGalerieImageRoute: typeof InstitutGalerieImageRoute
   InstitutLabelHauteIntegriteRoute: typeof InstitutLabelHauteIntegriteRoute
   InstitutLobbyingIntegriteRoute: typeof InstitutLobbyingIntegriteRoute
   InstitutVisionManifesteRoute: typeof InstitutVisionManifesteRoute
@@ -488,11 +498,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MotDuDirecteurRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schools-of-politics/vision-mission': {
+      id: '/schools-of-politics/vision-mission'
+      path: '/schools-of-politics/vision-mission'
+      fullPath: '/schools-of-politics/vision-mission'
+      preLoaderRoute: typeof SchoolsOfPoliticsVisionMissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schools-of-politics/apply': {
+      id: '/schools-of-politics/apply'
+      path: '/schools-of-politics/apply'
+      fullPath: '/schools-of-politics/apply'
+      preLoaderRoute: typeof SchoolsOfPoliticsApplyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/programmes/visites-techniques': {
@@ -535,20 +566,6 @@ declare module '@tanstack/react-router' {
       path: '/pilier/$slug'
       fullPath: '/pilier/$slug'
       preLoaderRoute: typeof PilierSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/schools-of-politics/apply': {
-      id: '/schools-of-politics/apply'
-      path: '/schools-of-politics/apply'
-      fullPath: '/schools-of-politics/apply'
-      preLoaderRoute: typeof SchoolsOfPoliticsApplyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/schools-of-politics/vision-mission': {
-      id: '/schools-of-politics/vision-mission'
-      path: '/schools-of-politics/vision-mission'
-      fullPath: '/schools-of-politics/vision-mission'
-      preLoaderRoute: typeof SchoolsOfPoliticsVisionMissionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lobbying-reseau/services-entreprises': {
@@ -621,6 +638,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InstitutLabelHauteIntegriteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/institut/galerie-image': {
+      id: '/institut/galerie-image'
+      path: '/institut/galerie-image'
+      fullPath: '/institut/galerie-image'
+      preLoaderRoute: typeof InstitutGalerieImageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/institut/diplomatie-territoriale': {
       id: '/institut/diplomatie-territoriale'
       path: '/institut/diplomatie-territoriale'
@@ -633,13 +657,6 @@ declare module '@tanstack/react-router' {
       path: '/institut/campus'
       fullPath: '/institut/campus'
       preLoaderRoute: typeof InstitutCampusRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/institut/galerie-image': {
-      id: '/institut/galerie-image'
-      path: '/institut/galerie-image'
-      fullPath: '/institut/galerie-image'
-      preLoaderRoute: typeof InstitutGalerieImageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gouvernance-digitale/solutions-saas': {
@@ -717,6 +734,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
   MotDuDirecteurRoute: MotDuDirecteurRoute,
   BiographieAntoineObtelRoute: BiographieAntoineObtelRoute,
   BiographieArnaudSighanoRoute: BiographieArnaudSighanoRoute,
@@ -729,8 +747,8 @@ const rootRouteChildren: RootRouteChildren = {
   GouvernanceDigitaleIaDataScienceRoute: GouvernanceDigitaleIaDataScienceRoute,
   GouvernanceDigitaleSolutionsSaasRoute: GouvernanceDigitaleSolutionsSaasRoute,
   InstitutCampusRoute: InstitutCampusRoute,
-  InstitutGalerieImageRoute: InstitutGalerieImageRoute,
   InstitutDiplomatieTerritorialeRoute: InstitutDiplomatieTerritorialeRoute,
+  InstitutGalerieImageRoute: InstitutGalerieImageRoute,
   InstitutLabelHauteIntegriteRoute: InstitutLabelHauteIntegriteRoute,
   InstitutLobbyingIntegriteRoute: InstitutLobbyingIntegriteRoute,
   InstitutVisionManifesteRoute: InstitutVisionManifesteRoute,
@@ -754,4 +772,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
