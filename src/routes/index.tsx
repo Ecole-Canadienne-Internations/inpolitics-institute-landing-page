@@ -21,7 +21,6 @@ import hero1 from "@/assets/hero-1.png";
 import hero2 from "@/assets/hero-2.png";
 import hero3 from "@/assets/hero-3.png";
 import heroBg from "@/assets/hero-bg-collage.jpeg";
-import arnaudDirectorImage from "@/assets/arnaud-sighano-image.jpeg";
 import arnaudProfile from "@/assets/arnaud-sighano-profile-picture.jpeg";
 import teamObtel from "@/assets/team-obtel.jpeg";
 import teamBoumediene from "@/assets/team-boumediene.jpeg";
