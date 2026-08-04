@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MotDuDirecteurRouteImport } from './routes/mot-du-directeur'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SchoolsOfPoliticsVisionMissionRouteImport } from './routes/schools-of-politics.vision-mission'
 import { Route as SchoolsOfPoliticsApplyRouteImport } from './routes/schools-of-politics.apply'
@@ -46,6 +47,11 @@ import { Route as BiographieAntoineObtelRouteImport } from './routes/biographie.
 const MotDuDirecteurRoute = MotDuDirecteurRouteImport.update({
   id: '/mot-du-directeur',
   path: '/mot-du-directeur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -228,6 +234,7 @@ const BiographieAntoineObtelRoute = BiographieAntoineObtelRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/mot-du-directeur': typeof MotDuDirecteurRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
@@ -263,6 +270,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/mot-du-directeur': typeof MotDuDirecteurRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
@@ -299,6 +307,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/mot-du-directeur': typeof MotDuDirecteurRoute
   '/biographie/antoine-obtel': typeof BiographieAntoineObtelRoute
   '/biographie/arnaud-sighano': typeof BiographieArnaudSighanoRoute
@@ -336,6 +345,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/mentions-legales'
     | '/mot-du-directeur'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
@@ -371,6 +381,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/mentions-legales'
     | '/mot-du-directeur'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
@@ -406,6 +417,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/mentions-legales'
     | '/mot-du-directeur'
     | '/biographie/antoine-obtel'
     | '/biographie/arnaud-sighano'
@@ -442,6 +454,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
   MotDuDirecteurRoute: typeof MotDuDirecteurRoute
   BiographieAntoineObtelRoute: typeof BiographieAntoineObtelRoute
   BiographieArnaudSighanoRoute: typeof BiographieArnaudSighanoRoute
@@ -483,6 +496,13 @@ declare module '@tanstack/react-router' {
       path: '/mot-du-directeur'
       fullPath: '/mot-du-directeur'
       preLoaderRoute: typeof MotDuDirecteurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -714,6 +734,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
   MotDuDirecteurRoute: MotDuDirecteurRoute,
   BiographieAntoineObtelRoute: BiographieAntoineObtelRoute,
   BiographieArnaudSighanoRoute: BiographieArnaudSighanoRoute,
