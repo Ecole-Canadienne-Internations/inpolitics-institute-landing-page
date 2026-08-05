@@ -687,47 +687,36 @@ function Footer() {
           </div>
         </div>
 
-        <div className="md:col-span-3">
+        <div className="md:col-span-7">
           <div className="text-xs font-semibold tracking-[0.2em] uppercase text-white mb-5">
-            Institut
+            Informations légales
           </div>
-          <ul className="space-y-3 text-sm">
-            <li><Link to="/institut/vision-manifeste" className="hover:text-white transition">Vision & Manifeste</Link></li>
-            <li><Link to="/institut/campus" className="hover:text-white transition">Nos Campus</Link></li>
-            <li><Link to="/institut/diplomatie-territoriale" className="hover:text-white transition">Diplomatie Territoriale</Link></li>
-            <li><Link to="/institut/label-haute-integrite" className="hover:text-white transition">Label Haute Intégrité</Link></li>
-            <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
-          </ul>
-        </div>
-
-        <div className="md:col-span-4">
-          <div className="text-xs font-semibold tracking-[0.2em] uppercase text-white mb-5">
-            Newsletter
+          <div className="space-y-4 text-sm leading-relaxed text-white/70">
+            <p>
+              InPolitics Institute est un cabinet d'études-conseils, de formation et de recherche. Les
+              formations sont hybrides (en présentiel et en ligne) sous forme d'ateliers et séminaires.
+              Les diplômes sont français certifiés Qualiopi Répertoire Spécifique (RS).
+            </p>
+            <p>
+              Le campus de l'Institut est établi à Gigean, au sein de Montpellier Métropole (France). Ce choix
+              d'implantation répond à une exigence de neutralité : Gigean — Montpellier Métropole constitue un
+              lieu neutre sur le plan géopolitique, propice à l'accueil de décideurs publics, de délégations et
+              d'experts internationaux dans un cadre d'échange impartial, indépendant de toute affiliation
+              partisane ou d'intérêt d'État.
+            </p>
+            <p>
+              L'Institut conduit ses travaux d'études, de recherche et de plaidoyer dans le respect des
+              standards d'intégrité et de transparence applicables aux activités de conseil et de représentation
+              d'intérêts.
+            </p>
           </div>
-          <p className="text-sm mb-4">
-            Recevez nos analyses et publications de l'Observatoire.
-          </p>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="flex border border-white/20 rounded-full overflow-hidden bg-white/5 p-1"
-          >
-            <input
-              type="email"
-              required
-              placeholder="Votre email"
-              className="flex-1 px-4 h-11 bg-transparent text-sm text-white placeholder:text-white/50 focus:outline-none"
-            />
-            <button className="btn-crimson px-5 text-xs font-semibold uppercase tracking-wide rounded-full">
-              S'inscrire
-            </button>
-          </form>
         </div>
       </div>
 
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
           <div>© {new Date().getFullYear()} InPolitics Institute. Tous droits réservés.</div>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6 md:pr-20">
             <Link to="/mentions-legales" className="hover:text-white transition">Mentions légales</Link>
             <a href="#" className="hover:text-white transition">Confidentialité</a>
           </div>
