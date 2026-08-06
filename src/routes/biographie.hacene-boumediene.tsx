@@ -41,7 +41,7 @@ function BioPage() {
                 Bloukli Hacene BOUMEDIENE
               </h1>
               <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Co-fondateur. Expert haussmannien, urbaniste, reconnu par les Architectes des Bâtiments de France (ABF).
+                Co-fondateur — Expert Urbaniste et Haussmannien, reconnu par les Architectes des Bâtiments de France (ABF).
               </p>
               <div className="mt-10 space-y-5 text-[17px] leading-[1.8] text-foreground/85">
                 {BIO.split(/(?<=\. )(?=[A-ZÉÈÀ])/).map((p, i) => <p key={i}>{p}</p>)}
