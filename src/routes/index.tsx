@@ -93,15 +93,16 @@ function TeamFounders() {
     {
       slug: "hacene-boumediene",
       name: "Bloukli Hacene BOUMEDIENE",
-      role: "Co-fondateur — Architecture & Urbanisme",
+      role: "Co-fondateur — Expert Urbaniste et Haussmannien",
       img: teamBoumediene,
-      imgCls: "w-36 h-36 md:w-48 md:h-48",
+      imgCls: "w-40 h-40 md:w-52 md:h-52",
     },
     {
       slug: "dieudonne-toukea",
       name: "Dr Dieudonné TOUKEA",
       role: "Directeur Afrique",
-      img: teamToukea.url,
+      img: teamToukea,
+
     },
   ];
   return (
