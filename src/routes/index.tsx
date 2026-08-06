@@ -24,8 +24,8 @@ import heroBg from "@/assets/hero-bg-collage.jpeg";
 import arnaudProfile from "@/assets/arnaud-sighano-profile-picture.jpeg";
 import teamObtel from "@/assets/team-obtel.jpeg";
 import teamBoumediene from "@/assets/team-boumediene.jpeg";
-import teamToukea from "@/assets/toukea-2026.jpeg.asset.json";
-import arnaudPortrait2026 from "@/assets/arnaud-portrait-2026.jpeg.asset.json";
+import teamToukea from "@/assets/toukea-2026.jpeg";
+import arnaudPortrait2026 from "@/assets/arnaud-portrait-2026.jpeg";
 import logo from "@/assets/inpolitics-insititute-new-logo.png";
 import pillarGouvernance from "@/assets/pillar-gouvernance.jpg";
 import pillarDiplomatie from "@/assets/pillar-diplomatie-1-UA.png";
@@ -93,15 +93,16 @@ function TeamFounders() {
     {
       slug: "hacene-boumediene",
       name: "Bloukli Hacene BOUMEDIENE",
-      role: "Co-fondateur — Architecture & Urbanisme",
+      role: "Co-fondateur — Expert Urbaniste et Haussmannien",
       img: teamBoumediene,
-      imgCls: "w-36 h-36 md:w-48 md:h-48",
+      imgCls: "w-40 h-40 md:w-52 md:h-52",
     },
     {
       slug: "dieudonne-toukea",
       name: "Dr Dieudonné TOUKEA",
       role: "Directeur Afrique",
-      img: teamToukea.url,
+      img: teamToukea,
+
     },
   ];
   return (
@@ -486,7 +487,7 @@ function Founder() {
           <div className="relative aspect-[4/5] max-w-sm">
             <div className="absolute -top-3 -right-3 left-10 bottom-10 rounded-[2rem] border border-crimson/40" />
             <img
-              src={arnaudPortrait2026.url}
+              src={arnaudPortrait2026}
               alt="Arnaud Sighano, Directeur d'Inpolitics Institute"
               loading="lazy"
               className="relative h-full w-full object-cover rounded-[2rem] shadow-2xl"
