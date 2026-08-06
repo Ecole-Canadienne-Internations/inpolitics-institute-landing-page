@@ -55,9 +55,10 @@ export function Header() {
 
       <div className={`transition-all ${scrolled || !isHome ? "glass-header" : "bg-white/85 backdrop-blur"}`}>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-26 md:h-32 flex items-center justify-between gap-6">
-          <Link to="/" className="flex items-center shrink-0" aria-label="InPolitics Institute">
+          <Link to="/" className="logo-anim flex items-center shrink-0" aria-label="InPolitics Institute">
             <img src={logo} alt="InPolitics Institute" className="h-24 md:h-28 lg:h-30 w-auto object-contain" />
           </Link>
+
 
           <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1" onMouseLeave={() => setOpenIdx(null)}>
             <Link
