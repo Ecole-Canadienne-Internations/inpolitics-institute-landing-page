@@ -39,8 +39,8 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { name: "google-site-verification", content: "Ph4KWMKdgySfCMkTFEgzM8ZsjQ3bDnozmqF6kt2NFfw" },
-      { title: "InPolitics Institute — Campus Europe à Gigean" },
-      { name: "description", content: "Campus Europe (Gigean, Montpellier Métropole) & Campus Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique." },
+      { title: "InPolitics Institute — site Europe à Gigean" },
+      { name: "description", content: "site Europe (Gigean, Montpellier Métropole) & site Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique." },
       { property: "og:title", content: "InPolitics Institute" },
       { property: "og:description", content: "L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale." },
       { property: "og:url", content: "https://inpoliticsinstitute.com/" },
@@ -252,7 +252,7 @@ function About() {
           <p>
             Notre approche fusionne la rigueur académique européenne, la
             spécificité du terrain et l'exigence éthique d'une République
-            qui se construit, depuis notre Campus Europe de Gigean
+            qui se construit, depuis notre site Europe de Gigean
             (Montpellier Métropole) jusqu'à nos pôles Afrique.
           </p>
         </div>
@@ -668,7 +668,7 @@ function Footer() {
           <p className="mt-6 text-sm leading-relaxed max-w-sm">
             L'Institut des Décideurs Publics, de la Diplomatie, de la
             Performance Territoriale et de la Gouvernance Digitale.
-            Campus Europe à Gigean (Montpellier Métropole) & Campus Afrique.
+            site Europe à Gigean (Montpellier Métropole) & site Afrique.
           </p>
           <div className="mt-7 space-y-3 text-sm">
             <div className="flex items-start gap-3">
@@ -699,7 +699,7 @@ function Footer() {
               Les diplômes sont français certifiés Qualiopi Répertoire Spécifique (RS).
             </p>
             <p>
-              Le campus de l'Institut est établi à Gigean, au sein de Montpellier Métropole (France). Ce choix
+              Le site de l'Institut est établi à Gigean, au sein de Montpellier Métropole (France). Ce choix
               d'implantation répond à une exigence de neutralité : Gigean — Montpellier Métropole constitue un
               lieu neutre sur le plan géopolitique, propice à l'accueil de décideurs publics, de délégations et
               d'experts internationaux dans un cadre d'échange impartial, indépendant de toute affiliation

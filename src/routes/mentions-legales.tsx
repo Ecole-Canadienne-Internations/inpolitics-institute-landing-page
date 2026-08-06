@@ -49,7 +49,7 @@ function MentionsLegales() {
               Les diplômes sont français certifiés Qualiopi Répertoire Spécifique (RS).
             </p>
             <p>
-              Le campus de l'Institut est établi à Gigean, au sein de Montpellier Métropole (France).
+              Le site de l'Institut est établi à Gigean, au sein de Montpellier Métropole (France).
               Ce choix d'implantation répond à une exigence de neutralité : Gigean — Montpellier
               Métropole constitue un lieu neutre sur le plan géopolitique, propice à l'accueil de
               décideurs publics, de délégations et d'experts internationaux dans un cadre d'échange

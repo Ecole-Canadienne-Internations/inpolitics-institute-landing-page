@@ -10,17 +10,17 @@ export type PageContent = {
 
 export const SUBPAGE_CONTENT: Record<string, PageContent> = {
   /* ---------------- L'INSTITUT ---------------- */
-  "institut/campus": {
-    eyebrow: "L'Institut — Campus",
-    title: "Nos Campus",
+  "institut/site": {
+    eyebrow: "L'Institut — site",
+    title: "Nos site",
     intro:
-      "Un Campus Europe à Gigean (Montpellier Métropole) et des perspectives d'extension en Afrique. Une seule exigence : former une élite publique et privée capable de transformer ses territoires.",
+      "Un site Europe à Gigean (Montpellier Métropole) et des perspectives d'extension en Afrique. Une seule exigence : former une élite publique et privée capable de transformer ses territoires.",
     sections: [
       {
-        h: "Campus Europe — Gigean, Montpellier Métropole",
+        h: "site Europe — Gigean, Montpellier Métropole",
         p: [
-          "Notre campus historique est implanté à Gigean, au cœur de la dynamique métropolitaine de Montpellier, à 25 minutes des institutions économiques de l'Hérault et du port de Sète. Ce positionnement stratégique permet à nos auditeurs de bénéficier d'un cadre républicain rigoureux tout en restant connectés à un tissu économique européen de premier plan.",
-          "Le Campus Europe accueille les Séminaires d'Immersion, les Cursus Hybrides et les conférences de haut niveau du Lab. Il est conçu comme un véritable lieu de travail pour décideurs : amphithéâtre, salles de simulation, espace de coworking exécutif et résidence d'études.",
+          "Notre site historique est implanté à Gigean, au cœur de la dynamique métropolitaine de Montpellier, à 25 minutes des institutions économiques de l'Hérault et du port de Sète. Ce positionnement stratégique permet à nos auditeurs de bénéficier d'un cadre républicain rigoureux tout en restant connectés à un tissu économique européen de premier plan.",
+          "Le site Europe accueille les Séminaires d'Immersion, les Cursus Hybrides et les conférences de haut niveau du Lab. Il est conçu comme un véritable lieu de travail pour décideurs : amphithéâtre, salles de simulation, espace de coworking exécutif et résidence d'études.",
         ],
         list: [
           "Adresse : Rue de l'Herme, 34770 GIGEAN — Montpellier Métropole, France",
@@ -29,16 +29,16 @@ export const SUBPAGE_CONTENT: Record<string, PageContent> = {
         ],
       },
       {
-        h: "Perspectives — Campus Afrique",
+        h: "Perspectives — site Afrique",
         p: [
           "L'Afrique est l'un des terrains d'application privilégiés de la méthode InPolitics. Sans implantation physique permanente à ce jour, nous organisons des sessions itinérantes, des séminaires de formation continue et des visites techniques en partenariat avec des institutions africaines de référence.",
-          "Notre ambition est d'ouvrir, à moyen terme, un Campus Afrique dédié à la diplomatie territoriale et à la gouvernance digitale, en lien étroit avec les pôles métropolitains du continent.",
+          "Notre ambition est d'ouvrir, à moyen terme, un site Afrique dédié à la diplomatie territoriale et à la gouvernance digitale, en lien étroit avec les pôles métropolitains du continent.",
         ],
       },
       {
         h: "Une infrastructure pédagogique au service de l'État",
         p: [
-          "Chaque campus est équipé pour la Simul' Crise (salle de crise dédiée, dispositif média et débriefing d'État), pour les ateliers de l'Observatoire (data lab) et pour les rencontres confidentielles du Club InPolitics Exec.",
+          "Chaque site est équipé pour la Simul' Crise (salle de crise dédiée, dispositif média et débriefing d'État), pour les ateliers de l'Observatoire (data lab) et pour les rencontres confidentielles du Club InPolitics Exec.",
         ],
       },
     ],
@@ -142,7 +142,7 @@ export const SUBPAGE_CONTENT: Record<string, PageContent> = {
     eyebrow: "Programmes — Séminaires d'Immersion",
     title: "Séminaires d'Immersion à Gigean",
     intro:
-      "Des formats courts et intensifs de 3 à 5 jours, pensés pour l'élite publique et privée. Présentiel à 100 % au Campus Europe.",
+      "Des formats courts et intensifs de 3 à 5 jours, pensés pour l'élite publique et privée. Présentiel à 100 % au site Europe.",
     sections: [
       {
         h: "Public concerné",
@@ -257,7 +257,7 @@ export const SUBPAGE_CONTENT: Record<string, PageContent> = {
       {
         h: "Évaluation",
         p: [
-          "Évaluation continue, projet final encadré et soutenance présentielle au Campus Europe. Les diplômés intègrent le réseau Alumni InPolitics et le Club Exec.",
+          "Évaluation continue, projet final encadré et soutenance présentielle au site Europe. Les diplômés intègrent le réseau Alumni InPolitics et le Club Exec.",
         ],
       },
     ],
@@ -506,7 +506,7 @@ export const SUBPAGE_CONTENT: Record<string, PageContent> = {
       {
         h: "Architecture du bootcamp",
         p: [
-          "5 jours intensifs au Campus Europe de Gigean, combinant ateliers stratégiques, rencontres avec des acteurs économiques et institutionnels, retours d'expérience de pairs ayant déjà franchi le pas.",
+          "5 jours intensifs au site Europe de Gigean, combinant ateliers stratégiques, rencontres avec des acteurs économiques et institutionnels, retours d'expérience de pairs ayant déjà franchi le pas.",
         ],
         list: [
           "Diagnostic personnel — projet, ressources, contraintes.",
