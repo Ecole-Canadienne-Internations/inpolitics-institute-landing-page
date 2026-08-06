@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import campus1 from "@/assets/image-campus1.jpeg";
-import campus2 from "@/assets/image-campus2.jpeg";
-import campus3 from "@/assets/image-campus3.jpeg";
-import campus4 from "@/assets/image-campus4.jpeg";
+import site1 from "@/assets/image-site1.jpeg";
+import site2 from "@/assets/image-site2.jpeg";
+import site3 from "@/assets/image-site3.jpeg";
+import site4 from "@/assets/image-site4.jpeg";
 import { ArrowLeft, Mail } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useContactModal } from "@/components/ContactModal";
@@ -13,9 +13,9 @@ export const Route = createFileRoute("/institut/galerie-image")({
   head: () => ({
     meta: [
       { title: "Galerie & Image — InPolitics Institute" },
-      { name: "description", content: "Immersion visuelle et 3D au cœur du campus de l'Institut. Découvrez nos espaces de formation à Gigean." },
+      { name: "description", content: "Immersion visuelle et 3D au cœur du site de l'Institut. Découvrez nos espaces de formation à Gigean." },
       { property: "og:title", content: "Galerie & Image — InPolitics Institute" },
-      { property: "og:description", content: "Immersion visuelle et 3D au cœur du campus de l'Institut." },
+      { property: "og:description", content: "Immersion visuelle et 3D au cœur du site de l'Institut." },
       { property: "og:url", content: "https://inpoliticsinstitute.com/institut/galerie-image" },
       { property: "og:type", content: "article" },
     ],
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/institut/galerie-image")({
   }),
 });
 
-const IMAGES = [campus1, campus2, campus3, campus4];
+const IMAGES = [site1, site2, site3, site4];
 
 function GalerieImage() {
   const { open } = useContactModal();
@@ -49,7 +49,7 @@ function GalerieImage() {
 
           <div className="mt-8 max-w-3xl">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Bienvenue dans cette <span className="text-foreground font-semibold">immersion 3D</span> au sein du campus de l'InPolitics Institute. À travers cette exposition visuelle, nous vous invitons à découvrir les espaces où se construit la formation des décideurs publics de demain : amphithéâtres, salles de simulation, data labs et lieux de réflexion dédiés à la diplomatie territoriale et à la gouvernance digitale.
+              Bienvenue dans cette <span className="text-foreground font-semibold">immersion 3D</span> au sein du site de l'InPolitics Institute. À travers cette exposition visuelle, nous vous invitons à découvrir les espaces où se construit la formation des décideurs publics de demain : amphithéâtres, salles de simulation, data labs et lieux de réflexion dédiés à la diplomatie territoriale et à la gouvernance digitale.
             </p>
             <p className="mt-4 text-lg md:text-xl text-muted-foreground leading-relaxed">
               Chaque image capture l'atmosphère et la rigueur républicaine qui animent nos programmes. Nous espérons que cette visite vous donnera un aperçu concret de l'environnement unique dans lequel se déroulent nos séminaires d'immersion et nos cursus hybrides.
@@ -64,7 +64,7 @@ function GalerieImage() {
               >
                 <img
                   src={src}
-                  alt={`Campus InPolitics Institute — vue ${idx + 1}`}
+                  alt={`site InPolitics Institute — vue ${idx + 1}`}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   loading="lazy"
                 />
