@@ -96,7 +96,7 @@ function TeamFounders() {
       role: "Co-fondateur — Expert Urbaniste et Haussmannien",
       img: teamBoumediene,
       imgCls: "w-40 h-40 md:w-52 md:h-52",
-      imgFit: "contain",
+      imgPosition: "object-top",
     },
     {
       slug: "dieudonne-toukea",
