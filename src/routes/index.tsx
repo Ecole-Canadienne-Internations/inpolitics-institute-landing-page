@@ -96,7 +96,7 @@ function TeamFounders() {
       role: "Co-fondateur — Expert Urbaniste et Haussmannien",
       img: teamBoumediene,
       imgCls: "w-40 h-40 md:w-52 md:h-52",
-      imgFit: "contain",
+      imgPosition: "object-top",
     },
     {
       slug: "dieudonne-toukea",
@@ -127,7 +127,7 @@ function TeamFounders() {
               <img
                 src={m.img}
                 alt={m.name}
-                className={`${(m as { imgCls?: string }).imgCls ?? "w-32 h-32 md:w-40 md:h-40"} rounded-full ${(m as { imgFit?: string }).imgFit ?? "object-cover"} object-center mx-auto aspect-square ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)] bg-white`}
+                className={`${(m as { imgCls?: string }).imgCls ?? "w-32 h-32 md:w-40 md:h-40"} rounded-full object-cover ${(m as { imgPosition?: string }).imgPosition ?? "object-center"} mx-auto aspect-square ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)] bg-white`}
                 loading="lazy"
               />
               <div className="mt-6">
@@ -145,7 +145,7 @@ function TeamFounders() {
               <img
                 src={m.img}
                 alt={m.name}
-                className={`${(m as { imgCls?: string }).imgCls ?? "w-32 h-32 md:w-40 md:h-40"} rounded-full ${(m as { imgFit?: string }).imgFit ?? "object-cover"} object-center mx-auto aspect-square ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)] bg-white`}
+                className={`${(m as { imgCls?: string }).imgCls ?? "w-32 h-32 md:w-40 md:h-40"} rounded-full object-cover ${(m as { imgPosition?: string }).imgPosition ?? "object-center"} mx-auto aspect-square ring-4 ring-white shadow-[0_20px_50px_-15px_rgba(15,23,42,0.25)] bg-white`}
                 loading="lazy"
               />
               <div className="mt-6">
