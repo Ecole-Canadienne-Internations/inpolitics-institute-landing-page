@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Mail } from "lucide-react";
 import { Header } from "@/components/Header";
 import { useContactModal } from "@/components/ContactModal";
-import teamBoumediene from "@/assets/hacene-boumediene-portrait.jpg.asset.json";
+import teamBoumediene from "@/assets/hacene-boumediene-portrait-v2.jpg.asset.json";
 
 const SITE = "https://inpoliticsinstitute.com";
 const BIO = `Bloukli Hacene Boumediene est co-fondateur d'inPolitics Institute, où il apporte son expertise unique à l'intersection de l'architecture, de l'urbanisme et de la décision publique. Reconnu pour son exigence par les Architectes des Bâtiments de France (ABF), il a collaboré avec plusieurs architectes français de renom qui ont façonné l'image de Paris à travers ses édifices haussmanniens les plus emblématiques. Cette immersion dans le patrimoine architectural lui a ouvert les portes des innovations urbanistiques. Aujourd'hui, il met cette double culture — tradition haussmannienne et ville de demain — au service des politiques et décideurs publics. Il les accompagne sur les codes stylistiques, l'identité urbaine et les mutations des métropoles contemporaines.`;

@@ -23,7 +23,7 @@ import hero3 from "@/assets/hero-3.png";
 import heroBg from "@/assets/hero-bg-collage.jpeg";
 import arnaudProfile from "@/assets/arnaud-sighano-profile-picture.jpeg";
 import teamObtel from "@/assets/team-obtel.jpeg";
-import teamBoumediene from "@/assets/hacene-boumediene-portrait.jpg.asset.json";
+import teamBoumediene from "@/assets/hacene-boumediene-portrait-v2.jpg.asset.json";
 import teamToukea from "@/assets/toukea-2026.jpeg";
 import arnaudPortrait2026 from "@/assets/arnaud-portrait-2026.jpeg";
 import logo from "@/assets/inpolitics-insititute-new-logo.png";
