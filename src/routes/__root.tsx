@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-router";
 
 import { ContactProvider } from "@/components/ContactModal";
+import { Footer } from "@/components/Footer";
 
 function NotFoundComponent() {
   return (
