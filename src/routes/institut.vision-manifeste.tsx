@@ -61,7 +61,7 @@ function Manifeste() {
               Notre Institut n'est ni un think-tank de plus, ni une simple école de formation. C'est un écosystème intégré — académie, observatoire, cabinet d'influence et incubateur de solutions de gouvernance digitale — au service exclusif des décideurs publics et privés qui veulent transformer leurs territoires.
             </p>
             <p>
-              Depuis nos site de Gigean (Montpellier Métropole) et nos pôles africains, nous accompagnons des États, des collectivités, des entreprises et des diasporas dans la conduite de leurs ambitions. Notre méthode est simple : haut niveau d'exigence académique, immersion terrain, et un réseau international d'experts au plus haut niveau.
+              Depuis notre site de Gigean (Montpellier Métropole) et nos pôles africains, nous accompagnons des États, des collectivités, des entreprises et des diasporas dans la conduite de leurs ambitions. Notre méthode est simple : haut niveau d'exigence académique, immersion terrain, et un réseau international d'experts au plus haut niveau.
             </p>
             <p>
               Rejoindre InPolitics, c'est faire le choix de l'élite républicaine, de l'intégrité comme socle, et de l'influence comme discipline. Bienvenue dans la maison de ceux qui transforment.
