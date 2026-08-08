@@ -14,7 +14,84 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          first_name: string
+          id: string
+          last_name: string
+          message: string
+          organisation: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          first_name: string
+          id?: string
+          last_name: string
+          message: string
+          organisation?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          first_name?: string
+          id?: string
+          last_name?: string
+          message?: string
+          organisation?: string | null
+        }
+        Relationships: []
+      }
+      school_applications: {
+        Row: {
+          country: string
+          created_at: string
+          education: string
+          email: string
+          first_name: string
+          hear_about: string
+          id: string
+          last_name: string
+          linkedin: string | null
+          motivation: string
+          nationality: string
+          phone: string
+          program: string
+        }
+        Insert: {
+          country: string
+          created_at?: string
+          education: string
+          email: string
+          first_name: string
+          hear_about: string
+          id?: string
+          last_name: string
+          linkedin?: string | null
+          motivation: string
+          nationality: string
+          phone: string
+          program: string
+        }
+        Update: {
+          country?: string
+          created_at?: string
+          education?: string
+          email?: string
+          first_name?: string
+          hear_about?: string
+          id?: string
+          last_name?: string
+          linkedin?: string | null
+          motivation?: string
+          nationality?: string
+          phone?: string
+          program?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
