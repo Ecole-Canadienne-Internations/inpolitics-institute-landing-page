@@ -6,7 +6,6 @@ import {
   BarChart3,
   Quote,
   ArrowUpRight,
-  MapPin,
   Mail,
   Phone,
   Shield,
@@ -23,10 +22,9 @@ import hero3 from "@/assets/hero-3.png";
 import heroBg from "@/assets/hero-bg-collage.jpeg";
 import arnaudProfile from "@/assets/arnaud-sighano-profile-picture.jpeg";
 import teamObtel from "@/assets/team-obtel.jpeg";
-import teamBoumediene from "@/assets/hacene-boumediene-portrait-v2.jpg.asset.json";
+import teamBoumediene from "@/assets/hacene-boumediene-portrait.jpg";
 import teamToukea from "@/assets/toukea-2026.jpeg";
 import arnaudPortrait2026 from "@/assets/arnaud-portrait-2026.jpeg";
-import logo from "@/assets/inpolitics-insititute-new-logo.png";
 import pillarGouvernance from "@/assets/pillar-gouvernance.jpg";
 import pillarDiplomatie from "@/assets/pillar-diplomatie-1-UA.png";
 import pillarObservatoire from "@/assets/pillar-observatoire.jpg";
@@ -39,8 +37,8 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { name: "google-site-verification", content: "Ph4KWMKdgySfCMkTFEgzM8ZsjQ3bDnozmqF6kt2NFfw" },
-      { title: "InPolitics Institute — site Europe à Gigean" },
-      { name: "description", content: "site Europe (Gigean, Montpellier Métropole) & site Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique." },
+      { title: "InPolitics Institute — Site Europe à Gigean" },
+      { name: "description", content: "Sites Europe (Gigean, Montpellier Métropole) et Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique." },
       { property: "og:title", content: "InPolitics Institute" },
       { property: "og:description", content: "L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale." },
       { property: "og:url", content: "https://inpoliticsinstitute.com/" },
@@ -69,7 +67,6 @@ function Landing() {
         <Faq />
         <ContactCta />
       </main>
-      <Footer />
       <WhatsAppFloat />
     </div>
   );
@@ -94,8 +91,8 @@ function TeamFounders() {
       slug: "hacene-boumediene",
       name: "Bloukli Hacene BOUMEDIENE",
       role: "Co-fondateur — Expert Urbaniste et Haussmannien",
-      img: teamBoumediene.url,
-      imgCls: "w-40 h-40 md:w-52 md:h-52",
+      img: teamBoumediene,
+      imgCls: "w-44 h-44 md:w-56 md:h-56 p-2",
     },
     {
       slug: "dieudonne-toukea",
@@ -208,13 +205,13 @@ function Hero() {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href="#contact"
+              <Link
+                to="/schools-of-politics/apply"
                 className="btn-crimson inline-flex items-center gap-2 px-7 h-13 py-3.5 rounded-full font-semibold text-sm"
               >
-                Demander la brochure
+                Apply for School of Politics
                 <ArrowRight className="size-4" />
-              </a>
+              </Link>
               <a
                 href="#formations"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-anthracite-foreground transition-colors"
@@ -658,71 +655,3 @@ function ContactCta() {
   );
 }
 
-/* ---------- FOOTER ---------- */
-function Footer() {
-  return (
-    <footer className="bg-anthracite text-white/80">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid md:grid-cols-12 gap-10">
-        <div className="md:col-span-5">
-          <img src={logo} alt="InPolitics Institute" className="h-14 w-auto object-contain bg-white rounded-lg p-2" />
-          <p className="mt-6 text-sm leading-relaxed max-w-sm">
-            L'Institut des Décideurs Publics, de la Diplomatie, de la
-            Performance Territoriale et de la Gouvernance Digitale.
-            site Europe à Gigean (Montpellier Métropole) & site Afrique.
-          </p>
-          <div className="mt-7 space-y-3 text-sm">
-            <div className="flex items-start gap-3">
-              <MapPin className="size-4 mt-0.5 text-crimson" />
-              <span>Rue de l'Herme, 34770 GIGEAN — Montpellier Métropole, France</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <Phone className="size-4 mt-0.5 text-crimson" />
-              <a href="tel:+33746440427" className="hover:text-white transition">+33 7 46 44 04 27</a>
-            </div>
-            <div className="flex items-start gap-3">
-              <Mail className="size-4 mt-0.5 text-crimson" />
-              <a href="mailto:contact@inpoliticsinstitute.com" className="hover:text-white transition">
-                contact@inpoliticsinstitute.com
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="md:col-span-7">
-          <div className="text-xs font-semibold tracking-[0.2em] uppercase text-white mb-5">
-            Informations légales
-          </div>
-          <div className="space-y-4 text-sm leading-relaxed text-white/70">
-            <p>
-              InPolitics Institute est un cabinet d'études-conseils, de formation et de recherche. Les
-              formations sont hybrides (en présentiel et en ligne) sous forme d'ateliers et séminaires.
-              Les diplômes sont français certifiés Qualiopi Répertoire Spécifique (RS).
-            </p>
-            <p>
-              Le site de l'Institut est établi à Gigean, au sein de Montpellier Métropole (France). Ce choix
-              d'implantation répond à une exigence de neutralité : Gigean — Montpellier Métropole constitue un
-              lieu neutre sur le plan géopolitique, propice à l'accueil de décideurs publics, de délégations et
-              d'experts internationaux dans un cadre d'échange impartial, indépendant de toute affiliation
-              partisane ou d'intérêt d'État.
-            </p>
-            <p>
-              L'Institut conduit ses travaux d'études, de recherche et de plaidoyer dans le respect des
-              standards d'intégrité et de transparence applicables aux activités de conseil et de représentation
-              d'intérêts.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-          <div>© {new Date().getFullYear()} InPolitics Institute. Tous droits réservés.</div>
-          <div className="flex items-center gap-6 md:pr-20">
-            <Link to="/mentions-legales" className="hover:text-white transition">Mentions légales</Link>
-            <a href="#" className="hover:text-white transition">Confidentialité</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}

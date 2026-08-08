@@ -64,7 +64,7 @@ function GalerieImage() {
               >
                 <img
                   src={src}
-                  alt={`site InPolitics Institute — vue ${idx + 1}`}
+                  alt={`Site InPolitics Institute — vue ${idx + 1}`}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   loading="lazy"
                 />

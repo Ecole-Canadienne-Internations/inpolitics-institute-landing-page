@@ -7,6 +7,8 @@ import {
 } from "@tanstack/react-router";
 
 import { ContactProvider } from "@/components/ContactModal";
+import { Footer } from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -77,7 +79,13 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <ContactProvider>
-        <Outlet />
+        <div className="flex min-h-screen flex-col">
+          <div className="flex-1">
+            <Outlet />
+          </div>
+          <Footer />
+        </div>
+        <Toaster />
       </ContactProvider>
     </QueryClientProvider>
   );
