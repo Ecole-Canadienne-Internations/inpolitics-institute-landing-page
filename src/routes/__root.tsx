@@ -8,6 +8,7 @@ import {
 
 import { ContactProvider } from "@/components/ContactModal";
 import { Footer } from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -84,6 +85,7 @@ function RootComponent() {
           </div>
           <Footer />
         </div>
+        <Toaster />
       </ContactProvider>
     </QueryClientProvider>
   );
