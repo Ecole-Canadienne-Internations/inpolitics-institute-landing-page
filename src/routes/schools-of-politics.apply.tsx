@@ -6,6 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Header } from "@/components/Header";
 import { ArrowLeft, Check, Send, Loader2 } from "lucide-react";
 import banner from "@/assets/banner4.png";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/schools-of-politics/apply")({
   component: Apply,
@@ -80,11 +82,26 @@ function Apply() {
     resolver: zodResolver(applicationSchema),
   });
 
-  const onSubmit = async () => {
+  const onSubmit = async (values: ApplicationForm) => {
     setSubmitting(true);
-    // Simulate submission — replace with actual API call
-    await new Promise((r) => setTimeout(r, 1500));
+    const { error } = await supabase.from("school_applications").insert({
+      first_name: values.firstName,
+      last_name: values.lastName,
+      email: values.email,
+      phone: values.phone,
+      country: values.country,
+      nationality: values.nationality,
+      education: values.education,
+      program: values.program,
+      motivation: values.motivation,
+      linkedin: values.linkedin?.trim() || null,
+      hear_about: values.hearAbout,
+    });
     setSubmitting(false);
+    if (error) {
+      toast.error("L'envoi a échoué. Merci de réessayer.");
+      return;
+    }
     setSubmitted(true);
   };
 
