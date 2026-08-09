@@ -5,15 +5,15 @@ import { useContactModal } from "@/components/ContactModal";
 import teamBoumediene from "@/assets/hacene-boumediene-portrait.jpg";
 
 const SITE = "https://inpoliticsinstitute.com";
-const BIO = `Bloukli Hacene Boumediene est co-fondateur d'inPolitics Institute, où il apporte son expertise unique à l'intersection de l'architecture, de l'urbanisme et de la décision publique. Reconnu pour son exigence par les Architectes des Bâtiments de France (ABF), il a collaboré avec plusieurs architectes français de renom qui ont façonné l'image de Paris à travers ses édifices haussmanniens les plus emblématiques. Cette immersion dans le patrimoine architectural lui a ouvert les portes des innovations urbanistiques. Aujourd'hui, il met cette double culture — tradition haussmannienne et ville de demain — au service des politiques et décideurs publics. Il les accompagne sur les codes stylistiques, l'identité urbaine et les mutations des métropoles contemporaines.`;
+const BIO = `Boukli Hacene Boumediene est co-fondateur d'inPolitics Institute, où il apporte son expertise unique à l'intersection de l'architecture, de l'urbanisme et de la décision publique. Reconnu pour son exigence par les Architectes des Bâtiments de France (ABF), il a collaboré avec plusieurs architectes français de renom qui ont façonné l'image de Paris à travers ses édifices haussmanniens les plus emblématiques. Cette immersion dans le patrimoine architectural lui a ouvert les portes des innovations urbanistiques. Aujourd'hui, il met cette double culture — tradition haussmannienne et ville de demain — au service des politiques et décideurs publics. Il les accompagne sur les codes stylistiques, l'identité urbaine et les mutations des métropoles contemporaines.`;
 
 export const Route = createFileRoute("/biographie/hacene-boumediene")({
   component: BioPage,
   head: () => ({
     meta: [
-      { title: "Bloukli Hacene BOUMEDIENE — Biographie | InPolitics Institute" },
-      { name: "description", content: "Biographie de Bloukli Hacene Boumediene, co-fondateur d'InPolitics Institute." },
-      { property: "og:title", content: "Bloukli Hacene BOUMEDIENE — InPolitics Institute" },
+      { title: "Boukli Hacene BOUMEDIENE — Biographie | InPolitics Institute" },
+      { name: "description", content: "Biographie de Boukli Hacene Boumediene, co-fondateur d'InPolitics Institute." },
+      { property: "og:title", content: "Boukli Hacene BOUMEDIENE — InPolitics Institute" },
       { property: "og:description", content: "Co-fondateur d'InPolitics Institute." },
       { property: "og:url", content: `${SITE}/biographie/hacene-boumediene` },
       { property: "og:type", content: "profile" },
@@ -38,7 +38,7 @@ function BioPage() {
                 Biographie — Co-fondation
               </div>
               <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-anthracite">
-                Bloukli Hacene BOUMEDIENE
+                Boukli Hacene BOUMEDIENE
               </h1>
               <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Co-fondateur — Expert Urbaniste et Haussmannien, reconnu par les Architectes des Bâtiments de France (ABF).
@@ -49,7 +49,7 @@ function BioPage() {
             </div>
             <div className="md:col-span-5 order-1 md:order-2 md:sticky md:top-40">
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-white">
-                <img src={teamBoumediene} alt="Bloukli Hacene BOUMEDIENE" className="h-full w-full object-contain bg-white" />
+                <img src={teamBoumediene} alt="Boukli Hacene BOUMEDIENE" className="h-full w-full object-contain bg-white" />
               </div>
             </div>
           </div>

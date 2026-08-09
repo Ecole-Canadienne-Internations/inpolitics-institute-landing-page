@@ -89,7 +89,7 @@ function TeamFounders() {
     },
     {
       slug: "hacene-boumediene",
-      name: "Bloukli Hacene BOUMEDIENE",
+      name: "Boukli Hacene BOUMEDIENE",
       role: "Co-fondateur — Expert Urbaniste et Haussmannien",
       img: teamBoumediene,
       imgCls: "w-44 h-44 md:w-56 md:h-56 p-2",
