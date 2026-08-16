@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as MotDuDirecteurRouteImport } from './routes/mot-du-directeur'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ManifesteRouteImport } from './routes/manifeste'
 import { Route as SchoolsOfPoliticsVisionMissionRouteImport } from './routes/schools-of-politics.vision-mission'
 import { Route as SchoolsOfPoliticsApplyRouteImport } from './routes/schools-of-politics.apply'
 import { Route as ProgrammesVisitesTechniquesRouteImport } from './routes/programmes.visites-techniques'
@@ -57,6 +58,11 @@ const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManifesteRoute = ManifesteRouteImport.update({
+  id: '/manifeste',
+  path: '/manifeste',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SchoolsOfPoliticsVisionMissionRoute =
@@ -512,6 +518,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/manifeste': {
+      id: '/manifeste'
+      path: '/manifeste'
+      fullPath: '/manifeste'
+      preLoaderRoute: typeof ManifesteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/schools-of-politics/vision-mission': {
       id: '/schools-of-politics/vision-mission'
       path: '/schools-of-politics/vision-mission'
@@ -734,6 +747,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ManifesteRoute: ManifesteRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   MotDuDirecteurRoute: MotDuDirecteurRoute,
   BiographieAntoineObtelRoute: BiographieAntoineObtelRoute,

@@ -19,6 +19,7 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import hero1 from "@/assets/hero-1.png";
 import hero2 from "@/assets/hero-2.png";
 import hero3 from "@/assets/hero-3.png";
+import homeVideo from "@/assets/inpolitics-home-video.mp4";
 import heroBg from "@/assets/hero-bg-collage.jpeg";
 import arnaudProfile from "@/assets/arnaud-sighano-profile-picture.jpeg";
 import teamObtel from "@/assets/team-obtel.jpeg";
@@ -58,6 +59,7 @@ function Landing() {
       <main>
         <Hero />
         <About />
+        <ManifesteSection />
         <Pillars />
         <SimulCrise />
         <Proof />
@@ -252,6 +254,53 @@ function About() {
             qui se construit, depuis notre site Europe de Gigean
             (Montpellier Métropole) jusqu'à nos pôles Afrique.
           </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- NOTRE MANIFESTE ---------- */
+function ManifesteSection() {
+  return (
+    <section id="manifeste" className="py-28 md:py-36 relative overflow-hidden">
+      <div className="absolute -top-24 -right-24 size-[420px] rounded-full bg-crimson/5 blur-3xl" />
+      <div className="max-w-4xl mx-auto px-6 lg:px-10 relative">
+        <div className="text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-anthracite leading-tight">
+            Notre Manifeste
+          </h2>
+        </div>
+
+        <div className="mt-10 relative rounded-[2rem] overflow-hidden border border-border bg-anthracite shadow-[0_30px_80px_-30px_rgba(15,23,42,0.45)]">
+          <div className="absolute -top-16 -right-16 size-56 rounded-full bg-crimson/30 blur-3xl pointer-events-none" />
+          <video
+            className="relative w-full aspect-video object-cover"
+            controls
+            preload="metadata"
+            playsInline
+          >
+            <source src={homeVideo} type="video/mp4" />
+            Votre navigateur ne supporte pas la lecture vidéo.
+          </video>
+        </div>
+
+        <div className="mt-10 text-center">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            Mêler science politique, données et communication d'impact. La politique n'est pas qu'une affaire de discours, c'est une science de la donnée et de la stratégie.
+          </p>
+          <span className="mt-5 flex items-center justify-center gap-2 text-crimson" aria-hidden="true">
+            <span className="size-1.5 rounded-full bg-current" />
+            <span className="size-1.5 rounded-full bg-current" />
+            <span className="size-1.5 rounded-full bg-current" />
+          </span>
+          <Link
+            to="/manifeste"
+            className="mt-6 btn-crimson inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm"
+          >
+            Pour voir la suite
+            <ArrowRight className="size-4" />
+          </Link>
         </div>
       </div>
     </section>
