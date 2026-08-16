@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { MapPin, Mail, Phone, Home } from "lucide-react";
+import { MapPin, Mail, Phone, Home, Facebook } from "lucide-react";
 import logo from "@/assets/inpolitics-insititute-new-logo.png";
 
 export function Footer() {
@@ -28,6 +28,17 @@ export function Footer() {
               <Mail className="size-4 mt-0.5 text-crimson" />
               <a href="mailto:contact@inpoliticsinstitute.com" className="hover:text-white transition">
                 contact@inpoliticsinstitute.com
+              </a>
+            </div>
+            <div className="flex items-start gap-3">
+              <Facebook className="size-4 mt-0.5 text-crimson" />
+              <a
+                href="https://www.facebook.com/share/18DMZCrkHx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
+                Suivez-nous sur Facebook
               </a>
             </div>
           </div>
