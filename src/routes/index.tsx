@@ -561,7 +561,7 @@ function Founder() {
             </div>
           </div>
           <Link
-            to="/biographie/arnaud-sighano"
+            to="/institut/vision-manifeste"
             className="mt-8 btn-crimson px-5 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-2"
           >
             Voir plus <ArrowRight className="size-3.5" />

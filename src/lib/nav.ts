@@ -14,7 +14,7 @@ export const NAV: NavMenu[] = [
   {
     label: "L'Institut",
     items: [
-      { to: "/institut/vision-manifeste", label: "Vision & Manifeste", desc: "Le texte officiel d'Arnaud SIGHANO.", banner: true },
+      { to: "/institut/vision-manifeste", label: "Vision", desc: "Le texte officiel d'Arnaud SIGHANO.", banner: true },
       { to: "/institut/site", label: "Nos sites", desc: "Gigean (Montpellier Métropole) & perspectives d'extension en Afrique.", banner: true },
       { to: "/institut/galerie-image", label: "Galerie & Image (Immersion sur le site)", desc: "Plongez dans une immersion visuelle au cœur du site de l'Institut.", banner: true },
       { to: "/institut/diplomatie-territoriale", label: "Diplomatie Territoriale", desc: "Positionnement international des territoires.", banner: true },
