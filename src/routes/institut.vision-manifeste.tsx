@@ -40,7 +40,7 @@ function Manifeste() {
                   L'Institut — Manifeste
                 </div>
                 <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-white">
-                  Vision & Manifeste
+                  Vision
                 </h1>
               </div>
             </div>

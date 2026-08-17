@@ -560,6 +560,12 @@ function Founder() {
               </div>
             </div>
           </div>
+          <Link
+            to="/biographie/arnaud-sighano"
+            className="mt-8 btn-crimson px-5 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-2"
+          >
+            Voir plus <ArrowRight className="size-3.5" />
+          </Link>
         </div>
       </div>
     </section>
