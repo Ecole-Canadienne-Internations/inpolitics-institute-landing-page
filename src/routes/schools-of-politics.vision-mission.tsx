@@ -10,11 +10,26 @@ export const Route = createFileRoute("/schools-of-politics/vision-mission")({
   head: () => ({
     meta: [
       { title: "Vision & Mission — School of Politics — InPolitics Institute" },
-      { name: "description", content: "Discover the vision and mission of the School of Politics at InPolitics Institute." },
-      { property: "og:title", content: "Vision & Mission — School of Politics — InPolitics Institute" },
-      { property: "og:description", content: "Vision and mission of the School of Politics at InPolitics Institute." },
+      {
+        name: "description",
+        content:
+          "Discover the vision and mission of the School of Politics at InPolitics Institute.",
+      },
+      {
+        property: "og:title",
+        content: "Vision & Mission — School of Politics — InPolitics Institute",
+      },
+      {
+        property: "og:description",
+        content: "Vision and mission of the School of Politics at InPolitics Institute.",
+      },
     ],
-    links: [{ rel: "canonical", href: "https://inpoliticsinstitute.com/schools-of-politics/vision-mission" }],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://inpoliticsinstitute.com/schools-of-politics/vision-mission",
+      },
+    ],
   }),
 });
 
@@ -84,11 +99,7 @@ function VisionMission() {
           </Link>
 
           <section className="relative w-full h-[320px] md:h-[420px] overflow-hidden mb-12">
-            <img
-              src={banner}
-              alt="School of Politics"
-              className="w-full h-full object-cover"
-            />
+            <img src={banner} alt="School of Politics" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
               <div className="max-w-3xl mx-auto">
@@ -134,9 +145,7 @@ function VisionMission() {
                   <h3 className="font-serif text-xl md:text-2xl font-semibold text-anthracite mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-[17px] leading-relaxed text-foreground/80">
-                    {item.body}
-                  </p>
+                  <p className="text-[17px] leading-relaxed text-foreground/80">{item.body}</p>
                 </div>
               </div>
             ))}

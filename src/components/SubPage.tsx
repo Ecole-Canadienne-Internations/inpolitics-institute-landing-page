@@ -34,9 +34,7 @@ export function SubPage({
             {title}
           </h1>
           {intro && (
-            <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-              {intro}
-            </p>
+            <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">{intro}</p>
           )}
           <div className="mt-12 prose-content space-y-10 text-[17px] leading-[1.8] text-foreground/85">
             {children}
@@ -45,7 +43,10 @@ export function SubPage({
             <p className="text-sm text-muted-foreground">
               Une question, un projet, une demande de partenariat ?
             </p>
-            <button onClick={open} className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2">
+            <button
+              onClick={open}
+              className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2"
+            >
               <Mail className="size-4" /> Contacter l'Institut
             </button>
           </div>
@@ -82,11 +83,7 @@ export function SubPageWithBanner({
           </Link>
 
           <section className="relative w-full h-[320px] md:h-[420px] overflow-hidden mb-12">
-            <img
-              src={bannerImage}
-              alt="Banner"
-              className="w-full h-full object-cover"
-            />
+            <img src={bannerImage} alt="Banner" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
               <div className="max-w-3xl mx-auto">
@@ -102,9 +99,7 @@ export function SubPageWithBanner({
 
           {intro && (
             <div className="max-w-3xl mx-auto mb-12">
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                {intro}
-              </p>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">{intro}</p>
             </div>
           )}
 
@@ -116,7 +111,10 @@ export function SubPageWithBanner({
             <p className="text-sm text-muted-foreground">
               Une question, un projet, une demande de partenariat ?
             </p>
-            <button onClick={open} className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2">
+            <button
+              onClick={open}
+              className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2"
+            >
               <Mail className="size-4" /> Contacter l'Institut
             </button>
           </div>

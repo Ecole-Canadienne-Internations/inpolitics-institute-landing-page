@@ -7,9 +7,15 @@ export const Route = createFileRoute("/lab/blog")({
   head: () => ({
     meta: [
       { title: "Le Blog du Décideur Public — InPolitics Institute" },
-      { name: "description", content: "Tribunes, analyses et décryptages signés par les praticiens de l'Institut." },
+      {
+        name: "description",
+        content: "Tribunes, analyses et décryptages signés par les praticiens de l'Institut.",
+      },
       { property: "og:title", content: "Le Blog du Décideur Public — InPolitics Institute" },
-      { property: "og:description", content: "Tribunes, analyses et décryptages signés par les praticiens de l'Institut." },
+      {
+        property: "og:description",
+        content: "Tribunes, analyses et décryptages signés par les praticiens de l'Institut.",
+      },
       { property: "og:url", content: "https://inpoliticsinstitute.com/lab/blog" },
       { property: "og:type", content: "article" },
     ],

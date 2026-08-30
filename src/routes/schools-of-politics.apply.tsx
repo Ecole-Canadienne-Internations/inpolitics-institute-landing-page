@@ -14,12 +14,20 @@ export const Route = createFileRoute("/schools-of-politics/apply")({
   head: () => ({
     meta: [
       { title: "Apply — School of Politics — InPolitics Institute" },
-      { name: "description", content: "Submit your application to join the School of Politics at InPolitics Institute." },
+      {
+        name: "description",
+        content: "Submit your application to join the School of Politics at InPolitics Institute.",
+      },
       { property: "og:title", content: "Apply — School of Politics — InPolitics Institute" },
-      { property: "og:description", content: "Apply to the School of Politics at InPolitics Institute." },
+      {
+        property: "og:description",
+        content: "Apply to the School of Politics at InPolitics Institute.",
+      },
       { property: "og:url", content: "https://inpoliticsinstitute.com/schools-of-politics/apply" },
     ],
-    links: [{ rel: "canonical", href: "https://inpoliticsinstitute.com/schools-of-politics/apply" }],
+    links: [
+      { rel: "canonical", href: "https://inpoliticsinstitute.com/schools-of-politics/apply" },
+    ],
   }),
 });
 
@@ -118,8 +126,8 @@ function Apply() {
               Application Submitted
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Thank you for your interest in the School of Politics. Our admissions team will
-              review your application and reach out to you within 48–72 hours.
+              Thank you for your interest in the School of Politics. Our admissions team will review
+              your application and reach out to you within 48–72 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
@@ -172,8 +180,8 @@ function Apply() {
           </section>
 
           <p className="text-lg text-muted-foreground mb-12 max-w-xl">
-            Take the first step toward joining the next generation of political leaders.
-            Fill out the form below and our team will contact you.
+            Take the first step toward joining the next generation of political leaders. Fill out
+            the form below and our team will contact you.
           </p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-8" noValidate>
@@ -292,9 +300,13 @@ function Apply() {
                     className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer"
                     defaultValue=""
                   >
-                    <option value="" disabled>Select your level</option>
+                    <option value="" disabled>
+                      Select your level
+                    </option>
                     {educationLevels.map((opt) => (
-                      <option key={opt.value} value={opt.value}>{opt.label}</option>
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
                     ))}
                   </select>
                   {errors.education && (
@@ -310,9 +322,13 @@ function Apply() {
                     className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer"
                     defaultValue=""
                   >
-                    <option value="" disabled>Select a program</option>
+                    <option value="" disabled>
+                      Select a program
+                    </option>
                     {programs.map((opt) => (
-                      <option key={opt.value} value={opt.value}>{opt.label}</option>
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
                     ))}
                   </select>
                   {errors.program && (
@@ -329,7 +345,8 @@ function Apply() {
               </legend>
               <div className="space-y-1.5">
                 <label className="text-sm font-medium text-anthracite">
-                  Why do you want to join the School of Politics? <span className="text-crimson">*</span>
+                  Why do you want to join the School of Politics?{" "}
+                  <span className="text-crimson">*</span>
                 </label>
                 <textarea
                   {...register("motivation")}
@@ -368,9 +385,13 @@ function Apply() {
                     className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer"
                     defaultValue=""
                   >
-                    <option value="" disabled>Select an option</option>
+                    <option value="" disabled>
+                      Select an option
+                    </option>
                     {hearOptions.map((opt) => (
-                      <option key={opt.value} value={opt.value}>{opt.label}</option>
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
                     ))}
                   </select>
                   {errors.hearAbout && (

@@ -23,9 +23,15 @@ export const Route = createFileRoute("/mot-du-directeur")({
   head: () => ({
     meta: [
       { title: "Mot du Directeur | InPolitics Institute" },
-      { name: "description", content: "Le mot du Directeur d'InPolitics Institute par Arnaud SIGHANO." },
+      {
+        name: "description",
+        content: "Le mot du Directeur d'InPolitics Institute par Arnaud SIGHANO.",
+      },
       { property: "og:title", content: "Mot du Directeur | InPolitics Institute" },
-      { property: "og:description", content: "Le mot du Directeur d'InPolitics Institute par Arnaud SIGHANO." },
+      {
+        property: "og:description",
+        content: "Le mot du Directeur d'InPolitics Institute par Arnaud SIGHANO.",
+      },
       { property: "og:url", content: `${SITE}/mot-du-directeur` },
       { property: "og:type", content: "article" },
     ],
@@ -41,7 +47,10 @@ function DirectorMessagePage() {
       <Header />
       <main className="pt-32 md:pt-40 pb-24">
         <article className="max-w-4xl mx-auto px-6 lg:px-10">
-          <Link to="/" className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-muted-foreground hover:text-crimson transition-colors mb-10">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-muted-foreground hover:text-crimson transition-colors mb-10"
+          >
             <ArrowLeft className="size-3.5" /> Retour à l'accueil
           </Link>
 
@@ -64,7 +73,10 @@ function DirectorMessagePage() {
 
           <div className="mt-16 pt-10 border-t border-border flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
             <p className="text-sm text-muted-foreground">Échanger directement avec la Direction</p>
-            <button onClick={open} className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2">
+            <button
+              onClick={open}
+              className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2"
+            >
               <Mail className="size-4" /> Contacter l'Institut
             </button>
           </div>

@@ -12,6 +12,8 @@ import {
   Timer,
   Siren,
   Plus,
+  Calendar,
+  MapPin,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
@@ -32,6 +34,7 @@ import pillarObservatoire from "@/assets/pillar-observatoire.jpg";
 import admissionDossier from "@/assets/admission-dossier.png";
 import admissionEntretien from "@/assets/admission-entretien.png";
 import admissionAdmission from "@/assets/admission-admission.png";
+import formationGouvernance from "@/assets/inpolitics-institute-formation.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -39,9 +42,17 @@ export const Route = createFileRoute("/")({
     meta: [
       { name: "google-site-verification", content: "Ph4KWMKdgySfCMkTFEgzM8ZsjQ3bDnozmqF6kt2NFfw" },
       { title: "InPolitics Institute — Site Europe à Gigean" },
-      { name: "description", content: "Sites Europe (Gigean, Montpellier Métropole) et Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique." },
+      {
+        name: "description",
+        content:
+          "Sites Europe (Gigean, Montpellier Métropole) et Afrique. Formation d'élite, diplomatie territoriale, lobbying d'intégrité, gouvernance digitale au service du développement économique.",
+      },
       { property: "og:title", content: "InPolitics Institute" },
-      { property: "og:description", content: "L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale." },
+      {
+        property: "og:description",
+        content:
+          "L'Institut des Décideurs Publics, de la Diplomatie, de la Performance Territoriale et de la Gouvernance Digitale.",
+      },
       { property: "og:url", content: "https://inpoliticsinstitute.com/" },
       { property: "og:type", content: "website" },
     ],
@@ -58,6 +69,7 @@ function Landing() {
       <Header />
       <main>
         <Hero />
+        <AnnouncementSection />
         <About />
         <ManifesteSection />
         <Pillars />
@@ -101,7 +113,6 @@ function TeamFounders() {
       name: "Dr Dieudonné TOUKEA",
       role: "Directeur Afrique",
       img: teamToukea,
-
     },
   ];
   return (
@@ -121,7 +132,10 @@ function TeamFounders() {
 
         <div className="flex flex-wrap justify-center gap-10">
           {team.slice(0, 3).map((m) => (
-            <div key={m.slug} className="flex flex-col justify-between h-full items-center text-center w-[250px]">
+            <div
+              key={m.slug}
+              className="flex flex-col justify-between h-full items-center text-center w-[250px]"
+            >
               <img
                 src={m.img}
                 alt={m.name}
@@ -130,7 +144,9 @@ function TeamFounders() {
               />
               <div className="mt-6">
                 <div className="text-lg font-bold text-anthracite">{m.name}</div>
-                <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">{m.role}</div>
+                <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">
+                  {m.role}
+                </div>
               </div>
               <BioLink slug={m.slug} />
             </div>
@@ -139,7 +155,10 @@ function TeamFounders() {
 
         <div className="flex justify-center mt-10">
           {team.slice(3).map((m) => (
-            <div key={m.slug} className="flex flex-col justify-between h-full items-center text-center w-[250px]">
+            <div
+              key={m.slug}
+              className="flex flex-col justify-between h-full items-center text-center w-[250px]"
+            >
               <img
                 src={m.img}
                 alt={m.name}
@@ -148,7 +167,9 @@ function TeamFounders() {
               />
               <div className="mt-6">
                 <div className="text-lg font-bold text-anthracite">{m.name}</div>
-                <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">{m.role}</div>
+                <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">
+                  {m.role}
+                </div>
               </div>
               <BioLink slug={m.slug} />
             </div>
@@ -160,17 +181,37 @@ function TeamFounders() {
 }
 
 function BioLink({ slug }: { slug: string }) {
-  const cls = "mt-6 btn-crimson px-5 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-2";
-  const inner = (<>En savoir plus <ArrowRight className="size-3.5" /></>);
-  if (slug === "arnaud-sighano") return <Link to="/biographie/arnaud-sighano" className={cls}>{inner}</Link>;
-  if (slug === "antoine-obtel") return <Link to="/biographie/antoine-obtel" className={cls}>{inner}</Link>;
-  if (slug === "hacene-boumediene") return <Link to="/biographie/hacene-boumediene" className={cls}>{inner}</Link>;
-  return <Link to="/biographie/dieudonne-toukea" className={cls}>{inner}</Link>;
+  const cls =
+    "mt-6 btn-crimson px-5 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-2";
+  const inner = (
+    <>
+      En savoir plus <ArrowRight className="size-3.5" />
+    </>
+  );
+  if (slug === "arnaud-sighano")
+    return (
+      <Link to="/biographie/arnaud-sighano" className={cls}>
+        {inner}
+      </Link>
+    );
+  if (slug === "antoine-obtel")
+    return (
+      <Link to="/biographie/antoine-obtel" className={cls}>
+        {inner}
+      </Link>
+    );
+  if (slug === "hacene-boumediene")
+    return (
+      <Link to="/biographie/hacene-boumediene" className={cls}>
+        {inner}
+      </Link>
+    );
+  return (
+    <Link to="/biographie/dieudonne-toukea" className={cls}>
+      {inner}
+    </Link>
+  );
 }
-
-
-
-
 
 /* ---------- HERO ---------- */
 const HERO_IMAGES = [hero1, hero2, hero3];
@@ -198,30 +239,89 @@ function Hero() {
       <div className="absolute inset-0 bg-white/50" />
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="max-w-2xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.05] font-bold text-anthracite">
-              Formez-vous aux plus hautes{" "}
-              <span className="text-crimson">sphères du pouvoir</span>, de la diplomatie et de la gouvernance digitale.
-            </h1>
-            <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
-              <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et de la Gouvernance Digitale au service du développement économique.
-            </p>
+          <h1 className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.05] font-bold text-anthracite">
+            Formez-vous aux plus hautes <span className="text-crimson">sphères du pouvoir</span>, de
+            la diplomatie et de la gouvernance digitale.
+          </h1>
+          <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
+            <span className="font-semibold text-anthracite">InPolitics Institute</span> — L'Institut
+            des Décideurs Publics, de la Diplomatie Territoriale, de la Performance Territoriale et
+            de la Gouvernance Digitale au service du développement économique.
+          </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Link
+              to="/schools-of-politics/apply"
+              className="btn-crimson inline-flex items-center gap-2 px-7 h-13 py-3.5 rounded-full font-semibold text-sm"
+            >
+              Apply for School of Politics
+              <ArrowRight className="size-4" />
+            </Link>
+            <a
+              href="#formations"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-anthracite-foreground transition-colors"
+            >
+              Découvrir l'institut
+              <ArrowUpRight className="size-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- ANNOUNCEMENT — À LA UNE ---------- */
+function AnnouncementSection() {
+  return (
+    <section className="py-16 md:py-20 bg-crimson/5">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
+        <div className="bg-white border border-crimson/20 rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)]">
+          <div className="grid md:grid-cols-2 gap-0">
+            {/* Image */}
+            <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden">
+              <img
+                src={formationGouvernance}
+                alt="Formation Gouvernance Publique"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute top-4 left-4">
+                <span className="inline-flex px-3 py-1.5 rounded-full bg-crimson text-white text-[11px] font-semibold tracking-[0.18em] uppercase">
+                  INSCRIPTIONS OUVERTES
+                </span>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-8 md:p-10 flex flex-col justify-center">
+              <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-4 w-fit">
+                À LA UNE
+              </div>
+              <h2 className="font-serif text-2xl md:text-3xl text-anthracite leading-tight mb-4">
+                Gouvernance Publique et Décentralisation : Enjeux, acteurs et territoires
+              </h2>
+              <p className="text-sm text-muted-foreground mb-3">
+                Formation certifiante — Certification RNCP / Qualiopi Répertoire Spécifique (RS)
+              </p>
+              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
+                <span className="inline-flex items-center gap-1.5">
+                  <Calendar className="size-4 text-crimson" />
+                  Prochaine session : Janvier 2027
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <MapPin className="size-4 text-crimson" />
+                  Montpellier, France
+                </span>
+              </div>
               <Link
-                to="/schools-of-politics/apply"
-                className="btn-crimson inline-flex items-center gap-2 px-7 h-13 py-3.5 rounded-full font-semibold text-sm"
+                to="/programmes-ouverts"
+                className="btn-crimson inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm w-fit"
               >
-                Apply for School of Politics
+                Découvrir la formation
                 <ArrowRight className="size-4" />
               </Link>
-              <a
-                href="#formations"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-anthracite-foreground transition-colors"
-              >
-                Découvrir l'institut
-                <ArrowUpRight className="size-4" />
-              </a>
             </div>
+          </div>
         </div>
       </div>
     </section>
@@ -243,15 +343,13 @@ function About() {
         </div>
         <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
           <p>
-            InPolitics Institute forme la prochaine génération de décideurs
-            publics aux disciplines essentielles de la République :
-            diplomatie territoriale, gouvernance digitale, lobbying d'intégrité
-            et performance des territoires.
+            InPolitics Institute forme la prochaine génération de décideurs publics aux disciplines
+            essentielles de la République : diplomatie territoriale, gouvernance digitale, lobbying
+            d'intégrité et performance des territoires.
           </p>
           <p>
-            Notre approche fusionne la rigueur académique européenne, la
-            spécificité du terrain et l'exigence éthique d'une République
-            qui se construit, depuis notre site Europe de Gigean
+            Notre approche fusionne la rigueur académique européenne, la spécificité du terrain et
+            l'exigence éthique d'une République qui se construit, depuis notre site Europe de Gigean
             (Montpellier Métropole) jusqu'à nos pôles Afrique.
           </p>
         </div>
@@ -287,9 +385,13 @@ function ManifesteSection() {
 
         <div className="mt-10 text-center">
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Mêler science politique, données et communication d'impact. La politique n'est pas qu'une affaire de discours, c'est une science de la donnée et de la stratégie.
+            Mêler science politique, données et communication d'impact. La politique n'est pas
+            qu'une affaire de discours, c'est une science de la donnée et de la stratégie.
           </p>
-          <span className="mt-5 flex items-center justify-center gap-2 text-crimson" aria-hidden="true">
+          <span
+            className="mt-5 flex items-center justify-center gap-2 text-crimson"
+            aria-hidden="true"
+          >
             <span className="size-1.5 rounded-full bg-current" />
             <span className="size-1.5 rounded-full bg-current" />
             <span className="size-1.5 rounded-full bg-current" />
@@ -334,10 +436,7 @@ const PILLARS = [
 
 function Pillars() {
   return (
-    <section
-      id="formations"
-      className="py-28 md:py-36"
-    >
+    <section id="formations" className="py-28 md:py-36">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div className="max-w-2xl">
@@ -381,9 +480,7 @@ function Pillars() {
                   </span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-lg font-bold text-anthracite leading-snug">
-                    {p.title}
-                  </h3>
+                  <h3 className="text-lg font-bold text-anthracite leading-snug">{p.title}</h3>
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">
                     {p.desc}
                   </p>
@@ -404,9 +501,21 @@ function Pillars() {
 /* ---------- SIMUL' CRISE ---------- */
 function SimulCrise() {
   const steps = [
-    { icon: Siren, t: "J-0 : Déclenchement", d: "Une crise réelle (diplomatique, électorale ou cyber) est annoncée à 8h00." },
-    { icon: Timer, t: "48 heures non-stop", d: "Les étudiants endossent les rôles de ministres, conseillers et porte-parole." },
-    { icon: Shield, t: "Débriefing d'État", d: "Décryptage par un jury d'anciens ministres, diplomates et experts en sécurité." },
+    {
+      icon: Siren,
+      t: "J-0 : Déclenchement",
+      d: "Une crise réelle (diplomatique, électorale ou cyber) est annoncée à 8h00.",
+    },
+    {
+      icon: Timer,
+      t: "48 heures non-stop",
+      d: "Les étudiants endossent les rôles de ministres, conseillers et porte-parole.",
+    },
+    {
+      icon: Shield,
+      t: "Débriefing d'État",
+      d: "Décryptage par un jury d'anciens ministres, diplomates et experts en sécurité.",
+    },
   ];
   return (
     <section className="py-28 md:py-36 relative overflow-hidden">
@@ -420,17 +529,20 @@ function SimulCrise() {
             Une immersion totale dans la <span className="text-crimson">prise de décision</span>.
           </h2>
           <p className="mt-6 text-muted-foreground leading-relaxed">
-            Une fois par trimestre, l'institut organise une simulation de crise
-            de 48 heures non-stop : gestion d'une crise diplomatique, élection
-            présidentielle fictive ou cyberattaque d'État. Les étudiants jouent
-            les rôles des ministres, des conseillers et des porte-parole.
+            Une fois par trimestre, l'institut organise une simulation de crise de 48 heures
+            non-stop : gestion d'une crise diplomatique, élection présidentielle fictive ou
+            cyberattaque d'État. Les étudiants jouent les rôles des ministres, des conseillers et
+            des porte-parole.
           </p>
         </div>
         <div className="lg:col-span-7 grid sm:grid-cols-3 gap-5 self-center">
           {steps.map((s, i) => {
             const Icon = s.icon;
             return (
-              <div key={s.t} className="relative bg-background border border-border rounded-3xl p-6 hover:border-crimson/40 transition">
+              <div
+                key={s.t}
+                className="relative bg-background border border-border rounded-3xl p-6 hover:border-crimson/40 transition"
+              >
                 <div className="size-12 rounded-2xl bg-crimson grid place-items-center mb-5">
                   <Icon className="size-5 text-white" strokeWidth={1.8} />
                 </div>
@@ -488,9 +600,24 @@ function Proof() {
 /* ---------- ADMISSION ---------- */
 function Admission() {
   const steps = [
-    { n: "01", t: "Étude de dossier", d: "Soumission du CV et d'une lettre de motivation en ligne.", img: admissionDossier },
-    { n: "02", t: "Entretien de sélection", d: "Grand oral devant le jury de l'institut (physique ou en ligne).", img: admissionEntretien },
-    { n: "03", t: "Admission définitive", d: "Intégration officielle de la nouvelle cohorte des élites.", img: admissionAdmission },
+    {
+      n: "01",
+      t: "Étude de dossier",
+      d: "Soumission du CV et d'une lettre de motivation en ligne.",
+      img: admissionDossier,
+    },
+    {
+      n: "02",
+      t: "Entretien de sélection",
+      d: "Grand oral devant le jury de l'institut (physique ou en ligne).",
+      img: admissionEntretien,
+    },
+    {
+      n: "03",
+      t: "Admission définitive",
+      d: "Intégration officielle de la nouvelle cohorte des élites.",
+      img: admissionAdmission,
+    },
   ];
   return (
     <section id="admission" className="py-28 md:py-36">
@@ -508,7 +635,12 @@ function Admission() {
           {steps.map((s) => (
             <div key={s.n} className="group text-center md:text-left">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_20px_50px_-20px_rgba(15,23,42,0.25)] mb-6">
-                <img src={s.img} alt={s.t} loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img
+                  src={s.img}
+                  alt={s.t}
+                  loading="lazy"
+                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
                 <div className="absolute top-4 left-4 size-12 rounded-2xl bg-crimson text-white grid place-items-center text-base font-bold shadow-lg">
                   {s.n}
                 </div>
@@ -522,7 +654,6 @@ function Admission() {
     </section>
   );
 }
-
 
 /* ---------- FOUNDER ---------- */
 function Founder() {
@@ -540,21 +671,21 @@ function Founder() {
             />
           </div>
         </div>
-        
+
         <div className="md:col-span-7">
           <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-5">
             06 — Mot du Directeur
           </div>
           <Quote className="size-8 text-crimson mb-4" strokeWidth={1.5} />
           <blockquote className="font-serif italic text-2xl md:text-[32px] leading-[1.35] text-anthracite">
-            « Bienvenue sur la plateforme officielle d'InPolitics Institute. À l'ère des mutations géopolitiques majeures et de l'accélération numérique, la gestion des affaires publiques et le développement économique exigent des paradigmes entièrement renouvelés. »
+            « Bienvenue sur la plateforme officielle d'InPolitics Institute. À l'ère des mutations
+            géopolitiques majeures et de l'accélération numérique, la gestion des affaires publiques
+            et le développement économique exigent des paradigmes entièrement renouvelés. »
           </blockquote>
           <div className="mt-8 flex items-center gap-4">
             <div className="h-px w-12 bg-anthracite/30" />
             <div>
-              <div className="text-sm font-bold text-anthracite">
-                Arnaud Sighano
-              </div>
+              <div className="text-sm font-bold text-anthracite">Arnaud Sighano</div>
               <div className="text-xs text-muted-foreground tracking-wide">
                 Directeur Fondateur — InPolitics Institute
               </div>
@@ -643,9 +774,7 @@ function Faq() {
                     opacity: isOpen ? 1 : 0,
                   }}
                 >
-                  <p className="pb-6 pr-12 text-muted-foreground leading-relaxed">
-                    {item.a}
-                  </p>
+                  <p className="pb-6 pr-12 text-muted-foreground leading-relaxed">{item.a}</p>
                 </div>
               </div>
             );
@@ -660,7 +789,7 @@ function Faq() {
 function ContactCta() {
   const phone = "237600000000";
   const wa = `https://wa.me/${phone}?text=${encodeURIComponent(
-    "Bonjour, je souhaite recevoir la brochure des programmes Inpolitics Institute."
+    "Bonjour, je souhaite recevoir la brochure des programmes Inpolitics Institute.",
   )}`;
   return (
     <section id="contact" className="py-24 md:py-32">
@@ -676,9 +805,8 @@ function ContactCta() {
                 Échangeons directement avec nos conseillers.
               </h2>
               <p className="mt-5 text-muted-foreground max-w-xl leading-relaxed">
-                Brochure des programmes, accès en avant-première aux analyses
-                de l'Observatoire Inpolitics et entretien confidentiel — par
-                WhatsApp ou par email.
+                Brochure des programmes, accès en avant-première aux analyses de l'Observatoire
+                Inpolitics et entretien confidentiel — par WhatsApp ou par email.
               </p>
             </div>
             <div className="md:col-span-5 flex flex-col gap-3">
@@ -709,4 +837,3 @@ function ContactCta() {
     </section>
   );
 }
-

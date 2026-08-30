@@ -69,7 +69,8 @@ const PITCH = [
     paragraphs: [
       "Notre ambition est claire : devenir le hub d'excellence de l'ingénierie politique en Afrique et à l'international, en offrant aux leaders les outils stratégiques et éthiques pour transformer la gouvernance de demain.",
     ],
-    quote: "Avec InPolitics Institute, la politique retrouve sa précision scientifique et sa force d'impact.",
+    quote:
+      "Avec InPolitics Institute, la politique retrouve sa précision scientifique et sa force d'impact.",
   },
 ];
 
@@ -78,9 +79,17 @@ export const Route = createFileRoute("/manifeste")({
   head: () => ({
     meta: [
       { title: "Notre Manifeste — InPolitics Institute" },
-      { name: "description", content: "Le manifeste d'InPolitics Institute : mêler science politique, données et communication d'impact pour bâtir la gouvernance de demain." },
+      {
+        name: "description",
+        content:
+          "Le manifeste d'InPolitics Institute : mêler science politique, données et communication d'impact pour bâtir la gouvernance de demain.",
+      },
       { property: "og:title", content: "Notre Manifeste — InPolitics Institute" },
-      { property: "og:description", content: "Le manifeste d'InPolitics Institute : mêler science politique, données et communication d'impact." },
+      {
+        property: "og:description",
+        content:
+          "Le manifeste d'InPolitics Institute : mêler science politique, données et communication d'impact.",
+      },
       { property: "og:url", content: `${SITE}/manifeste` },
       { property: "og:type", content: "article" },
     ],
@@ -120,13 +129,14 @@ function PitchSection({
         <span className="size-10 rounded-full bg-crimson/10 text-crimson grid place-items-center font-mono text-sm font-bold">
           {n}
         </span>
-        <h2 className="font-serif text-2xl md:text-4xl leading-tight text-anthracite">
-          {title}
-        </h2>
+        <h2 className="font-serif text-2xl md:text-4xl leading-tight text-anthracite">{title}</h2>
       </div>
       <div className="space-y-6">
         {paragraphs.map((p, i) => (
-          <p key={i} className="font-serif text-[20px] md:text-[22px] leading-[1.75] text-foreground/90">
+          <p
+            key={i}
+            className="font-serif text-[20px] md:text-[22px] leading-[1.75] text-foreground/90"
+          >
             {p}
           </p>
         ))}
@@ -167,7 +177,9 @@ function ManifestePage() {
 
           <div className="mt-12 space-y-7 font-serif text-[20px] md:text-[22px] leading-[1.75] text-foreground/90">
             <p className="first-letter:font-serif first-letter:text-[5.5rem] first-letter:leading-[0.85] first-letter:float-left first-letter:mr-3 first-letter:mt-2 first-letter:text-crimson first-letter:font-bold">
-              Mêler science politique, données et communication d'impact. La politique n'est pas qu'une affaire de discours, c'est une science de la donnée et de la stratégie. Chez InPolitics Institute, nous formons les décideurs à cette nouvelle ère technopolitique.
+              Mêler science politique, données et communication d'impact. La politique n'est pas
+              qu'une affaire de discours, c'est une science de la donnée et de la stratégie. Chez
+              InPolitics Institute, nous formons les décideurs à cette nouvelle ère technopolitique.
             </p>
 
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.22em] text-crimson pt-4">
@@ -182,7 +194,10 @@ function ManifestePage() {
             />
 
             <p>
-              Notre ambition est claire : devenir le hub d'excellence de l'ingénierie politique en Afrique et à l'international, en offrant aux leaders les outils stratégiques et éthiques pour transformer la gouvernance de demain. Avec InPolitics Institute, la politique retrouve sa précision scientifique et sa force d'impact.
+              Notre ambition est claire : devenir le hub d'excellence de l'ingénierie politique en
+              Afrique et à l'international, en offrant aux leaders les outils stratégiques et
+              éthiques pour transformer la gouvernance de demain. Avec InPolitics Institute, la
+              politique retrouve sa précision scientifique et sa force d'impact.
             </p>
           </div>
 
@@ -192,7 +207,10 @@ function ManifestePage() {
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {SYNTHESE.map((s) => (
-                <div key={s.k} className="bg-background border border-border rounded-3xl p-7 hover:border-crimson/40 transition">
+                <div
+                  key={s.k}
+                  className="bg-background border border-border rounded-3xl p-7 hover:border-crimson/40 transition"
+                >
                   <div className="font-serif text-xl text-anthracite">{s.k}</div>
                   <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-crimson mt-1">
                     {s.s}
@@ -211,7 +229,10 @@ function ManifestePage() {
             <p className="text-sm text-muted-foreground">
               Une question, un projet, une demande de partenariat ?
             </p>
-            <button onClick={open} className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2">
+            <button
+              onClick={open}
+              className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2"
+            >
               <Mail className="size-4" /> Contacter l'Institut
             </button>
           </div>

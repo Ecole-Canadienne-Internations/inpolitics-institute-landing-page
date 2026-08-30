@@ -44,9 +44,9 @@ function MentionsLegales() {
 
           <div className="mt-10 space-y-6 text-[17px] leading-[1.8] text-foreground/85">
             <p>
-              InPolitics Institute est un cabinet d'études-conseils, de formation et de recherche. Les
-              formations sont hybrides (en présentiel et en ligne) sous forme d'ateliers et séminaires.
-              Les diplômes sont français certifiés Qualiopi Répertoire Spécifique (RS).
+              InPolitics Institute est un cabinet d'études-conseils, de formation et de recherche.
+              Les formations sont hybrides (en présentiel et en ligne) sous forme d'ateliers et
+              séminaires. Les diplômes sont français certifiés Qualiopi Répertoire Spécifique (RS).
             </p>
             <p>
               Le site de l'Institut est établi à Gigean, au sein de Montpellier Métropole (France).
@@ -57,8 +57,8 @@ function MentionsLegales() {
             </p>
             <p>
               L'Institut conduit ses travaux d'études, de recherche et de plaidoyer dans le respect
-              des standards d'intégrité et de transparence applicables aux activités de conseil et de
-              représentation d'intérêts.
+              des standards d'intégrité et de transparence applicables aux activités de conseil et
+              de représentation d'intérêts.
             </p>
           </div>
 

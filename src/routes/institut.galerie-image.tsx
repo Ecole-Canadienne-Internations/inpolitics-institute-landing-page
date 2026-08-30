@@ -13,9 +13,16 @@ export const Route = createFileRoute("/institut/galerie-image")({
   head: () => ({
     meta: [
       { title: "Galerie & Image — InPolitics Institute" },
-      { name: "description", content: "Immersion visuelle et 3D au cœur du site de l'Institut. Découvrez nos espaces de formation à Gigean." },
+      {
+        name: "description",
+        content:
+          "Immersion visuelle et 3D au cœur du site de l'Institut. Découvrez nos espaces de formation à Gigean.",
+      },
       { property: "og:title", content: "Galerie & Image — InPolitics Institute" },
-      { property: "og:description", content: "Immersion visuelle et 3D au cœur du site de l'Institut." },
+      {
+        property: "og:description",
+        content: "Immersion visuelle et 3D au cœur du site de l'Institut.",
+      },
       { property: "og:url", content: "https://inpoliticsinstitute.com/institut/galerie-image" },
       { property: "og:type", content: "article" },
     ],
@@ -49,10 +56,18 @@ function GalerieImage() {
 
           <div className="mt-8 max-w-3xl">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Bienvenue dans cette <span className="text-foreground font-semibold">immersion 3D</span> au sein du site de l'InPolitics Institute. À travers cette exposition visuelle, nous vous invitons à découvrir les espaces où se construit la formation des décideurs publics de demain : amphithéâtres, salles de simulation, data labs et lieux de réflexion dédiés à la diplomatie territoriale et à la gouvernance digitale.
+              Bienvenue dans cette{" "}
+              <span className="text-foreground font-semibold">immersion 3D</span> au sein du site de
+              l'InPolitics Institute. À travers cette exposition visuelle, nous vous invitons à
+              découvrir les espaces où se construit la formation des décideurs publics de demain :
+              amphithéâtres, salles de simulation, data labs et lieux de réflexion dédiés à la
+              diplomatie territoriale et à la gouvernance digitale.
             </p>
             <p className="mt-4 text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Chaque image capture l'atmosphère et la rigueur républicaine qui animent nos programmes. Nous espérons que cette visite vous donnera un aperçu concret de l'environnement unique dans lequel se déroulent nos séminaires d'immersion et nos cursus hybrides.
+              Chaque image capture l'atmosphère et la rigueur républicaine qui animent nos
+              programmes. Nous espérons que cette visite vous donnera un aperçu concret de
+              l'environnement unique dans lequel se déroulent nos séminaires d'immersion et nos
+              cursus hybrides.
             </p>
           </div>
 
@@ -77,7 +92,10 @@ function GalerieImage() {
             <p className="text-sm text-muted-foreground">
               Une question, un projet, une demande de partenariat ?
             </p>
-            <button onClick={open} className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2">
+            <button
+              onClick={open}
+              className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2"
+            >
               <Mail className="size-4" /> Contacter l'Institut
             </button>
           </div>
@@ -86,4 +104,3 @@ function GalerieImage() {
     </div>
   );
 }
-

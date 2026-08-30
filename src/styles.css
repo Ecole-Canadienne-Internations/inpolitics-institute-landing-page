@@ -6,7 +6,8 @@
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_qU79TJXMnw.woff2") format("woff2");
+  src: url("https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_qU79TJXMnw.woff2")
+    format("woff2");
   font-weight: 200 800;
   font-display: swap;
 }
@@ -111,22 +112,43 @@
     font-feature-settings: "ss01", "cv11";
     letter-spacing: -0.011em;
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     letter-spacing: -0.03em;
     font-weight: 700;
   }
 }
 
 @layer utilities {
-  .bg-crimson { background-color: var(--crimson); }
-  .text-crimson { color: var(--crimson); }
-  .text-crimson-foreground { color: var(--crimson-foreground); }
-  .bg-anthracite { background-color: var(--anthracite); }
-  .text-anthracite { color: var(--anthracite); }
-  .text-anthracite-foreground { color: var(--anthracite-foreground); }
-  .border-crimson { border-color: var(--crimson); }
-  .ring-crimson { --tw-ring-color: var(--crimson); }
-  .font-serif { font-family: var(--font-serif); }
+  .bg-crimson {
+    background-color: var(--crimson);
+  }
+  .text-crimson {
+    color: var(--crimson);
+  }
+  .text-crimson-foreground {
+    color: var(--crimson-foreground);
+  }
+  .bg-anthracite {
+    background-color: var(--anthracite);
+  }
+  .text-anthracite {
+    color: var(--anthracite);
+  }
+  .text-anthracite-foreground {
+    color: var(--anthracite-foreground);
+  }
+  .border-crimson {
+    border-color: var(--crimson);
+  }
+  .ring-crimson {
+    --tw-ring-color: var(--crimson);
+  }
+  .font-serif {
+    font-family: var(--font-serif);
+  }
 
   .glass-header {
     background-color: color-mix(in oklab, white 75%, transparent);
@@ -137,7 +159,10 @@
   .btn-crimson {
     background-color: var(--crimson);
     color: var(--crimson-foreground);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background-color 0.2s ease;
   }
   .btn-crimson:hover {
     background-color: color-mix(in oklab, var(--crimson) 88%, black);
@@ -159,32 +184,59 @@
     opacity: 0;
     animation: heroFade 24s infinite;
   }
-  .hero-bg-slide:nth-child(1) { animation-delay: 0s; }
-  .hero-bg-slide:nth-child(2) { animation-delay: 6s; }
-  .hero-bg-slide:nth-child(3) { animation-delay: 12s; }
-  .hero-bg-slide:nth-child(4) { animation-delay: 18s; }
+  .hero-bg-slide:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .hero-bg-slide:nth-child(2) {
+    animation-delay: 6s;
+  }
+  .hero-bg-slide:nth-child(3) {
+    animation-delay: 12s;
+  }
+  .hero-bg-slide:nth-child(4) {
+    animation-delay: 18s;
+  }
   @keyframes heroFade {
-    0%   { opacity: 0; }
-    4%   { opacity: 1; }
-    25%  { opacity: 1; }
-    29%  { opacity: 0; }
-    100% { opacity: 0; }
+    0% {
+      opacity: 0;
+    }
+    4% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 1;
+    }
+    29% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
   }
   .hero-bg-veil {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.78) 50%, rgba(255,255,255,0.92) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 255, 255, 0.78) 50%,
+      rgba(255, 255, 255, 0.92) 100%
+    );
   }
 
   .pillar-card {
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
   .pillar-card::after {
     content: "";
     position: absolute;
-    left: 0; right: 0; bottom: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 2px;
     background-color: var(--crimson);
     transform: scaleX(0);
@@ -195,7 +247,9 @@
     transform: translateY(-4px);
     box-shadow: 0 20px 40px -20px color-mix(in oklab, black 25%, transparent);
   }
-  .pillar-card:hover::after { transform: scaleX(1); }
+  .pillar-card:hover::after {
+    transform: scaleX(1);
+  }
 
   .reveal {
     opacity: 0;
@@ -203,7 +257,10 @@
     animation: reveal 0.8s ease forwards;
   }
   @keyframes reveal {
-    to { opacity: 1; transform: translateY(0); }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Générique animé du logo InPolitics Institute */
@@ -216,7 +273,9 @@
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform, opacity, filter;
   }
-  .logo-anim:hover img { transform: scale(1.04); }
+  .logo-anim:hover img {
+    transform: scale(1.04);
+  }
   .logo-anim::after {
     content: "";
     position: absolute;
@@ -235,19 +294,44 @@
     animation: logoSweep 5.5s cubic-bezier(0.16, 1, 0.3, 1) 1.1s infinite;
   }
   @keyframes logoPop {
-    0%   { opacity: 0; transform: scale(0.82) translateY(10px); filter: blur(8px); }
-    60%  { opacity: 1; transform: scale(1.05) translateY(0); filter: blur(0); }
-    100% { opacity: 1; transform: scale(1); }
+    0% {
+      opacity: 0;
+      transform: scale(0.82) translateY(10px);
+      filter: blur(8px);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.05) translateY(0);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
   @keyframes logoSweep {
-    0%   { transform: translateX(-160%) skewX(-18deg); opacity: 0; }
-    8%   { opacity: 1; }
-    26%  { transform: translateX(260%) skewX(-18deg); opacity: 0; }
-    100% { transform: translateX(260%) skewX(-18deg); opacity: 0; }
+    0% {
+      transform: translateX(-160%) skewX(-18deg);
+      opacity: 0;
+    }
+    8% {
+      opacity: 1;
+    }
+    26% {
+      transform: translateX(260%) skewX(-18deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(260%) skewX(-18deg);
+      opacity: 0;
+    }
   }
   @media (prefers-reduced-motion: reduce) {
-    .logo-anim img { animation: none; }
-    .logo-anim::after { display: none; }
+    .logo-anim img {
+      animation: none;
+    }
+    .logo-anim::after {
+      display: none;
+    }
   }
-
 }

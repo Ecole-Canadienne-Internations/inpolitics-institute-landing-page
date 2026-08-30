@@ -17,9 +17,16 @@ export const Route = createFileRoute("/biographie/arnaud-sighano")({
   head: () => ({
     meta: [
       { title: "Arnaud SIGHANO — Biographie | InPolitics Institute" },
-      { name: "description", content: "Biographie d'Arnaud SIGHANO, Fondateur & Directeur Associé d'InPolitics Institute." },
+      {
+        name: "description",
+        content:
+          "Biographie d'Arnaud SIGHANO, Fondateur & Directeur Associé d'InPolitics Institute.",
+      },
       { property: "og:title", content: "Arnaud SIGHANO — InPolitics Institute" },
-      { property: "og:description", content: "Acteur reconnu de la diplomatie d'influence et des relations internationales." },
+      {
+        property: "og:description",
+        content: "Acteur reconnu de la diplomatie d'influence et des relations internationales.",
+      },
       { property: "og:url", content: `${SITE}/biographie/arnaud-sighano` },
       { property: "og:type", content: "profile" },
     ],
@@ -34,7 +41,10 @@ function BioPage() {
       <Header />
       <main className="pt-32 md:pt-40 pb-24">
         <article className="max-w-6xl mx-auto px-6 lg:px-10">
-          <Link to="/" className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-muted-foreground hover:text-crimson transition-colors mb-10">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-muted-foreground hover:text-crimson transition-colors mb-10"
+          >
             <ArrowLeft className="size-3.5" /> Retour à l'accueil
           </Link>
           <div className="grid md:grid-cols-12 gap-12 items-start">
@@ -46,21 +56,31 @@ function BioPage() {
                 Arnaud SIGHANO
               </h1>
               <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Fondateur & Directeur Associé d'InPolitics Institute. Diplomatie d'influence, relations internationales, Sport Diplomatie.
+                Fondateur & Directeur Associé d'InPolitics Institute. Diplomatie d'influence,
+                relations internationales, Sport Diplomatie.
               </p>
               <div className="mt-10 space-y-5 text-[17px] leading-[1.8] text-foreground/85">
-                {BIO_PARAGRAPHS.map((p, i) => <p key={i}>{p}</p>)}
+                {BIO_PARAGRAPHS.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
             </div>
             <div className="md:col-span-5 order-1 md:order-2 md:sticky md:top-40">
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-white">
-                <img src={arnaudSighanoImage} alt="Arnaud SIGHANO" className="h-full w-full object-cover" />
+                <img
+                  src={arnaudSighanoImage}
+                  alt="Arnaud SIGHANO"
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
           </div>
           <div className="mt-16 pt-10 border-t border-border flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
             <p className="text-sm text-muted-foreground">Échanger directement avec la Direction</p>
-            <button onClick={open} className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2">
+            <button
+              onClick={open}
+              className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2"
+            >
               <Mail className="size-4" /> Contacter l'Institut
             </button>
           </div>

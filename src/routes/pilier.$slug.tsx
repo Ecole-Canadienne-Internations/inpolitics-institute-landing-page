@@ -139,7 +139,10 @@ export const Route = createFileRoute("/pilier/$slug")({
     <div className="min-h-screen grid place-items-center p-10">
       <div className="text-center">
         <p className="text-muted-foreground mb-4">{error.message}</p>
-        <button onClick={reset} className="btn-crimson px-5 h-11 rounded-full text-sm font-semibold">
+        <button
+          onClick={reset}
+          className="btn-crimson px-5 h-11 rounded-full text-sm font-semibold"
+        >
           Réessayer
         </button>
       </div>
@@ -178,7 +181,10 @@ function PillarPage() {
         </section>
         <section className="relative pb-16">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-crimson transition mb-10">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-crimson transition mb-10"
+            >
               <ArrowLeft className="size-4" /> Retour à l'accueil
             </Link>
             <div className="grid lg:grid-cols-12 gap-12 items-end">
@@ -195,7 +201,11 @@ function PillarPage() {
               </div>
               <div className="lg:col-span-5">
                 <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl">
-                  <img src={pillar.cover} alt={pillar.title} className="h-full w-full object-cover" />
+                  <img
+                    src={pillar.cover}
+                    alt={pillar.title}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -214,8 +224,13 @@ function PillarPage() {
             </div>
             <div className="lg:col-span-8 space-y-3">
               {pillar.modules.map((m, i) => (
-                <div key={m} className="flex items-start gap-5 bg-background border border-border rounded-2xl p-5 md:p-6 hover:border-crimson/40 transition">
-                  <span className="text-xs font-mono text-crimson font-bold mt-1">{String(i + 1).padStart(2, "0")}</span>
+                <div
+                  key={m}
+                  className="flex items-start gap-5 bg-background border border-border rounded-2xl p-5 md:p-6 hover:border-crimson/40 transition"
+                >
+                  <span className="text-xs font-mono text-crimson font-bold mt-1">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <p className="text-anthracite font-medium">{m}</p>
                 </div>
               ))}
@@ -246,10 +261,18 @@ function PillarPage() {
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
             <div className="bg-anthracite text-white rounded-[2rem] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold leading-tight">Prêt à intégrer ce pilier ?</h3>
-                <p className="mt-2 text-white/70">Échangez avec un conseiller d'orientation InPolitics.</p>
+                <h3 className="text-2xl md:text-3xl font-bold leading-tight">
+                  Prêt à intégrer ce pilier ?
+                </h3>
+                <p className="mt-2 text-white/70">
+                  Échangez avec un conseiller d'orientation InPolitics.
+                </p>
               </div>
-              <Link to="/" hash="contact" className="btn-crimson inline-flex items-center gap-2 px-7 h-14 rounded-full font-semibold text-sm">
+              <Link
+                to="/"
+                hash="contact"
+                className="btn-crimson inline-flex items-center gap-2 px-7 h-14 rounded-full font-semibold text-sm"
+              >
                 Contacter l'institut <ArrowRight className="size-4" />
               </Link>
             </div>

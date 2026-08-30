@@ -112,7 +112,7 @@ export const SUBPAGE_CONTENT: Record<string, PageContent> = {
       {
         h: "Pourquoi un label ?",
         p: [
-          "Les collectivités performantes manquent souvent d'un signal extérieur attestant de la qualité de leur gouvernance financière. Le label \"Commune de Haute Intégrité\" comble ce vide : il offre aux exécutifs locaux une reconnaissance objective, mesurable et indépendante.",
+          'Les collectivités performantes manquent souvent d\'un signal extérieur attestant de la qualité de leur gouvernance financière. Le label "Commune de Haute Intégrité" comble ce vide : il offre aux exécutifs locaux une reconnaissance objective, mesurable et indépendante.',
         ],
       },
       {
@@ -746,13 +746,23 @@ export function RichSubPageWithBanner({ k, bannerImage }: { k: string; bannerIma
   const c = SUBPAGE_CONTENT[k];
   if (!c) {
     return (
-      <SubPageWithBanner eyebrow="InPolitics Institute" title="Page" intro="" bannerImage={bannerImage}>
+      <SubPageWithBanner
+        eyebrow="InPolitics Institute"
+        title="Page"
+        intro=""
+        bannerImage={bannerImage}
+      >
         <p>Contenu en préparation.</p>
       </SubPageWithBanner>
     );
   }
   return (
-    <SubPageWithBanner eyebrow={c.eyebrow} title={c.title} intro={c.intro} bannerImage={bannerImage}>
+    <SubPageWithBanner
+      eyebrow={c.eyebrow}
+      title={c.title}
+      intro={c.intro}
+      bannerImage={bannerImage}
+    >
       {c.sections.map((s, i) => (
         <section key={i} className="space-y-4">
           <h2 className="font-serif text-2xl md:text-3xl text-anthracite leading-tight mt-2">

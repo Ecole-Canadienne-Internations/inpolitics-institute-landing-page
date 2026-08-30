@@ -7,9 +7,15 @@ export const Route = createFileRoute("/lab/publications")({
   head: () => ({
     meta: [
       { title: "Publications & Recherche — InPolitics Institute" },
-      { name: "description", content: "Notes, rapports et baromètres de l'Observatoire InPolitics." },
+      {
+        name: "description",
+        content: "Notes, rapports et baromètres de l'Observatoire InPolitics.",
+      },
       { property: "og:title", content: "Publications & Recherche — InPolitics Institute" },
-      { property: "og:description", content: "Notes, rapports et baromètres de l'Observatoire InPolitics." },
+      {
+        property: "og:description",
+        content: "Notes, rapports et baromètres de l'Observatoire InPolitics.",
+      },
       { property: "og:url", content: "https://inpoliticsinstitute.com/lab/publications" },
       { property: "og:type", content: "article" },
     ],
