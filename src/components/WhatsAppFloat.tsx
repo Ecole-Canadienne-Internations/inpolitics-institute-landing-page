@@ -1,9 +1,9 @@
 import { MessageCircle } from "lucide-react";
 
 export function WhatsAppFloat() {
-  const phone = "237600000000";
+  const phone = "33746440427";
   const text = encodeURIComponent(
-    "Bonjour, je souhaite échanger avec un conseiller d'orientation Inpolitics Institute.",
+    "Bonjour, je souhaite des informations sur les programmes de InPolitics Institute",
   );
 
   return (
