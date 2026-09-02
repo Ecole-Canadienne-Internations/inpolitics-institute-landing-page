@@ -787,9 +787,9 @@ function Faq() {
 
 /* ---------- CONTACT CTA ---------- */
 function ContactCta() {
-  const phone = "237600000000";
+  const phone = "33746440427";
   const wa = `https://wa.me/${phone}?text=${encodeURIComponent(
-    "Bonjour, je souhaite recevoir la brochure des programmes Inpolitics Institute.",
+    "Bonjour, je souhaite des informations sur les programmes de InPolitics Institute",
   )}`;
   return (
     <section id="contact" className="py-24 md:py-32">
