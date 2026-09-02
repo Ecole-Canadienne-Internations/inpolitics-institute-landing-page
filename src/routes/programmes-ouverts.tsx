@@ -1,12 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Users, Clock, MapPin, Euro, Award, Calendar } from "lucide-react";
+import {
+  ArrowRight,
+  Users,
+  Clock,
+  MapPin,
+  Euro,
+  Award,
+  Calendar,
+  Target,
+  Briefcase,
+} from "lucide-react";
 import { Header } from "@/components/Header";
 import { useContactModal } from "@/components/ContactModal";
-import formation1 from "@/assets/inpolitics-institute-formation.jpg";
+import afficheGouvernance from "@/assets/affiche-level-up-governance.png.asset.json";
+import afficheProtocole from "@/assets/affiche-diplomatie-locale.png.asset.json";
 import formation2 from "@/assets/inpolitics-institute-formation-2.jpg";
 import formation3 from "@/assets/inpolitics-institute-formation-3.jpg";
-import formation4 from "@/assets/inpolitics-institute-formation-4.jpg";
 
 export const Route = createFileRoute("/programmes-ouverts")({
   component: ProgrammesOuverts,
@@ -33,11 +43,14 @@ export const Route = createFileRoute("/programmes-ouverts")({
 
 type Formation = {
   id: number;
+  slug: string;
   title: string;
   description: string;
+  objectives: string;
   target: string;
+  debouches: string;
   status: "Inscriptions Ouvertes" | "Places Limitées" | "Nouveau";
-  certification?: string;
+  certification: string;
   price: string;
   nextSession: string;
   format: string;
@@ -50,45 +63,63 @@ type Formation = {
 const formations: Formation[] = [
   {
     id: 1,
+    slug: "gouvernance",
     title: "Gouvernance Publique et Décentralisation : Enjeux, acteurs et territoires",
     description:
-      "Maîtrisez les fondamentaux de la gouvernance locale : cadre juridique, décentralisation, pilotage stratégique et relations interinstitutionnelles. Une formation complète pour les élus et cadres territoriaux.",
-    target: "Élus, directeurs généraux, cadres territoriaux",
+      "Compréhension approfondie des mécanismes de gouvernance territoriale, de la décentralisation et du management public.",
+    objectives:
+      "Principes de la gouvernance contemporaine, cadres juridiques, rôle des collectivités, outils de management public et participation citoyenne.",
+    target:
+      "Cadres des administrations, élus territoriaux, professionnels du développement local, consultants, membres d'ONG",
+    debouches:
+      "Responsable de collectivité, Chargé de mission en gouvernance, Conseiller en politique publique",
     status: "Inscriptions Ouvertes",
-    certification: "Certification RNCP / Qualiopi Répertoire Spécifique (RS)",
-    price: "2 400 €",
+    certification:
+      "Certificat reconnu à l'international · Certification française RNCP / Qualiopi Répertoire Spécifique (RS)",
+    price: "Sur demande (tarif préférentiel groupes et administrations)",
     nextSession: "Janvier 2027",
-    format: "Format Hybride : En ligne + 7 jours d'immersion à Montpellier (France)",
+    format: "Format Hybride — 32 heures sur 6 à 7 semaines + 1 semaine à Montpellier",
     location: "Montpellier, France",
-    image: formation1,
+    image: afficheGouvernance.url,
     ctaText: "S'INSCRIRE À CETTE FORMATION",
     ctaStyle: "crimson",
   },
   {
     id: 2,
+    slug: "leadership",
     title: "Leadership Politique et Communication Publique",
     description:
-      "Comment parler pour convaincre et mobiliser ? Maîtrisez les techniques de prise de parole, de gestion de crise et de communication digitale pour les acteurs politiques.",
-    target: "Élus, communicants des institutions, porte-paroles, responsables de partis",
+      "Immersion dans les techniques modernes de communication politique et institutionnelle et dans les pratiques de leadership.",
+    objectives:
+      "Compétences en leadership, persuasion, gestion de crise, médias numériques et stratégie de communication.",
+    target: "Élus, porte-paroles, communicants institutionnels, journalistes, conseillers en stratégie",
+    debouches:
+      "Conseiller en communication politique, Responsable communication institutionnelle",
     status: "Inscriptions Ouvertes",
-    price: "1 200 €",
+    certification: "Certification française RNCP / Qualiopi Répertoire Spécifique (RS)",
+    price: "Sur demande",
     nextSession: "Février 2027",
-    format: "2 jours — en ligne",
-    location: "En ligne",
+    format: "Format Hybride / En ligne — 28 heures sur 5 à 6 semaines + 1 semaine à Montpellier",
+    location: "Montpellier, France / En ligne",
     image: formation2,
-    ctaText: "VOIR LE PROGRAMME",
+    ctaText: "VOIR LE PROGRAMME / S'INSCRIRE",
     ctaStyle: "ghost",
   },
   {
     id: 3,
+    slug: "finances",
     title: "Gestion Financière et Budgétaire des Collectivités Territoriales",
     description:
-      "Devenez une Mairie Haute Performance. Apprenez à élaborer, exécuter et contrôler un budget communal transparent et performant pour améliorer votre classement, augmenter vos chances de coopération internationale et la recherche de financement.",
-    target: "Maires, Receveurs Municipaux, Contrôleurs de gestion",
+      "Maîtrise des outils financiers et budgétaires pour une gestion moderne des collectivités locales : transparence, efficacité, optimisation.",
+    objectives:
+      "Élaborer et exécuter un budget communal, conduire un audit interne, mobiliser les financements et bâtir des partenariats internationaux.",
+    target: "Maires, receveurs municipaux, contrôleurs de gestion, cadres financiers",
+    debouches: "Responsable financier territorial, Auditeur interne des collectivités",
     status: "Places Limitées",
-    price: "2 400 €",
-    nextSession: "Janvier 2026",
-    format: "Format Hybride : En ligne + 7 jours d'immersion à Montpellier (France)",
+    certification: "Certification française RNCP / Qualiopi Répertoire Spécifique (RS)",
+    price: "Sur demande",
+    nextSession: "Janvier 2027",
+    format: "Format Hybride — 35 heures sur 6 à 7 semaines + 1 semaine à Montpellier",
     location: "Montpellier, France",
     image: formation3,
     ctaText: "RÉSERVER MA PLACE",
@@ -96,17 +127,23 @@ const formations: Formation[] = [
   },
   {
     id: 4,
+    slug: "protocole",
     title: "Protocole, Diplomatie Locale et Coopération Décentralisée",
     description:
-      "Attirez les partenariats. Tout ce qu'un élu doit savoir sur le protocole d'État, l'accueil des délégations et le montage de dossiers de coopération internationale.",
-    target: "Maires, Chefs de cabinet, Chargés de coopération",
+      "Règles du protocole institutionnel et mécanismes de coopération internationale des collectivités territoriales.",
+    objectives:
+      "Protocole d'État, accueil des délégations, diplomatie locale et montage de projets de coopération décentralisée.",
+    target:
+      "Maires, chefs de cabinet, chargés de coopération, responsables des relations internationales",
+    debouches: "Conseiller en coopération décentralisée, Responsable protocole",
     status: "Nouveau",
-    price: "2 400 €",
-    nextSession: "Février 2026",
-    format: "Format Hybride : En ligne + 7 jours d'immersion à Montpellier (France)",
+    certification: "Certification française RNCP / Qualiopi Répertoire Spécifique (RS)",
+    price: "Sur demande",
+    nextSession: "Février 2027",
+    format: "Format Hybride — 30 heures sur 5 à 6 semaines + 1 semaine à Montpellier",
     location: "Montpellier, France",
-    image: formation4,
-    ctaText: "DÉCOUVRIR",
+    image: afficheProtocole.url,
+    ctaText: "DÉCOUVRIR & S'INSCRIRE",
     ctaStyle: "ghost",
   },
 ];
@@ -139,8 +176,8 @@ function ProgrammesOuverts() {
               les portes de ses programmes de renforcement de capacités. Des formations pratiques,
               certifiantes et dispensées par des experts de terrain, conçues pour les élus, cadres
               communaux, partis politiques et leaders de la société civile qui veulent passer à
-              l'action. En présentiel à Yaoundé et en ligne. Les inscriptions sont actuellement
-              ouvertes.
+              l'action. En présentiel à Montpellier, dans nos sites en Afrique, et en ligne. Les
+              inscriptions sont actuellement ouvertes.
             </p>
           </div>
 
@@ -163,12 +200,10 @@ function ProgrammesOuverts() {
                     <span className="inline-flex px-3 py-1 rounded-full bg-crimson text-white text-[10px] font-semibold tracking-wide uppercase">
                       {formation.status}
                     </span>
-                    {formation.certification && (
-                      <span className="inline-flex px-3 py-1 rounded-full bg-white/90 backdrop-blur text-anthracite text-[10px] font-semibold tracking-wide uppercase">
-                        <Award className="size-3 mr-1" />
-                        Certifié
-                      </span>
-                    )}
+                    <span className="inline-flex px-3 py-1 rounded-full bg-white/90 backdrop-blur text-anthracite text-[10px] font-semibold tracking-wide uppercase">
+                      <Award className="size-3 mr-1" />
+                      Certifié
+                    </span>
                   </div>
                 </div>
 
@@ -184,6 +219,13 @@ function ProgrammesOuverts() {
                   {/* Info Cards */}
                   <div className="space-y-3 mb-6">
                     <div className="flex items-start gap-3 text-sm">
+                      <Target className="size-4 text-crimson mt-0.5 shrink-0" />
+                      <div>
+                        <span className="font-semibold text-anthracite">Objectifs :</span>
+                        <p className="text-muted-foreground">{formation.objectives}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 text-sm">
                       <Users className="size-4 text-crimson mt-0.5 shrink-0" />
                       <div>
                         <span className="font-semibold text-anthracite">Pour qui ?</span>
@@ -191,9 +233,16 @@ function ProgrammesOuverts() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3 text-sm">
+                      <Award className="size-4 text-crimson mt-0.5 shrink-0" />
+                      <div>
+                        <span className="font-semibold text-anthracite">Certifications :</span>
+                        <p className="text-muted-foreground">{formation.certification}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 text-sm">
                       <Clock className="size-4 text-crimson mt-0.5 shrink-0" />
                       <div>
-                        <span className="font-semibold text-anthracite">Format :</span>
+                        <span className="font-semibold text-anthracite">Durée & Format :</span>
                         <p className="text-muted-foreground">{formation.format}</p>
                       </div>
                     </div>
@@ -218,27 +267,29 @@ function ProgrammesOuverts() {
                         <p className="text-muted-foreground">{formation.price}</p>
                       </div>
                     </div>
+                    <div className="flex items-start gap-3 text-sm">
+                      <Briefcase className="size-4 text-crimson mt-0.5 shrink-0" />
+                      <div>
+                        <span className="font-semibold text-anthracite">Débouchés :</span>
+                        <p className="text-muted-foreground">{formation.debouches}</p>
+                      </div>
+                    </div>
                   </div>
 
                   {/* CTA */}
                   <div className="pt-5 border-t border-border">
-                    {formation.ctaStyle === "crimson" ? (
-                      <Link
-                        to="/programmes-ouverts"
-                        className="btn-crimson w-full justify-center px-5 py-3 rounded-full text-xs font-semibold inline-flex items-center gap-2"
-                      >
-                        {formation.ctaText}
-                        <ArrowRight className="size-3.5" />
-                      </Link>
-                    ) : (
-                      <button
-                        onClick={open}
-                        className="w-full px-5 py-3 rounded-full text-xs font-semibold inline-flex items-center justify-center gap-2 border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-white transition-colors"
-                      >
-                        {formation.ctaText}
-                        <ArrowRight className="size-3.5" />
-                      </button>
-                    )}
+                    <Link
+                      to="/schools-of-politics/apply"
+                      search={{ program: formation.slug }}
+                      className={
+                        formation.ctaStyle === "crimson"
+                          ? "btn-crimson w-full justify-center px-5 py-3 rounded-full text-xs font-semibold inline-flex items-center gap-2"
+                          : "w-full px-5 py-3 rounded-full text-xs font-semibold inline-flex items-center justify-center gap-2 border border-anthracite/15 text-anthracite hover:bg-anthracite hover:text-white transition-colors"
+                      }
+                    >
+                      {formation.ctaText}
+                      <ArrowRight className="size-3.5" />
+                    </Link>
                   </div>
                 </div>
               </div>
