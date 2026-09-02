@@ -11,17 +11,21 @@ import { toast } from "sonner";
 
 export const Route = createFileRoute("/schools-of-politics/apply")({
   component: Apply,
+  validateSearch: (search: Record<string, unknown>) => ({
+    program: typeof search.program === "string" ? search.program : undefined,
+  }),
   head: () => ({
     meta: [
-      { title: "Apply — School of Politics — InPolitics Institute" },
+      { title: "Candidature — School of Politics — InPolitics Institute" },
       {
         name: "description",
-        content: "Submit your application to join the School of Politics at InPolitics Institute.",
+        content:
+          "Déposez votre candidature à la School of Politics de InPolitics Institute : formulaire en ligne, programmes certifiants pour élus et cadres publics.",
       },
-      { property: "og:title", content: "Apply — School of Politics — InPolitics Institute" },
+      { property: "og:title", content: "Candidature — School of Politics — InPolitics Institute" },
       {
         property: "og:description",
-        content: "Apply to the School of Politics at InPolitics Institute.",
+        content: "Formulaire de candidature — School of Politics, InPolitics Institute.",
       },
       { property: "og:url", content: "https://inpoliticsinstitute.com/schools-of-politics/apply" },
     ],
@@ -32,54 +36,52 @@ export const Route = createFileRoute("/schools-of-politics/apply")({
 });
 
 const applicationSchema = z.object({
-  firstName: z.string().min(2, "First name is required"),
-  lastName: z.string().min(2, "Last name is required"),
-  email: z.string().email("Valid email required"),
-  phone: z.string().min(6, "Phone number is required"),
-  country: z.string().min(2, "Country is required"),
-  nationality: z.string().min(2, "Nationality is required"),
-  education: z.string().min(1, "Please select your education level"),
-  program: z.string().min(1, "Please select a program"),
-  motivation: z.string().min(50, "Please write at least 50 characters about your motivation"),
+  firstName: z.string().min(2, "Le prénom est requis"),
+  lastName: z.string().min(2, "Le nom est requis"),
+  email: z.string().email("Adresse email valide requise"),
+  phone: z.string().min(6, "Le numéro de téléphone est requis"),
+  country: z.string().min(2, "Le pays de résidence est requis"),
+  currentRole: z.string().optional(),
+  program: z.string().min(1, "Merci de sélectionner une formation"),
+  motivation: z.string().min(50, "Merci d'écrire au moins 50 caractères de motivation"),
   linkedin: z.string().optional(),
-  hearAbout: z.string().min(1, "Please let us know how you heard about us"),
+  hearAbout: z.string().optional(),
 });
 
 type ApplicationForm = z.infer<typeof applicationSchema>;
 
-const educationLevels = [
-  { value: "high-school", label: "High School / Baccalaureate" },
-  { value: "bachelor", label: "Bachelor / Licence" },
-  { value: "master", label: "Master / Maitrise" },
-  { value: "doctorate", label: "Doctorate / PhD" },
-  { value: "executive", label: "Executive Education" },
-  { value: "other", label: "Other" },
-];
-
-const programs = [
-  { value: "political-strategy", label: "Political Strategy & Campaigns" },
-  { value: "public-diplomacy", label: "Public Diplomacy & International Relations" },
-  { value: "governance", label: "Governance & Public Policy" },
-  { value: "digital-governance", label: "Digital Governance & Tech Politics" },
-  { value: "lobbying", label: "Lobbying & Advocacy" },
-  { value: "individual-program", label: "Individual Program" },
-  { value: "school-of-politics", label: "School of politics" },
-  { value: "leadership", label: "Executive Leadership" },
+export const programOptions = [
+  {
+    value: "gouvernance",
+    label: "Gouvernance Publique et Décentralisation : Enjeux, acteurs et territoires",
+  },
+  { value: "leadership", label: "Leadership Politique et Communication Publique" },
+  {
+    value: "finances",
+    label: "Gestion Financière et Budgétaire des Collectivités Territoriales",
+  },
+  { value: "protocole", label: "Protocole, Diplomatie Locale et Coopération Décentralisée" },
 ];
 
 const hearOptions = [
-  { value: "social-media", label: "Social Media" },
-  { value: "website", label: "Website / Search Engine" },
-  { value: "referral", label: "Referral / Word of Mouth" },
-  { value: "institution", label: "Institutional Partner" },
-  { value: "event", label: "Event / Conference" },
-  { value: "email", label: "Email Campaign" },
-  { value: "other", label: "Other" },
+  { value: "reseaux-sociaux", label: "Réseaux sociaux" },
+  { value: "site-web", label: "Site web / Moteur de recherche" },
+  { value: "recommandation", label: "Recommandation / Bouche-à-oreille" },
+  { value: "institution", label: "Partenaire institutionnel" },
+  { value: "evenement", label: "Événement / Conférence" },
+  { value: "email", label: "Campagne email" },
+  { value: "autre", label: "Autre" },
 ];
 
+const inputClass =
+  "flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring placeholder:text-muted-foreground";
+
 function Apply() {
+  const { program: programParam } = Route.useSearch();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  const preselected = programOptions.find((p) => p.value === programParam)?.value ?? "";
 
   const {
     register,
@@ -88,22 +90,23 @@ function Apply() {
     reset,
   } = useForm<ApplicationForm>({
     resolver: zodResolver(applicationSchema),
+    defaultValues: { program: preselected },
   });
 
   const onSubmit = async (values: ApplicationForm) => {
     setSubmitting(true);
+    const label = programOptions.find((p) => p.value === values.program)?.label ?? values.program;
     const { error } = await supabase.from("school_applications").insert({
       first_name: values.firstName,
       last_name: values.lastName,
       email: values.email,
       phone: values.phone,
       country: values.country,
-      nationality: values.nationality,
-      education: values.education,
-      program: values.program,
+      program: label,
+      current_role_title: values.currentRole?.trim() || null,
       motivation: values.motivation,
       linkedin: values.linkedin?.trim() || null,
-      hear_about: values.hearAbout,
+      hear_about: values.hearAbout || null,
     });
     setSubmitting(false);
     if (error) {
@@ -123,18 +126,18 @@ function Apply() {
               <Check className="size-8 text-crimson" />
             </div>
             <h1 className="font-serif text-3xl md:text-4xl tracking-tight text-anthracite mb-4">
-              Application Submitted
+              Candidature envoyée
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Thank you for your interest in the School of Politics. Our admissions team will review
-              your application and reach out to you within 48–72 hours.
+              Merci de l'intérêt que vous portez à la School of Politics. Notre équipe des
+              admissions étudie votre dossier et vous recontacte sous 48 à 72 heures.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 to="/"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border border-input hover:bg-accent transition-colors"
               >
-                <ArrowLeft className="size-4" /> Back to Home
+                <ArrowLeft className="size-4" /> Retour à l'accueil
               </Link>
               <button
                 onClick={() => {
@@ -143,7 +146,7 @@ function Apply() {
                 }}
                 className="btn-crimson px-6 py-3 rounded-full text-sm font-semibold"
               >
-                Submit Another Application
+                Déposer une autre candidature
               </button>
             </div>
           </div>
@@ -173,46 +176,38 @@ function Apply() {
                   School of Politics
                 </div>
                 <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight text-white">
-                  Application Form
+                  Formulaire de Candidature
                 </h1>
               </div>
             </div>
           </section>
 
-          <p className="text-lg text-muted-foreground mb-12 max-w-xl">
-            Take the first step toward joining the next generation of political leaders. Fill out
-            the form below and our team will contact you.
+          <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
+            Rejoignez l'élite des leaders et décideurs publics de demain. Complétez votre dossier en
+            ligne.
           </p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-8" noValidate>
-            {/* Personal Information */}
+            {/* Identité */}
             <fieldset>
               <legend className="text-sm font-semibold uppercase tracking-[0.15em] text-anthracite mb-5 pb-2 border-b border-border w-full">
-                Personal Information
+                Identité
               </legend>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-anthracite">
-                    First Name <span className="text-crimson">*</span>
+                    Prénom <span className="text-crimson">*</span>
                   </label>
-                  <input
-                    {...register("firstName")}
-                    placeholder="e.g. Jean"
-                    className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring placeholder:text-muted-foreground"
-                  />
+                  <input {...register("firstName")} placeholder="ex. Jean" className={inputClass} />
                   {errors.firstName && (
                     <p className="text-xs text-crimson mt-1">{errors.firstName.message}</p>
                   )}
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-anthracite">
-                    Last Name <span className="text-crimson">*</span>
+                    Nom <span className="text-crimson">*</span>
                   </label>
-                  <input
-                    {...register("lastName")}
-                    placeholder="e.g. Dupont"
-                    className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring placeholder:text-muted-foreground"
-                  />
+                  <input {...register("lastName")} placeholder="ex. Dupont" className={inputClass} />
                   {errors.lastName && (
                     <p className="text-xs text-crimson mt-1">{errors.lastName.message}</p>
                   )}
@@ -220,21 +215,21 @@ function Apply() {
               </div>
             </fieldset>
 
-            {/* Contact Details */}
+            {/* Coordonnées */}
             <fieldset>
               <legend className="text-sm font-semibold uppercase tracking-[0.15em] text-anthracite mb-5 pb-2 border-b border-border w-full">
-                Contact Details
+                Coordonnées
               </legend>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-anthracite">
-                    Email <span className="text-crimson">*</span>
+                    Adresse Email <span className="text-crimson">*</span>
                   </label>
                   <input
                     type="email"
                     {...register("email")}
                     placeholder="jean.dupont@email.com"
-                    className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring placeholder:text-muted-foreground"
+                    className={inputClass}
                   />
                   {errors.email && (
                     <p className="text-xs text-crimson mt-1">{errors.email.message}</p>
@@ -242,13 +237,13 @@ function Apply() {
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-anthracite">
-                    Phone <span className="text-crimson">*</span>
+                    Numéro de Téléphone / WhatsApp <span className="text-crimson">*</span>
                   </label>
                   <input
                     type="tel"
                     {...register("phone")}
-                    placeholder="+33 6 00 00 00 00"
-                    className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring placeholder:text-muted-foreground"
+                    placeholder="+33 7 46 44 04 27"
+                    className={inputClass}
                   />
                   {errors.phone && (
                     <p className="text-xs text-crimson mt-1">{errors.phone.message}</p>
@@ -258,83 +253,49 @@ function Apply() {
               <div className="grid sm:grid-cols-2 gap-4 mt-4">
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-anthracite">
-                    Country of Residence <span className="text-crimson">*</span>
+                    Pays de résidence <span className="text-crimson">*</span>
                   </label>
-                  <input
-                    {...register("country")}
-                    placeholder="e.g. France"
-                    className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring placeholder:text-muted-foreground"
-                  />
+                  <input {...register("country")} placeholder="ex. France" className={inputClass} />
                   {errors.country && (
                     <p className="text-xs text-crimson mt-1">{errors.country.message}</p>
                   )}
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-anthracite">
-                    Nationality <span className="text-crimson">*</span>
+                    Fonction / Institution actuelle
                   </label>
                   <input
-                    {...register("nationality")}
-                    placeholder="e.g. Ivoirienne"
-                    className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring placeholder:text-muted-foreground"
+                    {...register("currentRole")}
+                    placeholder="ex. Maire, Commune de …"
+                    className={inputClass}
                   />
-                  {errors.nationality && (
-                    <p className="text-xs text-crimson mt-1">{errors.nationality.message}</p>
-                  )}
                 </div>
               </div>
             </fieldset>
 
-            {/* Academic & Program */}
+            {/* Programme */}
             <fieldset>
               <legend className="text-sm font-semibold uppercase tracking-[0.15em] text-anthracite mb-5 pb-2 border-b border-border w-full">
-                Academic & Program
+                Programme
               </legend>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-1.5">
-                  <label className="text-sm font-medium text-anthracite">
-                    Education Level <span className="text-crimson">*</span>
-                  </label>
-                  <select
-                    {...register("education")}
-                    className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer"
-                    defaultValue=""
-                  >
-                    <option value="" disabled>
-                      Select your level
+              <div className="space-y-1.5">
+                <label className="text-sm font-medium text-anthracite">
+                  Programme / Formation souhaitée <span className="text-crimson">*</span>
+                </label>
+                <select
+                  {...register("program")}
+                  className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer"
+                >
+                  <option value="">Sélectionnez une formation</option>
+                  {programOptions.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
                     </option>
-                    {educationLevels.map((opt) => (
-                      <option key={opt.value} value={opt.value}>
-                        {opt.label}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.education && (
-                    <p className="text-xs text-crimson mt-1">{errors.education.message}</p>
-                  )}
-                </div>
-                <div className="space-y-1.5">
-                  <label className="text-sm font-medium text-anthracite">
-                    Program Interested In <span className="text-crimson">*</span>
-                  </label>
-                  <select
-                    {...register("program")}
-                    className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer"
-                    defaultValue=""
-                  >
-                    <option value="" disabled>
-                      Select a program
-                    </option>
-                    {programs.map((opt) => (
-                      <option key={opt.value} value={opt.value}>
-                        {opt.label}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.program && (
-                    <p className="text-xs text-crimson mt-1">{errors.program.message}</p>
-                  )}
-                </div>
+                  ))}
+                </select>
+                {errors.program && (
+                  <p className="text-xs text-crimson mt-1">{errors.program.message}</p>
+                )}
               </div>
             </fieldset>
 
@@ -345,13 +306,12 @@ function Apply() {
               </legend>
               <div className="space-y-1.5">
                 <label className="text-sm font-medium text-anthracite">
-                  Why do you want to join the School of Politics?{" "}
-                  <span className="text-crimson">*</span>
+                  Message / Motivation <span className="text-crimson">*</span>
                 </label>
                 <textarea
                   {...register("motivation")}
                   rows={5}
-                  placeholder="Tell us about your motivation, goals, and what you hope to gain from this program..."
+                  placeholder="Présentez votre parcours, vos objectifs et ce que vous attendez de ce programme…"
                   className="flex w-full rounded-lg border border-input bg-transparent px-4 py-3 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring placeholder:text-muted-foreground resize-y min-h-[120px]"
                 />
                 {errors.motivation && (
@@ -360,51 +320,46 @@ function Apply() {
               </div>
             </fieldset>
 
-            {/* Additional Info */}
+            {/* Informations complémentaires */}
             <fieldset>
               <legend className="text-sm font-semibold uppercase tracking-[0.15em] text-anthracite mb-5 pb-2 border-b border-border w-full">
-                Additional Information
+                Informations complémentaires
               </legend>
               <div className="space-y-4">
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-anthracite">
-                    LinkedIn Profile (optional)
+                    Profil LinkedIn (facultatif)
                   </label>
                   <input
                     {...register("linkedin")}
-                    placeholder="https://linkedin.com/in/yourprofile"
-                    className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring placeholder:text-muted-foreground"
+                    placeholder="https://linkedin.com/in/votreprofil"
+                    className={inputClass}
                   />
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-anthracite">
-                    How did you hear about us? <span className="text-crimson">*</span>
+                    Comment avez-vous connu l'Institut ?
                   </label>
                   <select
                     {...register("hearAbout")}
                     className="flex h-11 w-full rounded-lg border border-input bg-transparent px-4 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer"
                     defaultValue=""
                   >
-                    <option value="" disabled>
-                      Select an option
-                    </option>
+                    <option value="">Sélectionnez une option</option>
                     {hearOptions.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
                     ))}
                   </select>
-                  {errors.hearAbout && (
-                    <p className="text-xs text-crimson mt-1">{errors.hearAbout.message}</p>
-                  )}
                 </div>
               </div>
             </fieldset>
 
-            {/* Submit */}
+            {/* Soumission */}
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between border-t border-border">
               <p className="text-xs text-muted-foreground">
-                Fields marked with <span className="text-crimson">*</span> are required
+                Les champs marqués d'un <span className="text-crimson">*</span> sont obligatoires
               </p>
               <button
                 type="submit"
@@ -413,11 +368,11 @@ function Apply() {
               >
                 {submitting ? (
                   <>
-                    <Loader2 className="size-4 animate-spin" /> Submitting...
+                    <Loader2 className="size-4 animate-spin" /> Envoi en cours…
                   </>
                 ) : (
                   <>
-                    <Send className="size-4" /> Submit Application
+                    <Send className="size-4" /> SOUMETTRE MA CANDIDATURE
                   </>
                 )}
               </button>
