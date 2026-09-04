@@ -46,6 +46,7 @@ import { Route as BiographieDieudonneToukeaRouteImport } from "./routes/biograph
 import { Route as BiographieArnaudSighanoRouteImport } from "./routes/biographie.arnaud-sighano"
 import { Route as BiographieAntoineObtelRouteImport } from "./routes/biographie.antoine-obtel"
 import { Route as AdminLoginRouteImport } from "./routes/admin.login"
+import { Route as AdminDashboardRouteImport } from "./routes/admin.dashboard"
 
 const ProgrammesOuvertsRoute = ProgrammesOuvertsRouteImport.update({
   id: "/programmes-ouverts",
@@ -249,6 +250,11 @@ const AdminLoginRoute = AdminLoginRouteImport.update({
   path: "/admin/login",
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: "/admin/dashboard",
+  path: "/admin/dashboard",
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   "/": typeof IndexRoute
@@ -256,6 +262,7 @@ export interface FileRoutesByFullPath {
   "/mentions-legales": typeof MentionsLegalesRoute
   "/mot-du-directeur": typeof MotDuDirecteurRoute
   "/programmes-ouverts": typeof ProgrammesOuvertsRoute
+  "/admin/dashboard": typeof AdminDashboardRoute
   "/admin/login": typeof AdminLoginRoute
   "/biographie/antoine-obtel": typeof BiographieAntoineObtelRoute
   "/biographie/arnaud-sighano": typeof BiographieArnaudSighanoRoute
@@ -295,6 +302,7 @@ export interface FileRoutesByTo {
   "/mentions-legales": typeof MentionsLegalesRoute
   "/mot-du-directeur": typeof MotDuDirecteurRoute
   "/programmes-ouverts": typeof ProgrammesOuvertsRoute
+  "/admin/dashboard": typeof AdminDashboardRoute
   "/admin/login": typeof AdminLoginRoute
   "/biographie/antoine-obtel": typeof BiographieAntoineObtelRoute
   "/biographie/arnaud-sighano": typeof BiographieArnaudSighanoRoute
@@ -335,6 +343,7 @@ export interface FileRoutesById {
   "/mentions-legales": typeof MentionsLegalesRoute
   "/mot-du-directeur": typeof MotDuDirecteurRoute
   "/programmes-ouverts": typeof ProgrammesOuvertsRoute
+  "/admin/dashboard": typeof AdminDashboardRoute
   "/admin/login": typeof AdminLoginRoute
   "/biographie/antoine-obtel": typeof BiographieAntoineObtelRoute
   "/biographie/arnaud-sighano": typeof BiographieArnaudSighanoRoute
@@ -376,6 +385,7 @@ export interface FileRouteTypes {
     | "/mentions-legales"
     | "/mot-du-directeur"
     | "/programmes-ouverts"
+    | "/admin/dashboard"
     | "/admin/login"
     | "/biographie/antoine-obtel"
     | "/biographie/arnaud-sighano"
@@ -415,6 +425,7 @@ export interface FileRouteTypes {
     | "/mentions-legales"
     | "/mot-du-directeur"
     | "/programmes-ouverts"
+    | "/admin/dashboard"
     | "/admin/login"
     | "/biographie/antoine-obtel"
     | "/biographie/arnaud-sighano"
@@ -454,6 +465,7 @@ export interface FileRouteTypes {
     | "/mentions-legales"
     | "/mot-du-directeur"
     | "/programmes-ouverts"
+    | "/admin/dashboard"
     | "/admin/login"
     | "/biographie/antoine-obtel"
     | "/biographie/arnaud-sighano"
@@ -494,6 +506,7 @@ export interface RootRouteChildren {
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   MotDuDirecteurRoute: typeof MotDuDirecteurRoute
   ProgrammesOuvertsRoute: typeof ProgrammesOuvertsRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
   AdminLoginRoute: typeof AdminLoginRoute
   BiographieAntoineObtelRoute: typeof BiographieAntoineObtelRoute
   BiographieArnaudSighanoRoute: typeof BiographieArnaudSighanoRoute
@@ -789,6 +802,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof AdminLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    "/admin/dashboard": {
+      id: "/admin/dashboard"
+      path: "/admin/dashboard"
+      fullPath: "/admin/dashboard"
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -798,6 +818,7 @@ const rootRouteChildren: RootRouteChildren = {
   MentionsLegalesRoute: MentionsLegalesRoute,
   MotDuDirecteurRoute: MotDuDirecteurRoute,
   ProgrammesOuvertsRoute: ProgrammesOuvertsRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
   AdminLoginRoute: AdminLoginRoute,
   BiographieAntoineObtelRoute: BiographieAntoineObtelRoute,
   BiographieArnaudSighanoRoute: BiographieArnaudSighanoRoute,
