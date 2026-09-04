@@ -61,6 +61,14 @@ export const programOptions = [
     label: "Gestion Financière et Budgétaire des Collectivités Territoriales",
   },
   { value: "protocole", label: "Protocole, Diplomatie Locale et Coopération Décentralisée" },
+  { value: "political-strategy", label: "Stratégie Politique & Campagnes Électorales" },
+  { value: "public-diplomacy", label: "Diplomatie Publique & Relations Internationales" },
+  { value: "governance", label: "Gouvernance & Politiques Publiques" },
+  { value: "digital-governance", label: "Gouvernance Digitale & Enjeux Technopolitiques" },
+  { value: "lobbying", label: "Lobbying & Plaidoyer d'Influence" },
+  { value: "individual-program", label: "Programme Individuel (sur-mesure)" },
+  { value: "school-of-politics", label: "School of Politics" },
+  { value: "executive-leadership", label: "Executive Leadership" },
 ];
 
 const hearOptions = [

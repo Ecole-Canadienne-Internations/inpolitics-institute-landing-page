@@ -13,8 +13,8 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { useContactModal } from "@/components/ContactModal";
-import afficheGouvernance from "@/assets/affiche-level-up-governance.png.asset.json";
-import afficheProtocole from "@/assets/affiche-diplomatie-locale.png.asset.json";
+import afficheGouvernance from "@/assets/affiche-level-up-governance.png";
+import afficheProtocole from "@/assets/affiche-diplomatie-locale.png";
 import formation2 from "@/assets/inpolitics-institute-formation-2.jpg";
 import formation3 from "@/assets/inpolitics-institute-formation-3.jpg";
 
@@ -80,7 +80,7 @@ const formations: Formation[] = [
     nextSession: "Janvier 2027",
     format: "Format Hybride — 32 heures sur 6 à 7 semaines + 1 semaine à Montpellier",
     location: "Montpellier, France",
-    image: afficheGouvernance.url,
+    image: afficheGouvernance,
     ctaText: "S'INSCRIRE À CETTE FORMATION",
     ctaStyle: "crimson",
   },
@@ -142,7 +142,7 @@ const formations: Formation[] = [
     nextSession: "Février 2027",
     format: "Format Hybride — 30 heures sur 5 à 6 semaines + 1 semaine à Montpellier",
     location: "Montpellier, France",
-    image: afficheProtocole.url,
+    image: afficheProtocole,
     ctaText: "DÉCOUVRIR & S'INSCRIRE",
     ctaStyle: "ghost",
   },

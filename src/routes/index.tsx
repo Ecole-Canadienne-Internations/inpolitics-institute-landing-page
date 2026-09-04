@@ -240,7 +240,7 @@ function Hero() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="max-w-2xl">
           <h1 className="text-4xl sm:text-5xl lg:text-[64px] leading-[1.05] font-bold text-anthracite">
-            Formez-vous aux plus hautes <span className="text-crimson">sphères du pouvoir</span>, de
+            Formez-vous aux <span className="text-crimson">leviers de la décision stratégique</span>, de
             la diplomatie et de la gouvernance digitale.
           </h1>
           <p className="mt-7 text-base md:text-lg text-anthracite/80 leading-relaxed max-w-xl">
