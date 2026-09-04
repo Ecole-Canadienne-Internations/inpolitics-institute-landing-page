@@ -45,6 +45,7 @@ import { Route as BiographieHaceneBoumedieneRouteImport } from "./routes/biograp
 import { Route as BiographieDieudonneToukeaRouteImport } from "./routes/biographie.dieudonne-toukea"
 import { Route as BiographieArnaudSighanoRouteImport } from "./routes/biographie.arnaud-sighano"
 import { Route as BiographieAntoineObtelRouteImport } from "./routes/biographie.antoine-obtel"
+import { Route as AdminLoginRouteImport } from "./routes/admin.login"
 
 const ProgrammesOuvertsRoute = ProgrammesOuvertsRouteImport.update({
   id: "/programmes-ouverts",
@@ -243,6 +244,11 @@ const BiographieAntoineObtelRoute = BiographieAntoineObtelRouteImport.update({
   path: "/biographie/antoine-obtel",
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: "/admin/login",
+  path: "/admin/login",
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   "/": typeof IndexRoute
@@ -250,6 +256,7 @@ export interface FileRoutesByFullPath {
   "/mentions-legales": typeof MentionsLegalesRoute
   "/mot-du-directeur": typeof MotDuDirecteurRoute
   "/programmes-ouverts": typeof ProgrammesOuvertsRoute
+  "/admin/login": typeof AdminLoginRoute
   "/biographie/antoine-obtel": typeof BiographieAntoineObtelRoute
   "/biographie/arnaud-sighano": typeof BiographieArnaudSighanoRoute
   "/biographie/dieudonne-toukea": typeof BiographieDieudonneToukeaRoute
@@ -288,6 +295,7 @@ export interface FileRoutesByTo {
   "/mentions-legales": typeof MentionsLegalesRoute
   "/mot-du-directeur": typeof MotDuDirecteurRoute
   "/programmes-ouverts": typeof ProgrammesOuvertsRoute
+  "/admin/login": typeof AdminLoginRoute
   "/biographie/antoine-obtel": typeof BiographieAntoineObtelRoute
   "/biographie/arnaud-sighano": typeof BiographieArnaudSighanoRoute
   "/biographie/dieudonne-toukea": typeof BiographieDieudonneToukeaRoute
@@ -327,6 +335,7 @@ export interface FileRoutesById {
   "/mentions-legales": typeof MentionsLegalesRoute
   "/mot-du-directeur": typeof MotDuDirecteurRoute
   "/programmes-ouverts": typeof ProgrammesOuvertsRoute
+  "/admin/login": typeof AdminLoginRoute
   "/biographie/antoine-obtel": typeof BiographieAntoineObtelRoute
   "/biographie/arnaud-sighano": typeof BiographieArnaudSighanoRoute
   "/biographie/dieudonne-toukea": typeof BiographieDieudonneToukeaRoute
@@ -367,6 +376,7 @@ export interface FileRouteTypes {
     | "/mentions-legales"
     | "/mot-du-directeur"
     | "/programmes-ouverts"
+    | "/admin/login"
     | "/biographie/antoine-obtel"
     | "/biographie/arnaud-sighano"
     | "/biographie/dieudonne-toukea"
@@ -405,6 +415,7 @@ export interface FileRouteTypes {
     | "/mentions-legales"
     | "/mot-du-directeur"
     | "/programmes-ouverts"
+    | "/admin/login"
     | "/biographie/antoine-obtel"
     | "/biographie/arnaud-sighano"
     | "/biographie/dieudonne-toukea"
@@ -443,6 +454,7 @@ export interface FileRouteTypes {
     | "/mentions-legales"
     | "/mot-du-directeur"
     | "/programmes-ouverts"
+    | "/admin/login"
     | "/biographie/antoine-obtel"
     | "/biographie/arnaud-sighano"
     | "/biographie/dieudonne-toukea"
@@ -482,6 +494,7 @@ export interface RootRouteChildren {
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   MotDuDirecteurRoute: typeof MotDuDirecteurRoute
   ProgrammesOuvertsRoute: typeof ProgrammesOuvertsRoute
+  AdminLoginRoute: typeof AdminLoginRoute
   BiographieAntoineObtelRoute: typeof BiographieAntoineObtelRoute
   BiographieArnaudSighanoRoute: typeof BiographieArnaudSighanoRoute
   BiographieDieudonneToukeaRoute: typeof BiographieDieudonneToukeaRoute
@@ -769,6 +782,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof BiographieAntoineObtelRouteImport
       parentRoute: typeof rootRouteImport
     }
+    "/admin/login": {
+      id: "/admin/login"
+      path: "/admin/login"
+      fullPath: "/admin/login"
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -778,6 +798,7 @@ const rootRouteChildren: RootRouteChildren = {
   MentionsLegalesRoute: MentionsLegalesRoute,
   MotDuDirecteurRoute: MotDuDirecteurRoute,
   ProgrammesOuvertsRoute: ProgrammesOuvertsRoute,
+  AdminLoginRoute: AdminLoginRoute,
   BiographieAntoineObtelRoute: BiographieAntoineObtelRoute,
   BiographieArnaudSighanoRoute: BiographieArnaudSighanoRoute,
   BiographieDieudonneToukeaRoute: BiographieDieudonneToukeaRoute,
