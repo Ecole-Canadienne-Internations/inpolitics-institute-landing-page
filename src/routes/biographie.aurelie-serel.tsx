@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Mail, Quote } from "lucide-react";
 import { Header } from "@/components/Header";
 import { useContactModal } from "@/components/ContactModal";
-import aurelieSerelAsset from "@/assets/aurelie-serel.png.asset.json";
+import aurelieSerel from "@/assets/aurelie-serel.png";
 
 const SITE = "https://inpoliticsinstitute.com";
 
@@ -129,7 +129,7 @@ function BioPage() {
             <div className="md:col-span-5 order-1 md:order-2 md:sticky md:top-40">
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-white">
                 <img
-                  src={aurelieSerelAsset.url}
+                  src={aurelieSerel}
                   alt="Aurélie SÉREL, Directrice Générale d’InPolitics Institute"
                   className="h-full w-full object-cover object-top"
                 />

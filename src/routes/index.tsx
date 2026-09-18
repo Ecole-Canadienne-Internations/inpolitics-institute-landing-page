@@ -35,7 +35,7 @@ import admissionDossier from "@/assets/admission-dossier.png";
 import admissionEntretien from "@/assets/admission-entretien.png";
 import admissionAdmission from "@/assets/admission-admission.png";
 import formationGouvernance from "@/assets/inpolitics-institute-formation.jpg";
-import aurelieSerelAsset from "@/assets/aurelie-serel.png.asset.json";
+import aurelieSerel from "@/assets/aurelie-serel.png";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -119,7 +119,7 @@ function TeamFounders() {
       slug: "aurelie-serel",
       name: "Aurélie SÉREL",
       role: "Directrice Générale",
-      img: aurelieSerelAsset.url,
+      img: aurelieSerel,
     },
   ];
   return (
