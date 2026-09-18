@@ -71,6 +71,7 @@ function Landing() {
       <main>
         <Hero />
         <AnnouncementSection />
+        <DirectorGeneralMessage />
         <About />
         <ManifesteSection />
         <Pillars />
@@ -90,6 +91,12 @@ function Landing() {
 /* ---------- TEAM — Qui sommes-nous ---------- */
 function TeamFounders() {
   const team = [
+    {
+      slug: "aurelie-serel",
+      name: "Aurélie SÉREL",
+      role: "Directrice Générale",
+      img: aurelieSerel,
+    },
     {
       slug: "arnaud-sighano",
       name: "Arnaud SIGHANO",
@@ -114,12 +121,6 @@ function TeamFounders() {
       name: "Dr Dieudonné TOUKEA",
       role: "Directeur Afrique",
       img: teamToukea,
-    },
-    {
-      slug: "aurelie-serel",
-      name: "Aurélie SÉREL",
-      role: "Directrice Générale",
-      img: aurelieSerel,
     },
   ];
   return (
@@ -335,6 +336,58 @@ function AnnouncementSection() {
               </Link>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- DIRECTRICE GÉNÉRALE ---------- */
+function DirectorGeneralMessage() {
+  return (
+    <section className="py-28 md:py-36">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-12 items-center">
+        <div className="md:col-span-5">
+          <div className="relative aspect-[4/5] max-w-sm">
+            <div className="absolute -top-3 -right-3 left-10 bottom-10 rounded-[2rem] border border-crimson/40" />
+            <img
+              src={aurelieSerel}
+              alt="Aurélie SÉREL, Directrice Générale d’InPolitics Institute"
+              loading="lazy"
+              className="relative h-full w-full object-cover object-top rounded-[2rem] shadow-2xl"
+            />
+          </div>
+        </div>
+
+        <div className="md:col-span-7">
+          <div className="inline-flex px-3 py-1.5 rounded-full bg-crimson/10 text-crimson text-[11px] font-semibold tracking-[0.18em] uppercase mb-5">
+            Mot de la Directrice Générale
+          </div>
+          <Quote className="size-8 text-crimson mb-4" strokeWidth={1.5} />
+          <blockquote className="font-serif italic text-2xl md:text-[32px] leading-[1.35] text-anthracite">
+            « Se réunir est un début, rester ensemble est un progrès, travailler ensemble est la
+            réussite. »
+          </blockquote>
+          <p className="mt-7 text-base md:text-lg text-muted-foreground leading-relaxed">
+            Spécialiste de la diplomatie d'influence, de la communication institutionnelle et des
+            affaires publiques, Aurélie SÉREL mobilise les réseaux du groupe GEFI au service de la
+            vision stratégique et technopolitique de l'Institut.
+          </p>
+          <div className="mt-8 flex items-center gap-4">
+            <div className="h-px w-12 bg-anthracite/30" />
+            <div>
+              <div className="text-sm font-bold text-anthracite">Aurélie SÉREL</div>
+              <div className="text-xs text-muted-foreground tracking-wide">
+                Directrice Générale — InPolitics Institute
+              </div>
+            </div>
+          </div>
+          <Link
+            to="/biographie/aurelie-serel"
+            className="mt-8 btn-crimson px-5 py-2.5 rounded-full text-xs font-semibold inline-flex items-center gap-2"
+          >
+            Voir plus <ArrowRight className="size-3.5" />
+          </Link>
         </div>
       </div>
     </section>
