@@ -35,6 +35,7 @@ import admissionDossier from "@/assets/admission-dossier.png";
 import admissionEntretien from "@/assets/admission-entretien.png";
 import admissionAdmission from "@/assets/admission-admission.png";
 import formationGouvernance from "@/assets/inpolitics-institute-formation.jpg";
+import aurelieSerelAsset from "@/assets/aurelie-serel.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -114,6 +115,12 @@ function TeamFounders() {
       role: "Directeur Afrique",
       img: teamToukea,
     },
+    {
+      slug: "aurelie-serel",
+      name: "Aurélie SÉREL",
+      role: "Directrice Générale",
+      img: aurelieSerelAsset.url,
+    },
   ];
   return (
     <section id="equipe" className="py-24 md:py-32">
@@ -153,7 +160,7 @@ function TeamFounders() {
           ))}
         </div>
 
-        <div className="flex justify-center mt-10">
+        <div className="flex flex-wrap justify-center gap-10 mt-10">
           {team.slice(3).map((m) => (
             <div
               key={m.slug}
@@ -203,6 +210,12 @@ function BioLink({ slug }: { slug: string }) {
   if (slug === "hacene-boumediene")
     return (
       <Link to="/biographie/hacene-boumediene" className={cls}>
+        {inner}
+      </Link>
+    );
+  if (slug === "aurelie-serel")
+    return (
+      <Link to="/biographie/aurelie-serel" className={cls}>
         {inner}
       </Link>
     );
