@@ -43,6 +43,7 @@ import { Route as DiasporaConnectRouteImport } from "./routes/diaspora.connect"
 import { Route as DiasporaConciergerieRouteImport } from "./routes/diaspora.conciergerie"
 import { Route as BiographieHaceneBoumedieneRouteImport } from "./routes/biographie.hacene-boumediene"
 import { Route as BiographieDieudonneToukeaRouteImport } from "./routes/biographie.dieudonne-toukea"
+import { Route as BiographieAurelieSerelRouteImport } from "./routes/biographie.aurelie-serel"
 import { Route as BiographieArnaudSighanoRouteImport } from "./routes/biographie.arnaud-sighano"
 import { Route as BiographieAntoineObtelRouteImport } from "./routes/biographie.antoine-obtel"
 import { Route as AdminLoginRouteImport } from "./routes/admin.login"
@@ -235,6 +236,11 @@ const BiographieDieudonneToukeaRoute =
     path: "/biographie/dieudonne-toukea",
     getParentRoute: () => rootRouteImport,
   } as any)
+const BiographieAurelieSerelRoute = BiographieAurelieSerelRouteImport.update({
+  id: "/biographie/aurelie-serel",
+  path: "/biographie/aurelie-serel",
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BiographieArnaudSighanoRoute = BiographieArnaudSighanoRouteImport.update({
   id: "/biographie/arnaud-sighano",
   path: "/biographie/arnaud-sighano",
@@ -266,6 +272,7 @@ export interface FileRoutesByFullPath {
   "/admin/login": typeof AdminLoginRoute
   "/biographie/antoine-obtel": typeof BiographieAntoineObtelRoute
   "/biographie/arnaud-sighano": typeof BiographieArnaudSighanoRoute
+  "/biographie/aurelie-serel": typeof BiographieAurelieSerelRoute
   "/biographie/dieudonne-toukea": typeof BiographieDieudonneToukeaRoute
   "/biographie/hacene-boumediene": typeof BiographieHaceneBoumedieneRoute
   "/diaspora/conciergerie": typeof DiasporaConciergerieRoute
@@ -306,6 +313,7 @@ export interface FileRoutesByTo {
   "/admin/login": typeof AdminLoginRoute
   "/biographie/antoine-obtel": typeof BiographieAntoineObtelRoute
   "/biographie/arnaud-sighano": typeof BiographieArnaudSighanoRoute
+  "/biographie/aurelie-serel": typeof BiographieAurelieSerelRoute
   "/biographie/dieudonne-toukea": typeof BiographieDieudonneToukeaRoute
   "/biographie/hacene-boumediene": typeof BiographieHaceneBoumedieneRoute
   "/diaspora/conciergerie": typeof DiasporaConciergerieRoute
@@ -347,6 +355,7 @@ export interface FileRoutesById {
   "/admin/login": typeof AdminLoginRoute
   "/biographie/antoine-obtel": typeof BiographieAntoineObtelRoute
   "/biographie/arnaud-sighano": typeof BiographieArnaudSighanoRoute
+  "/biographie/aurelie-serel": typeof BiographieAurelieSerelRoute
   "/biographie/dieudonne-toukea": typeof BiographieDieudonneToukeaRoute
   "/biographie/hacene-boumediene": typeof BiographieHaceneBoumedieneRoute
   "/diaspora/conciergerie": typeof DiasporaConciergerieRoute
@@ -389,6 +398,7 @@ export interface FileRouteTypes {
     | "/admin/login"
     | "/biographie/antoine-obtel"
     | "/biographie/arnaud-sighano"
+    | "/biographie/aurelie-serel"
     | "/biographie/dieudonne-toukea"
     | "/biographie/hacene-boumediene"
     | "/diaspora/conciergerie"
@@ -429,6 +439,7 @@ export interface FileRouteTypes {
     | "/admin/login"
     | "/biographie/antoine-obtel"
     | "/biographie/arnaud-sighano"
+    | "/biographie/aurelie-serel"
     | "/biographie/dieudonne-toukea"
     | "/biographie/hacene-boumediene"
     | "/diaspora/conciergerie"
@@ -469,6 +480,7 @@ export interface FileRouteTypes {
     | "/admin/login"
     | "/biographie/antoine-obtel"
     | "/biographie/arnaud-sighano"
+    | "/biographie/aurelie-serel"
     | "/biographie/dieudonne-toukea"
     | "/biographie/hacene-boumediene"
     | "/diaspora/conciergerie"
@@ -510,6 +522,7 @@ export interface RootRouteChildren {
   AdminLoginRoute: typeof AdminLoginRoute
   BiographieAntoineObtelRoute: typeof BiographieAntoineObtelRoute
   BiographieArnaudSighanoRoute: typeof BiographieArnaudSighanoRoute
+  BiographieAurelieSerelRoute: typeof BiographieAurelieSerelRoute
   BiographieDieudonneToukeaRoute: typeof BiographieDieudonneToukeaRoute
   BiographieHaceneBoumedieneRoute: typeof BiographieHaceneBoumedieneRoute
   DiasporaConciergerieRoute: typeof DiasporaConciergerieRoute
@@ -781,6 +794,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof BiographieDieudonneToukeaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    "/biographie/aurelie-serel": {
+      id: "/biographie/aurelie-serel"
+      path: "/biographie/aurelie-serel"
+      fullPath: "/biographie/aurelie-serel"
+      preLoaderRoute: typeof BiographieAurelieSerelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     "/biographie/arnaud-sighano": {
       id: "/biographie/arnaud-sighano"
       path: "/biographie/arnaud-sighano"
@@ -822,6 +842,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminLoginRoute: AdminLoginRoute,
   BiographieAntoineObtelRoute: BiographieAntoineObtelRoute,
   BiographieArnaudSighanoRoute: BiographieArnaudSighanoRoute,
+  BiographieAurelieSerelRoute: BiographieAurelieSerelRoute,
   BiographieDieudonneToukeaRoute: BiographieDieudonneToukeaRoute,
   BiographieHaceneBoumedieneRoute: BiographieHaceneBoumedieneRoute,
   DiasporaConciergerieRoute: DiasporaConciergerieRoute,
