@@ -1,3 +1,3 @@
 - [x] Ajouter le choix de langue au premier accueil, sa persistance et sa réouverture.
 - [x] Traduire toute la page d’accueil (navigation, formulaires et pied de page compris) en français, anglais et espagnol.
-- [ ] Vérifier le choix et l’affichage des trois langues dans l’aperçu.
+- [x] Vérifier le choix et l’affichage des trois langues dans l’aperçu.
