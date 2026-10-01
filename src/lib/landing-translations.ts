@@ -171,6 +171,26 @@ const phrases: [string, string, string][] = [
   ["InPolitics Institute est un cabinet d'études-conseils, de formation et de recherche. Les formations sont hybrides (en présentiel et en ligne) sous forme d'ateliers et séminaires. Les diplômes sont français certifiés Qualiopi Répertoire Spécifique (RS).", "InPolitics Institute is a consultancy, training and research organisation. Its courses combine in-person and online workshops and seminars. Qualifications are French and certified under Qualiopi Répertoire Spécifique (RS).", "InPolitics Institute es una organización de consultoría, formación e investigación. Sus cursos combinan talleres y seminarios presenciales y en línea. Las titulaciones son francesas, certificadas por Qualiopi Répertoire Spécifique (RS)."],
   ["Le site de l'Institut est établi à Gigean, au sein de Montpellier Métropole (France). Ce choix d'implantation répond à une exigence de neutralité : Gigean — Montpellier Métropole constitue un lieu neutre sur le plan géopolitique, propice à l'accueil de décideurs publics, de délégations et d'experts internationaux dans un cadre d'échange impartial, indépendant de toute affiliation partisane ou d'intérêt d'État.", "The institute is based in Gigean, within Montpellier Métropole, France. This location supports neutrality: Gigean offers a geopolitically neutral setting for public decision-makers, delegations and international experts to exchange ideas independently of party or state interests.", "La sede del instituto se encuentra en Gigean, en Montpellier Métropole, Francia. Este emplazamiento garantiza un entorno geopolíticamente neutral para el diálogo entre responsables públicos, delegaciones y expertos internacionales, libre de intereses partidistas o estatales."],
   ["L'Institut conduit ses travaux d'études, de recherche et de plaidoyer dans le respect des standards d'intégrité et de transparence applicables aux activités de conseil et de représentation d'intérêts.", "The institute conducts research and advocacy in accordance with the integrity and transparency standards applicable to consultancy and interest representation.", "El instituto realiza sus estudios, investigaciones y actividades de incidencia conforme a las normas de integridad y transparencia aplicables a la consultoría y la representación de intereses."],
+  ["Gigean · Montpellier Métropole", "Gigean · Montpellier Métropole", "Gigean · Montpellier Métropole"],
+  ["Montpellier, France", "Montpellier, France", "Montpellier, Francia"],
+  ["Vision & Mission", "Vision & Mission", "Visión y Misión"],
+  ["Formulaire d'orientation", "Guidance form", "Formulario de orientación"],
+  ["Échanger avec l'Institut", "Contact the Institute", "Contactar con el Instituto"],
+  ["Présentez-nous votre projet, votre fonction et vos objectifs. Notre équipe vous répond sous 48h.", "Tell us about your project, role and objectives. Our team will reply within 48 hours.", "Cuéntenos su proyecto, su cargo y sus objetivos. Nuestro equipo responderá en un plazo de 48 horas."],
+  ["Prénom", "First name", "Nombre"],
+  ["Nom", "Last name", "Apellidos"],
+  ["Email professionnel", "Work email", "Correo profesional"],
+  ["Fonction / Organisation", "Role / Organisation", "Cargo / Organización"],
+  ["Votre projet en quelques lignes…", "Describe your project briefly…", "Describa brevemente su proyecto…"],
+  ["Envoyer", "Send", "Enviar"],
+  ["Envoi…", "Sending…", "Enviando…"],
+  ["Message envoyé ✓", "Message sent ✓", "Mensaje enviado ✓"],
+  ["Merci de remplir tous les champs obligatoires.", "Please complete all required fields.", "Complete todos los campos obligatorios."],
+  ["L'envoi a échoué. Merci de réessayer.", "Your message could not be sent. Please try again.", "No se pudo enviar el mensaje. Inténtelo de nuevo."],
+  ["Message envoyé — nous vous répondons sous 48h.", "Message sent — we will reply within 48 hours.", "Mensaje enviado: responderemos en un plazo de 48 horas."],
+  ["Parler à un conseiller sur WhatsApp", "Speak to an adviser on WhatsApp", "Hablar con un asesor por WhatsApp"],
+  ["Bonjour, je souhaite des informations sur les programmes de InPolitics Institute", "Hello, I would like information about InPolitics Institute programmes", "Hola, quisiera recibir información sobre los programas de InPolitics Institute"],
+  ["Demande de brochure", "Programme brochure request", "Solicitud de folleto de programas"],
 ];
 
 const dictionary = new Map(phrases.map(([fr, en, es]) => [fr, { fr, en, es }]));
@@ -190,6 +210,24 @@ export function translateLanding(root: HTMLElement, language: LandingLanguage) {
     const translated = `${leading}${phrase[language]}${trailing}`;
     if (node.textContent !== translated) node.textContent = translated;
   }
+  root.querySelectorAll<HTMLElement>("[placeholder], [aria-label], [title]").forEach((element) => {
+    (["placeholder", "aria-label", "title"] as const).forEach((attribute) => {
+      const current = element.getAttribute(attribute);
+      if (!current || element.closest("[data-language-picker]")) return;
+      let stored = attributeOriginals.get(element);
+      if (!stored) {
+        stored = new Map();
+        attributeOriginals.set(element, stored);
+      }
+      const original = stored.get(attribute) ?? current;
+      const phrase = dictionary.get(normalize(original));
+      if (!phrase) return;
+      stored.set(attribute, original);
+      const translated = phrase[language];
+      if (current !== translated) element.setAttribute(attribute, translated);
+    });
+  });
   document.documentElement.lang = language;
 }
 const originals = new WeakMap<Node, string>();
+const attributeOriginals = new WeakMap<Element, Map<string, string>>();
