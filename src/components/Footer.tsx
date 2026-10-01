@@ -86,7 +86,9 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-          <div>© {new Date().getFullYear()} InPolitics Institute. Tous droits réservés.</div>
+          <div>
+            © {new Date().getFullYear()} InPolitics Institute. <span>Tous droits réservés.</span>
+          </div>
           <div className="flex items-center gap-6 md:pr-20">
             <Link to="/" className="hover:text-white transition">
               Accueil
