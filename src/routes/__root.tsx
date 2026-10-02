@@ -1,5 +1,15 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Outlet, Link, createRootRouteWithContext, useRouter } from "@tanstack/react-router";
+import {
+  Outlet,
+  Link,
+  createRootRouteWithContext,
+  useRouter,
+  useRouterState,
+} from "@tanstack/react-router";
+import { useEffect } from "react";
+import { LanguageWelcome } from "@/components/LanguageWelcome";
+import { translateLanding } from "@/lib/landing-translations";
+import { useLandingLanguage } from "@/lib/landing-language";
 
 import { ContactProvider } from "@/components/ContactModal";
 import { Footer } from "@/components/Footer";
@@ -70,6 +80,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const language = useLandingLanguage();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isAdmin = pathname.startsWith("/admin");
+  useEffect(() => {
+    if (!language || isAdmin) return;
+    const apply = () => translateLanding(document.body, language);
+    apply();
+    const observer = new MutationObserver(apply);
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+    return () => {
+      observer.disconnect();
+      translateLanding(document.body, "fr");
+      document.documentElement.lang = "fr";
+    };
+  }, [language, isAdmin]);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -80,6 +105,7 @@ function RootComponent() {
           </div>
           <Footer />
         </div>
+        {!isAdmin && <LanguageWelcome />}
         <Toaster />
       </ContactProvider>
     </QueryClientProvider>
