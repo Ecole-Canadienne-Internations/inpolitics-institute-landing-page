@@ -1,3 +1,8 @@
 - [x] Ajouter le choix de langue au premier accueil, sa persistance et sa réouverture.
 - [x] Traduire toute la page d’accueil (navigation, formulaires et pied de page compris) en français, anglais et espagnol.
 - [x] Vérifier le choix et l’affichage des trois langues dans l’aperçu.
+- [x] Étendre le sélecteur de langue et la traduction à toutes les routes : en-tête, bandeau rouge, pied de page, formulaires de contact, boutons et libellés d’action.
+- [x] Exclure les routes /admin (français fixé, sans sélecteur de langue).
+- [x] Traduire le contenu des sous-pages (biographies, programmes, manifeste, Lab, Diaspora, gouvernance digitale…) en anglais et espagnol.
+- [x] Laisser replier sans casse tout ce qui n’est pas traduisible : noms propres, adresses, marques, chiffres.
+- [x] Traduire l’onglet du navigateur (titre statique) selon la langue choisie.
