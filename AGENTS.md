@@ -1,2 +1,2 @@
-- Keep homepage translations in a dedicated phrase catalogue and apply them to the homepage DOM (including shared header/footer) only; this avoids rewriting unrelated subpages and preserves their existing French content.
-- Store the landing-page language preference in localStorage and offer a visible switcher in the homepage header; this makes the first-visit selection persistent and reversible.
+- Keep site translations in a dedicated phrase catalogue and apply them to the whole public site DOM from the root layout (admin pages excluded); French stays the editorial source.
+- Store the language preference in localStorage and offer a visible, reopenable switcher on every public page; this makes the first-visit selection persistent and reversible.

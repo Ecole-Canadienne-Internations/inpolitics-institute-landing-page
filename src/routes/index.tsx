@@ -36,9 +36,6 @@ import admissionEntretien from "@/assets/admission-entretien.png";
 import admissionAdmission from "@/assets/admission-admission.png";
 import formationGouvernance from "@/assets/inpolitics-institute-formation.jpg";
 import aurelieSerel from "@/assets/aurelie-serel.png";
-import { LanguageWelcome } from "@/components/LanguageWelcome";
-import { translateLanding } from "@/lib/landing-translations";
-import { useLandingLanguage } from "@/lib/landing-language";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -68,23 +65,9 @@ export const Route = createFileRoute("/")({
 });
 
 function Landing() {
-  const language = useLandingLanguage();
-  useEffect(() => {
-    if (!language) return;
-    const apply = () => translateLanding(document.body, language);
-    apply();
-    const observer = new MutationObserver(apply);
-    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
-    return () => {
-      observer.disconnect();
-      translateLanding(document.body, "fr");
-      document.documentElement.lang = "fr";
-    };
-  }, [language]);
   return (
     <div className="min-h-screen bg-white text-foreground">
       <Header />
-      <LanguageWelcome />
       <main>
         <Hero />
         <AnnouncementSection />
