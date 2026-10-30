@@ -60,10 +60,23 @@ function MentionsLegales() {
               des standards d'intégrité et de transparence applicables aux activités de conseil et
               de représentation d'intérêts.
             </p>
+            <p>
+              Le siège social et le futur campus de Gigean sont actuellement en phase de
+              développement et d'aménagement. Pendant la durée des travaux, nos bureaux
+              administratifs et nos sessions de formation exécutive se tiennent dans nos espaces
+              partenaires à Montpellier et Séville, ou en format itinérant.
+            </p>
           </div>
 
           <div className="mt-12 pt-8 border-t border-border space-y-2 text-sm text-muted-foreground">
-            <p>Rue de l'Herme, 34770 Gigean — Montpellier Métropole, France</p>
+            <p className="font-semibold text-foreground">InPolitics Institute — Siège & Futur Campus</p>
+            <p>Rue de l'Herme, 34770 Gigean — Montpellier Métropole (France)</p>
+            <p>(Permis de construire accordé 1ha — Ouverture du Campus horizon 2028)</p>
+            <p>
+              <Link to="/institut/galerie-image" className="text-crimson font-semibold hover:underline">
+                Voir Maquette
+              </Link>
+            </p>
             <p>+33 7 46 44 04 27</p>
           </div>
         </article>
