@@ -69,6 +69,17 @@ function GalerieImage() {
               l'environnement unique dans lequel se déroulent nos séminaires d'immersion et nos
               cursus hybrides.
             </p>
+            <div className="mt-8 border-l-4 border-crimson pl-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-crimson">
+                Informations Visiteurs & Formations
+              </p>
+              <p className="mt-3 text-base md:text-lg text-muted-foreground leading-relaxed">
+                Le siège social et le futur campus de Gigean sont actuellement en phase de
+                développement et d'aménagement. Pendant la durée des travaux, nos bureaux
+                administratifs et nos sessions de formation exécutive se tiennent dans nos espaces
+                partenaires à Montpellier et Séville, ou en format itinérant.
+              </p>
+            </div>
           </div>
 
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-6">

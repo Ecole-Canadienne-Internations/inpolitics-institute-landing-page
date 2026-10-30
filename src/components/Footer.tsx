@@ -21,7 +21,19 @@ export function Footer() {
           <div className="mt-7 space-y-3 text-sm">
             <div className="flex items-start gap-3">
               <MapPin className="size-4 mt-0.5 text-crimson" />
-              <span>Rue de l'Herme, 34770 GIGEAN — Montpellier Métropole, France</span>
+              <span>
+                Siège & Futur Campus — Rue de l'Herme, 34770 Gigean — Montpellier Métropole
+                (France)
+                <span className="block mt-1 text-xs opacity-80">
+                  (Permis de construire accordé 1ha — Ouverture du Campus horizon 2028)
+                </span>
+                <Link
+                  to="/institut/galerie-image"
+                  className="mt-1 inline-block text-crimson font-semibold hover:underline"
+                >
+                  Voir Maquette
+                </Link>
+              </span>
             </div>
             <div className="flex items-start gap-3">
               <Phone className="size-4 mt-0.5 text-crimson" />
