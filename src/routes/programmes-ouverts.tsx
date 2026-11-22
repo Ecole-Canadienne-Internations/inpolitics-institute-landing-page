@@ -12,6 +12,7 @@ import {
   Briefcase,
 } from "lucide-react";
 import { Header } from "@/components/Header";
+import { permanentProgrammes } from "@/lib/training-catalogue";
 import { useContactModal } from "@/components/ContactModal";
 import afficheGouvernance from "@/assets/affiche-level-up-governance.png";
 import afficheProtocole from "@/assets/affiche-diplomatie-locale.png";
@@ -26,13 +27,13 @@ export const Route = createFileRoute("/programmes-ouverts")({
       {
         name: "description",
         content:
-          "Découvrez nos formations certifiantes en gouvernance publique, leadership politique, gestion budgétaire et protocole diplomatique. Inscriptions ouvertes.",
+          "Découvrez les 12 parcours permanents : gouvernance par la data, leadership, finances publiques, diplomatie et transformation numérique. Sessions 2027.",
       },
       { property: "og:title", content: "Programmes Ouverts — InPolitics Institute" },
       {
         property: "og:description",
         content:
-          "Formations certifiantes en gouvernance publique, leadership politique, gestion budgétaire et protocole diplomatique.",
+          "12 parcours exécutifs hybrides en gouvernance, leadership, finances publiques et diplomatie. Sessions de mars à octobre 2027.",
       },
       { property: "og:url", content: "https://inpoliticsinstitute.com/programmes-ouverts" },
       { property: "og:type", content: "website" },
@@ -41,112 +42,17 @@ export const Route = createFileRoute("/programmes-ouverts")({
   }),
 });
 
-type Formation = {
-  id: number;
-  slug: string;
-  title: string;
-  description: string;
-  objectives: string;
-  target: string;
-  debouches: string;
-  status: "Inscriptions Ouvertes" | "Places Limitées" | "Nouveau";
-  certification: string;
-  price: string;
-  nextSession: string;
-  format: string;
-  location: string;
-  image: string;
-  ctaText: string;
-  ctaStyle: "crimson" | "ghost";
-};
-
-const formations: Formation[] = [
-  {
-    id: 1,
-    slug: "gouvernance",
-    title: "Gouvernance Publique et Décentralisation : Enjeux, acteurs et territoires",
-    description:
-      "Compréhension approfondie des mécanismes de gouvernance territoriale, de la décentralisation et du management public.",
-    objectives:
-      "Principes de la gouvernance contemporaine, cadres juridiques, rôle des collectivités, outils de management public et participation citoyenne.",
-    target:
-      "Cadres des administrations, élus territoriaux, professionnels du développement local, consultants, membres d'ONG",
-    debouches:
-      "Responsable de collectivité, Chargé de mission en gouvernance, Conseiller en politique publique",
-    status: "Inscriptions Ouvertes",
-    certification:
-      "Certificat reconnu à l'international · Certification française RNCP / Qualiopi Répertoire Spécifique (RS)",
-    price: "Sur demande (tarif préférentiel groupes et administrations)",
-    nextSession: "Janvier 2027",
-    format: "Format Hybride — 32 heures sur 6 à 7 semaines + 1 semaine à Montpellier",
-    location: "Montpellier, France",
-    image: afficheGouvernance,
-    ctaText: "S'INSCRIRE À CETTE FORMATION",
-    ctaStyle: "crimson",
-  },
-  {
-    id: 2,
-    slug: "leadership",
-    title: "Leadership Politique et Communication Publique",
-    description:
-      "Immersion dans les techniques modernes de communication politique et institutionnelle et dans les pratiques de leadership.",
-    objectives:
-      "Compétences en leadership, persuasion, gestion de crise, médias numériques et stratégie de communication.",
-    target: "Élus, porte-paroles, communicants institutionnels, journalistes, conseillers en stratégie",
-    debouches:
-      "Conseiller en communication politique, Responsable communication institutionnelle",
-    status: "Inscriptions Ouvertes",
-    certification: "Certification française RNCP / Qualiopi Répertoire Spécifique (RS)",
-    price: "Sur demande",
-    nextSession: "Février 2027",
-    format: "Format Hybride / En ligne — 28 heures sur 5 à 6 semaines + 1 semaine à Montpellier",
-    location: "Montpellier, France / En ligne",
-    image: formation2,
-    ctaText: "VOIR LE PROGRAMME / S'INSCRIRE",
-    ctaStyle: "ghost",
-  },
-  {
-    id: 3,
-    slug: "finances",
-    title: "Gestion Financière et Budgétaire des Collectivités Territoriales",
-    description:
-      "Maîtrise des outils financiers et budgétaires pour une gestion moderne des collectivités locales : transparence, efficacité, optimisation.",
-    objectives:
-      "Élaborer et exécuter un budget communal, conduire un audit interne, mobiliser les financements et bâtir des partenariats internationaux.",
-    target: "Maires, receveurs municipaux, contrôleurs de gestion, cadres financiers",
-    debouches: "Responsable financier territorial, Auditeur interne des collectivités",
-    status: "Places Limitées",
-    certification: "Certification française RNCP / Qualiopi Répertoire Spécifique (RS)",
-    price: "Sur demande",
-    nextSession: "Janvier 2027",
-    format: "Format Hybride — 35 heures sur 6 à 7 semaines + 1 semaine à Montpellier",
-    location: "Montpellier, France",
-    image: formation3,
-    ctaText: "RÉSERVER MA PLACE",
-    ctaStyle: "ghost",
-  },
-  {
-    id: 4,
-    slug: "protocole",
-    title: "Protocole, Diplomatie Locale et Coopération Décentralisée",
-    description:
-      "Règles du protocole institutionnel et mécanismes de coopération internationale des collectivités territoriales.",
-    objectives:
-      "Protocole d'État, accueil des délégations, diplomatie locale et montage de projets de coopération décentralisée.",
-    target:
-      "Maires, chefs de cabinet, chargés de coopération, responsables des relations internationales",
-    debouches: "Conseiller en coopération décentralisée, Responsable protocole",
-    status: "Nouveau",
-    certification: "Certification française RNCP / Qualiopi Répertoire Spécifique (RS)",
-    price: "Sur demande",
-    nextSession: "Février 2027",
-    format: "Format Hybride — 30 heures sur 5 à 6 semaines + 1 semaine à Montpellier",
-    location: "Montpellier, France",
-    image: afficheProtocole,
-    ctaText: "DÉCOUVRIR & S'INSCRIRE",
-    ctaStyle: "ghost",
-  },
-];
+const programmeImages = [afficheGouvernance, formation2, formation3, afficheProtocole];
+const formations = permanentProgrammes.map((programme, index) => ({
+  ...programme,
+  status: "Inscriptions Ouvertes",
+  certification: "Parcours exécutif de formation continue",
+  price: "Sur demande (tarifs préférentiels pour les groupes, collectivités territoriales et administrations publiques)",
+  location: "Montpellier, France / En ligne",
+  image: programmeImages[index % programmeImages.length],
+  ctaText: "S'INSCRIRE À CETTE FORMATION",
+  ctaStyle: index === 0 ? "crimson" : "ghost",
+}));
 
 function ProgrammesOuverts() {
   const { open } = useContactModal();
@@ -172,14 +78,13 @@ function ProgrammesOuverts() {
               Nos Programmes Ouverts
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-4xl">
-              Formez-vous à l'excellence de la gouvernance locale. InPolitics Institute vous ouvre
-              les portes de ses programmes de renforcement de capacités. Des formations pratiques,
-              certifiantes et dispensées par des experts de terrain, conçues pour les élus, cadres
-              communaux, partis politiques et leaders de la société civile qui veulent passer à
-              l'action. En présentiel à Montpellier, dans nos sites en Afrique, et en ligne. Les
-              inscriptions sont actuellement ouvertes.
+              Découvrez les 12 parcours permanents d’InPolitics Institute : gouvernance par la data, leadership politique, finances publiques, diplomatie territoriale et transformation numérique. Des formations hybrides associant classes virtuelles interactives et immersion en présentiel, conçues pour les élus, cadres publics et décideurs.
             </p>
           </div>
+
+          <p className="text-sm text-muted-foreground mb-8">
+            D’autres thématiques sont proposées selon les décisions du conseil académique et à la demande des organisations.
+          </p>
 
           {/* Formations Grid */}
           <div className="grid md:grid-cols-2 gap-8">
@@ -202,7 +107,7 @@ function ProgrammesOuverts() {
                     </span>
                     <span className="inline-flex px-3 py-1 rounded-full bg-white/90 backdrop-blur text-anthracite text-[10px] font-semibold tracking-wide uppercase">
                       <Award className="size-3 mr-1" />
-                      Certifié
+                      Parcours exécutif
                     </span>
                   </div>
                 </div>
@@ -235,7 +140,7 @@ function ProgrammesOuverts() {
                     <div className="flex items-start gap-3 text-sm">
                       <Award className="size-4 text-crimson mt-0.5 shrink-0" />
                       <div>
-                        <span className="font-semibold text-anthracite">Certifications :</span>
+                        <span className="font-semibold text-anthracite">Parcours :</span>
                         <p className="text-muted-foreground">{formation.certification}</p>
                       </div>
                     </div>

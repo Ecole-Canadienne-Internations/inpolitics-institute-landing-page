@@ -8,6 +8,8 @@ import { ArrowLeft, Check, Send, Loader2 } from "lucide-react";
 import banner from "@/assets/banner4.png";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { programOptions } from "@/lib/training-catalogue";
+export { programOptions } from "@/lib/training-catalogue";
 
 export const Route = createFileRoute("/schools-of-politics/apply")({
   component: Apply,
@@ -50,26 +52,6 @@ const applicationSchema = z.object({
 
 type ApplicationForm = z.infer<typeof applicationSchema>;
 
-export const programOptions = [
-  {
-    value: "gouvernance",
-    label: "Gouvernance Publique et Décentralisation : Enjeux, acteurs et territoires",
-  },
-  { value: "leadership", label: "Leadership Politique et Communication Publique" },
-  {
-    value: "finances",
-    label: "Gestion Financière et Budgétaire des Collectivités Territoriales",
-  },
-  { value: "protocole", label: "Protocole, Diplomatie Locale et Coopération Décentralisée" },
-  { value: "political-strategy", label: "Stratégie Politique & Campagnes Électorales" },
-  { value: "public-diplomacy", label: "Diplomatie Publique & Relations Internationales" },
-  { value: "governance", label: "Gouvernance & Politiques Publiques" },
-  { value: "digital-governance", label: "Gouvernance Digitale & Enjeux Technopolitiques" },
-  { value: "lobbying", label: "Lobbying & Plaidoyer d'Influence" },
-  { value: "individual-program", label: "Programme Individuel (sur-mesure)" },
-  { value: "school-of-politics", label: "School of Politics" },
-  { value: "executive-leadership", label: "Executive Leadership" },
-];
 
 const hearOptions = [
   { value: "reseaux-sociaux", label: "Réseaux sociaux" },

@@ -36,6 +36,7 @@ import admissionEntretien from "@/assets/admission-entretien.png";
 import admissionAdmission from "@/assets/admission-admission.png";
 import formationGouvernance from "@/assets/inpolitics-institute-formation.jpg";
 import aurelieSerel from "@/assets/aurelie-serel.png";
+import { permanentProgrammes } from "@/lib/training-catalogue";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -312,15 +313,15 @@ function AnnouncementSection() {
                 À LA UNE
               </div>
               <h2 className="font-serif text-2xl md:text-3xl text-anthracite leading-tight mb-4">
-                Gouvernance Publique et Décentralisation : Enjeux, acteurs et territoires
+                {permanentProgrammes[0].title}
               </h2>
               <p className="text-sm text-muted-foreground mb-3">
-                Formation certifiante — Certification RNCP / Qualiopi Répertoire Spécifique (RS)
+                Parcours exécutif de formation continue
               </p>
               <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
                 <span className="inline-flex items-center gap-1.5">
                   <Calendar className="size-4 text-crimson" />
-                  Prochaine session : Janvier 2027
+                  Prochaine session : Mars 2027
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <MapPin className="size-4 text-crimson" />

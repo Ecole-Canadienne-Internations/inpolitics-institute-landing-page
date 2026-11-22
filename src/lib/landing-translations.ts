@@ -1,4 +1,5 @@
 import type { LandingLanguage } from "./landing-language";
+import { trainingPhrases } from "./training-phrases";
 
 // French is the editorial source. Names, addresses, programme titles and legal names remain unchanged.
 // A row is [fr, en, es]: the French wording is also the lookup key.
@@ -7,6 +8,7 @@ import type { LandingLanguage } from "./landing-language";
 // key stays the rendered source text while French still gets its own wording.
 type Phrase = [string, string, string] | [string, string, string, string];
 const phrases: Phrase[] = [
+  ...trainingPhrases,
   ["Accueil", "Home", "Inicio"],
   ["Contact", "Contact", "Contacto"],
   ["L'Institut", "The Institute", "El Instituto"],

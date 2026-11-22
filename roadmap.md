@@ -6,3 +6,6 @@
 - [x] Traduire le contenu des sous-pages (biographies, programmes, manifeste, Lab, Diaspora, gouvernance digitale…) en anglais et espagnol.
 - [x] Laisser replier sans casse tout ce qui n’est pas traduisible : noms propres, adresses, marques, chiffres.
 - [x] Traduire l’onglet du navigateur (titre statique) selon la langue choisie.
+- [ ] Actualiser les 12 parcours du document officiel, les candidatures et la formation mise en avant sans modifier le design.
+- [ ] Corriger les dépendances vulnérables et vérifier les résultats de sécurité.
+- [ ] Vérifier les formations et leur présélection dans le site.
