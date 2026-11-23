@@ -6,6 +6,7 @@
 - [x] Traduire le contenu des sous-pages (biographies, programmes, manifeste, Lab, Diaspora, gouvernance digitale…) en anglais et espagnol.
 - [x] Laisser replier sans casse tout ce qui n’est pas traduisible : noms propres, adresses, marques, chiffres.
 - [x] Traduire l’onglet du navigateur (titre statique) selon la langue choisie.
-- [ ] Actualiser les 12 parcours du document officiel, les candidatures et la formation mise en avant sans modifier le design.
-- [ ] Corriger les dépendances vulnérables et vérifier les résultats de sécurité.
-- [ ] Vérifier les formations et leur présélection dans le site.
+- [x] Actualiser les 12 parcours du document officiel, les candidatures et la formation mise en avant sans modifier le design.
+- [ ] Terminer le traitement des résultats de sécurité : statut des candidatures à l’insertion, mot de passe administrateur exposé et protection contre les mots de passe divulgués (suivi distinct de la correction de l’aperçu).
+- [x] Vérifier les formations et leur présélection dans le site.
+- [x] Corriger les erreurs de compatibilité des pages racine et piliers, puis vérifier l’aperçu.

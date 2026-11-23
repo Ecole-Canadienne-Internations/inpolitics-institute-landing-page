@@ -138,7 +138,9 @@ export const Route = createFileRoute("/pilier/$slug")({
   errorComponent: ({ error, reset }) => (
     <div className="min-h-screen grid place-items-center p-10">
       <div className="text-center">
-        <p className="text-muted-foreground mb-4">{error.message}</p>
+        <p className="text-muted-foreground mb-4">
+          {error instanceof Error ? error.message : "Impossible de charger cette page. Veuillez réessayer."}
+        </p>
         <button
           onClick={reset}
           className="btn-crimson px-5 h-11 rounded-full text-sm font-semibold"
